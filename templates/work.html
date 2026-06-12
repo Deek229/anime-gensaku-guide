@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}{{ page_title }}{% endblock %}
+{% block description %}{{ description }}{% endblock %}
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TVSeries",
+  "name": {{ work.title|tojson }},
+  "description": {{ description|tojson }}
+}
+</script>
+{% endblock %}
+{% block content %}
+<article class="work-detail">
+  <nav class="breadcrumb"><a href="/">一覧</a> / {{ work.title }}</nav>
+  <header class="work-header">
+    <div class="badges">
+      <span class="badge badge-status">{{ work.status_label }}</span>
+      <span class="badge badge-source">{{ work.source_type_label }}</span>
+      {% for tag in work.tags %}
+      <span class="badge badge-tag">{{ tag }}</span>
+      {% endfor %}
+    </div>
+    <h1>{{ work.title }}</h1>
+    <p class="season-line">{{ work.season_label }}</p>
+  </header>
+
+  <section class="detail-panel">
+    <h2>原作情報</h2>
+    {% if work.has_source %}
+    <table class="info-table">
+      <tr><th>原作</th><td>{{ work.source_title or '—' }}</td></tr>
+      <tr><th>タイプ</th><td>{{ work.source_type_label }}</td></tr>
+      <tr><th>アニメ化範囲</th><td>{{ work.volumes_anime or '後日更新' }}</td></tr>
+      <tr><th>読む順・買い方</th><td>{{ work.read_order or '—' }}</td></tr>
+    </table>
+    {% else %}
+    <p>オリジナルアニメ、または原作情報は未登録です。</p>
+    {% endif %}
+  </section>
+
+  {% if work.memo %}
+  <section class="detail-panel">
+    <h2>メモ</h2>
+    <p>{{ work.memo }}</p>
+  </section>
+  {% endif %}
+
+  <section class="detail-panel actions-panel">
+    <h2>リンク</h2>
+    <div class="action-buttons">
+      {% if work.buy_url %}
+      <a class="btn btn-primary" href="{{ work.buy_url }}" target="_blank" rel="noopener sponsored">{{ work.buy_label }}</a>
+      {% endif %}
+      {% if work.official_url %}
+      <a class="btn btn-secondary" href="{{ work.official_url }}" target="_blank" rel="noopener">公式サイト</a>
+      {% endif %}
+      {% if work.wikipedia_url %}
+      <a class="btn btn-secondary" href="{{ work.wikipedia_url }}" target="_blank" rel="noopener">Wikipedia</a>
+      {% endif %}
+    </div>
+    <p class="affiliate-note">※ 購入リンクはAmazonアソシエイトを使用する場合があります。</p>
+  </section>
+
+  <p class="updated">最終更新: {{ work.updated_at or '—' }}</p>
+</article>
+{% endblock %}

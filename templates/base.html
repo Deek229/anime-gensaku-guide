@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ app_title }}{% endblock %}</title>
+  <meta name="description" content="{% block description %}{{ tagline|default('今期アニメの原作ラノベ・漫画と購入リンク') }}{% endblock %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="/static/style.css">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="/">✦ {{ app_title }}</a>
+      <nav class="nav">
+        <a href="/">今期アニメ</a>
+        <a href="/rankings">なろうR</a>
+      </nav>
+    </div>
+  </header>
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer">
+    <p class="disclosure">※ Amazonリンクはアフィリエイトを使用する場合があります。データの一部はAnnict・なろうAPIを利用しています。</p>
+    <p><small>{{ app_title }} v0.2</small></p>
+  </footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

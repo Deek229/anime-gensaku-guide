@@ -1,0 +1,15 @@
+# Render 無料公開用（https://render.com）
+# GitHubリポジトリ連携後、New > Blueprint でこのファイルを読み込む
+services:
+  - type: web
+    name: anime-gensaku-guide
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && python tools/seed_works.py
+    startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.0"
+      - key: SITE_URL
+        sync: false

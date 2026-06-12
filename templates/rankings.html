@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}なろうランキング｜{{ app_title }}{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>なろうランキング</h1>
+  <p class="tagline">公式APIのランキング閲覧（サブ機能）。書籍化・アニメ化候補の探索用。</p>
+</section>
+<section class="panel controls" id="rankControls">
+  <div class="period-tabs" id="periodTabs">
+    <button type="button" class="tab active" data-period="d">日間</button>
+    <button type="button" class="tab" data-period="w">週間</button>
+    <button type="button" class="tab" data-period="m">月間</button>
+    <button type="button" class="tab" data-period="q">四半期</button>
+  </div>
+  <p class="status-line" id="rankStatus">読み込み中...</p>
+</section>
+<section class="panel">
+  <div class="table-wrap">
+    <table class="rank-table">
+      <thead>
+        <tr><th>順位</th><th>作品</th><th>作者</th><th>状態</th><th>Pt</th></tr>
+      </thead>
+      <tbody id="rankBody"></tbody>
+    </table>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="/static/rankings.js"></script>
+{% endblock %}

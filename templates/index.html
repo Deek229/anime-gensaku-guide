@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}{{ season_label_name }} 原作ガイド｜{{ app_title }}{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>{{ season_label_name }}</h1>
+  <p class="tagline">{{ tagline }}</p>
+</section>
+
+<section class="panel controls">
+  <div class="control-row">
+    <label class="field">
+      <span>シーズン</span>
+      <select id="seasonSelect">
+        {% for s in meta.seasons %}
+        <option value="{{ s.id }}" {% if s.id == season %}selected{% endif %}>{{ s.label }} ({{ s.count }})</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label class="field">
+      <span>原作タイプ</span>
+      <select id="filterSource">
+        <option value="">すべて</option>
+        {% for st in meta.source_types %}
+        <option value="{{ st.id }}">{{ st.label }}</option>
+        {% endfor %}
+      </select>
+    </label>
+    <label class="field checkbox-field">
+      <input type="checkbox" id="filterHasSource">
+      <span>原作ありのみ</span>
+    </label>
+    <label class="field grow">
+      <span>検索</span>
+      <input type="search" id="searchInput" placeholder="作品名・原作名で検索…">
+    </label>
+  </div>
+  <p class="status-line" id="statusLine">{{ works|length }}作品</p>
+</section>
+
+<section class="panel">
+  <div class="work-grid" id="workGrid">
+    {% for w in works %}
+    <article class="work-card" data-source="{{ w.source_type }}" data-has-source="{{ '1' if w.has_source else '0' }}" data-search="{{ w.title }} {{ w.source_title }} {{ w.tags|join(' ') }}">
+      <div class="work-card-head">
+        <span class="badge badge-status">{{ w.status_label }}</span>
+        {% if w.source_type_label %}
+        <span class="badge badge-source">{{ w.source_type_label }}</span>
+        {% endif %}
+      </div>
+      <h2><a href="/works/{{ w.id }}">{{ w.title }}</a></h2>
+      {% if w.source_title %}
+      <p class="source-line">原作: {{ w.source_title }}</p>
+      {% endif %}
+      {% if w.volumes_anime %}
+      <p class="snippet">{{ w.volumes_anime[:90] }}{% if w.volumes_anime|length > 90 %}…{% endif %}</p>
+      {% endif %}
+      <div class="card-actions">
+        <a class="btn btn-secondary" href="/works/{{ w.id }}">詳細</a>
+        {% if w.buy_url %}
+        <a class="btn btn-primary" href="{{ w.buy_url }}" target="_blank" rel="noopener sponsored">{{ w.buy_label }}</a>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+  <p class="empty-msg hidden" id="emptyMsg">条件に一致する作品がありません。</p>
+</section>
+{% endblock %}
+{% block scripts %}
+<script src="/static/home.js"></script>
+{% endblock %}

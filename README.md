@@ -1,0 +1,59 @@
+# 11 アニメ原作ガイド
+
+今期アニメの**原作ラノベ・漫画**と**購入リンク**をまとめる個人用Webサイトです。  
+収益化は Amazonアソシエイトを想定（タグ設定は任意）。
+
+## 機能
+
+- **今期アニメ一覧**（2026夏など）— 原作タイプ・検索で絞り込み
+- **作品詳細ページ** — アニメ化範囲・読む順・Amazonリンク（SEO向けHTML）
+- **なろうランキング** — サブ機能（`/rankings`）
+
+## セットアップ
+
+```bash
+cd 11_名称未定Web作り
+pip install -r requirements.txt
+copy .env.example .env    # Amazonタグ等を設定
+python tools/seed_works.py
+python -m uvicorn app:app --reload --port 8052
+```
+
+http://127.0.0.1:8052
+
+## 無料でインターネット公開
+
+詳細は **[公開手順.md](公開手順.md)**（Render 無料プラン）。
+
+1. `GitHubに上げる.bat` をダブルクリック
+2. [Render](https://render.com) で Web Service を作成
+
+公開URLを Amazonアソシエイトの「ウェブサイト」欄に登録します。
+
+## データの編集
+
+`data/works.json` を直接編集するか、`tools/seed_works.py` を参考に項目を追加します。
+
+| 項目 | 説明 |
+|------|------|
+| `source_type` | light_novel / manga / web_novel / original |
+| `volumes_anime` | 何巻までがアニメ化か |
+| `read_order` | 読む・買う順のメモ |
+| `amazon_asin` | あれば直リンク |
+| `amazon_search` | ASIN未設定時の検索語 |
+
+## Annict同期（任意）
+
+`.env` に `ANNICT_ACCESS_TOKEN` を設定後:
+
+```bash
+python tools/sync_annict.py 2026-summer
+```
+
+人気順で作品リストを取り込み、手動データはマージされます。
+
+## 注意
+
+- あらすじの長文転載はしない（SEOは自作の「原作ガイド」文で）
+- Amazonリンクにはサイト上でアフィリエイト開示を表示
+- なろうランキングは公式API利用
