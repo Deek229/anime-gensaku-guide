@@ -4,7 +4,7 @@ from __future__ import annotations
 import html
 from datetime import datetime, timezone
 from typing import Any
-from urllib.parse import quote, urlencode
+from urllib.parse import quote, urlencode, urlsplit, urlunsplit
 from xml.etree.ElementTree import Element, SubElement, tostring
 
 from config import APP_TAGLINE, APP_TITLE, SITE_URL
@@ -15,6 +15,14 @@ def absolute_url(path: str = '/') -> str:
     if not path or path == '/':
         return f'{base}/'
     return f'{base}/{path.lstrip("/")}'
+
+
+def sitemap_loc(path: str = '/') -> str:
+    """サイトマップ用URL（非ASCIIを percent-encode）"""
+    url = absolute_url(path)
+    parts = urlsplit(url)
+    encoded_path = quote(parts.path, safe='/')
+    return urlunsplit((parts.scheme, parts.netloc, encoded_path, parts.query, parts.fragment))
 
 
 def work_page_title(work: dict[str, Any]) -> str:
@@ -146,7 +154,7 @@ def render_sitemap(paths: list[tuple[str, str, str]]) -> str:
     today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     for path, freq, priority in paths:
         url = SubElement(urlset, 'url')
-        SubElement(url, 'loc').text = absolute_url(path)
+        SubElement(url, 'loc').text = sitemap_loc(path)
         SubElement(url, 'lastmod').text = today
         SubElement(url, 'changefreq').text = freq
         SubElement(url, 'priority').text = priority
@@ -157,7 +165,7 @@ def render_robots() -> str:
     return '\n'.join([
         'User-agent: *',
         'Allow: /',
-        f'Sitemap: {absolute_url("/sitemap.xml")}',
+        f'Sitemap: {sitemap_loc("/sitemap.xml")}',
         '',
     ])
 
