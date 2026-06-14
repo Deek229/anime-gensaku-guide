@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ app_title }}{% endblock %}</title>
   <meta name="description" content="{% block description %}{{ tagline|default('今期アニメの原作ラノベ・漫画と購入リンク') }}{% endblock %}">
+  {% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}">{% endif %}
+  <meta property="og:site_name" content="{{ app_title }}">
+  <meta property="og:title" content="{% block og_title %}{{ app_title }}{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{{ tagline|default('今期アニメの原作ラノベ・漫画と購入リンク') }}{% endblock %}">
+  <meta property="og:type" content="{{ og_type|default('website') }}">
+  {% if canonical_url %}<meta property="og:url" content="{{ canonical_url }}">{% endif %}
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{% block twitter_title %}{{ app_title }}{% endblock %}">
+  <meta name="twitter:description" content="{% block twitter_description %}{{ tagline|default('今期アニメの原作ラノベ・漫画と購入リンク') }}{% endblock %}">
+  {% if google_site_verification %}
+  <meta name="google-site-verification" content="{{ google_site_verification }}">
+  {% endif %}
+  <link rel="alternate" type="application/rss+xml" title="{{ app_title }} RSS" href="/feed.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="/static/style.css">
   {% block head %}{% endblock %}
@@ -24,7 +38,7 @@
   </main>
   <footer class="site-footer">
     <p class="disclosure">※ Amazonリンクはアフィリエイトを使用する場合があります。データの一部はAnnict・なろうAPIを利用しています。</p>
-    <p><small>{{ app_title }} v0.2</small></p>
+    <p><small>{{ app_title }} v0.2 · <a href="/sitemap.xml">サイトマップ</a></small></p>
   </footer>
   {% block scripts %}{% endblock %}
 </body>

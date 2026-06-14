@@ -1,10 +1,42 @@
 {% extends "base.html" %}
 {% block title %}{{ season_label_name }} 原作ガイド｜{{ app_title }}{% endblock %}
+{% block description %}{{ season_label_name }}の原作ラノベ・漫画一覧。アニメ化範囲・読む順・Amazon購入リンク付き。{% endblock %}
+{% block og_title %}{{ season_label_name }} 原作ガイド{% endblock %}
+{% block og_description %}{{ tagline }}{% endblock %}
+{% block twitter_title %}{{ season_label_name }} 原作ガイド{% endblock %}
+{% block twitter_description %}{{ tagline }}{% endblock %}
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ app_title|tojson }},
+  "url": {{ canonical_url|tojson }},
+  "description": {{ tagline|tojson }},
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {{ (canonical_url ~ "?q={search_term_string}")|tojson }},
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+{% endblock %}
 {% block content %}
 <section class="hero">
   <h1>{{ season_label_name }}</h1>
   <p class="tagline">{{ tagline }}</p>
 </section>
+
+{% if popular_works %}
+<section class="panel popular-panel">
+  <h2 class="section-title">人気の原作ガイド</h2>
+  <div class="popular-links">
+    {% for w in popular_works %}
+    <a class="popular-chip" href="/works/{{ w.id }}">{{ w.title }}</a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
 
 <section class="panel controls">
   <div class="control-row">

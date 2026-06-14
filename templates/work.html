@@ -1,14 +1,25 @@
 {% extends "base.html" %}
 {% block title %}{{ page_title }}{% endblock %}
 {% block description %}{{ description }}{% endblock %}
+{% block og_title %}{{ work.seo_title }}{% endblock %}
+{% block og_description %}{{ description }}{% endblock %}
+{% block twitter_title %}{{ work.seo_title }}{% endblock %}
+{% block twitter_description %}{{ description }}{% endblock %}
 {% block head %}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "TVSeries",
   "name": {{ work.title|tojson }},
-  "description": {{ description|tojson }}
+  "description": {{ description|tojson }},
+  "url": {{ work.page_url|tojson }}
 }
+</script>
+<script type="application/ld+json">
+{{ faq_json|tojson }}
+</script>
+<script type="application/ld+json">
+{{ breadcrumb_json|tojson }}
 </script>
 {% endblock %}
 {% block content %}
@@ -22,9 +33,13 @@
       <span class="badge badge-tag">{{ tag }}</span>
       {% endfor %}
     </div>
-    <h1>{{ work.title }}</h1>
+    <h1>{{ work.title }}の原作は？</h1>
     <p class="season-line">{{ work.season_label }}</p>
   </header>
+
+  <section class="detail-panel intro-panel">
+    <p class="intro-text">{{ work.intro }}</p>
+  </section>
 
   <section class="detail-panel">
     <h2>原作情報</h2>
@@ -39,6 +54,20 @@
     <p>オリジナルアニメ、または原作情報は未登録です。</p>
     {% endif %}
   </section>
+
+  {% if work.faq %}
+  <section class="detail-panel faq-panel">
+    <h2>よくある質問</h2>
+    <div class="faq-list">
+      {% for item in work.faq %}
+      <details class="faq-item">
+        <summary>{{ item.question }}</summary>
+        <p>{{ item.answer }}</p>
+      </details>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
 
   {% if work.memo %}
   <section class="detail-panel">
@@ -60,8 +89,24 @@
       <a class="btn btn-secondary" href="{{ work.wikipedia_url }}" target="_blank" rel="noopener">Wikipedia</a>
       {% endif %}
     </div>
+    <div class="share-row">
+      <span class="share-label">シェア</span>
+      <a class="btn btn-share btn-x" href="{{ work.twitter_share_url }}" target="_blank" rel="noopener">Xでシェア</a>
+      <a class="btn btn-share btn-line" href="{{ work.line_share_url }}" target="_blank" rel="noopener">LINE</a>
+    </div>
     <p class="affiliate-note">※ 購入リンクはAmazonアソシエイトを使用する場合があります。</p>
   </section>
+
+  {% if related_works %}
+  <section class="detail-panel related-panel">
+    <h2>関連作品</h2>
+    <div class="related-links">
+      {% for rw in related_works %}
+      <a class="related-chip" href="/works/{{ rw.id }}">{{ rw.title }}</a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
 
   <p class="updated">最終更新: {{ work.updated_at or '—' }}</p>
 </article>

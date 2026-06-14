@@ -10,13 +10,23 @@ from config import (
     SOURCE_TYPE_LABELS,
     STATUS_LABELS,
 )
+from seo import (
+    absolute_url,
+    build_faq,
+    build_intro,
+    build_share_text,
+    line_share_url,
+    twitter_share_url,
+    work_meta_description,
+    work_page_title,
+)
 from store import find_work, load_works
 
 
 def enrich_work(work: dict[str, Any]) -> dict[str, Any]:
     url, buy_label = buy_url(work)
     st = work.get('source_type', 'other')
-    return {
+    base = {
         **work,
         'source_type_label': SOURCE_TYPE_LABELS.get(st, st),
         'status_label': STATUS_LABELS.get(work.get('status', ''), ''),
@@ -24,6 +34,21 @@ def enrich_work(work: dict[str, Any]) -> dict[str, Any]:
         'buy_url': url,
         'buy_label': buy_label,
         'has_source': st not in ('original', 'other', ''),
+    }
+    page_path = f'/works/{work["id"]}'
+    page_url = absolute_url(page_path)
+    share_text = build_share_text(base)
+    return {
+        **base,
+        'page_path': page_path,
+        'page_url': page_url,
+        'seo_title': work_page_title(base),
+        'seo_description': work_meta_description(base),
+        'intro': build_intro(base),
+        'faq': build_faq(base),
+        'share_text': share_text,
+        'twitter_share_url': twitter_share_url(share_text, page_url),
+        'line_share_url': line_share_url(share_text, page_url),
     }
 
 
@@ -56,6 +81,30 @@ def list_works(
 def get_work(work_id: str) -> dict[str, Any] | None:
     w = find_work(work_id)
     return enrich_work(w) if w else None
+
+
+def related_works(work_id: str, limit: int = 4) -> list[dict[str, Any]]:
+    target = find_work(work_id)
+    if not target:
+        return []
+    tags = set(target.get('tags') or [])
+    season = target.get('season')
+    scored: list[tuple[int, dict[str, Any]]] = []
+    for work in load_works():
+        if work.get('id') == work_id:
+            continue
+        score = len(tags & set(work.get('tags') or []))
+        if season and work.get('season') == season:
+            score += 1
+        if score > 0:
+            scored.append((score, work))
+    scored.sort(key=lambda x: (-x[0], -(x[1].get('watchers_count') or 0)))
+    return [enrich_work(w) for _, w in scored[:limit]]
+
+
+def popular_works(season: str | None = None, limit: int = 5) -> list[dict[str, Any]]:
+    items = list_works(season=season, has_source_only=True)
+    return items[:limit]
 
 
 def list_meta() -> dict[str, Any]:

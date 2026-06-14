@@ -6,7 +6,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
-RUN python tools/seed_works.py
+RUN python tools/seed_works.py && python tools/generate_social_posts.py
 
 ENV PORT=10000
 EXPOSE 10000

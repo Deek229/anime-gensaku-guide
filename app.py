@@ -11,12 +11,21 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Query
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, PlainTextResponse, Response
 from fastapi.staticfiles import StaticFiles
 
-from anime_service import get_work, list_meta, list_works
-from config import APP_TAGLINE, APP_TITLE, APP_VERSION, DEFAULT_SEASON, SITE_URL
+from anime_service import get_work, list_meta, list_works, popular_works, related_works
+from config import (
+    APP_TAGLINE,
+    APP_TITLE,
+    APP_VERSION,
+    DEFAULT_SEASON,
+    GOOGLE_SITE_VERIFICATION,
+    SEASON_LABELS,
+    SITE_URL,
+)
 from ranking_service import get_ranking, list_meta as rank_meta
+from seo import absolute_url, breadcrumb_json_ld, faq_json_ld, render_robots, render_rss, render_sitemap
 from templates_env import render as render_template
 
 load_dotenv(Path(__file__).parent / '.env')
@@ -27,15 +36,19 @@ STATIC = ROOT / 'static'
 app.mount('/static', StaticFiles(directory=STATIC), name='static')
 
 
+def _season_label(season: str) -> str:
+    return next(
+        (s['label'] for s in list_meta()['seasons'] if s['id'] == season),
+        SEASON_LABELS.get(season, season),
+    )
+
+
 @app.get('/', response_class=HTMLResponse)
 def home(season: str | None = None):
     season = season or DEFAULT_SEASON
     works = list_works(season=season)
     meta = list_meta()
-    season_label_name = next(
-        (s['label'] for s in meta['seasons'] if s['id'] == season),
-        season,
-    )
+    season_label_name = _season_label(season)
     return HTMLResponse(render_template(
         'index.html',
         app_title=APP_TITLE,
@@ -43,8 +56,12 @@ def home(season: str | None = None):
         season=season,
         season_label_name=season_label_name,
         works=works,
+        popular_works=popular_works(season=season),
         meta=meta,
         site_url=SITE_URL,
+        canonical_url=absolute_url('/'),
+        og_type='website',
+        google_site_verification=GOOGLE_SITE_VERIFICATION,
     ))
 
 
@@ -53,18 +70,23 @@ def work_page(work_id: str):
     work = get_work(work_id)
     if not work:
         raise HTTPException(404, '作品が見つかりません')
-    page_title = f'{work["title"]}の原作は？｜{APP_TITLE}'
-    description = (
-        f'{work["title"]}の原作は{work.get("source_type_label", "不明")}。'
-        f'{work.get("volumes_anime", "")[:80]}'
-    )
     return HTMLResponse(render_template(
         'work.html',
         work=work,
-        page_title=page_title,
-        description=description[:120],
+        related_works=related_works(work_id),
+        page_title=f'{work["seo_title"]}｜{APP_TITLE}',
+        description=work['seo_description'],
+        faq_json=faq_json_ld(work['faq']),
+        breadcrumb_json=breadcrumb_json_ld([
+            ('ホーム', '/'),
+            (work['season_label'], '/'),
+            (work['title'], work['page_path']),
+        ]),
         site_url=SITE_URL,
         app_title=APP_TITLE,
+        canonical_url=work['page_url'],
+        og_type='article',
+        google_site_verification=GOOGLE_SITE_VERIFICATION,
     ))
 
 
@@ -74,7 +96,43 @@ def rankings_page():
         'rankings.html',
         app_title=APP_TITLE,
         tagline='なろうランキング（サブ）',
+        site_url=SITE_URL,
+        canonical_url=absolute_url('/rankings'),
+        og_type='website',
+        google_site_verification=GOOGLE_SITE_VERIFICATION,
     ))
+
+
+@app.get('/sitemap.xml')
+def sitemap():
+    paths: list[tuple[str, str, str]] = [
+        ('/', 'daily', '1.0'),
+        ('/rankings', 'weekly', '0.6'),
+    ]
+    for work in list_works():
+        paths.append((f'/works/{work["id"]}', 'weekly', '0.8'))
+    xml = render_sitemap(paths)
+    return Response(content=xml, media_type='application/xml')
+
+
+@app.get('/robots.txt', response_class=PlainTextResponse)
+def robots():
+    return PlainTextResponse(render_robots(), media_type='text/plain')
+
+
+@app.get('/feed.xml')
+def feed():
+    season = DEFAULT_SEASON
+    items = [
+        {
+            'path': f'/works/{w["id"]}',
+            'title': w['seo_title'],
+            'description': w['seo_description'],
+        }
+        for w in list_works(season=season, has_source_only=True)[:20]
+    ]
+    xml = render_rss(items, f'{APP_TITLE} - {_season_label(season)}')
+    return Response(content=xml, media_type='application/rss+xml')
 
 
 @app.get('/api/works')

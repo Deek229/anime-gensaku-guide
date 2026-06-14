@@ -496,6 +496,93 @@ a { color: var(--cyan); }
 
 .hidden { display: none !important; }
 
+.section-title {
+  margin: 0 0 1rem;
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.popular-panel { margin-bottom: 0.5rem; }
+
+.popular-links, .related-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.popular-chip, .related-chip {
+  display: inline-block;
+  padding: 0.45rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(155, 123, 255, 0.15);
+  border: 1px solid rgba(155, 123, 255, 0.35);
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.popular-chip:hover, .related-chip:hover {
+  background: rgba(255, 110, 180, 0.18);
+  border-color: rgba(255, 110, 180, 0.4);
+}
+
+.intro-text {
+  margin: 0;
+  color: var(--text);
+  line-height: 1.8;
+}
+
+.faq-list { display: grid; gap: 0.65rem; }
+
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.65rem 0.9rem;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 700;
+  color: #fff;
+}
+
+.faq-item p {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+}
+
+.share-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.share-label {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-right: 0.25rem;
+}
+
+.btn-share {
+  font-size: 0.82rem;
+  padding: 0.4rem 0.75rem;
+}
+
+.btn-x {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--line);
+  color: #fff;
+}
+
+.btn-line {
+  background: rgba(6, 199, 85, 0.15);
+  border: 1px solid rgba(6, 199, 85, 0.35);
+  color: #b8ffd6;
+}
+
 @media (max-width: 600px) {
   .hero h1 { font-size: 1.35rem; }
   .work-grid { grid-template-columns: 1fr; }

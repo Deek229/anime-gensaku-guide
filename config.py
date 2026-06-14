@@ -13,6 +13,9 @@ APP_VERSION = '0.2.0'
 DEFAULT_PORT = 8052
 SITE_URL = os.environ.get('SITE_URL', os.environ.get('RENDER_EXTERNAL_URL', 'http://127.0.0.1:8052')).rstrip('/')
 
+# Google Search Console 所有権確認（HTMLタグの content 値のみ）
+GOOGLE_SITE_VERIFICATION = os.environ.get('GOOGLE_SITE_VERIFICATION', '').strip()
+
 # Amazonアソシエイト（未設定時は検索リンクのみ）
 AMAZON_ASSOCIATE_TAG = os.environ.get('AMAZON_ASSOCIATE_TAG', '').strip()
 
