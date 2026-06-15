@@ -19,6 +19,6 @@ jobs:
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_FROM: onboarding@resend.dev
-          REMINDER_EMAIL_TO: a_n_k_6@hotmail.com
+          REMINDER_EMAIL_TO: ${{ secrets.RESEND_TO_EMAIL }}
           SITE_URL: https://anime-gensaku-guide.onrender.com
         run: python tools/gsc_reminder.py

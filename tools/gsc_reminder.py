@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parent.parent
 load_dotenv(ROOT / '.env')
 
 SITE_URL = os.environ.get('SITE_URL', 'https://anime-gensaku-guide.onrender.com').rstrip('/')
-TO = os.environ.get('REMINDER_EMAIL_TO', 'a_n_k_6@hotmail.com')
+TO = os.environ.get('REMINDER_EMAIL_TO', 'a_n_k_6@hotmail.com').strip() or 'a_n_k_6@hotmail.com'
 # サイト公開日（この日から2週間はインデックス集中フェーズ）
 LAUNCH_DATE = date.fromisoformat(os.environ.get('SITE_LAUNCH_DATE', '2026-06-14'))
 
@@ -219,6 +219,13 @@ def _send_via_resend(subject: str, body: str, to_addr: str) -> None:
     except urllib.error.HTTPError as e:
         detail = e.read().decode()
         print(f'Resend API error ({e.code}): {detail}', file=sys.stderr)
+        if e.code == 403 and 'own email' in detail.lower():
+            print(
+                '\n対処: Resendに登録したメールアドレスと送信先を同じにしてください。\n'
+                'Resend右上のアカウントメールを確認 → GitHub Secret RESEND_TO_EMAIL に設定\n'
+                'または Resend を a_n_k_6@hotmail.com で登録し直す',
+                file=sys.stderr,
+            )
         raise SystemExit(1) from e
 
 
