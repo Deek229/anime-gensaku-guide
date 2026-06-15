@@ -196,6 +196,8 @@ def _send_via_resend(subject: str, body: str, to_addr: str) -> None:
     if not api_key:
         raise ValueError('RESEND_API_KEY が未設定')
 
+    print(f'Resend送信先: {to_addr}')
+
     from_addr = os.environ.get('RESEND_FROM', 'onboarding@resend.dev').strip()
     payload = json.dumps({
         'from': from_addr,
@@ -229,6 +231,41 @@ def _send_via_resend(subject: str, body: str, to_addr: str) -> None:
         raise SystemExit(1) from e
 
 
+def _send_via_brevo(subject: str, body: str, to_addr: str) -> None:
+    api_key = os.environ.get('BREVO_API_KEY', '').strip()
+    if not api_key:
+        raise ValueError('BREVO_API_KEY が未設定')
+
+    sender_email = os.environ.get('BREVO_SENDER_EMAIL', to_addr).strip()
+    sender_name = os.environ.get('BREVO_SENDER_NAME', 'アニメ原作ガイド').strip()
+    print(f'Brevo送信: {sender_email} → {to_addr}')
+
+    payload = json.dumps({
+        'sender': {'name': sender_name, 'email': sender_email},
+        'to': [{'email': to_addr}],
+        'subject': subject,
+        'textContent': body,
+    }).encode('utf-8')
+
+    req = urllib.request.Request(
+        'https://api.brevo.com/v3/smtp/email',
+        data=payload,
+        headers={
+            'accept': 'application/json',
+            'api-key': api_key,
+            'content-type': 'application/json',
+        },
+        method='POST',
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            print(resp.read().decode())
+    except urllib.error.HTTPError as e:
+        detail = e.read().decode()
+        print(f'Brevo API error ({e.code}): {detail}', file=sys.stderr)
+        raise SystemExit(1) from e
+
+
 def _send_via_smtp(subject: str, body: str, to_addr: str) -> None:
     host = os.environ.get('SMTP_HOST', 'smtp-mail.outlook.com')
     port = int(os.environ.get('SMTP_PORT', '587'))
@@ -259,7 +296,9 @@ def send_reminder() -> None:
     body = build_body()
 
     try:
-        if os.environ.get('RESEND_API_KEY', '').strip():
+        if os.environ.get('BREVO_API_KEY', '').strip():
+            _send_via_brevo(subject, body, to_addr)
+        elif os.environ.get('RESEND_API_KEY', '').strip():
             _send_via_resend(subject, body, to_addr)
         else:
             _send_via_smtp(subject, body, to_addr)

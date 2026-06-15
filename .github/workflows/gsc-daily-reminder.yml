@@ -17,6 +17,8 @@ jobs:
       - run: pip install python-dotenv
       - name: Send reminder email
         env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+          BREVO_SENDER_EMAIL: ${{ secrets.BREVO_SENDER_EMAIL }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_FROM: onboarding@resend.dev
           REMINDER_EMAIL_TO: ${{ secrets.RESEND_TO_EMAIL }}
