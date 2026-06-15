@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-from jinja2 import Environment, FileSystemLoader, select_autoescape
+from jinja2 import Environment, FileSystemLoader, Markup, select_autoescape
 
 ROOT = Path(__file__).parent
 env = Environment(
@@ -10,7 +10,13 @@ env = Environment(
     autoescape=select_autoescape(['html', 'xml']),
     auto_reload=True,
 )
-env.filters['tojson'] = lambda v: json.dumps(v, ensure_ascii=False)
+
+
+def _tojson(value) -> Markup:
+    return Markup(json.dumps(value, ensure_ascii=False))
+
+
+env.filters['tojson'] = _tojson
 
 
 def render(template_name: str, **context) -> str:
