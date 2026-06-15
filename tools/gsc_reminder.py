@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
-"""アニメ原作ガイド — 日本語タスク管理メールを送信"""
+"""アニメ原作ガイド — 日本語タスク管理メールを送信（Brevo）"""
 from __future__ import annotations
 
 import json
 import os
-import smtplib
 import sys
 import traceback
 import urllib.error
 import urllib.request
 from dataclasses import dataclass
 from datetime import date
-from email.message import EmailMessage
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -21,7 +19,6 @@ load_dotenv(ROOT / '.env')
 
 SITE_URL = os.environ.get('SITE_URL', 'https://anime-gensaku-guide.onrender.com').rstrip('/')
 TO = os.environ.get('REMINDER_EMAIL_TO', 'a_n_k_6@hotmail.com').strip() or 'a_n_k_6@hotmail.com'
-# サイト公開日（この日から2週間はインデックス集中フェーズ）
 LAUNCH_DATE = date.fromisoformat(os.environ.get('SITE_LAUNCH_DATE', '2026-06-14'))
 
 WEEKDAYS_JA = '月火水木金土日'
@@ -53,10 +50,9 @@ def _phase_label(days: int) -> str:
 
 def _daily_tasks(today: date) -> list[Task]:
     days = _days_since_launch(today)
-    weekday = today.weekday()  # 0=月
+    weekday = today.weekday()
     tasks: list[Task] = []
 
-    # --- 毎日 ---
     tasks.append(Task(
         title='サイトが開くか確認',
         steps=[
@@ -76,7 +72,6 @@ def _daily_tasks(today: date) -> list[Task]:
         minutes=2,
     ))
 
-    # --- フェーズ1: インデックス集中 ---
     if days < 14:
         tasks.append(Task(
             title='Search Console でインデックス登録をリクエスト',
@@ -90,8 +85,7 @@ def _daily_tasks(today: date) -> list[Task]:
             minutes=3,
         ))
 
-    # --- 曜日別 ---
-    if weekday in (0, 3):  # 月・木
+    if weekday in (0, 3):
         tasks.append(Task(
             title='Search Console「ページ」で登録数をチェック',
             steps=[
@@ -102,7 +96,7 @@ def _daily_tasks(today: date) -> list[Task]:
             optional=days >= 14,
         ))
 
-    if weekday in (1, 3, 5):  # 火・木・土
+    if weekday in (1, 3, 5):
         tasks.append(Task(
             title='X（Twitter）で作品をシェア',
             steps=[
@@ -114,7 +108,7 @@ def _daily_tasks(today: date) -> list[Task]:
             optional=days < 7,
         ))
 
-    if weekday == 6:  # 日
+    if weekday == 6:
         tasks.append(Task(
             title='今週のまとめ確認（週1回）',
             steps=[
@@ -191,50 +185,13 @@ def build_body() -> str:
     return body + footer
 
 
-def _send_via_resend(subject: str, body: str, to_addr: str) -> None:
-    api_key = os.environ.get('RESEND_API_KEY', '').strip()
-    if not api_key:
-        raise ValueError('RESEND_API_KEY が未設定')
-
-    print(f'Resend送信先: {to_addr}')
-
-    from_addr = os.environ.get('RESEND_FROM', 'onboarding@resend.dev').strip()
-    payload = json.dumps({
-        'from': from_addr,
-        'to': [to_addr],
-        'subject': subject,
-        'text': body,
-    }).encode('utf-8')
-
-    req = urllib.request.Request(
-        'https://api.resend.com/emails',
-        data=payload,
-        headers={
-            'Authorization': f'Bearer {api_key}',
-            'Content-Type': 'application/json',
-        },
-        method='POST',
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=60) as resp:
-            print(resp.read().decode())
-    except urllib.error.HTTPError as e:
-        detail = e.read().decode()
-        print(f'Resend API error ({e.code}): {detail}', file=sys.stderr)
-        if e.code == 403 and 'own email' in detail.lower():
-            print(
-                '\n対処: Resendに登録したメールアドレスと送信先を同じにしてください。\n'
-                'Resend右上のアカウントメールを確認 → GitHub Secret RESEND_TO_EMAIL に設定\n'
-                'または Resend を a_n_k_6@hotmail.com で登録し直す',
-                file=sys.stderr,
-            )
-        raise SystemExit(1) from e
-
-
 def _send_via_brevo(subject: str, body: str, to_addr: str) -> None:
     api_key = os.environ.get('BREVO_API_KEY', '').strip()
     if not api_key:
-        raise ValueError('BREVO_API_KEY が未設定')
+        raise ValueError(
+            'BREVO_API_KEY が未設定です。\n'
+            '→ Brevoメール設定を開く.bat の手順で API キーを .env に入れてください。'
+        )
 
     sender_email = os.environ.get('BREVO_SENDER_EMAIL', to_addr).strip()
     sender_name = os.environ.get('BREVO_SENDER_NAME', 'アニメ原作ガイド').strip()
@@ -266,36 +223,6 @@ def _send_via_brevo(subject: str, body: str, to_addr: str) -> None:
         raise SystemExit(1) from e
 
 
-def _send_via_smtp(subject: str, body: str, to_addr: str) -> None:
-    host = os.environ.get('SMTP_HOST', 'smtp-mail.outlook.com')
-    port = int(os.environ.get('SMTP_PORT', '587'))
-    user = os.environ.get('SMTP_USER', '').strip()
-    password = os.environ.get('SMTP_PASSWORD', '').strip().replace(' ', '')
-
-    if not user or not password:
-        raise ValueError('SMTP_USER / SMTP_PASSWORD が未設定')
-
-    if len(password) < 16:
-        raise ValueError(
-            'SMTP_PASSWORD は Microsoft のアプリパスワード（16文字）を入れてください。\n'
-            '通常のログインパスワードでは送れません。\n'
-            '作成: https://account.live.com/proofs/manage/additional → アプリパスワード'
-        )
-
-    msg = EmailMessage()
-    msg.set_content(body, charset='utf-8')
-    msg['Subject'] = subject
-    msg['From'] = user
-    msg['To'] = to_addr
-
-    with smtplib.SMTP(host, port, timeout=60) as server:
-        server.ehlo()
-        server.starttls()
-        server.ehlo()
-        server.login(user, password)
-        server.send_message(msg)
-
-
 def send_reminder() -> None:
     to_addr = TO.strip()
     today = date.today()
@@ -303,29 +230,7 @@ def send_reminder() -> None:
     body = build_body()
 
     try:
-        if os.environ.get('BREVO_API_KEY', '').strip():
-            _send_via_brevo(subject, body, to_addr)
-        elif os.environ.get('RESEND_API_KEY', '').strip():
-            _send_via_resend(subject, body, to_addr)
-        else:
-            _send_via_smtp(subject, body, to_addr)
-    except smtplib.SMTPAuthenticationError as e:
-        err = str(e).lower()
-        if 'basic authentication is disabled' in err:
-            print(
-                'HotmailのSMTP送信はMicrosoftで無効になっています。\n'
-                '→ Brevoメール設定を開く.bat の手順で Brevo に切り替えてください。',
-                file=sys.stderr,
-            )
-        else:
-            print(
-                'SMTP認証エラー:\n'
-                '・アプリパスワード（16文字）を確認\n'
-                '・または Brevo に切り替え（Brevoメール設定を開く.bat）',
-                file=sys.stderr,
-            )
-        print(e, file=sys.stderr)
-        raise SystemExit(1) from e
+        _send_via_brevo(subject, body, to_addr)
     except Exception:
         print('メール送信エラー:', file=sys.stderr)
         traceback.print_exc()

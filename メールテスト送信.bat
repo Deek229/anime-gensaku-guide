@@ -2,7 +2,7 @@
 chcp 65001 >nul
 cd /d "%~dp0"
 echo ========================================
-echo  メールテスト送信（PC / Hotmail）
+echo  メールテスト送信（Brevo）
 echo ========================================
 echo.
 if not exist .env (
@@ -10,8 +10,8 @@ if not exist .env (
   copy /Y .env.example .env >nul
   echo.
   echo .env を開いて次を設定してください:
-  echo   SMTP_USER=a_n_k_6@hotmail.com
-  echo   SMTP_PASSWORD=アプリパスワード16文字
+  echo   BREVO_API_KEY=（BrevoのAPIキー）
+  echo   BREVO_SENDER_EMAIL=a_n_k_6@hotmail.com
   echo   REMINDER_EMAIL_TO=a_n_k_6@hotmail.com
   echo.
   notepad .env
@@ -19,13 +19,12 @@ if not exist .env (
   exit /b 1
 )
 echo 送信中...
-echo （Brevo または SMTP を使用）
 echo.
 python tools\gsc_reminder.py
 if errorlevel 1 (
   echo.
   echo 失敗しました。
-  echo HotmailのSMTPが使えない場合は Brevoメール設定を開く.bat を実行してください。
+  echo Brevoメール設定を開く.bat で設定を確認してください。
 ) else (
   echo.
   echo 成功! メールを確認してください。

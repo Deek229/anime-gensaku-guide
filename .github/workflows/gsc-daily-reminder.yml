@@ -1,10 +1,11 @@
 # 毎朝 9:00 JST にタスク管理メールを送信
+# ※ Brevo 設定前は schedule をオフ。設定後に schedule のコメントを外す
 name: Daily task email reminder
 
 on:
-  schedule:
-    - cron: '0 0 * * *'   # 09:00 JST
   workflow_dispatch:
+  # schedule:
+  #   - cron: '0 0 * * *'   # 09:00 JST
 
 jobs:
   remind:
