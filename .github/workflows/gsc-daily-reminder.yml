@@ -1,5 +1,5 @@
 # 毎朝 9:00 JST に GSC 作業リマインダーをメール送信
-name: GSC daily email reminder
+name: Daily task email reminder
 
 on:
   schedule:
