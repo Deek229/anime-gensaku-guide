@@ -275,6 +275,13 @@ def _send_via_smtp(subject: str, body: str, to_addr: str) -> None:
     if not user or not password:
         raise ValueError('SMTP_USER / SMTP_PASSWORD が未設定')
 
+    if len(password) < 16:
+        raise ValueError(
+            'SMTP_PASSWORD は Microsoft のアプリパスワード（16文字）を入れてください。\n'
+            '通常のログインパスワードでは送れません。\n'
+            '作成: https://account.live.com/proofs/manage/additional → アプリパスワード'
+        )
+
     msg = EmailMessage()
     msg.set_content(body, charset='utf-8')
     msg['Subject'] = subject
@@ -303,11 +310,20 @@ def send_reminder() -> None:
         else:
             _send_via_smtp(subject, body, to_addr)
     except smtplib.SMTPAuthenticationError as e:
-        print(
-            'SMTP認証エラー: HotmailはGitHub Actionsから送れません。\n'
-            'Resend API を使ってください（GSCメール設定.md 参照）',
-            file=sys.stderr,
-        )
+        err = str(e).lower()
+        if 'basic authentication is disabled' in err:
+            print(
+                'HotmailのSMTP送信はMicrosoftで無効になっています。\n'
+                '→ Brevoメール設定を開く.bat の手順で Brevo に切り替えてください。',
+                file=sys.stderr,
+            )
+        else:
+            print(
+                'SMTP認証エラー:\n'
+                '・アプリパスワード（16文字）を確認\n'
+                '・または Brevo に切り替え（Brevoメール設定を開く.bat）',
+                file=sys.stderr,
+            )
         print(e, file=sys.stderr)
         raise SystemExit(1) from e
     except Exception:

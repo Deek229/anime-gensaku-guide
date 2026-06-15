@@ -19,10 +19,13 @@ if not exist .env (
   exit /b 1
 )
 echo 送信中...
+echo （Brevo または SMTP を使用）
+echo.
 python tools\gsc_reminder.py
 if errorlevel 1 (
   echo.
-  echo 失敗しました。.env の SMTP_PASSWORD を確認してください。
+  echo 失敗しました。
+  echo HotmailのSMTPが使えない場合は Brevoメール設定を開く.bat を実行してください。
 ) else (
   echo.
   echo 成功! メールを確認してください。
