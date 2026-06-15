@@ -2,10 +2,13 @@
 """アニメ原作ガイド — 日本語タスク管理メールを送信"""
 from __future__ import annotations
 
+import json
 import os
 import smtplib
 import sys
 import traceback
+import urllib.error
+import urllib.request
 from dataclasses import dataclass
 from datetime import date
 from email.message import EmailMessage
@@ -188,41 +191,83 @@ def build_body() -> str:
     return body + footer
 
 
-def send_reminder() -> None:
+def _send_via_resend(subject: str, body: str, to_addr: str) -> None:
+    api_key = os.environ.get('RESEND_API_KEY', '').strip()
+    if not api_key:
+        raise ValueError('RESEND_API_KEY が未設定')
+
+    from_addr = os.environ.get('RESEND_FROM', 'onboarding@resend.dev').strip()
+    payload = json.dumps({
+        'from': from_addr,
+        'to': [to_addr],
+        'subject': subject,
+        'text': body,
+    }).encode('utf-8')
+
+    req = urllib.request.Request(
+        'https://api.resend.com/emails',
+        data=payload,
+        headers={
+            'Authorization': f'Bearer {api_key}',
+            'Content-Type': 'application/json',
+        },
+        method='POST',
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            print(resp.read().decode())
+    except urllib.error.HTTPError as e:
+        detail = e.read().decode()
+        print(f'Resend API error ({e.code}): {detail}', file=sys.stderr)
+        raise SystemExit(1) from e
+
+
+def _send_via_smtp(subject: str, body: str, to_addr: str) -> None:
     host = os.environ.get('SMTP_HOST', 'smtp-mail.outlook.com')
     port = int(os.environ.get('SMTP_PORT', '587'))
     user = os.environ.get('SMTP_USER', '').strip()
     password = os.environ.get('SMTP_PASSWORD', '').strip().replace(' ', '')
-    to_addr = TO.strip()
 
     if not user or not password:
-        raise SystemExit(
-            'SMTP_USER / SMTP_PASSWORD が未設定です。\n'
-            'GSCメール設定.md を参照してください。'
-        )
+        raise ValueError('SMTP_USER / SMTP_PASSWORD が未設定')
 
-    today = date.today()
     msg = EmailMessage()
-    msg.set_content(build_body(), charset='utf-8')
-    msg['Subject'] = build_subject(today)
+    msg.set_content(body, charset='utf-8')
+    msg['Subject'] = subject
     msg['From'] = user
     msg['To'] = to_addr
 
+    with smtplib.SMTP(host, port, timeout=60) as server:
+        server.ehlo()
+        server.starttls()
+        server.ehlo()
+        server.login(user, password)
+        server.send_message(msg)
+
+
+def send_reminder() -> None:
+    to_addr = TO.strip()
+    today = date.today()
+    subject = build_subject(today)
+    body = build_body()
+
     try:
-        with smtplib.SMTP(host, port, timeout=60) as server:
-            server.ehlo()
-            server.starttls()
-            server.ehlo()
-            server.login(user, password)
-            server.send_message(msg)
+        if os.environ.get('RESEND_API_KEY', '').strip():
+            _send_via_resend(subject, body, to_addr)
+        else:
+            _send_via_smtp(subject, body, to_addr)
     except smtplib.SMTPAuthenticationError as e:
-        print('SMTP認証エラー: アプリパスワードを再確認してください', file=sys.stderr)
+        print(
+            'SMTP認証エラー: HotmailはGitHub Actionsから送れません。\n'
+            'Resend API を使ってください（GSCメール設定.md 参照）',
+            file=sys.stderr,
+        )
         print(e, file=sys.stderr)
         raise SystemExit(1) from e
-    except Exception as e:
+    except Exception:
         print('メール送信エラー:', file=sys.stderr)
         traceback.print_exc()
-        raise SystemExit(1) from e
+        raise SystemExit(1)
 
     print(f'Sent to {to_addr}')
 

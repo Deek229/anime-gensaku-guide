@@ -1,4 +1,4 @@
-# 毎朝 9:00 JST に GSC 作業リマインダーをメール送信
+# 毎朝 9:00 JST にタスク管理メールを送信
 name: Daily task email reminder
 
 on:
@@ -17,10 +17,8 @@ jobs:
       - run: pip install python-dotenv
       - name: Send reminder email
         env:
-          SMTP_HOST: smtp-mail.outlook.com
-          SMTP_PORT: '587'
-          SMTP_USER: ${{ secrets.SMTP_USER }}
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_FROM: onboarding@resend.dev
           REMINDER_EMAIL_TO: a_n_k_6@hotmail.com
           SITE_URL: https://anime-gensaku-guide.onrender.com
         run: python tools/gsc_reminder.py
