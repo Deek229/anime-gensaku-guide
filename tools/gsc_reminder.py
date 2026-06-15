@@ -4,9 +4,11 @@ from __future__ import annotations
 
 import os
 import smtplib
+import sys
+import traceback
 from dataclasses import dataclass
 from datetime import date
-from email.mime.text import MIMEText
+from email.message import EmailMessage
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -160,7 +162,7 @@ def build_body() -> str:
     total_min = sum(t.minutes for t in tasks if not t.optional)
 
     header = f"""━━━━━━━━━━━━━━━━━━━━━━━━
-📋 アニメ原作ガイド｜今日のタスク
+■ アニメ原作ガイド｜今日のタスク
 {today.year}年{today.month}月{today.day}日（{_weekday_label(today)}）
 ━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -190,7 +192,7 @@ def send_reminder() -> None:
     host = os.environ.get('SMTP_HOST', 'smtp-mail.outlook.com')
     port = int(os.environ.get('SMTP_PORT', '587'))
     user = os.environ.get('SMTP_USER', '').strip()
-    password = os.environ.get('SMTP_PASSWORD', '').strip()
+    password = os.environ.get('SMTP_PASSWORD', '').strip().replace(' ', '')
     to_addr = TO.strip()
 
     if not user or not password:
@@ -200,17 +202,27 @@ def send_reminder() -> None:
         )
 
     today = date.today()
-    msg = MIMEText(build_body(), 'plain', 'utf-8')
+    msg = EmailMessage()
+    msg.set_content(build_body(), charset='utf-8')
     msg['Subject'] = build_subject(today)
     msg['From'] = user
     msg['To'] = to_addr
 
-    with smtplib.SMTP(host, port, timeout=30) as server:
-        server.ehlo()
-        server.starttls()
-        server.ehlo()
-        server.login(user, password)
-        server.sendmail(user, [to_addr], msg.as_string())
+    try:
+        with smtplib.SMTP(host, port, timeout=60) as server:
+            server.ehlo()
+            server.starttls()
+            server.ehlo()
+            server.login(user, password)
+            server.send_message(msg)
+    except smtplib.SMTPAuthenticationError as e:
+        print('SMTP認証エラー: アプリパスワードを再確認してください', file=sys.stderr)
+        print(e, file=sys.stderr)
+        raise SystemExit(1) from e
+    except Exception as e:
+        print('メール送信エラー:', file=sys.stderr)
+        traceback.print_exc()
+        raise SystemExit(1) from e
 
     print(f'Sent to {to_addr}')
 
