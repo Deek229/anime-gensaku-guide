@@ -2,7 +2,8 @@
 import json
 from pathlib import Path
 
-from jinja2 import Environment, FileSystemLoader, Markup, select_autoescape
+from jinja2 import Environment, FileSystemLoader, select_autoescape
+from markupsafe import Markup
 
 ROOT = Path(__file__).parent
 env = Environment(
