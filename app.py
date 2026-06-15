@@ -65,6 +65,11 @@ def home(season: str | None = None):
     ))
 
 
+@app.head('/', include_in_schema=False)
+def home_head():
+    return Response(status_code=200)
+
+
 @app.get('/works/{work_id}', response_class=HTMLResponse)
 def work_page(work_id: str):
     work = get_work(work_id)
@@ -192,3 +197,8 @@ def api_rankings_meta():
 @app.get('/api/health')
 def health():
     return {'status': 'ok', 'app': APP_TITLE, 'version': APP_VERSION}
+
+
+@app.head('/api/health', include_in_schema=False)
+def health_head():
+    return Response(status_code=200)

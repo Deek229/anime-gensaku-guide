@@ -1,0 +1,16 @@
+# Render 無料プランのスリープ防止（14分ごとに ping）
+name: Keep site awake
+
+on:
+  schedule:
+    - cron: '*/14 * * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping health endpoint
+        run: |
+          curl -fsS "https://anime-gensaku-guide.onrender.com/api/health"
+          curl -fsS "https://anime-gensaku-guide.onrender.com/robots.txt"
