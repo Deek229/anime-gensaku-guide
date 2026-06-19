@@ -162,10 +162,18 @@ def render_sitemap(paths: list[tuple[str, str, str]]) -> str:
 
 
 def render_robots() -> str:
+    sitemap = sitemap_loc('/sitemap.xml')
     return '\n'.join([
+        'User-agent: Googlebot',
+        'Allow: /',
+        '',
+        'User-agent: Googlebot-Image',
+        'Allow: /',
+        '',
         'User-agent: *',
         'Allow: /',
-        f'Sitemap: {sitemap_loc("/sitemap.xml")}',
+        '',
+        f'Sitemap: {sitemap}',
         '',
     ])
 

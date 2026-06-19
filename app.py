@@ -108,20 +108,33 @@ def rankings_page():
     ))
 
 
-@app.get('/sitemap.xml')
-def sitemap():
+def _build_sitemap_xml() -> str:
     paths: list[tuple[str, str, str]] = [
         ('/', 'daily', '1.0'),
         ('/rankings', 'weekly', '0.6'),
     ]
     for work in list_works():
         paths.append((f'/works/{work["id"]}', 'weekly', '0.8'))
-    xml = render_sitemap(paths)
-    return Response(content=xml, media_type='application/xml')
+    return render_sitemap(paths)
+
+
+@app.get('/sitemap.xml')
+def sitemap():
+    return Response(content=_build_sitemap_xml(), media_type='application/xml')
+
+
+@app.head('/sitemap.xml', include_in_schema=False)
+def sitemap_head():
+    return Response(content=_build_sitemap_xml(), media_type='application/xml')
 
 
 @app.get('/robots.txt', response_class=PlainTextResponse)
 def robots():
+    return PlainTextResponse(render_robots(), media_type='text/plain')
+
+
+@app.head('/robots.txt', include_in_schema=False)
+def robots_head():
     return PlainTextResponse(render_robots(), media_type='text/plain')
 
 
