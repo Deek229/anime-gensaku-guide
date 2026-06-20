@@ -73,16 +73,26 @@ def _daily_tasks(today: date) -> list[Task]:
     ))
 
     if days < 14:
+        index_urls = [
+            ('トップ（再リクエスト・503対策）', f'{SITE_URL}/'),
+            ('Re:ゼロ', f'{SITE_URL}/works/re-ゼロから始める異世界生活-4th-season-奪還編'),
+            ('無職転生Ⅲ', f'{SITE_URL}/works/無職転生ⅲ-異世界行ったら本気だす'),
+            ('BLEACH 千年血戦篇', f'{SITE_URL}/works/bleach-千年血戦篇-禍進譚'),
+            ('きみが死ぬまで恋をしたい', f'{SITE_URL}/works/きみが死ぬまで恋をしたい'),
+            ('ワンパンマン 第3期（新作ページ）', f'{SITE_URL}/works/ワンパンマン-第3期'),
+        ]
+        url_lines = [f'   ・{name}: {url}' for name, url in index_urls]
         tasks.append(Task(
-            title='Search Console でインデックス登録をリクエスト',
+            title='Search Console：残りのページをインデックス登録リクエスト',
             steps=[
                 'Search Console を開く: https://search.google.com/search-console',
-                f'上部URL欄に入力: {SITE_URL}/',
-                '「公開URLをテスト」→ OKなら「インデックス登録をリクエスト」',
-                '※ 1日約10URLまで。上限なら明日でOK',
-                '人気作品ページも1〜2件リクエスト（任意）',
+                '※ 依頼の前に、各URLをブラウザで開いて30秒待つ（Renderスリープ対策）',
+                '上部「URL検査」にURLを貼る →「インデックス登録をリクエスト」',
+                '※ 1日の上限あり。超えたら翌日続きから（ランキングは依頼済みならスキップ可）',
+                '【今日リクエストするURL（上から順に）】',
+                *url_lines,
             ],
-            minutes=3,
+            minutes=10,
         ))
 
     if weekday in (0, 3):

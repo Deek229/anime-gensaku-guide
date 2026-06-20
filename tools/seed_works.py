@@ -211,6 +211,16 @@ WORKS = [
         'tags': ['SF', '京アニ'],
         'watchers_count': 6300,
     },
+    {
+        'title': 'ワンパンマン 第3期',
+        'source_type': 'manga',
+        'source_title': 'ワンパンマン',
+        'volumes_anime': '第3期は漫画「怪人協会編」後半〜（第1・2期は1〜16巻相当が目安）',
+        'read_order': '漫画1巻から。アニメ2期まで見た人は17巻前後からも可',
+        'amazon_search': 'ワンパンマン 漫画',
+        'tags': ['バトル', 'ギャグ', '少年漫画'],
+        'watchers_count': 9700,
+    },
 ]
 
 rows = []
