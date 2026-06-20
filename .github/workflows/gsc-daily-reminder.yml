@@ -4,8 +4,8 @@ name: Daily task email reminder
 
 on:
   workflow_dispatch:
-  # schedule:
-  #   - cron: '0 0 * * *'   # 09:00 JST
+  schedule:
+    - cron: '0 0 * * *'   # 09:00 JST（UTC 0:00）
 
 jobs:
   remind:
