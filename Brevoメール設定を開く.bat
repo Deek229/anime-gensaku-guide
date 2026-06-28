@@ -21,5 +21,8 @@ echo    BREVO_API_KEY=（キー）
 echo    BREVO_SENDER_EMAIL=a_n_k_6@hotmail.com
 echo    REMINDER_EMAIL_TO=a_n_k_6@hotmail.com
 echo 5. メールテスト送信.bat を実行
+echo 6. 毎朝9時の自動送信（GitHub）用:
+echo    GitHub → Settings → Secrets → Actions
+echo    名前 BREVO_API_KEY、値は上と同じキー
 echo.
 pause

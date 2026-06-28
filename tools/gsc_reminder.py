@@ -195,13 +195,23 @@ def build_body() -> str:
     return body + footer
 
 
+def _missing_api_key_message() -> str:
+    if os.environ.get('GITHUB_ACTIONS') == 'true':
+        return (
+            'BREVO_API_KEY が未設定です。\n'
+            '→ GitHub: Settings → Secrets and variables → Actions\n'
+            '  名前 BREVO_API_KEY、値（BrevoのAPIキー）を追加してください。'
+        )
+    return (
+        'BREVO_API_KEY が未設定です。\n'
+        '→ Brevoメール設定を開く.bat の手順で API キーを .env に入れてください。'
+    )
+
+
 def _send_via_brevo(subject: str, body: str, to_addr: str) -> None:
     api_key = os.environ.get('BREVO_API_KEY', '').strip()
     if not api_key:
-        raise ValueError(
-            'BREVO_API_KEY が未設定です。\n'
-            '→ Brevoメール設定を開く.bat の手順で API キーを .env に入れてください。'
-        )
+        raise ValueError(_missing_api_key_message())
 
     sender_email = os.environ.get('BREVO_SENDER_EMAIL', to_addr).strip()
     sender_name = os.environ.get('BREVO_SENDER_NAME', 'アニメ原作ガイド').strip()

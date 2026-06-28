@@ -16,6 +16,22 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install python-dotenv
+      - name: Verify Brevo API key
+        env:
+          BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
+        run: |
+          if [ -z "${BREVO_API_KEY}" ]; then
+            echo "::error title=メール送信の設定不足::BREVO_API_KEY が GitHub Secrets に未登録です。"
+            echo ""
+            echo "【対処】Brevo で API キーを作成し、次のページで Secret を追加してください:"
+            echo "https://github.com/Deek229/anime-gensaku-guide/settings/secrets/actions"
+            echo "  Name: BREVO_API_KEY"
+            echo "  Secret: （Brevo の API キー）"
+            echo ""
+            echo "追加後、Actions から「Run workflow」で再実行できます。"
+            exit 1
+          fi
+          echo "BREVO_API_KEY: configured"
       - name: Send reminder email
         env:
           BREVO_API_KEY: ${{ secrets.BREVO_API_KEY }}
