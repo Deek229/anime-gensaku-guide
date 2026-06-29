@@ -475,18 +475,24 @@
     "memo": "",
     "official_url": "https://sh-anime.shochiku.co.jp/worldisdancing-anime/",
     "title": "ワールド イズ ダンシング",
-    "source_type": "original",
-    "source_title": "",
-    "read_order": "原作なし。アニメ単体で楽しむ",
-    "amazon_search": "ワールド イズ ダンシング アニメ",
+    "source_type": "manga",
+    "source_title": "ワールド イズ ダンシング",
+    "source_volume_from": 1,
+    "source_volume_to": 6,
+    "source_volume_approximate": true,
+    "source_volume_note": "原作漫画は全6巻で完結。映像化範囲は未公表のため推定。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "ワールド イズ ダンシング 漫画",
     "tags": [
       "スポーツ",
-      "オリジナル"
+      "歴史",
+      "青年漫画"
     ],
     "watchers_count": 6400,
     "share_slug": "world-is-dancing",
-    "key_visual_url": "https://sh-anime.shochiku.co.jp/worldisdancing-anime/og/ogp_ja_v6.png",
-    "cover_image_url": "/static/cover-placeholder.svg"
+    "isbn": "9784065245057",
+    "amazon_asin": "4065245052",
+    "cover_image_url": "/static/covers/world-is-dancing.jpg"
   },
   {
     "id": "二十世紀電氣目録-ユーレカ-エヴリカ",

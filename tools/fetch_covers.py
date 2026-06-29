@@ -114,6 +114,10 @@ DEFAULT_SOURCES: dict[str, dict[str, str]] = {
         'isbn': '9784088815565',
         'amazon_asin': '4088815564',
     },
+    'ワールド-イズ-ダンシング': {
+        'isbn': '9784065245057',
+        'amazon_asin': '4065245052',
+    },
 }
 
 
