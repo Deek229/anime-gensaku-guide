@@ -73,13 +73,30 @@
   <div class="work-grid" id="workGrid">
     {% for w in works %}
     <article class="work-card" data-source="{{ w.source_type }}" data-has-source="{{ '1' if w.has_source else '0' }}" data-search="{{ w.title }} {{ w.source_title }} {{ w.tags|join(' ') }}">
-      {% if w.buy_url %}
-      <a class="work-card-cover" href="{{ w.buy_url }}" target="_blank" rel="noopener sponsored" aria-label="{{ w.source_title or w.title }}を{{ w.buy_label }}">
-        <img src="{{ w.cover_url }}" alt="{{ w.source_title or w.title }}の表紙" loading="lazy" width="120" height="170" onerror="this.onerror=null;this.src='/static/cover-placeholder.svg';">
+      {% if w.cover_kind == 'original_badge' %}
+      <div class="work-card-cover original-visual-badge" aria-label="アニメオリジナル作品">
+        <span class="original-visual-badge__mark">TV</span>
+        <span class="original-visual-badge__text">アニメ<br>オリジナル<br>作品</span>
+      </div>
+      {% elif w.buy_url %}
+      <a class="work-card-cover cover-with-fallback" href="{{ w.buy_url }}" target="_blank" rel="noopener sponsored" aria-label="{{ w.source_title or w.title }}を{{ w.buy_label }}">
+        <img src="{{ w.cover_url }}" alt="{% if w.cover_kind == 'key_visual' %}{{ w.title }}のキービジュアル{% else %}{{ w.source_title or w.title }}の表紙{% endif %}" loading="lazy" width="120" height="170"{% if w.is_original_anime %} onerror="this.classList.add('is-broken')"{% else %} onerror="this.onerror=null;this.src='/static/cover-placeholder.svg';"{% endif %}>
+        {% if w.is_original_anime %}
+        <div class="original-visual-badge original-visual-badge--fallback" aria-hidden="true">
+          <span class="original-visual-badge__mark">TV</span>
+          <span class="original-visual-badge__text">アニメ<br>オリジナル<br>作品</span>
+        </div>
+        {% endif %}
       </a>
       {% else %}
-      <div class="work-card-cover">
-        <img src="{{ w.cover_url }}" alt="{{ w.source_title or w.title }}の表紙" loading="lazy" width="120" height="170" onerror="this.onerror=null;this.src='/static/cover-placeholder.svg';">
+      <div class="work-card-cover{% if w.is_original_anime %} cover-with-fallback{% endif %}">
+        <img src="{{ w.cover_url }}" alt="{% if w.cover_kind == 'key_visual' %}{{ w.title }}のキービジュアル{% else %}{{ w.source_title or w.title }}の表紙{% endif %}" loading="lazy" width="120" height="170"{% if w.is_original_anime %} onerror="this.classList.add('is-broken')"{% else %} onerror="this.onerror=null;this.src='/static/cover-placeholder.svg';"{% endif %}>
+        {% if w.is_original_anime %}
+        <div class="original-visual-badge original-visual-badge--fallback" aria-hidden="true">
+          <span class="original-visual-badge__mark">TV</span>
+          <span class="original-visual-badge__text">アニメ<br>オリジナル<br>作品</span>
+        </div>
+        {% endif %}
       </div>
       {% endif %}
       <div class="work-card-body">

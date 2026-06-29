@@ -5,8 +5,6 @@ from pathlib import Path
 from typing import Any
 
 from amazon_links import amazon_cover_url, buy_url
-
-COVER_PLACEHOLDER = '/static/cover-placeholder.svg'
 from config import (
     DEFAULT_SEASON,
     SEASON_LABELS,
@@ -26,35 +24,51 @@ from seo import (
 from store import find_work, load_works, resolve_share_slug
 from volume_utils import enrich_volume_fields
 
+COVER_PLACEHOLDER = '/static/cover-placeholder.svg'
 
-def resolve_cover_display(work: dict[str, Any]) -> str:
+
+def is_original_anime(work: dict[str, Any]) -> bool:
+    st = (work.get('source_type') or 'other').strip()
+    source_title = (work.get('source_title') or '').strip()
+    return st == 'original' or (st in ('', 'other') and not source_title)
+
+
+def resolve_cover_display(work: dict[str, Any]) -> tuple[str, str]:
+    """(cover_url, cover_kind) — cover_kind: source_cover | key_visual | original_badge"""
+    if is_original_anime(work):
+        key_visual = (work.get('key_visual_url') or '').strip()
+        if key_visual:
+            return key_visual, 'key_visual'
+        return '', 'original_badge'
+
     url = (work.get('cover_image_url') or '').strip()
     if url == COVER_PLACEHOLDER:
-        return COVER_PLACEHOLDER
+        return COVER_PLACEHOLDER, 'source_cover'
     if url.startswith('/static/covers/'):
         local = Path(__file__).parent / url.removeprefix('/')
         if local.is_file() and local.stat().st_size >= 1000:
-            return url
-        return COVER_PLACEHOLDER
+            return url, 'source_cover'
+        return COVER_PLACEHOLDER, 'source_cover'
     if url:
-        return url
+        return url, 'source_cover'
     slug = (work.get('share_slug') or '').strip()
     if slug:
         local_url = f'/static/covers/{slug}.jpg'
         local = Path(__file__).parent / 'static' / 'covers' / f'{slug}.jpg'
         if local.is_file() and local.stat().st_size >= 1000:
-            return local_url
+            return local_url, 'source_cover'
     asin = (work.get('amazon_asin') or '').strip()
     if asin:
-        return amazon_cover_url(asin) or COVER_PLACEHOLDER
-    return COVER_PLACEHOLDER
+        return amazon_cover_url(asin) or COVER_PLACEHOLDER, 'source_cover'
+    return COVER_PLACEHOLDER, 'source_cover'
 
 
 def enrich_work(work: dict[str, Any]) -> dict[str, Any]:
     url, buy_label = buy_url(work)
     work = enrich_volume_fields(work)
-    cover_url = resolve_cover_display(work)
-    has_cover = cover_url != COVER_PLACEHOLDER
+    cover_url, cover_kind = resolve_cover_display(work)
+    original_anime = is_original_anime(work)
+    has_cover = cover_kind in ('source_cover', 'key_visual') and cover_url not in ('', COVER_PLACEHOLDER)
     st = work.get('source_type', 'other')
     base = {
         **work,
@@ -64,6 +78,8 @@ def enrich_work(work: dict[str, Any]) -> dict[str, Any]:
         'buy_url': url,
         'buy_label': buy_label,
         'cover_url': cover_url,
+        'cover_kind': cover_kind,
+        'is_original_anime': original_anime,
         'has_cover': has_cover,
         'has_source': st not in ('original', 'other', ''),
     }

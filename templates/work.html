@@ -27,13 +27,30 @@
   <nav class="breadcrumb"><a href="/">一覧</a> / {{ work.title }}</nav>
   <header class="work-header">
     <div class="work-header-main">
-      {% if work.buy_url %}
-      <a class="work-cover-wrap work-cover-link" href="{{ work.buy_url }}" target="_blank" rel="noopener sponsored" aria-label="{{ work.source_title or work.title }}を{{ work.buy_label }}">
-        <img class="work-cover" src="{{ work.cover_url }}" alt="{{ work.source_title or work.title }}の表紙" width="160" height="230" onerror="this.onerror=null;this.src='/static/cover-placeholder.svg';">
+      {% if work.cover_kind == 'original_badge' %}
+      <div class="work-cover-wrap original-visual-badge original-visual-badge--detail" aria-label="アニメオリジナル作品">
+        <span class="original-visual-badge__mark">TV</span>
+        <span class="original-visual-badge__text">アニメ<br>オリジナル<br>作品</span>
+      </div>
+      {% elif work.buy_url %}
+      <a class="work-cover-wrap work-cover-link cover-with-fallback" href="{{ work.buy_url }}" target="_blank" rel="noopener sponsored" aria-label="{{ work.source_title or work.title }}を{{ work.buy_label }}">
+        <img class="work-cover" src="{{ work.cover_url }}" alt="{% if work.cover_kind == 'key_visual' %}{{ work.title }}のキービジュアル{% else %}{{ work.source_title or work.title }}の表紙{% endif %}" width="160" height="230"{% if work.is_original_anime %} onerror="this.classList.add('is-broken')"{% else %} onerror="this.onerror=null;this.src='/static/cover-placeholder.svg';"{% endif %}>
+        {% if work.is_original_anime %}
+        <div class="original-visual-badge original-visual-badge--detail original-visual-badge--fallback" aria-hidden="true">
+          <span class="original-visual-badge__mark">TV</span>
+          <span class="original-visual-badge__text">アニメ<br>オリジナル<br>作品</span>
+        </div>
+        {% endif %}
       </a>
       {% else %}
-      <div class="work-cover-wrap">
-        <img class="work-cover" src="{{ work.cover_url }}" alt="{{ work.source_title or work.title }}の表紙" width="160" height="230" onerror="this.onerror=null;this.src='/static/cover-placeholder.svg';">
+      <div class="work-cover-wrap{% if work.is_original_anime %} cover-with-fallback{% endif %}">
+        <img class="work-cover" src="{{ work.cover_url }}" alt="{% if work.cover_kind == 'key_visual' %}{{ work.title }}のキービジュアル{% else %}{{ work.source_title or work.title }}の表紙{% endif %}" width="160" height="230"{% if work.is_original_anime %} onerror="this.classList.add('is-broken')"{% else %} onerror="this.onerror=null;this.src='/static/cover-placeholder.svg';"{% endif %}>
+        {% if work.is_original_anime %}
+        <div class="original-visual-badge original-visual-badge--detail original-visual-badge--fallback" aria-hidden="true">
+          <span class="original-visual-badge__mark">TV</span>
+          <span class="original-visual-badge__text">アニメ<br>オリジナル<br>作品</span>
+        </div>
+        {% endif %}
       </div>
       {% endif %}
       <div class="work-header-text">

@@ -473,7 +473,7 @@
     "status": "upcoming",
     "media": "tv",
     "memo": "",
-    "official_url": "",
+    "official_url": "https://sh-anime.shochiku.co.jp/worldisdancing-anime/",
     "title": "ワールド イズ ダンシング",
     "source_type": "original",
     "source_title": "",
@@ -485,6 +485,7 @@
     ],
     "watchers_count": 6400,
     "share_slug": "world-is-dancing",
+    "key_visual_url": "https://sh-anime.shochiku.co.jp/worldisdancing-anime/og/ogp_ja_v6.png",
     "cover_image_url": "/static/cover-placeholder.svg"
   },
   {

@@ -220,6 +220,67 @@ a { color: var(--cyan); }
   transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
+.original-visual-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  width: 88px;
+  height: 124px;
+  border-radius: 6px;
+  border: 1px solid rgba(232, 77, 138, 0.25);
+  background: linear-gradient(145deg, #fff5f9 0%, #f0f6ff 55%, #f5f0ff 100%);
+  box-shadow: 0 2px 8px rgba(26, 29, 38, 0.08);
+  text-align: center;
+  padding: 0.5rem 0.35rem;
+}
+
+.original-visual-badge--detail {
+  width: 140px;
+  height: 198px;
+  border-radius: 8px;
+  gap: 0.5rem;
+  padding: 0.75rem 0.5rem;
+}
+
+.original-visual-badge__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #fff;
+  background: linear-gradient(135deg, var(--pink), var(--violet));
+}
+
+.original-visual-badge__text {
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--muted);
+}
+
+.original-visual-badge--detail .original-visual-badge__text {
+  font-size: 0.82rem;
+}
+
+.cover-with-fallback .original-visual-badge--fallback {
+  display: none;
+}
+
+.cover-with-fallback:has(img.is-broken) img {
+  display: none;
+}
+
+.cover-with-fallback:has(img.is-broken) .original-visual-badge--fallback {
+  display: flex;
+}
+
 .work-card-cover:hover img {
   box-shadow: 0 4px 14px rgba(26, 29, 38, 0.14);
   transform: translateY(-1px);

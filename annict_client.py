@@ -1,13 +1,21 @@
 """Annict API からシーズン作品を取得（要 ANNICT_ACCESS_TOKEN）"""
 from __future__ import annotations
 
+import re
 import time
+import urllib.request
 from typing import Any
 
 import requests
 
 from config import ANNICT_ACCESS_TOKEN, ANNICT_API_URL
 from store import slugify, upsert_work
+
+_OG_IMAGE_PATTERNS = (
+    re.compile(r'property=["\']og:image["\']\s+content=["\']([^"\']+)["\']', re.I),
+    re.compile(r'content=["\']([^"\']+)["\']\s+property=["\']og:image["\']', re.I),
+    re.compile(r'name=["\']twitter:image["\']\s+content=["\']([^"\']+)["\']', re.I),
+)
 
 # Annict media -> source_type 推定は手動補完が必要
 _SOURCE_GUESS_KEYWORDS = {
@@ -23,12 +31,69 @@ def _guess_source_type(title: str) -> str:
     return 'other'
 
 
-def fetch_season_works(season: str) -> list[dict[str, Any]]:
+def _annict_session() -> requests.Session:
     if not ANNICT_ACCESS_TOKEN:
         raise RuntimeError('ANNICT_ACCESS_TOKEN が未設定です（.env または環境変数）')
-
     session = requests.Session()
     session.headers['Authorization'] = f'Bearer {ANNICT_ACCESS_TOKEN}'
+    return session
+
+
+def _extract_recommended_image(row: dict[str, Any]) -> str:
+    images = row.get('images') or {}
+    return (images.get('recommended_url') or '').strip()
+
+
+def fetch_work_images(title: str, annict_id: int | None = None) -> tuple[str, int | None]:
+    """Annict からキービジュアル URL を取得。(url, annict_id)"""
+    if not ANNICT_ACCESS_TOKEN:
+        return '', annict_id
+
+    session = _annict_session()
+    rows: list[dict[str, Any]] = []
+    if annict_id:
+        r = session.get(f'{ANNICT_API_URL}/{annict_id}', timeout=30)
+        if r.status_code == 200:
+            rows = [r.json()]
+    else:
+        r = session.get(
+            ANNICT_API_URL,
+            params={'filter_title': title, 'per_page': 10},
+            timeout=30,
+        )
+        r.raise_for_status()
+        rows = r.json().get('works', [])
+
+    needle = title.strip()
+    for row in rows:
+        if annict_id or row.get('title', '').strip() == needle:
+            url = _extract_recommended_image(row)
+            return url, row.get('id') or annict_id
+    return '', annict_id
+
+
+def fetch_official_og_image(official_url: str) -> str:
+    """公式サイトの og:image をキービジュアル候補として取得"""
+    url = (official_url or '').strip()
+    if not url:
+        return ''
+    try:
+        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (compatible; AnimeGensakuGuide/1.0)'})
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            html = resp.read().decode('utf-8', errors='replace')
+    except (urllib.error.URLError, TimeoutError):
+        return ''
+    for pattern in _OG_IMAGE_PATTERNS:
+        m = pattern.search(html)
+        if m:
+            candidate = m.group(1).strip()
+            if candidate.startswith('http'):
+                return candidate
+    return ''
+
+
+def fetch_season_works(season: str) -> list[dict[str, Any]]:
+    session = _annict_session()
     page = 1
     imported: list[dict[str, Any]] = []
 
@@ -50,7 +115,8 @@ def fetch_season_works(season: str) -> list[dict[str, Any]]:
             break
         for row in batch:
             title = row.get('title', '')
-            work = upsert_work({
+            key_visual_url = _extract_recommended_image(row)
+            payload: dict[str, Any] = {
                 'id': slugify(title),
                 'annict_id': row.get('id'),
                 'season': season,
@@ -69,7 +135,10 @@ def fetch_season_works(season: str) -> list[dict[str, Any]]:
                 'amazon_search': f'{title} 原作',
                 'tags': [],
                 'memo': '',
-            })
+            }
+            if key_visual_url:
+                payload['key_visual_url'] = key_visual_url
+            work = upsert_work(payload)
             imported.append(work)
         if len(batch) < 50:
             break
