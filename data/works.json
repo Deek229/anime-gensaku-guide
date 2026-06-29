@@ -23,7 +23,7 @@
     "share_slug": "mushoku-tensei-3",
     "isbn": "9784040662206",
     "amazon_asin": "4040662202",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4040662202.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/mushoku-tensei-3.jpg"
   },
   {
     "id": "幼女戦記ⅱ",
@@ -49,7 +49,7 @@
     "share_slug": "youjo-senki-2",
     "isbn": "9784041051252",
     "amazon_asin": "4041051258",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4041051258.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/youjo-senki-2.jpg"
   },
   {
     "id": "re-ゼロから始める異世界生活-4th-season-奪還編",
@@ -75,7 +75,7 @@
     "share_slug": "re-zero-4th-dakkan",
     "isbn": "9784040662084",
     "amazon_asin": "4040662083",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4040662083.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/re-zero-4th-dakkan.jpg"
   },
   {
     "id": "ぐらんぶる-season-3",
@@ -101,7 +101,7 @@
     "share_slug": "grand-blue-season-3",
     "isbn": "9784063879902",
     "amazon_asin": "4063879909",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4063879909.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/grand-blue-season-3.jpg"
   },
   {
     "id": "bleach-千年血戦篇-禍進譚",
@@ -127,7 +127,7 @@
     "share_slug": "bleach-senbankessen-kashintan",
     "isbn": "9784088806495",
     "amazon_asin": "4088806492",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4088806492.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/bleach-senbankessen-kashintan.jpg"
   },
   {
     "id": "君のことが大大大大大好きな100人の彼女-第3期",
@@ -153,7 +153,7 @@
     "share_slug": "hyakkano-3",
     "isbn": "9784088915333",
     "amazon_asin": "408891533X",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/408891533X.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/hyakkano-3.jpg"
   },
   {
     "id": "逃げ上手の若君-第二期",
@@ -179,7 +179,7 @@
     "share_slug": "nige-jouzu-2",
     "isbn": "9784088827100",
     "amazon_asin": "4088827104",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4088827104.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/nige-jouzu-2.jpg"
   },
   {
     "id": "骸骨騎士様-只今異世界へお出掛け中ⅱ",
@@ -205,7 +205,7 @@
     "share_slug": "gaikotsu-kishi-2",
     "isbn": "9784865540543",
     "amazon_asin": "4865540547",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4865540547.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/gaikotsu-kishi-2.jpg"
   },
   {
     "id": "乙女ゲー世界はモブに厳しい世界です2",
@@ -231,7 +231,7 @@
     "share_slug": "mobuseka-2",
     "isbn": "9784864361940",
     "amazon_asin": "4864361940",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4864361940.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/mobuseka-2.jpg"
   },
   {
     "id": "片田舎のおっさん-剣聖になるⅱ",
@@ -257,7 +257,7 @@
     "share_slug": "katainaka-kensei-2",
     "isbn": "9784253306918",
     "amazon_asin": "4253306918",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4253306918.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/katainaka-kensei-2.jpg"
   },
   {
     "id": "きみが死ぬまで恋をしたい",
@@ -283,7 +283,7 @@
     "share_slug": "kimi-shinu",
     "isbn": "9784758078986",
     "amazon_asin": "475807898X",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/475807898X.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/kimi-shinu.jpg"
   },
   {
     "id": "株式会社マジルミエ-第2期",
@@ -309,7 +309,7 @@
     "share_slug": "magilumiere-2",
     "isbn": "9784088830285",
     "amazon_asin": "4088830288",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4088830288.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/magilumiere-2.jpg"
   },
   {
     "id": "正反対な君と僕-第2期",
@@ -335,7 +335,7 @@
     "share_slug": "seihantaiteki-2",
     "isbn": "9784088834569",
     "amazon_asin": "4088834569",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4088834569.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/seihantaiteki-2.jpg"
   },
   {
     "id": "攻殻機動隊-the-ghost-in-the-shell",
@@ -361,7 +361,7 @@
     "share_slug": "ghost-in-the-shell",
     "isbn": "9784063337125",
     "amazon_asin": "406333712X",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/406333712X.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/ghost-in-the-shell.jpg"
   },
   {
     "id": "天幕のジャードゥーガル",
@@ -387,7 +387,7 @@
     "share_slug": "tenmaku-jadougal",
     "isbn": "9784088835670",
     "amazon_asin": "4088835670",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4088835670.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/tenmaku-jadougal.jpg"
   },
   {
     "id": "クレバテスⅱ-魔獣の王と偽りの勇者伝承",
@@ -413,7 +413,7 @@
     "share_slug": "clevatess-2",
     "isbn": "9784866970804",
     "amazon_asin": "4866970804",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4866970804.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/clevatess-2.jpg"
   },
   {
     "id": "スーパーの裏でヤニ吸うふたり",
@@ -439,7 +439,7 @@
     "share_slug": "super-yani-2",
     "isbn": "9784757580947",
     "amazon_asin": "4757580940",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4757580940.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/super-yani-2.jpg"
   },
   {
     "id": "追放された転生重騎士はゲーム知識で無双する",
@@ -465,7 +465,7 @@
     "share_slug": "tsuihou-juukishi",
     "isbn": "9784065281437",
     "amazon_asin": "4065281431",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4065281431.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/tsuihou-juukishi.jpg"
   },
   {
     "id": "ワールド-イズ-ダンシング",
@@ -538,6 +538,6 @@
     "share_slug": "onepunch-man-3",
     "isbn": "9784088815565",
     "amazon_asin": "4088815564",
-    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4088815564.09._SL250_.jpg"
+    "cover_image_url": "/static/covers/onepunch-man-3.jpg"
   }
 ]

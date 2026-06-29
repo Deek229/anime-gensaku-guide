@@ -5,7 +5,7 @@ services:
     name: anime-gensaku-guide
     runtime: python
     plan: free
-    buildCommand: pip install -r requirements.txt && python tools/seed_works.py && python tools/fetch_covers.py && python tools/generate_social_posts.py
+    buildCommand: pip install -r requirements.txt && python tools/seed_works.py && python tools/generate_social_posts.py
     startCommand: uvicorn app:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /api/health
     envVars:

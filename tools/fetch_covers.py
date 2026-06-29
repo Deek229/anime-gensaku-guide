@@ -1,4 +1,4 @@
-"""作品の表紙画像を OpenBD / Amazon から取得して works.json を更新"""
+"""作品の表紙画像を OpenBD / Amazon から取得し static/covers/ に保存して works.json を更新"""
 from __future__ import annotations
 
 import json
@@ -11,12 +11,16 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from amazon_links import amazon_cover_url
-from store import load_works, save_works
+from store import load_works, resolve_share_slug, save_works
 
 sys.stdout.reconfigure(encoding='utf-8')
 
+ROOT = Path(__file__).resolve().parents[1]
+COVERS_DIR = ROOT / 'static' / 'covers'
 OPENBD_GET = 'https://api.openbd.jp/v1/get?isbn={isbn}'
 PLACEHOLDER = '/static/cover-placeholder.svg'
+MIN_BYTES = 1000
+USER_AGENT = 'Mozilla/5.0 (compatible; AnimeGensakuGuide/1.0)'
 
 # work id -> 表紙用の ISBN-13 / Amazon ASIN（原作1巻または該当巻）
 DEFAULT_SOURCES: dict[str, dict[str, str]] = {
@@ -107,6 +111,25 @@ def _normalize_isbn(isbn: str) -> str:
     return ''.join(ch for ch in (isbn or '') if ch.isdigit())
 
 
+def cover_slug(work: dict) -> str:
+    return resolve_share_slug(work)
+
+
+def local_cover_rel(work: dict) -> str:
+    return f'/static/covers/{cover_slug(work)}.jpg'
+
+
+def local_cover_file(work: dict) -> Path:
+    return COVERS_DIR / f'{cover_slug(work)}.jpg'
+
+
+def _local_cover_valid(path: Path) -> bool:
+    try:
+        return path.is_file() and path.stat().st_size >= MIN_BYTES
+    except OSError:
+        return False
+
+
 def fetch_openbd_cover(isbn: str) -> str:
     isbn = _normalize_isbn(isbn)
     if len(isbn) != 13:
@@ -125,40 +148,59 @@ def fetch_openbd_cover(isbn: str) -> str:
     return (summary.get('cover') or '').strip()
 
 
-def _cover_exists(url: str, min_bytes: int = 1000) -> bool:
+def _download_image(url: str, dest: Path) -> bool:
     if not url:
         return False
     try:
-        req = urllib.request.Request(url, method='HEAD', headers={'User-Agent': 'Mozilla/5.0'})
-        with urllib.request.urlopen(req, timeout=12) as resp:
-            length = int(resp.headers.get('Content-Length', 0))
-            return length >= min_bytes
+        req = urllib.request.Request(url, headers={'User-Agent': USER_AGENT})
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            data = resp.read()
     except urllib.error.URLError:
         return False
+    if len(data) < MIN_BYTES:
+        return False
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_bytes(data)
+    return True
 
 
-def resolve_cover_url(work: dict) -> tuple[str, str]:
-    """(cover_url, source) source: openbd|amazon|placeholder|existing"""
-    existing = (work.get('cover_image_url') or '').strip()
-    if existing and existing != PLACEHOLDER and _cover_exists(existing):
-        return existing, 'existing'
-
+def _remote_candidates(work: dict) -> list[tuple[str, str]]:
+    """(url, source_label) in priority order."""
+    candidates: list[tuple[str, str]] = []
     isbn = _normalize_isbn(work.get('isbn') or '')
     asin = (work.get('amazon_asin') or '').strip()
 
     if isbn:
         openbd_url = fetch_openbd_cover(isbn)
-        if openbd_url and _cover_exists(openbd_url):
-            return openbd_url, 'openbd'
+        if openbd_url:
+            candidates.append((openbd_url, 'openbd'))
         time.sleep(0.15)
 
     if asin:
-        amazon_url = amazon_cover_url(asin)
-        if _cover_exists(amazon_url):
-            return amazon_url, 'amazon'
+        candidates.append((amazon_cover_url(asin), 'amazon'))
+
+    existing = (work.get('cover_image_url') or '').strip()
+    if existing and existing not in (PLACEHOLDER,) and not existing.startswith('/static/covers/'):
+        candidates.append((existing, 'existing'))
+
+    return candidates
+
+
+def resolve_cover(work: dict) -> tuple[str, str]:
+    """(cover_url, source)"""
+    dest = local_cover_file(work)
+    if _local_cover_valid(dest):
+        return local_cover_rel(work), 'cached'
 
     if work.get('source_type') in ('original', '') and not work.get('source_title'):
         return PLACEHOLDER, 'placeholder'
+
+    for url, source in _remote_candidates(work):
+        if _download_image(url, dest):
+            return local_cover_rel(work), source
+
+    if _local_cover_valid(dest):
+        return local_cover_rel(work), 'cached'
 
     return PLACEHOLDER, 'placeholder'
 
@@ -175,23 +217,23 @@ def merge_defaults(work: dict) -> dict:
 
 def main() -> int:
     works = load_works()
-    stats = {'openbd': 0, 'amazon': 0, 'placeholder': 0, 'existing': 0}
+    stats: dict[str, int] = {}
     updated = 0
 
     for i, work in enumerate(works):
         work = merge_defaults(work)
-        cover_url, source = resolve_cover_url(work)
+        cover_url, source = resolve_cover(work)
         work['cover_image_url'] = cover_url
         stats[source] = stats.get(source, 0) + 1
         works[i] = work
         updated += 1
         title = work.get('title', work.get('id', ''))
-        print(f'[{source:11}] {title}')
+        print(f'[{source:11}] {title} -> {cover_url}')
 
     save_works(works)
     real_covers = sum(1 for w in works if w.get('cover_image_url') != PLACEHOLDER)
     print(f'\nupdated {updated} works | covers: {real_covers} | placeholder: {stats.get("placeholder", 0)}')
-    print(f'sources: openbd={stats.get("openbd", 0)} amazon={stats.get("amazon", 0)}')
+    print(f'sources: {", ".join(f"{k}={v}" for k, v in sorted(stats.items()))}')
     return 0
 
 

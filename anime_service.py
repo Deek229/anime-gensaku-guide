@@ -1,6 +1,7 @@
 """アニメ作品の検索・フィルタ"""
 from __future__ import annotations
 
+from pathlib import Path
 from typing import Any
 
 from amazon_links import amazon_cover_url, buy_url
@@ -28,8 +29,21 @@ from volume_utils import enrich_volume_fields
 
 def resolve_cover_display(work: dict[str, Any]) -> str:
     url = (work.get('cover_image_url') or '').strip()
+    if url == COVER_PLACEHOLDER:
+        return COVER_PLACEHOLDER
+    if url.startswith('/static/covers/'):
+        local = Path(__file__).parent / url.removeprefix('/')
+        if local.is_file() and local.stat().st_size >= 1000:
+            return url
+        return COVER_PLACEHOLDER
     if url:
         return url
+    slug = (work.get('share_slug') or '').strip()
+    if slug:
+        local_url = f'/static/covers/{slug}.jpg'
+        local = Path(__file__).parent / 'static' / 'covers' / f'{slug}.jpg'
+        if local.is_file() and local.stat().st_size >= 1000:
+            return local_url
     asin = (work.get('amazon_asin') or '').strip()
     if asin:
         return amazon_cover_url(asin) or COVER_PLACEHOLDER
