@@ -394,6 +394,34 @@ a { color: var(--cyan); }
   font-size: 0.92rem;
 }
 
+.volume-range-line {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+
+.volume-range-line strong {
+  color: var(--cyan);
+}
+
+.volume-type {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.volume-approx {
+  display: inline-block;
+  margin-left: 0.35rem;
+  color: var(--gold);
+  font-size: 0.8rem;
+}
+
+.volume-detail {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
 .actions-panel .affiliate-note {
   margin-top: 0.75rem;
   padding: 0.65rem 0.85rem;

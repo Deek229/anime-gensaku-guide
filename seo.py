@@ -65,6 +65,32 @@ def build_intro(work: dict[str, Any]) -> str:
     return ' '.join(c for c in chunks if c)
 
 
+def _faq_volume_answer(work: dict[str, Any]) -> str:
+    vf = work.get('source_volume_from')
+    vt = work.get('source_volume_to')
+    note = (work.get('source_volume_note') or '').strip()
+
+    if vf is None and vt is None:
+        return work.get('volumes_anime') or '放送に合わせて更新予定です。'
+
+    label = work.get('source_type_label', '')
+    if vf is not None and vt is not None:
+        if vf == vt:
+            core = f'原作{label}の第{vf}巻が対象です。'
+        else:
+            core = f'原作{label}は第{vf}巻から第{vt}巻までが対象です。'
+    elif vf is not None:
+        core = f'原作{label}は第{vf}巻からの内容です。'
+    else:
+        core = f'原作{label}は第{vt}巻までが対象です。'
+
+    if note:
+        core += note
+    if work.get('source_volume_approximate'):
+        core += ' ※放送進行で更新'
+    return core
+
+
 def build_faq(work: dict[str, Any]) -> list[dict[str, str]]:
     title = work.get('title', '')
     if not work.get('has_source'):
@@ -82,7 +108,7 @@ def build_faq(work: dict[str, Any]) -> list[dict[str, str]]:
         },
         {
             'question': f'{title}のアニメは原作の何巻・何話まで？',
-            'answer': work.get('volumes_anime') or '放送に合わせて更新予定です。',
+            'answer': _faq_volume_answer(work),
         },
         {
             'question': f'{title}の原作はどこから読めばいい？',
@@ -100,7 +126,11 @@ def build_faq(work: dict[str, Any]) -> list[dict[str, str]]:
 def build_share_text(work: dict[str, Any]) -> str:
     title = work.get('title', '')
     if work.get('has_source'):
-        return f'【{title}】原作は{work.get("source_type_label", "")}「{work.get("source_title", "")}」｜{work.get("volumes_anime", "")[:40]}'
+        vol = work.get('volume_short') or (work.get('volumes_anime') or '')[:40]
+        return (
+            f'【{title}】原作は{work.get("source_type_label", "")}'
+            f'「{work.get("source_title", "")}」｜{vol}'
+        )
     return f'【{title}】{work.get("season_label", "")}の情報'
 
 

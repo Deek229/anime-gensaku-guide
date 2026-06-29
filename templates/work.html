@@ -47,7 +47,26 @@
     <table class="info-table">
       <tr><th>原作</th><td>{{ work.source_title or '—' }}</td></tr>
       <tr><th>タイプ</th><td>{{ work.source_type_label }}</td></tr>
-      <tr><th>アニメ化範囲</th><td>{{ work.volumes_anime or '後日更新' }}</td></tr>
+      <tr><th>アニメ化範囲</th>
+        <td>
+          {% if work.source_volume_from is not none or work.source_volume_to is not none %}
+          <p class="volume-range-line">
+            <strong>
+              {% if work.source_volume_from is not none and work.source_volume_to is not none %}
+              第{{ work.source_volume_from }}巻〜第{{ work.source_volume_to }}巻
+              {% elif work.source_volume_from is not none %}
+              第{{ work.source_volume_from }}巻〜
+              {% else %}
+              〜第{{ work.source_volume_to }}巻
+              {% endif %}
+            </strong>
+            <span class="volume-type">（{{ work.source_type_label }}）</span>
+            {% if work.source_volume_approximate %}<span class="volume-approx">※放送進行で更新</span>{% endif %}
+          </p>
+          {% endif %}
+          <p class="volume-detail">{{ work.volumes_anime or '後日更新' }}</p>
+        </td>
+      </tr>
       <tr><th>読む順・買い方</th><td>{{ work.read_order or '—' }}</td></tr>
     </table>
     {% else %}

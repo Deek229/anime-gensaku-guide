@@ -37,11 +37,16 @@ http://127.0.0.1:8052
 | 項目 | 説明 |
 |------|------|
 | `source_type` | light_novel / manga / web_novel / original |
-| `volumes_anime` | 何巻までがアニメ化か |
+| `source_volume_from` | アニメ化範囲の開始巻（int、未設定可） |
+| `source_volume_to` | アニメ化範囲の終了巻（int、未設定可） |
+| `source_volume_approximate` | `true` なら「※放送進行で更新」を付与 |
+| `source_volume_note` | 補足（前期の対応巻など） |
 | `read_order` | 読む・買う順のメモ |
 | `amazon_asin` | あれば直リンク |
 | `amazon_search` | ASIN未設定時の検索語 |
 | `share_slug` | Xシェア用のASCII専用URL（`/works/{share_slug}`）。日本語 `id` は canonical のまま |
+
+`volumes_anime` は廃止し、上記フィールドから FAQ・一覧・Xシェア文を自動生成します。
 
 ## X（Twitter）シェアについて
 

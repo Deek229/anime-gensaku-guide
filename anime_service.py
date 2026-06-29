@@ -21,10 +21,12 @@ from seo import (
     work_page_title,
 )
 from store import find_work, load_works, resolve_share_slug
+from volume_utils import enrich_volume_fields
 
 
 def enrich_work(work: dict[str, Any]) -> dict[str, Any]:
     url, buy_label = buy_url(work)
+    work = enrich_volume_fields(work)
     st = work.get('source_type', 'other')
     base = {
         **work,
