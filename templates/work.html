@@ -26,6 +26,11 @@
 <article class="work-detail">
   <nav class="breadcrumb"><a href="/">一覧</a> / {{ work.title }}</nav>
   <header class="work-header">
+    <div class="work-header-main">
+      <div class="work-cover-wrap">
+        <img class="work-cover" src="{{ work.cover_url }}" alt="{{ work.source_title or work.title }}の表紙" width="160" height="230">
+      </div>
+      <div class="work-header-text">
     <div class="badges">
       <span class="badge badge-status">{{ work.status_label }}</span>
       <span class="badge badge-source">{{ work.source_type_label }}</span>
@@ -35,6 +40,8 @@
     </div>
     <h1>{{ work.title }}の原作は？</h1>
     <p class="season-line">{{ work.season_label }}</p>
+      </div>
+    </div>
   </header>
 
   <section class="detail-panel intro-panel">

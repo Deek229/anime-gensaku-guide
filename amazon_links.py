@@ -26,6 +26,14 @@ def amazon_search_url(query: str) -> str:
     return url
 
 
+def amazon_cover_url(asin: str, width: int = 250) -> str:
+    """Amazon商品画像URL（書籍のISBN-10/ASIN）"""
+    asin = (asin or '').strip()
+    if not asin:
+        return ''
+    return f'https://images-na.ssl-images-amazon.com/images/P/{asin}.09._SL{width}_.jpg'
+
+
 def buy_url(work: dict) -> tuple[str, str]:
     """(url, label)"""
     asin = work.get('amazon_asin', '')

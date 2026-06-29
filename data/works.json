@@ -15,9 +15,15 @@
     "source_volume_note": "第1・2期は第1〜11巻相当。3期は第13巻から公式スタート。",
     "read_order": "小説1巻から順に。アニメ未視聴なら1巻から読むのがおすすめ",
     "amazon_search": "無職転生 ラノベ",
-    "tags": ["異世界", "ファンタジー"],
+    "tags": [
+      "異世界",
+      "ファンタジー"
+    ],
     "watchers_count": 9999,
-    "share_slug": "mushoku-tensei-3"
+    "share_slug": "mushoku-tensei-3",
+    "isbn": "9784040662206",
+    "amazon_asin": "4040662202",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4040662202.09._SL250_.jpg"
   },
   {
     "id": "幼女戦記ⅱ",
@@ -35,9 +41,15 @@
     "source_volume_note": "劇場版までが第1〜4巻相当。サラマンダー戦闘団編（第5巻〜）から。",
     "read_order": "1巻から。第1期を見た場合は該当巻から",
     "amazon_search": "幼女戦記 ラノベ",
-    "tags": ["異世界", "ミリタリー"],
+    "tags": [
+      "異世界",
+      "ミリタリー"
+    ],
     "watchers_count": 9500,
-    "share_slug": "youjo-senki-2"
+    "share_slug": "youjo-senki-2",
+    "isbn": "9784041051252",
+    "amazon_asin": "4041051258",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4041051258.09._SL250_.jpg"
   },
   {
     "id": "re-ゼロから始める異世界生活-4th-season-奪還編",
@@ -55,9 +67,15 @@
     "source_volume_note": "4期全体（喪失編11話＋奪還編8話）。続きは第26巻から。",
     "read_order": "アニメ1期から見た人は、対応する巻から読む",
     "amazon_search": "Reゼロ ラノベ",
-    "tags": ["異世界", "ダーク"],
+    "tags": [
+      "異世界",
+      "ダーク"
+    ],
     "watchers_count": 9800,
-    "share_slug": "re-zero-4th-dakkan"
+    "share_slug": "re-zero-4th-dakkan",
+    "isbn": "9784040662084",
+    "amazon_asin": "4040662083",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4040662083.09._SL250_.jpg"
   },
   {
     "id": "ぐらんぶる-season-3",
@@ -75,9 +93,15 @@
     "source_volume_note": "第1・2期は第1〜11巻相当。パラオ編が中心。",
     "read_order": "漫画1巻から。ダイビングコメディ",
     "amazon_search": "ぐらんぶる 漫画",
-    "tags": ["コメディ", "スポーツ"],
+    "tags": [
+      "コメディ",
+      "スポーツ"
+    ],
     "watchers_count": 8800,
-    "share_slug": "grand-blue-season-3"
+    "share_slug": "grand-blue-season-3",
+    "isbn": "9784063879902",
+    "amazon_asin": "4063879909",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4063879909.09._SL250_.jpg"
   },
   {
     "id": "bleach-千年血戦篇-禍進譚",
@@ -95,9 +119,15 @@
     "source_volume_note": "千年血戦篇の最終クール（漫画完結巻まで）。",
     "read_order": "漫画は完結済み。アニメのみならそのまま視聴可",
     "amazon_search": "BLEACH 全巻",
-    "tags": ["バトル", "少年漫画"],
+    "tags": [
+      "バトル",
+      "少年漫画"
+    ],
     "watchers_count": 9200,
-    "share_slug": "bleach-senbankessen-kashintan"
+    "share_slug": "bleach-senbankessen-kashintan",
+    "isbn": "9784088806495",
+    "amazon_asin": "4088806492",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4088806492.09._SL250_.jpg"
   },
   {
     "id": "君のことが大大大大大好きな100人の彼女-第3期",
@@ -115,9 +145,15 @@
     "source_volume_note": "第1・2期は第1〜7巻相当。",
     "read_order": "漫画1巻からがおすすめ",
     "amazon_search": "100人の彼女 漫画",
-    "tags": ["ラブコメ", "ギャグ"],
+    "tags": [
+      "ラブコメ",
+      "ギャグ"
+    ],
     "watchers_count": 8500,
-    "share_slug": "hyakkano-3"
+    "share_slug": "hyakkano-3",
+    "isbn": "9784088915333",
+    "amazon_asin": "408891533X",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/408891533X.09._SL250_.jpg"
   },
   {
     "id": "逃げ上手の若君-第二期",
@@ -135,9 +171,15 @@
     "source_volume_note": "1期は第1〜4巻第31話まで。2期は連続2クール。",
     "read_order": "漫画1巻から",
     "amazon_search": "逃げ上手の若君 漫画",
-    "tags": ["歴史", "コメディ"],
+    "tags": [
+      "歴史",
+      "コメディ"
+    ],
     "watchers_count": 8200,
-    "share_slug": "nige-jouzu-2"
+    "share_slug": "nige-jouzu-2",
+    "isbn": "9784088827100",
+    "amazon_asin": "4088827104",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4088827104.09._SL250_.jpg"
   },
   {
     "id": "骸骨騎士様-只今異世界へお出掛け中ⅱ",
@@ -155,9 +197,15 @@
     "source_volume_note": "1期は第1〜3巻相当。",
     "read_order": "1巻から。異世界ゆるふわ系",
     "amazon_search": "骸骨騎士様 ラノベ",
-    "tags": ["異世界", "ファンタジー"],
+    "tags": [
+      "異世界",
+      "ファンタジー"
+    ],
     "watchers_count": 7500,
-    "share_slug": "gaikotsu-kishi-2"
+    "share_slug": "gaikotsu-kishi-2",
+    "isbn": "9784865540543",
+    "amazon_asin": "4865540547",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4865540547.09._SL250_.jpg"
   },
   {
     "id": "乙女ゲー世界はモブに厳しい世界です2",
@@ -175,9 +223,15 @@
     "source_volume_note": "1期は第1〜3巻相当。",
     "read_order": "1巻から読むと設定がわかりやすい",
     "amazon_search": "乙女ゲー世界はモブに厳しい世界です ラノベ",
-    "tags": ["異世界", "乙女ゲー"],
+    "tags": [
+      "異世界",
+      "乙女ゲー"
+    ],
     "watchers_count": 7800,
-    "share_slug": "mobuseka-2"
+    "share_slug": "mobuseka-2",
+    "isbn": "9784864361940",
+    "amazon_asin": "4864361940",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4864361940.09._SL250_.jpg"
   },
   {
     "id": "片田舎のおっさん-剣聖になるⅱ",
@@ -195,9 +249,15 @@
     "source_volume_note": "1期は第1〜3巻相当。",
     "read_order": "1巻から",
     "amazon_search": "片田舎のおっさん 剣聖 ラノベ",
-    "tags": ["ファンタジー", "バトル"],
+    "tags": [
+      "ファンタジー",
+      "バトル"
+    ],
     "watchers_count": 7600,
-    "share_slug": "katainaka-kensei-2"
+    "share_slug": "katainaka-kensei-2",
+    "isbn": "9784253306918",
+    "amazon_asin": "4253306918",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4253306918.09._SL250_.jpg"
   },
   {
     "id": "きみが死ぬまで恋をしたい",
@@ -215,9 +275,15 @@
     "source_volume_note": "2026年夏にTV第1期放送。原作漫画は9巻刊行中。",
     "read_order": "漫画1巻から",
     "amazon_search": "きみが死ぬまで恋をしたい 漫画",
-    "tags": ["恋愛", "SF"],
+    "tags": [
+      "恋愛",
+      "SF"
+    ],
     "watchers_count": 7400,
-    "share_slug": "kimi-shinu"
+    "share_slug": "kimi-shinu",
+    "isbn": "9784758078986",
+    "amazon_asin": "475807898X",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/475807898X.09._SL250_.jpg"
   },
   {
     "id": "株式会社マジルミエ-第2期",
@@ -235,9 +301,15 @@
     "source_volume_note": "1期は第1〜6巻相当。",
     "read_order": "1巻から",
     "amazon_search": "株式会社マジルミエ 漫画",
-    "tags": ["コメディ", "魔法少女"],
+    "tags": [
+      "コメディ",
+      "魔法少女"
+    ],
     "watchers_count": 7200,
-    "share_slug": "magilumiere-2"
+    "share_slug": "magilumiere-2",
+    "isbn": "9784088830285",
+    "amazon_asin": "4088830288",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4088830288.09._SL250_.jpg"
   },
   {
     "id": "正反対な君と僕-第2期",
@@ -255,9 +327,15 @@
     "source_volume_note": "1期は第1〜6巻相当。",
     "read_order": "1巻から",
     "amazon_search": "正反対な君と僕 漫画",
-    "tags": ["ラブコメ", "日常"],
+    "tags": [
+      "ラブコメ",
+      "日常"
+    ],
     "watchers_count": 7000,
-    "share_slug": "seihantaiteki-2"
+    "share_slug": "seihantaiteki-2",
+    "isbn": "9784088834569",
+    "amazon_asin": "4088834569",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4088834569.09._SL250_.jpg"
   },
   {
     "id": "攻殻機動隊-the-ghost-in-the-shell",
@@ -275,9 +353,15 @@
     "source_volume_note": "士郎正宗の原作1巻「人形使い」編を新規TVアニメ化。",
     "read_order": "士郎正宗の漫画から",
     "amazon_search": "攻殻機動隊 漫画",
-    "tags": ["SF", "名作"],
+    "tags": [
+      "SF",
+      "名作"
+    ],
     "watchers_count": 6900,
-    "share_slug": "ghost-in-the-shell"
+    "share_slug": "ghost-in-the-shell",
+    "isbn": "9784063337125",
+    "amazon_asin": "406333712X",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/406333712X.09._SL250_.jpg"
   },
   {
     "id": "天幕のジャードゥーガル",
@@ -295,9 +379,15 @@
     "source_volume_note": "原作漫画は5巻刊行中（2026年6月時点）。",
     "read_order": "漫画1巻から",
     "amazon_search": "天幕のジャードゥーガル 漫画",
-    "tags": ["歴史", "グルメ"],
+    "tags": [
+      "歴史",
+      "グルメ"
+    ],
     "watchers_count": 6800,
-    "share_slug": "tenmaku-jadougal"
+    "share_slug": "tenmaku-jadougal",
+    "isbn": "9784088835670",
+    "amazon_asin": "4088835670",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4088835670.09._SL250_.jpg"
   },
   {
     "id": "クレバテスⅱ-魔獣の王と偽りの勇者伝承",
@@ -315,9 +405,15 @@
     "source_volume_note": "1期は単行本1〜5巻相当。原作漫画は11巻刊行中。",
     "read_order": "Web版または単行本から",
     "amazon_search": "クレバテス 漫画",
-    "tags": ["ファンタジー", "バトル"],
+    "tags": [
+      "ファンタジー",
+      "バトル"
+    ],
     "watchers_count": 6700,
-    "share_slug": "clevatess-2"
+    "share_slug": "clevatess-2",
+    "isbn": "9784866970804",
+    "amazon_asin": "4866970804",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4866970804.09._SL250_.jpg"
   },
   {
     "id": "スーパーの裏でヤニ吸うふたり",
@@ -335,9 +431,15 @@
     "source_volume_note": "短編漫画（既刊2巻）。",
     "read_order": "1巻から。短編寄り",
     "amazon_search": "スーパーの裏でヤニ吸うふたり 漫画",
-    "tags": ["日常", "ラブコメ"],
+    "tags": [
+      "日常",
+      "ラブコメ"
+    ],
     "watchers_count": 6600,
-    "share_slug": "super-yani-2"
+    "share_slug": "super-yani-2",
+    "isbn": "9784757580947",
+    "amazon_asin": "4757580940",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4757580940.09._SL250_.jpg"
   },
   {
     "id": "追放された転生重騎士はゲーム知識で無双する",
@@ -355,9 +457,15 @@
     "source_volume_note": "2026年夏にTV第1期放送。",
     "read_order": "1巻から",
     "amazon_search": "追放された転生重騎士 ラノベ",
-    "tags": ["異世界", "ファンタジー"],
+    "tags": [
+      "異世界",
+      "ファンタジー"
+    ],
     "watchers_count": 6500,
-    "share_slug": "tsuihou-juukishi"
+    "share_slug": "tsuihou-juukishi",
+    "isbn": "9784065281437",
+    "amazon_asin": "4065281431",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4065281431.09._SL250_.jpg"
   },
   {
     "id": "ワールド-イズ-ダンシング",
@@ -371,9 +479,13 @@
     "source_title": "",
     "read_order": "原作なし。アニメ単体で楽しむ",
     "amazon_search": "",
-    "tags": ["スポーツ", "オリジナル"],
+    "tags": [
+      "スポーツ",
+      "オリジナル"
+    ],
     "watchers_count": 6400,
-    "share_slug": "world-is-dancing"
+    "share_slug": "world-is-dancing",
+    "cover_image_url": "/static/cover-placeholder.svg"
   },
   {
     "id": "二十世紀電氣目録-ユーレカ-エヴリカ",
@@ -391,9 +503,15 @@
     "source_volume_note": "京アニの小説・ビジュアルノベル原作（単行本2巻）をベースにした新作アニメ。",
     "read_order": "公式情報を確認",
     "amazon_search": "二十世紀電氣目録",
-    "tags": ["SF", "京アニ"],
+    "tags": [
+      "SF",
+      "京アニ"
+    ],
     "watchers_count": 6300,
-    "share_slug": "20seiki-eureka"
+    "share_slug": "20seiki-eureka",
+    "isbn": "9784907064884",
+    "amazon_asin": "4907064888",
+    "cover_image_url": "/static/cover-placeholder.svg"
   },
   {
     "id": "ワンパンマン-第3期",
@@ -411,8 +529,15 @@
     "source_volume_note": "第1・2期は第1〜16巻相当。第3期第2クールは2027年放送。",
     "read_order": "漫画1巻から。アニメ2期まで見た人は17巻前後からも可",
     "amazon_search": "ワンパンマン 漫画",
-    "tags": ["バトル", "ギャグ", "少年漫画"],
+    "tags": [
+      "バトル",
+      "ギャグ",
+      "少年漫画"
+    ],
     "watchers_count": 9700,
-    "share_slug": "onepunch-man-3"
+    "share_slug": "onepunch-man-3",
+    "isbn": "9784088815565",
+    "amazon_asin": "4088815564",
+    "cover_image_url": "https://images-na.ssl-images-amazon.com/images/P/4088815564.09._SL250_.jpg"
   }
 ]

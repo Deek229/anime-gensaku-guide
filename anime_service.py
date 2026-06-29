@@ -3,7 +3,9 @@ from __future__ import annotations
 
 from typing import Any
 
-from amazon_links import buy_url
+from amazon_links import amazon_cover_url, buy_url
+
+COVER_PLACEHOLDER = '/static/cover-placeholder.svg'
 from config import (
     DEFAULT_SEASON,
     SEASON_LABELS,
@@ -24,9 +26,21 @@ from store import find_work, load_works, resolve_share_slug
 from volume_utils import enrich_volume_fields
 
 
+def resolve_cover_display(work: dict[str, Any]) -> str:
+    url = (work.get('cover_image_url') or '').strip()
+    if url:
+        return url
+    asin = (work.get('amazon_asin') or '').strip()
+    if asin:
+        return amazon_cover_url(asin) or COVER_PLACEHOLDER
+    return COVER_PLACEHOLDER
+
+
 def enrich_work(work: dict[str, Any]) -> dict[str, Any]:
     url, buy_label = buy_url(work)
     work = enrich_volume_fields(work)
+    cover_url = resolve_cover_display(work)
+    has_cover = cover_url != COVER_PLACEHOLDER
     st = work.get('source_type', 'other')
     base = {
         **work,
@@ -35,6 +49,8 @@ def enrich_work(work: dict[str, Any]) -> dict[str, Any]:
         'season_label': SEASON_LABELS.get(work.get('season', ''), work.get('season', '')),
         'buy_url': url,
         'buy_label': buy_label,
+        'cover_url': cover_url,
+        'has_cover': has_cover,
         'has_source': st not in ('original', 'other', ''),
     }
     page_path = f'/works/{work["id"]}'

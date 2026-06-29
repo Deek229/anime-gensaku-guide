@@ -73,6 +73,10 @@
   <div class="work-grid" id="workGrid">
     {% for w in works %}
     <article class="work-card" data-source="{{ w.source_type }}" data-has-source="{{ '1' if w.has_source else '0' }}" data-search="{{ w.title }} {{ w.source_title }} {{ w.tags|join(' ') }}">
+      <a class="work-card-cover" href="/works/{{ w.id }}">
+        <img src="{{ w.cover_url }}" alt="{{ w.source_title or w.title }}の表紙" loading="lazy" width="120" height="170">
+      </a>
+      <div class="work-card-body">
       <div class="work-card-head">
         <span class="badge badge-status">{{ w.status_label }}</span>
         {% if w.source_type_label %}
@@ -91,6 +95,7 @@
         {% if w.buy_url %}
         <a class="btn btn-primary" href="{{ w.buy_url }}" target="_blank" rel="noopener sponsored">{{ w.buy_label }}</a>
         {% endif %}
+      </div>
       </div>
     </article>
     {% endfor %}

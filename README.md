@@ -44,9 +44,25 @@ http://127.0.0.1:8052
 | `read_order` | 読む・買う順のメモ |
 | `amazon_asin` | あれば直リンク |
 | `amazon_search` | ASIN未設定時の検索語 |
+| `isbn` | 表紙取得用 ISBN-13（OpenBD） |
+| `cover_image_url` | 表紙画像URL（`tools/fetch_covers.py` で自動設定可） |
 | `share_slug` | Xシェア用のASCII専用URL（`/works/{share_slug}`）。日本語 `id` は canonical のまま |
 
 `volumes_anime` は廃止し、上記フィールドから FAQ・一覧・Xシェア文を自動生成します。
+
+## 表紙画像の取得
+
+原作の表紙サムネイルは `tools/fetch_covers.py` で一括設定できます。
+
+```bash
+python tools/fetch_covers.py
+```
+
+1. 各作品の `isbn` / `amazon_asin` から [OpenBD API](https://api.openbd.jp/v1/get?isbn=...) を試行
+2. 見つからなければ Amazon 商品画像 URL を使用
+3. オリジナルアニメなど取得不可の場合は `/static/cover-placeholder.svg`
+
+Render デプロイ時も `render.yaml` の build で自動実行されます。
 
 ## X（Twitter）シェアについて
 
