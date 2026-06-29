@@ -21,7 +21,7 @@ def main() -> None:
 
     posts = []
     for work in works:
-        page_url = f'{SITE_URL.rstrip("/")}/works/{work["id"]}'
+        page_url = work['share_url']
         text = build_share_text(work)
         posts.append({
             'title': work['title'],

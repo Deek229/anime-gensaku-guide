@@ -20,7 +20,7 @@ from seo import (
     work_meta_description,
     work_page_title,
 )
-from store import find_work, load_works
+from store import find_work, load_works, resolve_share_slug
 
 
 def enrich_work(work: dict[str, Any]) -> dict[str, Any]:
@@ -37,18 +37,24 @@ def enrich_work(work: dict[str, Any]) -> dict[str, Any]:
     }
     page_path = f'/works/{work["id"]}'
     page_url = absolute_url(page_path)
+    share_slug = resolve_share_slug(work)
+    share_path = f'/works/{share_slug}'
+    share_url = absolute_url(share_path)
     share_text = build_share_text(base)
     return {
         **base,
         'page_path': page_path,
         'page_url': page_url,
+        'share_slug': share_slug,
+        'share_path': share_path,
+        'share_url': share_url,
         'seo_title': work_page_title(base),
         'seo_description': work_meta_description(base),
         'intro': build_intro(base),
         'faq': build_faq(base),
         'share_text': share_text,
-        'twitter_share_url': twitter_share_url(share_text, page_url),
-        'line_share_url': line_share_url(share_text, page_url),
+        'twitter_share_url': twitter_share_url(share_text, share_url),
+        'line_share_url': line_share_url(share_text, share_url),
     }
 
 

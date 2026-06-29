@@ -11,6 +11,7 @@ from typing import Any
 from config import WORKS_FILE
 
 _slug_re = re.compile(r'[^\w\-]+', re.UNICODE)
+_ascii_slug_re = re.compile(r'[^a-z0-9\-]+')
 
 
 def slugify(text: str) -> str:
@@ -21,6 +22,22 @@ def slugify(text: str) -> str:
     if not s:
         s = 'work-' + hashlib.md5(text.encode('utf-8')).hexdigest()[:10]
     return s
+
+
+def share_slugify(title: str, work_id: str) -> str:
+    """ASCII-only slug for social sharing (X truncates Unicode in URLs)."""
+    base = slugify(title).lower()
+    ascii_only = _ascii_slug_re.sub('-', base)
+    ascii_only = re.sub(r'-+', '-', ascii_only).strip('-')[:80]
+    if len(ascii_only) >= 4:
+        return ascii_only
+    digest = hashlib.md5(work_id.encode('utf-8')).hexdigest()[:10]
+    return f'w-{digest}'
+
+
+def resolve_share_slug(work: dict[str, Any]) -> str:
+    slug = work.get('share_slug') or share_slugify(work.get('title', ''), work.get('id', ''))
+    return slug
 
 
 def ensure_store():
@@ -47,7 +64,7 @@ def save_works(works: list[dict[str, Any]]):
 
 def find_work(work_id: str) -> dict[str, Any] | None:
     for w in load_works():
-        if w.get('id') == work_id:
+        if w.get('id') == work_id or w.get('share_slug') == work_id:
             return w
     return None
 

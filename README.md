@@ -41,6 +41,11 @@ http://127.0.0.1:8052
 | `read_order` | 読む・買う順のメモ |
 | `amazon_asin` | あれば直リンク |
 | `amazon_search` | ASIN未設定時の検索語 |
+| `share_slug` | Xシェア用のASCII専用URL（`/works/{share_slug}`）。日本語 `id` は canonical のまま |
+
+## X（Twitter）シェアについて
+
+作品URLの `id` には日本語が含まれることがあります。Xはシェア時にURL内の非ASCII文字でリンクが切れるため、**シェアボタンは ASCII の `share_slug` URL** を使います（例: `/works/re-zero-4th-dakkan`）。ページの canonical は従来どおり日本語 `id` です。
 
 ## Annict同期（任意）
 

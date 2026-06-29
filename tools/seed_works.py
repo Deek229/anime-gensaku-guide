@@ -3,11 +3,36 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from store import save_works, slugify
+from store import save_works, slugify, share_slugify
 
 sys.stdout.reconfigure(encoding='utf-8')
 
 SEASON = '2026-summer'
+
+# X（Twitter）はURL内の非ASCII文字でリンクが切れるため、ASCII専用の share_slug を付与
+SHARE_SLUGS = {
+    '無職転生Ⅲ ～異世界行ったら本気だす～': 'mushoku-tensei-3',
+    '幼女戦記Ⅱ': 'youjo-senki-2',
+    'Re:ゼロから始める異世界生活 4th season 奪還編': 're-zero-4th-dakkan',
+    'ぐらんぶる Season 3': 'grand-blue-season-3',
+    'BLEACH 千年血戦篇-禍進譚-': 'bleach-senbankessen-kashintan',
+    '君のことが大大大大大好きな100人の彼女 第3期': 'hyakkano-3',
+    '逃げ上手の若君 第二期': 'nige-jouzu-2',
+    '骸骨騎士様、只今異世界へお出掛け中Ⅱ': 'gaikotsu-kishi-2',
+    '乙女ゲー世界はモブに厳しい世界です2': 'mobuseka-2',
+    '片田舎のおっさん、剣聖になるⅡ': 'katainaka-kensei-2',
+    'きみが死ぬまで恋をしたい': 'kimi-shinu',
+    '株式会社マジルミエ 第2期': 'magilumiere-2',
+    '正反対な君と僕 第2期': 'seihantaiteki-2',
+    '攻殻機動隊 THE GHOST IN THE SHELL': 'ghost-in-the-shell',
+    '天幕のジャードゥーガル': 'tenmaku-jadougal',
+    'クレバテスⅡ-魔獣の王と偽りの勇者伝承-': 'clevatess-2',
+    'スーパーの裏でヤニ吸うふたり': 'super-yani-2',
+    '追放された転生重騎士はゲーム知識で無双する': 'tsuihou-juukishi',
+    'ワールド イズ ダンシング': 'world-is-dancing',
+    '二十世紀電氣目録-ユーレカ・エヴリカ-': '20seiki-eureka',
+    'ワンパンマン 第3期': 'onepunch-man-3',
+}
 
 # 人気作中心に原作情報を手動で付与（後から編集・Annict同期可）
 WORKS = [
@@ -225,8 +250,10 @@ WORKS = [
 
 rows = []
 for w in WORKS:
+    work_id = slugify(w['title'])
     rows.append({
-        'id': slugify(w['title']),
+        'id': work_id,
+        'share_slug': SHARE_SLUGS.get(w['title']) or share_slugify(w['title'], work_id),
         'season': SEASON,
         'status': 'upcoming',
         'media': 'tv',
