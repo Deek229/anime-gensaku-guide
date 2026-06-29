@@ -217,6 +217,12 @@ a { color: var(--cyan); }
   border: 1px solid var(--line);
   background: #eef1f5;
   box-shadow: 0 2px 8px rgba(26, 29, 38, 0.08);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.work-card-cover:hover img {
+  box-shadow: 0 4px 14px rgba(26, 29, 38, 0.14);
+  transform: translateY(-1px);
 }
 
 .work-card-body {
@@ -362,6 +368,16 @@ a { color: var(--cyan); }
   flex: 0 0 auto;
 }
 
+.work-cover-link {
+  display: block;
+  text-decoration: none;
+}
+
+.work-cover-link:hover .work-cover {
+  box-shadow: 0 6px 18px rgba(26, 29, 38, 0.16);
+  transform: translateY(-1px);
+}
+
 .work-cover {
   display: block;
   width: 140px;
@@ -371,6 +387,7 @@ a { color: var(--cyan); }
   border: 1px solid var(--line);
   background: #eef1f5;
   box-shadow: 0 4px 16px rgba(26, 29, 38, 0.1);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
 
 .work-header-text {

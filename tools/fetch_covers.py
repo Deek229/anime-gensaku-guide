@@ -1,6 +1,7 @@
 """作品の表紙画像を OpenBD / Amazon から取得し static/covers/ に保存して works.json を更新"""
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 import time
@@ -20,73 +21,82 @@ COVERS_DIR = ROOT / 'static' / 'covers'
 OPENBD_GET = 'https://api.openbd.jp/v1/get?isbn={isbn}'
 PLACEHOLDER = '/static/cover-placeholder.svg'
 MIN_BYTES = 1000
+HANMOTO_COVER = 'https://img.hanmoto.com/bd/img/{isbn}_600.jpg'
+OVERLAP_COVER = 'https://over-lap.co.jp/Contents/ProductImages/0/{isbn}_L.jpg'
+OPENBD_COVER = 'https://cover.openbd.jp/{isbn}_400.jpg'
 USER_AGENT = 'Mozilla/5.0 (compatible; AnimeGensakuGuide/1.0)'
+
+# share_slug -> direct cover URL (OpenBD/版元未登録の特例)
+MANUAL_COVER_URLS: dict[str, str] = {
+    'mobuseka-2': 'https://microgrouplibrary.com/web/img/uploads/book/179.jpg',
+    '20seiki-eureka': 'https://makeshop-multi-images.akamaized.net/kyoanibtc/itemimages/000000001538_2wjBJZY.jpg',
+}
 
 # work id -> 表紙用の ISBN-13 / Amazon ASIN（原作1巻または該当巻）
 DEFAULT_SOURCES: dict[str, dict[str, str]] = {
     '無職転生ⅲ-異世界行ったら本気だす': {
-        'isbn': '9784040662206',
-        'amazon_asin': '4040662202',
+        'isbn': '9784040684833',
+        'amazon_asin': '4040684833',
     },
     '幼女戦記ⅱ': {
-        'isbn': '9784041051252',
-        'amazon_asin': '4041051258',
+        'isbn': '9784047309029',
+        'amazon_asin': '4047309028',
     },
     're-ゼロから始める異世界生活-4th-season-奪還編': {
-        'isbn': '9784040662084',
-        'amazon_asin': '4040662083',
+        'isbn': '9784040640068',
+        'amazon_asin': '4040640068',
     },
     'ぐらんぶる-season-3': {
-        'isbn': '9784063879902',
-        'amazon_asin': '4063879909',
+        'isbn': '9784065134474',
+        'amazon_asin': '4065134474',
     },
     'bleach-千年血戦篇-禍進譚': {
         'isbn': '9784088806495',
         'amazon_asin': '4088806492',
     },
     '君のことが大大大大大好きな100人の彼女-第3期': {
-        'isbn': '9784088915333',
-        'amazon_asin': '408891533X',
+        'isbn': '9784088921648',
+        'amazon_asin': '408892164X',
     },
     '逃げ上手の若君-第二期': {
-        'isbn': '9784088827100',
-        'amazon_asin': '4088827104',
+        'isbn': '9784088830735',
+        'amazon_asin': '4088830733',
     },
     '骸骨騎士様-只今異世界へお出掛け中ⅱ': {
-        'isbn': '9784865540543',
-        'amazon_asin': '4865540547',
+        'isbn': '9784865541465',
+        'amazon_asin': '4865541465',
     },
     '乙女ゲー世界はモブに厳しい世界です2': {
-        'isbn': '9784864361940',
-        'amazon_asin': '4864361940',
+        'isbn': '9784896379112',
+        'amazon_asin': '4896379112',
     },
     '片田舎のおっさん-剣聖になるⅱ': {
-        'isbn': '9784253306918',
-        'amazon_asin': '4253306918',
+        'isbn': '9784757580220',
+        'amazon_asin': '4757580226',
     },
     'きみが死ぬまで恋をしたい': {
         'isbn': '9784758078986',
         'amazon_asin': '475807898X',
     },
     '株式会社マジルミエ-第2期': {
-        'isbn': '9784088830285',
-        'amazon_asin': '4088830288',
+        'isbn': '9784088835402',
+        'amazon_asin': '4088835402',
     },
     '正反対な君と僕-第2期': {
-        'isbn': '9784088834569',
-        'amazon_asin': '4088834569',
+        'isbn': '9784088841434',
+        'amazon_asin': '4088841433',
     },
     '攻殻機動隊-the-ghost-in-the-shell': {
-        'isbn': '9784063337125',
-        'amazon_asin': '406333712X',
+        'isbn': '9784063132489',
+        'amazon_asin': '4063132489',
     },
     '天幕のジャードゥーガル': {
-        'isbn': '9784088835670',
-        'amazon_asin': '4088835670',
+        'isbn': '9784253264464',
+        'amazon_asin': '4253264468',
     },
     'クレバテスⅱ-魔獣の王と偽りの勇者伝承': {
-        'isbn': '9784866970804',
-        'amazon_asin': '4866970804',
+        'isbn': '9784866972916',
+        'amazon_asin': '4866972916',
     },
     'スーパーの裏でヤニ吸うふたり': {
         'isbn': '9784757580947',
@@ -169,11 +179,19 @@ def _remote_candidates(work: dict) -> list[tuple[str, str]]:
     candidates: list[tuple[str, str]] = []
     isbn = _normalize_isbn(work.get('isbn') or '')
     asin = (work.get('amazon_asin') or '').strip()
+    slug = cover_slug(work)
+
+    manual = MANUAL_COVER_URLS.get(slug, '')
+    if manual:
+        candidates.append((manual, 'manual'))
 
     if isbn:
         openbd_url = fetch_openbd_cover(isbn)
         if openbd_url:
             candidates.append((openbd_url, 'openbd'))
+        candidates.append((HANMOTO_COVER.format(isbn=isbn), 'hanmoto'))
+        candidates.append((OVERLAP_COVER.format(isbn=isbn), 'overlap'))
+        candidates.append((OPENBD_COVER.format(isbn=isbn), 'openbd-cdn'))
         time.sleep(0.15)
 
     if asin:
@@ -186,9 +204,11 @@ def _remote_candidates(work: dict) -> list[tuple[str, str]]:
     return candidates
 
 
-def resolve_cover(work: dict) -> tuple[str, str]:
+def resolve_cover(work: dict, *, force: bool = False) -> tuple[str, str]:
     """(cover_url, source)"""
     dest = local_cover_file(work)
+    if force and dest.is_file():
+        dest.unlink(missing_ok=True)
     if _local_cover_valid(dest):
         return local_cover_rel(work), 'cached'
 
@@ -216,13 +236,17 @@ def merge_defaults(work: dict) -> dict:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(description='Fetch cover images for works')
+    parser.add_argument('--force', action='store_true', help='Re-download even if cached')
+    args = parser.parse_args()
+
     works = load_works()
     stats: dict[str, int] = {}
     updated = 0
 
     for i, work in enumerate(works):
         work = merge_defaults(work)
-        cover_url, source = resolve_cover(work)
+        cover_url, source = resolve_cover(work, force=args.force)
         work['cover_image_url'] = cover_url
         stats[source] = stats.get(source, 0) + 1
         works[i] = work

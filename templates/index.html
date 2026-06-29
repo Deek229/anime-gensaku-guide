@@ -73,9 +73,15 @@
   <div class="work-grid" id="workGrid">
     {% for w in works %}
     <article class="work-card" data-source="{{ w.source_type }}" data-has-source="{{ '1' if w.has_source else '0' }}" data-search="{{ w.title }} {{ w.source_title }} {{ w.tags|join(' ') }}">
-      <a class="work-card-cover" href="/works/{{ w.id }}">
+      {% if w.buy_url %}
+      <a class="work-card-cover" href="{{ w.buy_url }}" target="_blank" rel="noopener sponsored" aria-label="{{ w.source_title or w.title }}を{{ w.buy_label }}">
         <img src="{{ w.cover_url }}" alt="{{ w.source_title or w.title }}の表紙" loading="lazy" width="120" height="170" onerror="this.onerror=null;this.src='/static/cover-placeholder.svg';">
       </a>
+      {% else %}
+      <div class="work-card-cover">
+        <img src="{{ w.cover_url }}" alt="{{ w.source_title or w.title }}の表紙" loading="lazy" width="120" height="170" onerror="this.onerror=null;this.src='/static/cover-placeholder.svg';">
+      </div>
+      {% endif %}
       <div class="work-card-body">
       <div class="work-card-head">
         <span class="badge badge-status">{{ w.status_label }}</span>

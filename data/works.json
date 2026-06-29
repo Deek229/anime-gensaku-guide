@@ -21,8 +21,8 @@
     ],
     "watchers_count": 9999,
     "share_slug": "mushoku-tensei-3",
-    "isbn": "9784040662206",
-    "amazon_asin": "4040662202",
+    "isbn": "9784040684833",
+    "amazon_asin": "4040684833",
     "cover_image_url": "/static/covers/mushoku-tensei-3.jpg"
   },
   {
@@ -47,8 +47,8 @@
     ],
     "watchers_count": 9500,
     "share_slug": "youjo-senki-2",
-    "isbn": "9784041051252",
-    "amazon_asin": "4041051258",
+    "isbn": "9784047309029",
+    "amazon_asin": "4047309028",
     "cover_image_url": "/static/covers/youjo-senki-2.jpg"
   },
   {
@@ -73,8 +73,8 @@
     ],
     "watchers_count": 9800,
     "share_slug": "re-zero-4th-dakkan",
-    "isbn": "9784040662084",
-    "amazon_asin": "4040662083",
+    "isbn": "9784040640068",
+    "amazon_asin": "4040640068",
     "cover_image_url": "/static/covers/re-zero-4th-dakkan.jpg"
   },
   {
@@ -99,8 +99,8 @@
     ],
     "watchers_count": 8800,
     "share_slug": "grand-blue-season-3",
-    "isbn": "9784063879902",
-    "amazon_asin": "4063879909",
+    "isbn": "9784065134474",
+    "amazon_asin": "4065134474",
     "cover_image_url": "/static/covers/grand-blue-season-3.jpg"
   },
   {
@@ -151,8 +151,8 @@
     ],
     "watchers_count": 8500,
     "share_slug": "hyakkano-3",
-    "isbn": "9784088915333",
-    "amazon_asin": "408891533X",
+    "isbn": "9784088921648",
+    "amazon_asin": "408892164X",
     "cover_image_url": "/static/covers/hyakkano-3.jpg"
   },
   {
@@ -177,8 +177,8 @@
     ],
     "watchers_count": 8200,
     "share_slug": "nige-jouzu-2",
-    "isbn": "9784088827100",
-    "amazon_asin": "4088827104",
+    "isbn": "9784088830735",
+    "amazon_asin": "4088830733",
     "cover_image_url": "/static/covers/nige-jouzu-2.jpg"
   },
   {
@@ -203,8 +203,8 @@
     ],
     "watchers_count": 7500,
     "share_slug": "gaikotsu-kishi-2",
-    "isbn": "9784865540543",
-    "amazon_asin": "4865540547",
+    "isbn": "9784865541465",
+    "amazon_asin": "4865541465",
     "cover_image_url": "/static/covers/gaikotsu-kishi-2.jpg"
   },
   {
@@ -229,8 +229,8 @@
     ],
     "watchers_count": 7800,
     "share_slug": "mobuseka-2",
-    "isbn": "9784864361940",
-    "amazon_asin": "4864361940",
+    "isbn": "9784896379112",
+    "amazon_asin": "4896379112",
     "cover_image_url": "/static/covers/mobuseka-2.jpg"
   },
   {
@@ -255,8 +255,8 @@
     ],
     "watchers_count": 7600,
     "share_slug": "katainaka-kensei-2",
-    "isbn": "9784253306918",
-    "amazon_asin": "4253306918",
+    "isbn": "9784757580220",
+    "amazon_asin": "4757580226",
     "cover_image_url": "/static/covers/katainaka-kensei-2.jpg"
   },
   {
@@ -307,8 +307,8 @@
     ],
     "watchers_count": 7200,
     "share_slug": "magilumiere-2",
-    "isbn": "9784088830285",
-    "amazon_asin": "4088830288",
+    "isbn": "9784088835402",
+    "amazon_asin": "4088835402",
     "cover_image_url": "/static/covers/magilumiere-2.jpg"
   },
   {
@@ -333,8 +333,8 @@
     ],
     "watchers_count": 7000,
     "share_slug": "seihantaiteki-2",
-    "isbn": "9784088834569",
-    "amazon_asin": "4088834569",
+    "isbn": "9784088841434",
+    "amazon_asin": "4088841433",
     "cover_image_url": "/static/covers/seihantaiteki-2.jpg"
   },
   {
@@ -359,8 +359,8 @@
     ],
     "watchers_count": 6900,
     "share_slug": "ghost-in-the-shell",
-    "isbn": "9784063337125",
-    "amazon_asin": "406333712X",
+    "isbn": "9784063132489",
+    "amazon_asin": "4063132489",
     "cover_image_url": "/static/covers/ghost-in-the-shell.jpg"
   },
   {
@@ -385,8 +385,8 @@
     ],
     "watchers_count": 6800,
     "share_slug": "tenmaku-jadougal",
-    "isbn": "9784088835670",
-    "amazon_asin": "4088835670",
+    "isbn": "9784253264464",
+    "amazon_asin": "4253264468",
     "cover_image_url": "/static/covers/tenmaku-jadougal.jpg"
   },
   {
@@ -411,8 +411,8 @@
     ],
     "watchers_count": 6700,
     "share_slug": "clevatess-2",
-    "isbn": "9784866970804",
-    "amazon_asin": "4866970804",
+    "isbn": "9784866972916",
+    "amazon_asin": "4866972916",
     "cover_image_url": "/static/covers/clevatess-2.jpg"
   },
   {
@@ -478,7 +478,7 @@
     "source_type": "original",
     "source_title": "",
     "read_order": "原作なし。アニメ単体で楽しむ",
-    "amazon_search": "",
+    "amazon_search": "ワールド イズ ダンシング アニメ",
     "tags": [
       "スポーツ",
       "オリジナル"
@@ -511,7 +511,7 @@
     "share_slug": "20seiki-eureka",
     "isbn": "9784907064884",
     "amazon_asin": "4907064888",
-    "cover_image_url": "/static/cover-placeholder.svg"
+    "cover_image_url": "/static/covers/20seiki-eureka.jpg"
   },
   {
     "id": "ワンパンマン-第3期",

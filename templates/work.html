@@ -27,9 +27,15 @@
   <nav class="breadcrumb"><a href="/">一覧</a> / {{ work.title }}</nav>
   <header class="work-header">
     <div class="work-header-main">
+      {% if work.buy_url %}
+      <a class="work-cover-wrap work-cover-link" href="{{ work.buy_url }}" target="_blank" rel="noopener sponsored" aria-label="{{ work.source_title or work.title }}を{{ work.buy_label }}">
+        <img class="work-cover" src="{{ work.cover_url }}" alt="{{ work.source_title or work.title }}の表紙" width="160" height="230" onerror="this.onerror=null;this.src='/static/cover-placeholder.svg';">
+      </a>
+      {% else %}
       <div class="work-cover-wrap">
         <img class="work-cover" src="{{ work.cover_url }}" alt="{{ work.source_title or work.title }}の表紙" width="160" height="230" onerror="this.onerror=null;this.src='/static/cover-placeholder.svg';">
       </div>
+      {% endif %}
       <div class="work-header-text">
     <div class="badges">
       <span class="badge badge-status">{{ work.status_label }}</span>
