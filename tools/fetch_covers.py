@@ -35,12 +35,12 @@ MANUAL_COVER_URLS: dict[str, str] = {
 # work id -> 表紙用の ISBN-13 / Amazon ASIN（原作1巻または該当巻）
 DEFAULT_SOURCES: dict[str, dict[str, str]] = {
     '無職転生ⅲ-異世界行ったら本気だす': {
-        'isbn': '9784040684833',
-        'amazon_asin': '4040684833',
+        'isbn': '9784040687452',
+        'amazon_asin': '4040687452',
     },
     '幼女戦記ⅱ': {
         'isbn': '9784047309029',
-        'amazon_asin': '4047309028',
+        'amazon_asin': '4047309029',
     },
     're-ゼロから始める異世界生活-4th-season-奪還編': {
         'isbn': '9784040640068',
@@ -52,7 +52,7 @@ DEFAULT_SOURCES: dict[str, dict[str, str]] = {
     },
     'bleach-千年血戦篇-禍進譚': {
         'isbn': '9784088806495',
-        'amazon_asin': '4088806492',
+        'amazon_asin': '4088806495',
     },
     '君のことが大大大大大好きな100人の彼女-第3期': {
         'isbn': '9784088921648',
@@ -60,7 +60,7 @@ DEFAULT_SOURCES: dict[str, dict[str, str]] = {
     },
     '逃げ上手の若君-第二期': {
         'isbn': '9784088830735',
-        'amazon_asin': '4088830733',
+        'amazon_asin': '4088830735',
     },
     '骸骨騎士様-只今異世界へお出掛け中ⅱ': {
         'isbn': '9784865541465',
@@ -72,7 +72,7 @@ DEFAULT_SOURCES: dict[str, dict[str, str]] = {
     },
     '片田舎のおっさん-剣聖になるⅱ': {
         'isbn': '9784757580220',
-        'amazon_asin': '4757580226',
+        'amazon_asin': '4757580220',
     },
     'きみが死ぬまで恋をしたい': {
         'isbn': '9784758078986',
@@ -84,7 +84,7 @@ DEFAULT_SOURCES: dict[str, dict[str, str]] = {
     },
     '正反対な君と僕-第2期': {
         'isbn': '9784088841434',
-        'amazon_asin': '4088841433',
+        'amazon_asin': '4088841434',
     },
     '攻殻機動隊-the-ghost-in-the-shell': {
         'isbn': '9784063132489',
@@ -92,31 +92,31 @@ DEFAULT_SOURCES: dict[str, dict[str, str]] = {
     },
     '天幕のジャードゥーガル': {
         'isbn': '9784253264464',
-        'amazon_asin': '4253264468',
+        'amazon_asin': '4253264464',
     },
     'クレバテスⅱ-魔獣の王と偽りの勇者伝承': {
-        'isbn': '9784866972916',
-        'amazon_asin': '4866972916',
+        'isbn': '9784048113502',
+        'amazon_asin': '404811350X',
     },
     'スーパーの裏でヤニ吸うふたり': {
         'isbn': '9784757580947',
-        'amazon_asin': '4757580940',
+        'amazon_asin': '4757580947',
     },
     '追放された転生重騎士はゲーム知識で無双する': {
         'isbn': '9784065281437',
-        'amazon_asin': '4065281431',
+        'amazon_asin': '4065281437',
     },
     '二十世紀電氣目録-ユーレカ-エヴリカ': {
         'isbn': '9784907064884',
-        'amazon_asin': '4907064888',
+        'amazon_asin': '4907064884',
     },
     'ワンパンマン-第3期': {
         'isbn': '9784088815565',
-        'amazon_asin': '4088815564',
+        'amazon_asin': '4088815565',
     },
     'ワールド-イズ-ダンシング': {
         'isbn': '9784065245057',
-        'amazon_asin': '4065245052',
+        'amazon_asin': '4065245057',
     },
 }
 

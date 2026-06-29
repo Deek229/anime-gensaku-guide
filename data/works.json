@@ -9,10 +9,10 @@
     "title": "無職転生Ⅲ ～異世界行ったら本気だす～",
     "source_type": "light_novel",
     "source_title": "無職転生 ～異世界行ったら本気だす～",
-    "source_volume_from": 12,
+    "source_volume_from": 13,
     "source_volume_to": 15,
     "source_volume_approximate": true,
-    "source_volume_note": "第1・2期は第1〜11巻相当。3期は第13巻から公式スタート。",
+    "source_volume_note": "第1・2期は第1〜12巻相当。3期は第13巻から公式スタート。",
     "read_order": "小説1巻から順に。アニメ未視聴なら1巻から読むのがおすすめ",
     "amazon_search": "無職転生 ラノベ",
     "tags": [
@@ -21,8 +21,8 @@
     ],
     "watchers_count": 9999,
     "share_slug": "mushoku-tensei-3",
-    "isbn": "9784040684833",
-    "amazon_asin": "4040684833",
+    "isbn": "9784040687452",
+    "amazon_asin": "4040687452",
     "cover_image_url": "/static/covers/mushoku-tensei-3.jpg"
   },
   {
@@ -48,7 +48,7 @@
     "watchers_count": 9500,
     "share_slug": "youjo-senki-2",
     "isbn": "9784047309029",
-    "amazon_asin": "4047309028",
+    "amazon_asin": "4047309029",
     "cover_image_url": "/static/covers/youjo-senki-2.jpg"
   },
   {
@@ -126,7 +126,7 @@
     "watchers_count": 9200,
     "share_slug": "bleach-senbankessen-kashintan",
     "isbn": "9784088806495",
-    "amazon_asin": "4088806492",
+    "amazon_asin": "4088806495",
     "cover_image_url": "/static/covers/bleach-senbankessen-kashintan.jpg"
   },
   {
@@ -178,7 +178,7 @@
     "watchers_count": 8200,
     "share_slug": "nige-jouzu-2",
     "isbn": "9784088830735",
-    "amazon_asin": "4088830733",
+    "amazon_asin": "4088830735",
     "cover_image_url": "/static/covers/nige-jouzu-2.jpg"
   },
   {
@@ -256,7 +256,7 @@
     "watchers_count": 7600,
     "share_slug": "katainaka-kensei-2",
     "isbn": "9784757580220",
-    "amazon_asin": "4757580226",
+    "amazon_asin": "4757580220",
     "cover_image_url": "/static/covers/katainaka-kensei-2.jpg"
   },
   {
@@ -272,7 +272,7 @@
     "source_volume_from": 1,
     "source_volume_to": 3,
     "source_volume_approximate": true,
-    "source_volume_note": "2026年夏にTV第1期放送。原作漫画は9巻刊行中。",
+    "source_volume_note": "2026年夏にTV第1期放送。原作漫画は8巻既刊、9巻は2026年7月発売予定。",
     "read_order": "漫画1巻から",
     "amazon_search": "きみが死ぬまで恋をしたい 漫画",
     "tags": [
@@ -334,7 +334,7 @@
     "watchers_count": 7000,
     "share_slug": "seihantaiteki-2",
     "isbn": "9784088841434",
-    "amazon_asin": "4088841433",
+    "amazon_asin": "4088841434",
     "cover_image_url": "/static/covers/seihantaiteki-2.jpg"
   },
   {
@@ -386,7 +386,7 @@
     "watchers_count": 6800,
     "share_slug": "tenmaku-jadougal",
     "isbn": "9784253264464",
-    "amazon_asin": "4253264468",
+    "amazon_asin": "4253264464",
     "cover_image_url": "/static/covers/tenmaku-jadougal.jpg"
   },
   {
@@ -397,13 +397,13 @@
     "memo": "",
     "official_url": "",
     "title": "クレバテスⅡ-魔獣の王と偽りの勇者伝承-",
-    "source_type": "web_novel",
-    "source_title": "クレバテス",
+    "source_type": "manga",
+    "source_title": "クレバテス-魔獣の王と赤子と屍の勇者-",
     "source_volume_from": 6,
-    "source_volume_to": 11,
+    "source_volume_to": 12,
     "source_volume_approximate": true,
-    "source_volume_note": "1期は単行本1〜5巻相当。原作漫画は11巻刊行中。",
-    "read_order": "Web版または単行本から",
+    "source_volume_note": "1期は単行本1〜5巻相当。2期は第6巻から。新装版は12巻既刊（2026年時点）。",
+    "read_order": "漫画1巻から。1期視聴済みなら6巻から",
     "amazon_search": "クレバテス 漫画",
     "tags": [
       "ファンタジー",
@@ -411,8 +411,8 @@
     ],
     "watchers_count": 6700,
     "share_slug": "clevatess-2",
-    "isbn": "9784866972916",
-    "amazon_asin": "4866972916",
+    "isbn": "9784048113502",
+    "amazon_asin": "404811350X",
     "cover_image_url": "/static/covers/clevatess-2.jpg"
   },
   {
@@ -438,7 +438,7 @@
     "watchers_count": 6600,
     "share_slug": "super-yani-2",
     "isbn": "9784757580947",
-    "amazon_asin": "4757580940",
+    "amazon_asin": "4757580947",
     "cover_image_url": "/static/covers/super-yani-2.jpg"
   },
   {
@@ -464,7 +464,7 @@
     "watchers_count": 6500,
     "share_slug": "tsuihou-juukishi",
     "isbn": "9784065281437",
-    "amazon_asin": "4065281431",
+    "amazon_asin": "4065281437",
     "cover_image_url": "/static/covers/tsuihou-juukishi.jpg"
   },
   {
@@ -491,7 +491,7 @@
     "watchers_count": 6400,
     "share_slug": "world-is-dancing",
     "isbn": "9784065245057",
-    "amazon_asin": "4065245052",
+    "amazon_asin": "4065245057",
     "cover_image_url": "/static/covers/world-is-dancing.jpg"
   },
   {
@@ -502,13 +502,13 @@
     "memo": "",
     "official_url": "",
     "title": "二十世紀電氣目録-ユーレカ・エヴリカ-",
-    "source_type": "other",
+    "source_type": "light_novel",
     "source_title": "二十世紀電氣目録",
     "source_volume_from": 1,
-    "source_volume_to": 2,
-    "source_volume_approximate": true,
-    "source_volume_note": "京アニの小説・ビジュアルノベル原作（単行本2巻）をベースにした新作アニメ。",
-    "read_order": "公式情報を確認",
+    "source_volume_to": 1,
+    "source_volume_approximate": false,
+    "source_volume_note": "結城弘のKAエスマ文庫小説（全1巻）が原作。アニメは世界観を一部改変。",
+    "read_order": "小説1巻から。アニメとは設定が異なる箇所あり",
     "amazon_search": "二十世紀電氣目録",
     "tags": [
       "SF",
@@ -517,7 +517,7 @@
     "watchers_count": 6300,
     "share_slug": "20seiki-eureka",
     "isbn": "9784907064884",
-    "amazon_asin": "4907064888",
+    "amazon_asin": "4907064884",
     "cover_image_url": "/static/covers/20seiki-eureka.jpg"
   },
   {
@@ -544,7 +544,7 @@
     "watchers_count": 9700,
     "share_slug": "onepunch-man-3",
     "isbn": "9784088815565",
-    "amazon_asin": "4088815564",
+    "amazon_asin": "4088815565",
     "cover_image_url": "/static/covers/onepunch-man-3.jpg"
   }
 ]
