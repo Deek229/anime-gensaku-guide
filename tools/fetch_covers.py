@@ -36,8 +36,11 @@ MANUAL_COVER_URLS: dict[str, str] = {
     'last-boss-queen-2': 'https://www.animatebookstore.com/get_image.php?product_id=793008&thumb=large',
     'neko-to-ryu': 'https://www.cmoa.jp/data/image/title/title_0000206418/VOLUME/100002064180001.jpg',
     'futsutsuka-akujo': 'https://c.bookwalker.jp/9643044/t_700x780.jpg',
-    # 単行本未刊行のWeb漫画
-    'someya-san': 'https://www.cmoa.jp/data/image/title/title_0000356459/VOLUME/100003564590001.jpg',
+}
+
+# cover_source=key_visual の作品は原作表紙ではなくキービジュアルを取得（広告ポリシー対策）
+KEY_VISUAL_COVER_URLS: dict[str, str] = {
+    'someya-san': 'https://someyasan-anime.af-original.com/wp-content/uploads/sites/3/TV-0227.jpg',
 }
 
 # work id -> 表紙用の ISBN-13 / Amazon ASIN（原作1巻または該当巻）
@@ -219,6 +222,21 @@ def _remote_candidates(work: dict) -> list[tuple[str, str]]:
 def resolve_cover(work: dict, *, force: bool = False) -> tuple[str, str]:
     """(cover_url, source)"""
     dest = local_cover_file(work)
+    slug = cover_slug(work)
+    cover_source = (work.get('cover_source') or '').strip()
+
+    if cover_source == 'key_visual':
+        key_url = (work.get('key_visual_url') or '').strip() or KEY_VISUAL_COVER_URLS.get(slug, '')
+        if force and dest.is_file():
+            dest.unlink(missing_ok=True)
+        if not force and _local_cover_valid(dest):
+            return local_cover_rel(work), 'key_visual'
+        if key_url and _download_image(key_url, dest):
+            return local_cover_rel(work), 'key_visual'
+        if _local_cover_valid(dest):
+            return local_cover_rel(work), 'key_visual'
+        return PLACEHOLDER, 'placeholder'
+
     if force and dest.is_file():
         dest.unlink(missing_ok=True)
     if _local_cover_valid(dest):

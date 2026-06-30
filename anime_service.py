@@ -35,8 +35,17 @@ def is_original_anime(work: dict[str, Any]) -> bool:
 
 def resolve_cover_display(work: dict[str, Any]) -> tuple[str, str]:
     """(cover_url, cover_kind) — cover_kind: source_cover | key_visual | original_badge"""
+    cover_source = (work.get('cover_source') or '').strip()
+    key_visual = (work.get('key_visual_url') or '').strip()
+    if cover_source == 'key_visual' and key_visual:
+        slug = (work.get('share_slug') or '').strip()
+        if slug:
+            local = Path(__file__).parent / 'static' / 'covers' / f'{slug}.jpg'
+            if local.is_file() and local.stat().st_size >= 1000:
+                return f'/static/covers/{slug}.jpg', 'key_visual'
+        return key_visual, 'key_visual'
+
     if is_original_anime(work):
-        key_visual = (work.get('key_visual_url') or '').strip()
         if key_visual:
             return key_visual, 'key_visual'
         return '', 'original_badge'
