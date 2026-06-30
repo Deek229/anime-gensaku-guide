@@ -47,6 +47,7 @@ http://127.0.0.1:8052
 | `isbn` | 表紙取得用 ISBN-13（OpenBD） |
 | `cover_image_url` | 表紙画像URL（`tools/fetch_covers.py` で自動設定可） |
 | `share_slug` | Xシェア用のASCII専用URL（`/works/{share_slug}`）。日本語 `id` は canonical のまま |
+| `main_comment` | 作品詳細の「主コメント」（編集者視点の見どころ紹介、500字以内・オリジナル文） |
 
 `volumes_anime` は廃止し、上記フィールドから FAQ・一覧・Xシェア文を自動生成します。
 

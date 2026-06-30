@@ -71,6 +71,15 @@
     <p class="intro-text">{{ work.intro }}</p>
   </section>
 
+  {% if work.main_comment %}
+  <section class="detail-panel main-comment-panel">
+    <h2>主コメント</h2>
+    <div class="main-comment-box">
+      <p class="main-comment-text">{{ work.main_comment }}</p>
+    </div>
+  </section>
+  {% endif %}
+
   <section class="detail-panel">
     <h2>原作情報</h2>
     {% if work.has_source %}

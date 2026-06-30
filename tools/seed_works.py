@@ -4,6 +4,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from store import save_works, slugify, share_slugify
+from tools.add_main_comments import MAIN_COMMENTS
 
 sys.stdout.reconfigure(encoding='utf-8')
 
@@ -314,7 +315,7 @@ WORKS = [
 rows = []
 for w in WORKS:
     work_id = slugify(w['title'])
-    rows.append({
+    row = {
         'id': work_id,
         'share_slug': SHARE_SLUGS.get(w['title']) or share_slugify(w['title'], work_id),
         'season': SEASON,
@@ -323,7 +324,11 @@ for w in WORKS:
         'memo': '',
         'official_url': '',
         **w,
-    })
+    }
+    comment = MAIN_COMMENTS.get(work_id)
+    if comment:
+        row['main_comment'] = comment
+    rows.append(row)
 
 save_works(rows)
 print(f'seeded {len(rows)} works -> data/works.json')

@@ -676,6 +676,21 @@ a { color: var(--cyan); }
   line-height: 1.8;
 }
 
+.main-comment-box {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(26, 29, 38, 0.04);
+}
+
+.main-comment-text {
+  margin: 0;
+  color: var(--text);
+  font-size: 0.94rem;
+  line-height: 1.85;
+}
+
 .faq-list { display: grid; gap: 0.65rem; }
 
 .faq-item {

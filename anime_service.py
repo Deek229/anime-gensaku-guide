@@ -72,6 +72,7 @@ def enrich_work(work: dict[str, Any]) -> dict[str, Any]:
     st = work.get('source_type', 'other')
     base = {
         **work,
+        'main_comment': (work.get('main_comment') or '').strip(),
         'source_type_label': SOURCE_TYPE_LABELS.get(st, st),
         'status_label': STATUS_LABELS.get(work.get('status', ''), ''),
         'season_label': SEASON_LABELS.get(work.get('season', ''), work.get('season', '')),
