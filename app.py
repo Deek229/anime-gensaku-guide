@@ -3,7 +3,7 @@
 
 起動:
   cd 11_名称未定Web作り
-  python tools/seed_works.py          # 初回のみ
+  python tools/seed_works.py          # data/works.json が空のときのみ
   python -m uvicorn app:app --reload --port 8052
 """
 from datetime import date

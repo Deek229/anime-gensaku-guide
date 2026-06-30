@@ -1,12 +1,23 @@
-"""2026夏アニメの初期データ投入"""
+"""2026夏アニメの初期データ投入（空の data/works.json 向け・ローカル初回のみ）"""
+import json
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from config import WORKS_FILE
 from store import save_works, slugify, share_slugify
 from tools.add_main_comments import MAIN_COMMENTS
 
 sys.stdout.reconfigure(encoding='utf-8')
+
+if WORKS_FILE.exists():
+    try:
+        existing = json.loads(WORKS_FILE.read_text(encoding='utf-8'))
+    except (json.JSONDecodeError, OSError):
+        existing = []
+    if existing:
+        print(f'skip seed: {WORKS_FILE} already has {len(existing)} works')
+        sys.exit(0)
 
 SEASON = '2026-summer'
 
