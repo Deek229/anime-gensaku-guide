@@ -30,6 +30,14 @@ USER_AGENT = 'Mozilla/5.0 (compatible; AnimeGensakuGuide/1.0)'
 MANUAL_COVER_URLS: dict[str, str] = {
     'mobuseka-2': 'https://microgrouplibrary.com/web/img/uploads/book/179.jpg',
     '20seiki-eureka': 'https://makeshop-multi-images.akamaized.net/kyoanibtc/itemimages/000000001538_2wjBJZY.jpg',
+    # OpenBD/Amazon から取得できない作品
+    'tensura-4': 'https://microgrouplibrary.com/web/img/uploads/book/702.jpg',
+    'all-works-maid': 'https://www.animatebookstore.com/get_image.php?product_id=770143&thumb=large',
+    'last-boss-queen-2': 'https://www.animatebookstore.com/get_image.php?product_id=793008&thumb=large',
+    'neko-to-ryu': 'https://www.cmoa.jp/data/image/title/title_0000206418/VOLUME/100002064180001.jpg',
+    'futsutsuka-akujo': 'https://c.bookwalker.jp/9643044/t_700x780.jpg',
+    # 単行本未刊行のWeb漫画
+    'someya-san': 'https://www.cmoa.jp/data/image/title/title_0000356459/VOLUME/100003564590001.jpg',
 }
 
 # work id -> 表紙用の ISBN-13 / Amazon ASIN（原作1巻または該当巻）
