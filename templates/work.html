@@ -80,6 +80,13 @@
   </section>
   {% endif %}
 
+  {% if work.has_anime_continue %}
+  <section class="detail-panel continue-panel">
+    <h2>アニメの続きは何巻から？</h2>
+    <p class="continue-text">{{ work.anime_continue_text }}</p>
+  </section>
+  {% endif %}
+
   <section class="detail-panel">
     <h2>原作情報</h2>
     {% if work.has_source %}

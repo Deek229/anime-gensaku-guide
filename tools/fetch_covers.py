@@ -123,7 +123,7 @@ DEFAULT_SOURCES: dict[str, dict[str, str]] = {
     },
     'ワンパンマン-第3期': {
         'isbn': '9784088815565',
-        'amazon_asin': '4088815565',
+        'amazon_asin': '4088815564',
     },
     'ワールド-イズ-ダンシング': {
         'isbn': '9784065245057',

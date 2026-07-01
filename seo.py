@@ -115,6 +115,11 @@ def build_faq(work: dict[str, Any]) -> list[dict[str, str]]:
             'answer': work.get('read_order') or '1巻から順に読むのがおすすめです。',
         },
     ]
+    if work.get('has_anime_continue') and work.get('anime_continue_text'):
+        faq.insert(2, {
+            'question': f'{title}のアニメの続きは何巻から？',
+            'answer': work['anime_continue_text'],
+        })
     if work.get('source_type') == 'light_novel':
         faq.append({
             'question': f'{title}はラノベと漫画どっちから読む？',

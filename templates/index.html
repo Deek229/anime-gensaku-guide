@@ -110,7 +110,9 @@
       {% if w.source_title %}
       <p class="source-line">原作: {{ w.source_title }}</p>
       {% endif %}
-      {% if w.volumes_anime %}
+      {% if w.anime_continue_short %}
+      <p class="snippet snippet-continue">{{ w.anime_continue_short }}</p>
+      {% elif w.volumes_anime %}
       <p class="snippet">{{ w.volumes_anime[:90] }}{% if w.volumes_anime|length > 90 %}…{% endif %}</p>
       {% endif %}
       <div class="card-actions">

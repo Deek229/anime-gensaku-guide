@@ -68,15 +68,50 @@ def format_volume_short(work: dict[str, Any]) -> str:
     return f'第{vt}巻まで'
 
 
+def format_anime_continue(work: dict[str, Any]) -> str | None:
+    """アニメ視聴後に原作を続ける巻の表示テキスト"""
+    if work.get('source_type') == 'original':
+        return None
+    vol = work.get('anime_continue_volume')
+    note = (work.get('anime_continue_note') or '').strip()
+    if vol is None and not note:
+        return None
+    label = _type_label(work)
+    if vol is not None:
+        core = f'第{vol}巻から（{label}）'
+    else:
+        core = ''
+    if note:
+        return f'{core}。{note}' if core else note
+    return core
+
+
+def format_anime_continue_short(work: dict[str, Any]) -> str | None:
+    """一覧カード用の短い続き巻表記"""
+    if work.get('source_type') == 'original':
+        return None
+    vol = work.get('anime_continue_volume')
+    if vol is not None:
+        return f'続きは第{vol}巻から'
+    note = (work.get('anime_continue_note') or '').strip()
+    if note:
+        return note[:40] + ('…' if len(note) > 40 else '')
+    return None
+
+
 def enrich_volume_fields(work: dict[str, Any]) -> dict[str, Any]:
     """構造化巻数フィールドから表示用テキストを生成"""
     if has_volume_fields(work) or work.get('source_type') == 'original':
         volumes_anime = format_volume_range(work)
     else:
         volumes_anime = work.get('volumes_anime') or format_volume_range(work)
+    anime_continue = format_anime_continue(work)
     return {
         **work,
         'volumes_anime': volumes_anime,
         'volume_short': format_volume_short(work),
         'has_volume_data': has_volume_fields(work),
+        'anime_continue_text': anime_continue,
+        'anime_continue_short': format_anime_continue_short(work),
+        'has_anime_continue': bool(anime_continue),
     }

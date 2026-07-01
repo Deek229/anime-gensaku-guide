@@ -676,6 +676,26 @@ a { color: var(--cyan); }
   line-height: 1.8;
 }
 
+.continue-panel {
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  background: linear-gradient(135deg, #fffdf5 0%, #fff 100%);
+}
+
+.continue-text {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+.snippet-continue {
+  color: var(--accent);
+  font-weight: 600;
+}
+
 .main-comment-box {
   border: 1px solid var(--line);
   border-radius: 12px;
