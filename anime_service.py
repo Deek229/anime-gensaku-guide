@@ -15,10 +15,11 @@ from seo import (
     absolute_url,
     build_faq,
     build_intro,
-    build_share_text,
+    build_x_share_text,
     line_share_url,
     twitter_share_url,
     work_meta_description,
+    work_og_image_url,
     work_page_title,
 )
 from store import find_work, load_works, resolve_share_slug
@@ -98,7 +99,8 @@ def enrich_work(work: dict[str, Any]) -> dict[str, Any]:
     share_slug = resolve_share_slug(work)
     share_path = f'/works/{share_slug}'
     share_url = absolute_url(share_path)
-    share_text = build_share_text(base)
+    x_share_text = build_x_share_text(base)
+    og_image_url = work_og_image_url({**base, 'cover_url': cover_url})
     return {
         **base,
         'page_path': page_path,
@@ -110,9 +112,11 @@ def enrich_work(work: dict[str, Any]) -> dict[str, Any]:
         'seo_description': work_meta_description(base),
         'intro': build_intro(base),
         'faq': build_faq(base),
-        'share_text': share_text,
-        'twitter_share_url': twitter_share_url(share_text, share_url),
-        'line_share_url': line_share_url(share_text, share_url),
+        'share_text': x_share_text,
+        'x_share_text': x_share_text,
+        'og_image_url': og_image_url,
+        'twitter_share_url': twitter_share_url(x_share_text, share_url),
+        'line_share_url': line_share_url(x_share_text, share_url),
     }
 
 

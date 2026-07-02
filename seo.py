@@ -128,15 +128,69 @@ def build_faq(work: dict[str, Any]) -> list[dict[str, str]]:
     return faq
 
 
+def _short_title_for_x(title: str, max_len: int = 18) -> str:
+    for sep in (' ～', '～', ' ', '　', ' - ', '―'):
+        if sep in title:
+            title = title.split(sep)[0]
+    return title.strip()[:max_len]
+
+
+def _x_hashtags(work: dict[str, Any]) -> str:
+    tags = work.get('tags') or []
+    parts = [f'#{tag}' for tag in tags[:2]]
+    if not parts:
+        parts.append('#アニメ')
+    return ' '.join(parts[:2])
+
+
+def _trim_x_text(text: str, max_len: int = 120) -> str:
+    if len(text) <= max_len:
+        return text
+    body, _, tags = text.partition(' #')
+    if tags:
+        tag_part = ' #' + tags
+        room = max_len - len(tag_part)
+        if room > 20:
+            return body[:room].rstrip('。、 ') + tag_part
+    return text[: max_len - 1].rstrip('。、 ') + '…'
+
+
+def build_x_share_text(work: dict[str, Any]) -> str:
+    """X投稿用の短文（URL除き約100〜120文字、ハッシュタグ付き）"""
+    custom = (work.get('x_share_text') or '').strip()
+    if custom:
+        return custom
+
+    title = _short_title_for_x(work.get('title', ''))
+    hashtags = _x_hashtags(work)
+
+    if not work.get('has_source'):
+        core = f'【{title}】{work.get("season_label", "アニメ")}の情報👇'
+        return _trim_x_text(f'{core} {hashtags}')
+
+    vol = work.get('anime_continue_volume')
+    if vol is None:
+        vol = work.get('source_volume_from')
+
+    if vol is not None:
+        core = f'【{title}】原作は第{vol}巻から。アニメ追ってる人向け👇'
+    else:
+        short = (work.get('volume_short') or '').strip()
+        core = f'【{title}】{short}👇' if short else f'【{title}】原作ガイド👇'
+
+    return _trim_x_text(f'{core} {hashtags}')
+
+
 def build_share_text(work: dict[str, Any]) -> str:
-    title = work.get('title', '')
-    if work.get('has_source'):
-        vol = work.get('volume_short') or (work.get('volumes_anime') or '')[:40]
-        return (
-            f'【{title}】原作は{work.get("source_type_label", "")}'
-            f'「{work.get("source_title", "")}」｜{vol}'
-        )
-    return f'【{title}】{work.get("season_label", "")}の情報'
+    """LINE等向けのやや長めシェア文"""
+    return build_x_share_text(work)
+
+
+def work_og_image_url(work: dict[str, Any]) -> str | None:
+    cover = (work.get('cover_url') or work.get('cover_image_url') or '').strip()
+    if not cover or 'placeholder' in cover:
+        return None
+    return absolute_url(cover)
 
 
 def twitter_share_url(text: str, url: str) -> str:

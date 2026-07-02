@@ -12,7 +12,7 @@ sys.path.insert(0, str(ROOT))
 
 from anime_service import list_works  # noqa: E402
 from config import DEFAULT_SEASON, SITE_URL  # noqa: E402
-from seo import build_share_text, twitter_share_url  # noqa: E402
+from seo import build_x_share_text, twitter_share_url  # noqa: E402
 
 
 def main() -> None:
@@ -22,7 +22,7 @@ def main() -> None:
     posts = []
     for work in works:
         page_url = work['share_url']
-        text = build_share_text(work)
+        text = build_x_share_text(work)
         posts.append({
             'title': work['title'],
             'text': text,

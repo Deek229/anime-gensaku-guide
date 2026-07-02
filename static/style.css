@@ -762,6 +762,41 @@ a { color: var(--cyan); }
   color: #1a7a42;
 }
 
+.btn-copy {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  color: var(--text);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn-x-mini {
+  min-width: 2.2rem;
+  padding: 0.4rem 0.55rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.share-hint,
+.share-preview,
+.share-url-hint {
+  margin: 0.65rem 0 0;
+  font-size: 0.82rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.share-preview {
+  padding: 0.65rem 0.75rem;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.share-url-hint a {
+  word-break: break-all;
+}
+
 @media (max-width: 600px) {
   .hero h1 { font-size: 1.35rem; }
   .work-grid { grid-template-columns: 1fr; }

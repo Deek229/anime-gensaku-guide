@@ -43,6 +43,13 @@ def _season_label(season: str) -> str:
     )
 
 
+def _home_og_image(season: str) -> str | None:
+    for work in popular_works(season=season):
+        if work.get('og_image_url'):
+            return work['og_image_url']
+    return None
+
+
 @app.get('/', response_class=HTMLResponse)
 def home(season: str | None = None):
     season = season or DEFAULT_SEASON
@@ -60,6 +67,8 @@ def home(season: str | None = None):
         meta=meta,
         site_url=SITE_URL,
         canonical_url=absolute_url('/'),
+        og_url=absolute_url('/'),
+        og_image=_home_og_image(season),
         og_type='website',
         google_site_verification=GOOGLE_SITE_VERIFICATION,
     ))
@@ -90,6 +99,8 @@ def work_page(work_id: str):
         site_url=SITE_URL,
         app_title=APP_TITLE,
         canonical_url=work['page_url'],
+        og_url=work['share_url'],
+        og_image=work.get('og_image_url'),
         og_type='article',
         google_site_verification=GOOGLE_SITE_VERIFICATION,
     ))
@@ -103,6 +114,8 @@ def rankings_page():
         tagline='なろうランキング（サブ）',
         site_url=SITE_URL,
         canonical_url=absolute_url('/rankings'),
+        og_url=absolute_url('/rankings'),
+        og_image=_home_og_image(DEFAULT_SEASON),
         og_type='website',
         google_site_verification=GOOGLE_SITE_VERIFICATION,
     ))

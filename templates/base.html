@@ -11,11 +11,16 @@
   <meta property="og:title" content="{% block og_title %}{{ app_title }}{% endblock %}">
   <meta property="og:description" content="{% block og_description %}{{ tagline|default('今期アニメの原作ラノベ・漫画と購入リンク') }}{% endblock %}">
   <meta property="og:type" content="{{ og_type|default('website') }}">
-  {% if canonical_url %}<meta property="og:url" content="{{ canonical_url }}">{% endif %}
+  {% if og_url %}<meta property="og:url" content="{{ og_url }}">{% elif canonical_url %}<meta property="og:url" content="{{ canonical_url }}">{% endif %}
   <meta property="og:locale" content="ja_JP">
-  <meta name="twitter:card" content="summary">
+  {% if og_image %}
+  <meta property="og:image" content="{{ og_image }}">
+  <meta property="og:image:alt" content="{% block og_image_alt %}{{ app_title }}{% endblock %}">
+  {% endif %}
+  <meta name="twitter:card" content="{% if og_image %}summary_large_image{% else %}summary{% endif %}">
   <meta name="twitter:title" content="{% block twitter_title %}{{ app_title }}{% endblock %}">
   <meta name="twitter:description" content="{% block twitter_description %}{{ tagline|default('今期アニメの原作ラノベ・漫画と購入リンク') }}{% endblock %}">
+  {% if og_image %}<meta name="twitter:image" content="{{ og_image }}">{% endif %}
   {% if google_site_verification %}
   <meta name="google-site-verification" content="{{ google_site_verification }}">
   {% endif %}

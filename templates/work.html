@@ -3,6 +3,7 @@
 {% block description %}{{ description }}{% endblock %}
 {% block og_title %}{{ work.seo_title }}{% endblock %}
 {% block og_description %}{{ description }}{% endblock %}
+{% block og_image_alt %}{{ work.title }}の表紙{% endblock %}
 {% block twitter_title %}{{ work.seo_title }}{% endblock %}
 {% block twitter_description %}{{ description }}{% endblock %}
 {% block head %}
@@ -155,10 +156,16 @@
       {% endif %}
     </div>
     <div class="share-row">
-      <span class="share-label">シェア</span>
-      <a class="btn btn-share btn-x" href="{{ work.twitter_share_url }}" target="_blank" rel="noopener">Xでシェア</a>
-      <a class="btn btn-share btn-line" href="{{ work.line_share_url }}" target="_blank" rel="noopener">LINE</a>
+      <span class="share-label">Xで投稿</span>
+      <a class="btn btn-share btn-x" href="{{ work.twitter_share_url }}" target="_blank" rel="noopener noreferrer">Xでシェア</a>
+      <button type="button" class="btn btn-share btn-copy" id="copyShareText" data-text="{{ work.x_share_text }}">文面をコピー</button>
+      <a class="btn btn-share btn-line" href="{{ work.line_share_url }}" target="_blank" rel="noopener noreferrer">LINE</a>
     </div>
+    {% if work.has_cover %}
+    <p class="share-hint">📷 画像付き投稿: 上の表紙を<strong>右クリック→「画像を保存」</strong>して、X投稿時に添付してください。</p>
+    {% endif %}
+    <p class="share-preview"><span class="share-label">投稿文プレビュー</span>{{ work.x_share_text }}</p>
+    <p class="share-url-hint">シェアURL: <a href="{{ work.share_url }}">{{ work.share_url }}</a></p>
     <p class="affiliate-note">※ 購入リンクはAmazonアソシエイトを使用する場合があります。</p>
   </section>
 
@@ -175,4 +182,27 @@
 
   <p class="updated">最終更新: {{ work.updated_at or '—' }}</p>
 </article>
+{% endblock %}
+{% block scripts %}
+<script>
+(function () {
+  var btn = document.getElementById('copyShareText');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    var text = btn.getAttribute('data-text') || '';
+    var done = function () {
+      var prev = btn.textContent;
+      btn.textContent = 'コピーしました';
+      setTimeout(function () { btn.textContent = prev; }, 1800);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done).catch(function () {
+        window.prompt('以下をコピーしてください', text);
+      });
+    } else {
+      window.prompt('以下をコピーしてください', text);
+    }
+  });
+})();
+</script>
 {% endblock %}
