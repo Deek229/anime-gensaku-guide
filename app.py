@@ -15,6 +15,7 @@ from fastapi.responses import HTMLResponse, PlainTextResponse, Response
 from fastapi.staticfiles import StaticFiles
 
 from anime_service import get_work, list_meta, list_works, popular_works, related_works
+from guide_service import get_matome, list_matome_pages
 from config import (
     APP_TAGLINE,
     APP_TITLE,
@@ -65,6 +66,7 @@ def home(season: str | None = None):
         works=works,
         popular_works=popular_works(season=season),
         meta=meta,
+        matome_pages=list_matome_pages(),
         site_url=SITE_URL,
         canonical_url=absolute_url('/'),
         og_url=absolute_url('/'),
@@ -106,6 +108,28 @@ def work_page(work_id: str):
     ))
 
 
+@app.get('/matome/{slug}', response_class=HTMLResponse)
+def matome_page(slug: str):
+    page = get_matome(slug)
+    if not page:
+        raise HTTPException(404, 'まとめページが見つかりません')
+    path = page['path']
+    other_matome = [m for m in list_matome_pages() if m['slug'] != slug]
+    return HTMLResponse(render_template(
+        'matome.html',
+        app_title=APP_TITLE,
+        tagline=APP_TAGLINE,
+        page=page,
+        other_matome=other_matome,
+        site_url=SITE_URL,
+        canonical_url=absolute_url(path),
+        og_url=absolute_url(path),
+        og_image=_home_og_image(page['season']),
+        og_type='article',
+        google_site_verification=GOOGLE_SITE_VERIFICATION,
+    ))
+
+
 @app.get('/rankings', response_class=HTMLResponse)
 def rankings_page():
     return HTMLResponse(render_template(
@@ -126,6 +150,8 @@ def _build_sitemap_xml() -> str:
         ('/', 'daily', '1.0'),
         ('/rankings', 'weekly', '0.6'),
     ]
+    for matome in list_matome_pages():
+        paths.append((matome['path'], 'weekly', '0.7'))
     for work in list_works():
         paths.append((f'/works/{work["id"]}', 'weekly', '0.8'))
     return render_sitemap(paths)

@@ -38,6 +38,17 @@
 </section>
 {% endif %}
 
+{% if matome_pages %}
+<section class="panel matome-panel">
+  <h2 class="section-title">シーズンまとめ（原作おすすめ10選）</h2>
+  <div class="popular-links">
+    {% for m in matome_pages %}
+    <a class="popular-chip" href="{{ m.path }}">{{ m.title }}</a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
 <section class="panel controls">
   <div class="control-row">
     <label class="field">

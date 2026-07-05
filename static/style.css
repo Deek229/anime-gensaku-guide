@@ -797,6 +797,60 @@ a { color: var(--cyan); }
   word-break: break-all;
 }
 
+.matome-list { margin-top: 0.5rem; }
+
+.matome-ranking {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.matome-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.matome-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+.matome-rank {
+  flex-shrink: 0;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--pink);
+  background: #fff0f6;
+  border-radius: 50%;
+}
+
+.matome-body { flex: 1; min-width: 0; }
+.matome-body h2 { margin: 0 0 0.35rem; font-size: 1.1rem; }
+.matome-comment { margin: 0.5rem 0; font-size: 0.92rem; color: var(--muted); line-height: 1.6; }
+
+.matome-footer { margin-top: 1rem; }
+.matome-footer .section-title { margin-top: 1.25rem; }
+
+.breadcrumb {
+  margin: 0 0 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--cyan); }
+
+.matome-panel { margin-bottom: 1rem; }
+.matome-panel .popular-links { margin-top: 0.5rem; }
+
 @media (max-width: 600px) {
   .hero h1 { font-size: 1.35rem; }
   .work-grid { grid-template-columns: 1fr; }

@@ -14,6 +14,8 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA_FILES = [
     ROOT / 'data' / 'season_expansion_spring.json',
     ROOT / 'data' / 'season_expansion_summer.json',
+    ROOT / 'data' / 'season_expansion_autumn.json',
+    ROOT / 'data' / 'season_expansion_winter.json',
 ]
 
 
@@ -54,7 +56,7 @@ def main() -> int:
     works = load_works()
     existing_ids = {w['id'] for w in works}
     existing_titles = {w['title'] for w in works}
-    added_spring = added_summer = 0
+    added_spring = added_summer = added_autumn = added_winter = 0
     for raw in new_rows:
         row = _base(raw)
         if row['id'] in existing_ids or row['title'] in existing_titles:
@@ -62,16 +64,23 @@ def main() -> int:
         works.append(row)
         existing_ids.add(row['id'])
         existing_titles.add(row['title'])
-        if row['season'] == '2026-spring':
+        season = row['season']
+        if season == '2026-spring':
             added_spring += 1
-        else:
+        elif season == '2026-summer':
             added_summer += 1
+        elif season == '2026-autumn':
+            added_autumn += 1
+        elif season == '2026-winter':
+            added_winter += 1
     works.sort(key=lambda w: (-(w.get('watchers_count') or 0), w.get('season', ''), w.get('title', '')))
     save_works(works)
     spring_total = sum(1 for w in works if w.get('season') == '2026-spring')
     summer_total = sum(1 for w in works if w.get('season') == '2026-summer')
-    print(f'added spring: {added_spring}, added summer: {added_summer}')
-    print(f'totals -> spring: {spring_total}, summer: {summer_total}, all: {len(works)}')
+    autumn_total = sum(1 for w in works if w.get('season') == '2026-autumn')
+    winter_total = sum(1 for w in works if w.get('season') == '2026-winter')
+    print(f'added spring: {added_spring}, summer: {added_summer}, autumn: {added_autumn}, winter: {added_winter}')
+    print(f'totals -> spring: {spring_total}, summer: {summer_total}, autumn: {autumn_total}, winter: {winter_total}, all: {len(works)}')
     return 0
 
 

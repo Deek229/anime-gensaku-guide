@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}｜{{ app_title }}{% endblock %}
+{% block description %}{{ page.seo_description }}{% endblock %}
+{% block og_title %}{{ page.title }}{% endblock %}
+{% block og_description %}{{ page.lead }}{% endblock %}
+{% block twitter_title %}{{ page.title }}{% endblock %}
+{% block twitter_description %}{{ page.lead }}{% endblock %}
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ page.title|tojson }},
+  "description": {{ page.lead|tojson }},
+  "url": {{ canonical_url|tojson }}
+}
+</script>
+{% endblock %}
+{% block content %}
+<section class="hero">
+  <p class="breadcrumb"><a href="/">ホーム</a> › <a href="/?season={{ page.season }}">{{ page.season_label }}</a> › まとめ</p>
+  <h1>{{ page.title }}</h1>
+  <p class="tagline">{{ page.lead }}</p>
+</section>
+
+<section class="panel matome-list">
+  <ol class="matome-ranking">
+    {% for w in page.picks %}
+    <li class="matome-item">
+      <span class="matome-rank">{{ loop.index }}</span>
+      <div class="matome-body">
+        <h2><a href="/works/{{ w.id }}">{{ w.title }}</a></h2>
+        {% if w.source_title %}
+        <p class="source-line">原作: {{ w.source_type_label }}「{{ w.source_title }}」</p>
+        {% endif %}
+        {% if w.volumes_anime %}
+        <p class="snippet">{{ w.volumes_anime }}</p>
+        {% endif %}
+        {% if w.main_comment %}
+        <p class="matome-comment">{{ w.main_comment[:200] }}{% if w.main_comment|length > 200 %}…{% endif %}</p>
+        {% endif %}
+        <div class="card-actions">
+          <a class="btn btn-secondary" href="/works/{{ w.id }}">詳細ガイド</a>
+          {% if w.buy_url %}
+          <a class="btn btn-primary" href="{{ w.buy_url }}" target="_blank" rel="noopener sponsored">{{ w.buy_label }}</a>
+          {% endif %}
+        </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+</section>
+
+<section class="panel matome-footer">
+  <p>ほかの作品は <a href="/?season={{ page.season }}">{{ page.season_label }}一覧</a> から探せます。</p>
+  {% if other_matome %}
+  <h2 class="section-title">ほかのシーズンまとめ</h2>
+  <div class="popular-links">
+    {% for m in other_matome %}
+    <a class="popular-chip" href="{{ m.path }}">{{ m.title }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+</section>
+{% endblock %}
