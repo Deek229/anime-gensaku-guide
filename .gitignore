@@ -2,5 +2,6 @@
 __pycache__/
 *.pyc
 data/cache/
+data/site_stats.json
 .venv/
 venv/

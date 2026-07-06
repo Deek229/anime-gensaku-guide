@@ -13,6 +13,8 @@ from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import HTMLResponse, PlainTextResponse, Response
 from fastapi.staticfiles import StaticFiles
+from starlette.middleware.base import BaseHTTPMiddleware
+from starlette.requests import Request
 
 from anime_service import get_work, list_meta, list_works, popular_works, related_works
 from guide_service import get_matome, list_matome_pages
@@ -27,6 +29,7 @@ from config import (
 )
 from ranking_service import get_ranking, list_meta as rank_meta
 from seo import absolute_url, breadcrumb_json_ld, faq_json_ld, render_robots, render_rss, render_sitemap
+from site_stats import increment, should_count_page_view
 from templates_env import render as render_template
 
 load_dotenv(Path(__file__).parent / '.env')
@@ -34,6 +37,20 @@ load_dotenv(Path(__file__).parent / '.env')
 app = FastAPI(title=APP_TITLE, version=APP_VERSION)
 ROOT = Path(__file__).parent
 STATIC = ROOT / 'static'
+
+
+class AccessCountMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        if should_count_page_view(
+            request.method,
+            request.url.path,
+            request.headers.get('user-agent'),
+        ):
+            increment()
+        return await call_next(request)
+
+
+app.add_middleware(AccessCountMiddleware)
 app.mount('/static', StaticFiles(directory=STATIC), name='static')
 
 

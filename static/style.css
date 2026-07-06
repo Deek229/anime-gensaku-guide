@@ -635,6 +635,11 @@ a { color: var(--cyan); }
   border-top: 1px solid var(--line);
   padding-top: 1.25rem;
 }
+.site-footer .access-count {
+  margin: 0.5rem 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
 
 .disclosure { margin: 0 0 0.35rem; }
 
