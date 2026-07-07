@@ -44,7 +44,7 @@ SOURCE_TYPE_LABELS = {
 
 STATUS_LABELS = {
     'upcoming': '放送予定',
-    'airing': '放送中',
+    'airing': '放送開始',
     'finished': '放送終了',
 }
 
