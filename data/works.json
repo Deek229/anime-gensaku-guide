@@ -1938,6 +1938,37 @@
     "anime_continue_note": "漫画は全47巻で完結済み。アニメ追い込み後の続き巻はありません。"
   },
   {
+    "id": "日本三國",
+    "season": "2026-spring",
+    "status": "finished",
+    "media": "tv",
+    "memo": "",
+    "official_url": "https://www.nipponsangoku.com/",
+    "title": "日本三國",
+    "source_type": "manga",
+    "source_title": "日本三國",
+    "source_volume_from": 1,
+    "source_volume_to": 4,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年春にTV第1期（全12話）。アニメは漫画4巻第21話「聖夷滅亡」まで。単行本は連載中（2026年4月時点で7巻既刊）。",
+    "read_order": "漫画1巻から。アニメ視聴後の続きは5巻から",
+    "amazon_search": "日本三國 漫画",
+    "tags": [
+      "架空戦記",
+      "SF",
+      "軍事",
+      "政治"
+    ],
+    "watchers_count": 7600,
+    "share_slug": "nippon-sangoku",
+    "isbn": "9784098510306",
+    "amazon_asin": "4098510308",
+    "main_comment": "文明崩壊後、三国に分裂した近未来日本を舞台に、奇才軍師・三角青輝が再統一を目指す架空戦記。弁舌と謀略で成り上がる政治劇と大規模合戦が読みどころで、マンガワン発の注目作が2026春にアニメ化。歴史フィクション×近未来SFが好きな人、三国志・戦国もの好きに。第1期は4巻までなので、続きは5巻から。",
+    "anime_continue_volume": 5,
+    "anime_continue_note": "第1期終了後は漫画5巻から。未読の人は1巻から。",
+    "cover_image_url": "/static/covers/nippon-sangoku.jpg"
+  },
+  {
     "id": "ヒロイン-聖女-いいえ-オールワークスメイドです-誇",
     "season": "2026-summer",
     "status": "airing",
