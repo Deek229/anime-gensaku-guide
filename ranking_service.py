@@ -7,7 +7,7 @@ from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Any
 
-from config import BIGGENRE_LABELS, CACHE_DIR, END_LABELS, RANK_CACHE_TTL_SEC, RANKING_DISPLAY_LIMIT
+from config import BIGGENRE_LABELS, CACHE_DIR, END_LABELS, RANKINGS_FALLBACK_DIR, RANK_CACHE_TTL_SEC, RANKING_DISPLAY_LIMIT
 from narou_client import fetch_novels, fetch_ranking, novel_url, rank_rtype
 
 PERIOD_LABELS = {
@@ -67,6 +67,20 @@ def _enrich_row(rank_row: dict[str, Any], novel: dict[str, Any] | None) -> dict[
     }
 
 
+def _load_fallback(period: str) -> dict[str, Any] | None:
+    path = RANKINGS_FALLBACK_DIR / f'{period}.json'
+    if not path.exists():
+        return None
+    try:
+        payload = json.loads(path.read_text(encoding='utf-8'))
+        payload = dict(payload)
+        payload['stale'] = True
+        payload['warning'] = 'サーバーからなろうAPIに直接接続できないため、同梱データを表示しています'
+        return payload
+    except (json.JSONDecodeError, OSError):
+        return None
+
+
 def get_ranking(period: str = 'd', target: date | None = None) -> dict[str, Any]:
     if period not in PERIOD_LABELS:
         period = 'd'
@@ -101,6 +115,9 @@ def get_ranking(period: str = 'd', target: date | None = None) -> dict[str, Any]
             stale['stale'] = True
             stale['warning'] = f'最新取得に失敗したためキャッシュを表示しています（{exc}）'
             return stale
+        fallback = _load_fallback(period)
+        if fallback:
+            return fallback
         raise
 
 

@@ -6,6 +6,7 @@ ROOT = Path(__file__).parent
 DATA_DIR = ROOT / 'data'
 WORKS_FILE = DATA_DIR / 'works.json'
 CACHE_DIR = DATA_DIR / 'cache'
+RANKINGS_FALLBACK_DIR = DATA_DIR / 'rankings_fallback'
 
 APP_TITLE = 'アニメ原作ガイド'
 APP_TAGLINE = '今期アニメの原作ラノベ・漫画をチェックして、買う順まで一発でわかる'

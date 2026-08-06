@@ -256,6 +256,10 @@ def api_rankings(
     try:
         return get_ranking(period, target_date)
     except Exception as e:
+        from ranking_service import _load_fallback
+        fallback = _load_fallback(period)
+        if fallback:
+            return fallback
         return {
             'period': period,
             'period_label': {'d': '日間', 'w': '週間', 'm': '月間', 'q': '四半期'}.get(period, period),
