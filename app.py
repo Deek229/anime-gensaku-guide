@@ -82,6 +82,7 @@ def home(season: str | None = None):
         season_label_name=season_label_name,
         works=works,
         popular_works=popular_works(season=season),
+        ln_pick_works=list_works(season='ln-picks'),
         meta=meta,
         matome_pages=list_matome_pages(),
         site_url=SITE_URL,
@@ -255,7 +256,13 @@ def api_rankings(
     try:
         return get_ranking(period, target_date)
     except Exception as e:
-        raise HTTPException(502, f'なろうAPI: {e}') from e
+        return {
+            'period': period,
+            'period_label': {'d': '日間', 'w': '週間', 'm': '月間', 'q': '四半期'}.get(period, period),
+            'count': 0,
+            'items': [],
+            'error': f'なろうAPI: {e}',
+        }
 
 
 @app.get('/api/rankings/meta')

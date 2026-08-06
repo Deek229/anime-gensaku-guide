@@ -12,6 +12,11 @@ async function loadRankings() {
     const res = await fetch(`/api/rankings?period=${period}`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = await res.json();
+    if (data.error) {
+      body.innerHTML = '';
+      status.textContent = data.error;
+      return;
+    }
     body.innerHTML = (data.items || []).map((item) => `
       <tr>
         <td class="rank">${item.rank}</td>
@@ -21,7 +26,9 @@ async function loadRankings() {
         <td>${esc(item.pt)}</td>
       </tr>
     `).join('');
-    status.textContent = `${data.period_label} ${data.count}件`;
+    status.textContent = data.warning
+      ? `${data.period_label} ${data.count}件（${data.warning}）`
+      : `${data.period_label} ${data.count}件`;
   } catch (err) {
     status.textContent = `エラー: ${err.message}`;
   }

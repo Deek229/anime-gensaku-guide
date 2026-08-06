@@ -38,6 +38,17 @@
 </section>
 {% endif %}
 
+{% if ln_pick_works %}
+<section class="panel popular-panel">
+  <h2 class="section-title">おすすめラノベ（アニメ化未定）</h2>
+  <div class="popular-links">
+    {% for w in ln_pick_works %}
+    <a class="popular-chip" href="/works/{{ w.share_slug }}">{{ w.title }}</a>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
 {% if matome_pages %}
 <section class="panel matome-panel">
   <h2 class="section-title">シーズンまとめ（原作おすすめ10選）</h2>

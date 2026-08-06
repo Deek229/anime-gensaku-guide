@@ -19,7 +19,11 @@ def _get_json_gzip(url: str, params: dict[str, Any]) -> Any:
     params = {**params, 'out': 'json', 'gzip': 5}
     r = _SESSION.get(url, params=params, timeout=45)
     r.raise_for_status()
-    return json.loads(gzip.decompress(r.content))
+    content = r.content
+    try:
+        return json.loads(gzip.decompress(content))
+    except OSError:
+        return json.loads(content)
 
 
 def rank_rtype(target: date, period: str) -> str:
@@ -59,7 +63,8 @@ def fetch_novels(ncodes: list[str]) -> dict[str, dict[str, Any]]:
             continue
         for row in data[1:]:
             if isinstance(row, dict) and row.get('ncode'):
-                out[row['ncode']] = row
+                key = str(row['ncode']).upper()
+                out[key] = {**row, 'ncode': key}
         time.sleep(0.3)
     return out
 

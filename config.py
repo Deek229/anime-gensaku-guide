@@ -53,9 +53,10 @@ STATUS_LABELS = {
 # なろうAPI（サブ機能）
 RANK_API_URL = 'https://api.syosetu.com/rank/rankget/'
 NOVEL_API_URL = 'https://api.syosetu.com/novelapi/api/'
-NOVEL_BATCH_SIZE = 40
+NOVEL_BATCH_SIZE = 20
 NOVEL_FIELDS = 't-n-w-s-e-i-bg-g-k-gl-ga'
 RANK_CACHE_TTL_SEC = 60 * 60
+RANKING_DISPLAY_LIMIT = 100
 
 BIGGENRE_LABELS = {
     1: 'ファンタジー', 2: '恋愛', 3: 'ラブコメ', 4: '純文学',
