@@ -80,6 +80,7 @@ def enrich_work(work: dict[str, Any]) -> dict[str, Any]:
     original_anime = is_original_anime(work)
     has_cover = cover_kind in ('source_cover', 'key_visual') and cover_url not in ('', COVER_PLACEHOLDER)
     st = work.get('source_type', 'other')
+    is_ln_pick = work.get('season') == 'ln-picks' or work.get('status') == 'ln_only'
     base = {
         **work,
         'main_comment': (work.get('main_comment') or '').strip(),
@@ -91,6 +92,7 @@ def enrich_work(work: dict[str, Any]) -> dict[str, Any]:
         'cover_url': cover_url,
         'cover_kind': cover_kind,
         'is_original_anime': original_anime,
+        'is_ln_pick': is_ln_pick,
         'has_cover': has_cover,
         'has_source': st not in ('original', 'other', ''),
     }

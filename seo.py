@@ -27,6 +27,8 @@ def sitemap_loc(path: str = '/') -> str:
 
 def work_page_title(work: dict[str, Any]) -> str:
     title = work.get('title', '')
+    if work.get('is_ln_pick'):
+        return f'{title} ラノベ1巻・読む順・Amazon'
     if work.get('has_source'):
         st = work.get('source_type_label', '原作')
         return f'{title} 原作は何巻まで？{st}の読む順'
@@ -35,6 +37,11 @@ def work_page_title(work: dict[str, Any]) -> str:
 
 def work_meta_description(work: dict[str, Any]) -> str:
     title = work.get('title', '')
+    if work.get('is_ln_pick'):
+        return (
+            f'「{title}」ラノベのあらすじ・読む順・Amazon購入リンク。'
+            f'詐欺師から英雄へ——本格モノ作り異世界ファンタジー。{APP_TAGLINE}'
+        )[:155]
     if not work.get('has_source'):
         return f'{title}（{work.get("season_label", "")}）の情報。{APP_TAGLINE}'
 
@@ -51,6 +58,14 @@ def work_meta_description(work: dict[str, Any]) -> str:
 def build_intro(work: dict[str, Any]) -> str:
     title = work.get('title', '')
     season = work.get('season_label', '')
+    if work.get('is_ln_pick'):
+        source = work.get('source_title') or title
+        return (
+            f'「{source}」は水月一人著の異世界ファンタジーラノベ（HJノベルス）。'
+            f'現時点ではアニメ化未定。{work.get("read_order") or "1巻から順に読むのがおすすめ。"} '
+            f'このページではあらすじ・巻数・Amazon購入リンクをまとめています。'
+        )
+
     if not work.get('has_source'):
         return f'「{title}」は{season}の作品です。本作はオリジナルアニメのため、原作小説・漫画はありません。'
 
@@ -93,6 +108,29 @@ def _faq_volume_answer(work: dict[str, Any]) -> str:
 
 def build_faq(work: dict[str, Any]) -> list[dict[str, str]]:
     title = work.get('title', '')
+    if work.get('is_ln_pick'):
+        source = work.get('source_title') or title
+        faq = [
+            {
+                'question': f'{title}は何巻まで出ていますか？',
+                'answer': _faq_volume_answer(work),
+            },
+            {
+                'question': f'{title}はアニメ化されていますか？',
+                'answer': '現時点ではアニメ化の発表はありません（2026年8月時点）。',
+            },
+            {
+                'question': f'{title}はどこから読めばいい？',
+                'answer': work.get('read_order') or '書籍版は1巻から、Web版は「小説家になろう」でも読めます。',
+            },
+        ]
+        if work.get('buy_url'):
+            faq.append({
+                'question': f'{title}の1巻はどこで買える？',
+                'answer': 'Amazonで書籍版1巻を購入できます（このページの購入リンクから）。',
+            })
+        return faq
+
     if not work.get('has_source'):
         return [
             {

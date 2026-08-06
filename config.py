@@ -30,6 +30,7 @@ SEASON_LABELS = {
     '2026-spring': '2026年春アニメ',
     '2026-autumn': '2026年秋アニメ',
     '2026-winter': '2026年冬アニメ',
+    'ln-picks': 'おすすめラノベ',
 }
 
 SOURCE_TYPE_LABELS = {
@@ -46,6 +47,7 @@ STATUS_LABELS = {
     'upcoming': '放送予定',
     'airing': '放送開始',
     'finished': '放送終了',
+    'ln_only': 'ラノベ',
 }
 
 # なろうAPI（サブ機能）

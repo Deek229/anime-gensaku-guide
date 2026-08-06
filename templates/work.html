@@ -10,7 +10,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "TVSeries",
+  "@type": {% if work.is_ln_pick %}"Book"{% else %}"TVSeries"{% endif %},
   "name": {{ work.title|tojson }},
   "description": {{ description|tojson }},
   "url": {{ work.page_url|tojson }}
@@ -62,8 +62,8 @@
       <span class="badge badge-tag">{{ tag }}</span>
       {% endfor %}
     </div>
-    <h1>{{ work.title }}の原作は？</h1>
-    <p class="season-line">{{ work.season_label }}</p>
+    <h1>{% if work.is_ln_pick %}{{ work.title }} ラノベガイド{% else %}{{ work.title }}の原作は？{% endif %}</h1>
+    <p class="season-line">{% if work.is_ln_pick %}おすすめラノベ（アニメ化未定）{% else %}{{ work.season_label }}{% endif %}</p>
       </div>
     </div>
   </header>
@@ -89,14 +89,28 @@
   {% endif %}
 
   <section class="detail-panel">
-    <h2>原作情報</h2>
+    <h2>{% if work.is_ln_pick %}作品情報{% else %}原作情報{% endif %}</h2>
     {% if work.has_source %}
     <table class="info-table">
       <tr><th>原作</th><td>{{ work.source_title or '—' }}</td></tr>
       <tr><th>タイプ</th><td>{{ work.source_type_label }}</td></tr>
-      <tr><th>アニメ化範囲</th>
+      <tr><th>{% if work.is_ln_pick %}刊行状況{% else %}アニメ化範囲{% endif %}</th>
         <td>
-          {% if work.source_volume_from is not none or work.source_volume_to is not none %}
+          {% if work.is_ln_pick %}
+          <p class="volume-range-line">
+            <strong>
+              {% if work.source_volume_from is not none and work.source_volume_to is not none %}
+              書籍版 第{{ work.source_volume_from }}巻〜第{{ work.source_volume_to }}巻
+              {% elif work.source_volume_from is not none %}
+              書籍版 第{{ work.source_volume_from }}巻〜
+              {% else %}
+              書籍版 第2巻まで（2024年2月時点）
+              {% endif %}
+            </strong>
+            <span class="volume-type">（{{ work.source_type_label }}）</span>
+          </p>
+          <p class="volume-detail">アニメ化未定</p>
+          {% elif work.source_volume_from is not none or work.source_volume_to is not none %}
           <p class="volume-range-line">
             <strong>
               {% if work.source_volume_from is not none and work.source_volume_to is not none %}
@@ -111,7 +125,9 @@
             {% if work.source_volume_approximate %}<span class="volume-approx">※放送進行で更新</span>{% endif %}
           </p>
           {% endif %}
+          {% if not work.is_ln_pick %}
           <p class="volume-detail">{{ work.volumes_anime or '後日更新' }}</p>
+          {% endif %}
         </td>
       </tr>
       <tr><th>読む順・買い方</th><td>{{ work.read_order or '—' }}</td></tr>
