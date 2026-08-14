@@ -28,6 +28,24 @@
 </section>
 
 <div class="home-layout">
+{% if affiliate_picks %}
+<aside class="home-aff" aria-label="Amazonおすすめ">
+  <section class="panel sidebar-panel aff-panel">
+    <h2 class="section-title">今期のおすすめ原作</h2>
+    <p class="aff-note">Amazonアフィリエイトリンクです</p>
+    <div class="aff-list">
+      {% for w in affiliate_picks %}
+      <a class="aff-card" href="{{ w.buy_url }}" target="_blank" rel="noopener sponsored">
+        <img src="{{ w.cover_url }}" alt="{{ w.source_title or w.title }}" width="80" height="113" loading="lazy">
+        <span class="aff-card-title">{{ w.source_title or w.title }}</span>
+        <span class="aff-card-cta">{{ w.buy_label }}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+</aside>
+{% endif %}
+
 <div class="home-main">
 
 <section class="panel controls">

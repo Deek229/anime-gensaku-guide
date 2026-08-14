@@ -177,6 +177,15 @@ def popular_works(season: str | None = None, limit: int = 5) -> list[dict[str, A
     return items[:limit]
 
 
+def affiliate_picks(season: str | None = None, limit: int = 6) -> list[dict[str, Any]]:
+    """左サイド用。ASINがある今期原作をAmazon商品カードとして出す。"""
+    items = [
+        w for w in list_works(season=season, has_source_only=True)
+        if (w.get('amazon_asin') or '').strip() and w.get('buy_url')
+    ]
+    return items[:limit]
+
+
 def list_meta() -> dict[str, Any]:
     works = load_works()
     seasons = sorted({w.get('season', '') for w in works if w.get('season')}, reverse=True)

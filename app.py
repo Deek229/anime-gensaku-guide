@@ -16,7 +16,7 @@ from fastapi.staticfiles import StaticFiles
 from starlette.middleware.base import BaseHTTPMiddleware
 from starlette.requests import Request
 
-from anime_service import get_work, list_meta, list_works, popular_works, related_works
+from anime_service import affiliate_picks, get_work, list_meta, list_works, popular_works, related_works
 from guide_service import get_matome, list_matome_pages
 from config import (
     APP_TAGLINE,
@@ -82,6 +82,7 @@ def home(season: str | None = None):
         season_label_name=season_label_name,
         works=works,
         popular_works=popular_works(season=season),
+        affiliate_picks=affiliate_picks(season=season),
         ln_pick_works=list_works(season='ln-picks'),
         meta=meta,
         matome_pages=list_matome_pages(),

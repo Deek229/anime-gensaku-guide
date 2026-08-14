@@ -87,7 +87,7 @@ a { color: var(--cyan); }
 }
 
 .container {
-  max-width: 1280px;
+  max-width: 1360px;
   margin: 0 auto;
   padding: 1.25rem 1rem 2rem;
 }
@@ -105,6 +105,14 @@ a { color: var(--cyan); }
   min-width: 0;
 }
 
+.home-aff {
+  flex: 0 0 168px;
+  width: 168px;
+  max-width: 168px;
+  position: sticky;
+  top: 0.85rem;
+}
+
 .home-sidebar {
   flex: 0 0 260px;
   width: 260px;
@@ -114,6 +122,58 @@ a { color: var(--cyan); }
   gap: 0.75rem;
   position: sticky;
   top: 0.85rem;
+}
+
+.aff-note {
+  margin: -0.35rem 0 0.65rem;
+  font-size: 0.7rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.aff-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.aff-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  text-decoration: none;
+  color: var(--text);
+  padding: 0.35rem;
+  border-radius: 10px;
+  border: 1px solid transparent;
+}
+
+.aff-card:hover {
+  border-color: #f0c0d8;
+  background: #fff8fb;
+}
+
+.aff-card img {
+  width: 88px;
+  height: 124px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: #eef1f5;
+}
+
+.aff-card-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.aff-card-cta {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--pink);
 }
 
 .sidebar-panel {
@@ -912,6 +972,12 @@ a { color: var(--cyan); }
 
 .matome-panel { margin-bottom: 1rem; }
 .matome-panel .popular-links { margin-top: 0.5rem; }
+
+@media (max-width: 1100px) {
+  .home-aff {
+    display: none;
+  }
+}
 
 @media (max-width: 800px) {
   .home-layout {
