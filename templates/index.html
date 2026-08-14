@@ -123,6 +123,17 @@
 </div>
 
 <aside class="home-sidebar" aria-label="ガイドメニュー">
+  {% if matome_pages %}
+  <section class="panel sidebar-panel">
+    <h2 class="section-title">シーズンまとめ</h2>
+    <nav class="sidebar-nav">
+      {% for m in matome_pages %}
+      <a class="sidebar-link" href="{{ m.path }}">{{ m.title }}</a>
+      {% endfor %}
+    </nav>
+  </section>
+  {% endif %}
+
   {% if popular_works %}
   <section class="panel sidebar-panel">
     <h2 class="section-title">人気の原作ガイド</h2>
@@ -140,17 +151,6 @@
     <nav class="sidebar-nav">
       {% for w in ln_pick_works %}
       <a class="sidebar-link" href="/works/{{ w.share_slug }}">{{ w.title }}</a>
-      {% endfor %}
-    </nav>
-  </section>
-  {% endif %}
-
-  {% if matome_pages %}
-  <section class="panel sidebar-panel">
-    <h2 class="section-title">シーズンまとめ</h2>
-    <nav class="sidebar-nav">
-      {% for m in matome_pages %}
-      <a class="sidebar-link" href="{{ m.path }}">{{ m.title }}</a>
       {% endfor %}
     </nav>
   </section>
