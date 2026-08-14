@@ -10,22 +10,31 @@ from datetime import date
 from pathlib import Path
 
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException, Query
-from fastapi.responses import HTMLResponse, PlainTextResponse, Response
+from fastapi import FastAPI, HTTPException, Query, Request
+from fastapi.responses import HTMLResponse, PlainTextResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.base import BaseHTTPMiddleware
-from starlette.requests import Request
 
 from anime_service import affiliate_picks, get_work, list_meta, list_works, popular_works, related_works
 from guide_service import get_matome, list_matome_pages
 from config import (
-    APP_TAGLINE,
     APP_TITLE,
     APP_VERSION,
     DEFAULT_SEASON,
     GOOGLE_SITE_VERIFICATION,
     SEASON_LABELS,
     SITE_URL,
+)
+from i18n import (
+    COOKIE as LANG_COOKIE,
+    cookie_lang,
+    i18n_context,
+    is_bot,
+    ja_path,
+    locale_redirect,
+    localized_path,
+    parse_accept_language,
+    strings,
 )
 from ranking_service import get_ranking, list_meta as rank_meta
 from seo import absolute_url, breadcrumb_json_ld, faq_json_ld, render_robots, render_rss, render_sitemap
@@ -50,15 +59,34 @@ class AccessCountMiddleware(BaseHTTPMiddleware):
         return await call_next(request)
 
 
+class LocaleMiddleware(BaseHTTPMiddleware):
+    async def dispatch(self, request: Request, call_next):
+        redir = locale_redirect(request)
+        if redir:
+            return redir
+        path = request.url.path
+        if path == '/en' or path.startswith('/en/'):
+            request.state.lang = 'en'
+            new_path = ja_path(path)
+            request.scope['path'] = new_path
+            request.scope['raw_path'] = new_path.encode('ascii', 'ignore') or b'/'
+        else:
+            if is_bot(request.headers.get('user-agent')):
+                request.state.lang = 'ja'
+            else:
+                request.state.lang = cookie_lang(request) or parse_accept_language(
+                    request.headers.get('accept-language')
+                )
+        return await call_next(request)
+
+
 app.add_middleware(AccessCountMiddleware)
+app.add_middleware(LocaleMiddleware)
 app.mount('/static', StaticFiles(directory=STATIC), name='static')
 
 
-def _season_label(season: str) -> str:
-    return next(
-        (s['label'] for s in list_meta()['seasons'] if s['id'] == season),
-        SEASON_LABELS.get(season, season),
-    )
+def _season_label(season: str, lang: str = 'ja') -> str:
+    return strings(lang)['season_labels'].get(season, SEASON_LABELS.get(season, season))
 
 
 def _home_og_image(season: str) -> str | None:
@@ -68,31 +96,50 @@ def _home_og_image(season: str) -> str | None:
     return None
 
 
+def html_page(request: Request, template: str, page_path: str, **ctx) -> HTMLResponse:
+    i18n = i18n_context(request, page_path)
+    canonical = absolute_url(localized_path(page_path, i18n['lang']))
+    merged = {
+        **i18n,
+        'google_site_verification': GOOGLE_SITE_VERIFICATION,
+        'site_url': SITE_URL,
+        **ctx,
+        'canonical_url': canonical,
+        'og_url': canonical,
+    }
+    return HTMLResponse(render_template(template, **merged))
+
+
+@app.get('/set-lang/{lang}')
+def set_lang(lang: str, next: str = '/'):
+    chosen = 'en' if lang == 'en' else 'ja'
+    nxt = next if next.startswith('/') and not next.startswith('//') else '/'
+    nxt = ja_path(nxt)
+    dest = localized_path(nxt, chosen)
+    resp = RedirectResponse(dest, status_code=303)
+    resp.set_cookie(LANG_COOKIE, chosen, max_age=60 * 60 * 24 * 365, path='/', samesite='lax')
+    return resp
+
+
 @app.get('/', response_class=HTMLResponse)
-def home(season: str | None = None):
+def home(request: Request, season: str | None = None):
+    lang = getattr(request.state, 'lang', 'ja')
     season = season or DEFAULT_SEASON
-    works = list_works(season=season)
-    meta = list_meta()
-    season_label_name = _season_label(season)
-    return HTMLResponse(render_template(
+    return html_page(
+        request,
         'index.html',
-        app_title=APP_TITLE,
-        tagline=APP_TAGLINE,
+        '/',
         season=season,
-        season_label_name=season_label_name,
-        works=works,
+        season_label_name=_season_label(season, lang),
+        works=list_works(season=season),
         popular_works=popular_works(season=season),
         affiliate_picks=affiliate_picks(season=season),
         ln_pick_works=list_works(season='ln-picks'),
-        meta=meta,
+        meta=list_meta(),
         matome_pages=list_matome_pages(),
-        site_url=SITE_URL,
-        canonical_url=absolute_url('/'),
-        og_url=absolute_url('/'),
         og_image=_home_og_image(season),
         og_type='website',
-        google_site_verification=GOOGLE_SITE_VERIFICATION,
-    ))
+    )
 
 
 @app.head('/', include_in_schema=False)
@@ -101,76 +148,80 @@ def home_head():
 
 
 @app.get('/works/{work_id}', response_class=HTMLResponse)
-def work_page(work_id: str):
+def work_page(request: Request, work_id: str):
     work = get_work(work_id)
     if not work:
         raise HTTPException(404, '作品が見つかりません')
-    return HTMLResponse(render_template(
+    lang = getattr(request.state, 'lang', 'ja')
+    t = strings(lang)
+    if lang == 'en':
+        page_title = f'{work["title"]} | {t["app_title"]}'
+        description = f'{work["title"]} — source material, reading order, and Amazon links.'
+    else:
+        page_title = f'{work["seo_title"]}｜{APP_TITLE}'
+        description = work['seo_description']
+    return html_page(
+        request,
         'work.html',
+        f'/works/{work_id}',
         work=work,
         related_works=related_works(work_id),
-        page_title=f'{work["seo_title"]}｜{APP_TITLE}',
-        description=work['seo_description'],
+        page_title=page_title,
+        description=description,
         faq_json=faq_json_ld(work['faq']),
         breadcrumb_json=breadcrumb_json_ld([
-            ('ホーム', '/'),
-            (work['season_label'], '/'),
+            (t['home'], '/'),
+            (t['season_labels'].get(work.get('season'), work.get('season_label', '')), '/'),
             (work['title'], work['page_path']),
         ]),
-        site_url=SITE_URL,
-        app_title=APP_TITLE,
-        canonical_url=work['page_url'],
-        og_url=work['share_url'],
         og_image=work.get('og_image_url'),
         og_type='article',
-        google_site_verification=GOOGLE_SITE_VERIFICATION,
-    ))
+    )
 
 
 @app.get('/matome/{slug}', response_class=HTMLResponse)
-def matome_page(slug: str):
+def matome_page(request: Request, slug: str):
     page = get_matome(slug)
     if not page:
         raise HTTPException(404, 'まとめページが見つかりません')
-    path = page['path']
+    t = strings(getattr(request.state, 'lang', 'ja'))
+    loc = t['matome'].get(slug)
+    if loc:
+        page = {**page, 'title': loc['title'], 'lead': loc['lead'], 'seo_description': loc['lead'][:155]}
+    page = {**page, 'season_label': t['season_labels'].get(page['season'], page['season_label'])}
     other_matome = [m for m in list_matome_pages() if m['slug'] != slug]
-    return HTMLResponse(render_template(
+    return html_page(
+        request,
         'matome.html',
-        app_title=APP_TITLE,
-        tagline=APP_TAGLINE,
+        page['path'],
         page=page,
         other_matome=other_matome,
-        site_url=SITE_URL,
-        canonical_url=absolute_url(path),
-        og_url=absolute_url(path),
         og_image=_home_og_image(page['season']),
         og_type='article',
-        google_site_verification=GOOGLE_SITE_VERIFICATION,
-    ))
+    )
 
 
 @app.get('/rankings', response_class=HTMLResponse)
-def rankings_page():
-    return HTMLResponse(render_template(
+def rankings_page(request: Request):
+    return html_page(
+        request,
         'rankings.html',
-        app_title=APP_TITLE,
-        tagline='なろうランキング（サブ）',
-        site_url=SITE_URL,
-        canonical_url=absolute_url('/rankings'),
-        og_url=absolute_url('/rankings'),
+        '/rankings',
         og_image=_home_og_image(DEFAULT_SEASON),
         og_type='website',
-        google_site_verification=GOOGLE_SITE_VERIFICATION,
-    ))
+    )
 
 
 def _build_sitemap_xml() -> str:
     paths: list[tuple[str, str, str]] = [
         ('/', 'daily', '1.0'),
         ('/rankings', 'weekly', '0.6'),
+        ('/en', 'daily', '0.9'),
+        ('/en/rankings', 'weekly', '0.5'),
     ]
     for matome in list_matome_pages():
         paths.append((matome['path'], 'weekly', '0.7'))
+        paths.append((f'/en{matome["path"]}', 'weekly', '0.6'))
     for work in list_works():
         paths.append((f'/works/{work["id"]}', 'weekly', '0.8'))
     return render_sitemap(paths)

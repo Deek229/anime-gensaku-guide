@@ -96,7 +96,7 @@
       if (merged.length >= MAX_SHOW) break;
     }
     if (!merged.length) return;
-    if (titleEl) titleEl.textContent = '最近見た原作';
+    if (titleEl) titleEl.textContent = document.body.dataset.affRecent || titleEl.textContent;
     listEl.replaceChildren(...merged.map(cardNode));
   }
 

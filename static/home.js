@@ -22,12 +22,13 @@ function applyFilters() {
     if (ok) visible += 1;
   });
   els.emptyMsg.classList.toggle('hidden', visible > 0);
-  els.statusLine.textContent = `${visible}作品表示`;
+  els.statusLine.textContent = (document.body.dataset.statusTpl || '{n}').replace('{n}', String(visible));
 }
 
 els.seasonSelect?.addEventListener('change', () => {
   const season = els.seasonSelect.value;
-  window.location.href = `/?season=${encodeURIComponent(season)}`;
+  const prefix = document.body.dataset.langPrefix || '';
+  window.location.href = `${prefix}/?season=${encodeURIComponent(season)}`;
 });
 
 [els.filterSource, els.filterHasSource, els.searchInput].forEach((el) => {

@@ -1,24 +1,24 @@
 {% extends "base.html" %}
-{% block title %}なろうランキング｜{{ app_title }}{% endblock %}
+{% block title %}{{ t.rankings_title }}｜{{ app_title }}{% endblock %}
 {% block content %}
 <section class="hero">
-  <h1>なろうランキング</h1>
-  <p class="tagline">公式APIのランキング閲覧（サブ機能）。書籍化・アニメ化候補の探索用。</p>
+  <h1>{{ t.rankings_title }}</h1>
+  <p class="tagline">{{ t.rankings_lead }}</p>
 </section>
 <section class="panel controls" id="rankControls">
   <div class="period-tabs" id="periodTabs">
-    <button type="button" class="tab active" data-period="d">日間</button>
-    <button type="button" class="tab" data-period="w">週間</button>
-    <button type="button" class="tab" data-period="m">月間</button>
-    <button type="button" class="tab" data-period="q">四半期</button>
+    <button type="button" class="tab active" data-period="d">{{ t.rank_d }}</button>
+    <button type="button" class="tab" data-period="w">{{ t.rank_w }}</button>
+    <button type="button" class="tab" data-period="m">{{ t.rank_m }}</button>
+    <button type="button" class="tab" data-period="q">{{ t.rank_q }}</button>
   </div>
-  <p class="status-line" id="rankStatus">読み込み中...</p>
+  <p class="status-line" id="rankStatus">{{ t.rank_loading }}</p>
 </section>
 <section class="panel">
   <div class="table-wrap">
     <table class="rank-table">
       <thead>
-        <tr><th>順位</th><th>作品</th><th>作者</th><th>状態</th><th>Pt</th></tr>
+        <tr><th>{{ t.rank_th_rank }}</th><th>{{ t.rank_th_title }}</th><th>{{ t.rank_th_writer }}</th><th>{{ t.rank_th_status }}</th><th>{{ t.rank_th_pt }}</th></tr>
       </thead>
       <tbody id="rankBody"></tbody>
     </table>

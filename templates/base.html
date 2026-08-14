@@ -1,42 +1,54 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="{{ html_lang|default('ja') }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{% block title %}{{ app_title }}{% endblock %}</title>
-  <meta name="description" content="{% block description %}{{ tagline|default('今期アニメの原作ラノベ・漫画と購入リンク') }}{% endblock %}">
+  <meta name="description" content="{% block description %}{{ tagline|default('') }}{% endblock %}">
   <meta name="robots" content="index, follow">
   {% if canonical_url %}<link rel="canonical" href="{{ canonical_url }}">{% endif %}
+  {% if ja_url %}<link rel="alternate" hreflang="ja" href="{{ ja_url }}">{% endif %}
+  {% if en_url %}<link rel="alternate" hreflang="en" href="{{ en_url }}">{% endif %}
+  {% if ja_url %}<link rel="alternate" hreflang="x-default" href="{{ ja_url }}">{% endif %}
   <meta property="og:site_name" content="{{ app_title }}">
   <meta property="og:title" content="{% block og_title %}{{ app_title }}{% endblock %}">
-  <meta property="og:description" content="{% block og_description %}{{ tagline|default('今期アニメの原作ラノベ・漫画と購入リンク') }}{% endblock %}">
+  <meta property="og:description" content="{% block og_description %}{{ tagline|default('') }}{% endblock %}">
   <meta property="og:type" content="{{ og_type|default('website') }}">
   {% if og_url %}<meta property="og:url" content="{{ og_url }}">{% elif canonical_url %}<meta property="og:url" content="{{ canonical_url }}">{% endif %}
-  <meta property="og:locale" content="ja_JP">
+  <meta property="og:locale" content="{{ og_locale|default('ja_JP') }}">
+  {% if lang == 'en' %}
+  <meta property="og:locale:alternate" content="ja_JP">
+  {% else %}
+  <meta property="og:locale:alternate" content="en_US">
+  {% endif %}
   {% if og_image %}
   <meta property="og:image" content="{{ og_image }}">
   <meta property="og:image:alt" content="{% block og_image_alt %}{{ app_title }}{% endblock %}">
   {% endif %}
   <meta name="twitter:card" content="{% if og_image %}summary_large_image{% else %}summary{% endif %}">
   <meta name="twitter:title" content="{% block twitter_title %}{{ app_title }}{% endblock %}">
-  <meta name="twitter:description" content="{% block twitter_description %}{{ tagline|default('今期アニメの原作ラノベ・漫画と購入リンク') }}{% endblock %}">
+  <meta name="twitter:description" content="{% block twitter_description %}{{ tagline|default('') }}{% endblock %}">
   {% if og_image %}<meta name="twitter:image" content="{{ og_image }}">{% endif %}
   {% if google_site_verification %}
   <meta name="google-site-verification" content="{{ google_site_verification }}">
   {% endif %}
   <link rel="alternate" type="application/rss+xml" title="{{ app_title }} RSS" href="/feed.xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="/static/style.css?v=20260814-affleft">
+  <link rel="stylesheet" href="/static/style.css?v=20260814-i18n">
   {% block head %}{% endblock %}
 </head>
-<body>
+<body data-lang="{{ lang|default('ja') }}" data-lang-prefix="{{ lang_prefix|default('') }}" data-status-tpl="{{ t.works_shown }}" data-aff-recent="{{ t.aff_recent }}" data-copied="{{ t.copied }}" data-copy-prompt="{{ t.copy_prompt }}" data-rank-loading="{{ t.rank_loading }}" data-rank-error="{{ t.rank_error }}">
   <header class="site-header">
     <div class="header-inner">
-      <a class="logo" href="/">✦ {{ app_title }}</a>
+      <a class="logo" href="{{ lang_prefix|default('') }}/">✦ {{ app_title }}</a>
       <nav class="nav">
-        <a href="/">今期アニメ</a>
-        <a href="/matome/2026-summer">まとめ</a>
-        <a href="/rankings">なろうR</a>
+        <a href="{{ lang_prefix|default('') }}/">{{ t.nav_current }}</a>
+        <a href="{{ lang_prefix|default('') }}/matome/2026-summer">{{ t.nav_matome }}</a>
+        <a href="{{ lang_prefix|default('') }}/rankings">{{ t.nav_rankings }}</a>
+        <span class="lang-switch" role="navigation" aria-label="Language">
+          <a class="lang-link{% if lang != 'en' %} is-active{% endif %}" href="{{ switch_ja }}">JA</a>
+          <a class="lang-link{% if lang == 'en' %} is-active{% endif %}" href="{{ switch_en }}">EN</a>
+        </span>
       </nav>
     </div>
   </header>
@@ -44,11 +56,11 @@
     {% block content %}{% endblock %}
   </main>
   <footer class="site-footer">
-    <p class="disclosure">※ Amazonリンクはアフィリエイトを使用する場合があります。データの一部はAnnict・なろうAPIを利用しています。</p>
-    <p class="access-count">総アクセス数: {{ total_access_count | commas }}</p>
-    <p><small>{{ app_title }} v0.2 · <a href="/sitemap.xml">サイトマップ</a></small></p>
+    <p class="disclosure">{{ t.disclosure }}</p>
+    <p class="access-count">{{ t.access_count }}: {{ total_access_count | commas }}</p>
+    <p><small>{{ app_title }} v0.2 · <a href="/sitemap.xml">{{ t.sitemap }}</a></small></p>
   </footer>
   {% block scripts %}{% endblock %}
-  <script src="/static/interest.js?v=20260814"></script>
+  <script src="/static/interest.js?v=20260814b"></script>
 </body>
 </html>

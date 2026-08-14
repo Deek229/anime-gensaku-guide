@@ -7,7 +7,7 @@ function esc(s) {
 async function loadRankings() {
   const status = document.getElementById('rankStatus');
   const body = document.getElementById('rankBody');
-  status.textContent = '読み込み中...';
+    status.textContent = document.body.dataset.rankLoading || 'Loading…';
   try {
     const res = await fetch(`/api/rankings?period=${period}`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
@@ -30,7 +30,7 @@ async function loadRankings() {
       ? `${data.period_label} ${data.count}件（${data.warning}）`
       : `${data.period_label} ${data.count}件`;
   } catch (err) {
-    status.textContent = `エラー: ${err.message}`;
+    status.textContent = `${document.body.dataset.rankError || 'Error'}: ${err.message}`;
   }
 }
 

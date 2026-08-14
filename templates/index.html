@@ -1,9 +1,9 @@
 {% extends "base.html" %}
-{% block title %}{{ season_label_name }} 原作ガイド｜{{ app_title }}{% endblock %}
-{% block description %}{{ season_label_name }}の原作ラノベ・漫画一覧。アニメ化範囲・読む順・Amazon購入リンク付き。{% endblock %}
-{% block og_title %}{{ season_label_name }} 原作ガイド{% endblock %}
+{% block title %}{{ t.home_title.format(season=season_label_name, app=app_title) }}{% endblock %}
+{% block description %}{{ t.home_desc.format(season=season_label_name) }}{% endblock %}
+{% block og_title %}{{ t.home_og.format(season=season_label_name) }}{% endblock %}
 {% block og_description %}{{ tagline }}{% endblock %}
-{% block twitter_title %}{{ season_label_name }} 原作ガイド{% endblock %}
+{% block twitter_title %}{{ t.home_og.format(season=season_label_name) }}{% endblock %}
 {% block twitter_description %}{{ tagline }}{% endblock %}
 {% block head %}
 <script type="application/ld+json">
@@ -29,16 +29,16 @@
 
 <div class="home-layout">
 {% if affiliate_picks %}
-<aside class="home-aff" aria-label="Amazonおすすめ">
+<aside class="home-aff" aria-label="{{ t.aff_aria }}">
   <section class="panel sidebar-panel aff-panel">
-    <h2 class="section-title" id="affTitle">今期のおすすめ原作</h2>
-    <p class="aff-note">この端末で見た作品を優先して出します（Amazonアフィリエイト）</p>
+    <h2 class="section-title" id="affTitle">{{ t.aff_title }}</h2>
+    <p class="aff-note">{{ t.aff_note }}</p>
     <div class="aff-list" id="affList">
       {% for w in affiliate_picks %}
       <a class="aff-card" href="{{ w.buy_url }}" target="_blank" rel="noopener sponsored" data-work-id="{{ w.id }}">
         <img src="{{ w.cover_url }}" alt="{{ w.source_title or w.title }}" width="80" height="113" loading="lazy">
         <span class="aff-card-title">{{ w.source_title or w.title }}</span>
-        <span class="aff-card-cta">{{ w.buy_label }}</span>
+        <span class="aff-card-cta">{{ t.amazon_view if w.amazon_asin else t.amazon_search }}</span>
       </a>
       {% endfor %}
     </div>
@@ -51,32 +51,32 @@
 <section class="panel controls">
   <div class="control-row">
     <label class="field">
-      <span>シーズン</span>
+      <span>{{ t.season }}</span>
       <select id="seasonSelect">
         {% for s in meta.seasons %}
-        <option value="{{ s.id }}" {% if s.id == season %}selected{% endif %}>{{ s.label }} ({{ s.count }})</option>
+        <option value="{{ s.id }}" {% if s.id == season %}selected{% endif %}>{{ t.season_labels.get(s.id, s.label) }} ({{ s.count }})</option>
         {% endfor %}
       </select>
     </label>
     <label class="field">
-      <span>原作タイプ</span>
+      <span>{{ t.source_type_ui }}</span>
       <select id="filterSource">
-        <option value="">すべて</option>
+        <option value="">{{ t.all }}</option>
         {% for st in meta.source_types %}
-        <option value="{{ st.id }}">{{ st.label }}</option>
+        <option value="{{ st.id }}">{{ t.source_labels.get(st.id, st.label) }}</option>
         {% endfor %}
       </select>
     </label>
     <label class="field checkbox-field">
       <input type="checkbox" id="filterHasSource">
-      <span>原作ありのみ</span>
+      <span>{{ t.has_source_only }}</span>
     </label>
     <label class="field grow">
-      <span>検索</span>
-      <input type="search" id="searchInput" placeholder="作品名・原作名で検索…">
+      <span>{{ t.search }}</span>
+      <input type="search" id="searchInput" placeholder="{{ t.search_ph }}">
     </label>
   </div>
-  <p class="status-line" id="statusLine">{{ works|length }}作品</p>
+  <p class="status-line" id="statusLine">{{ t.works_count.format(n=works|length) }}</p>
 </section>
 
 <section class="panel">
@@ -84,9 +84,9 @@
     {% for w in works %}
     <article class="work-card" data-source="{{ w.source_type }}" data-has-source="{{ '1' if w.has_source else '0' }}" data-search="{{ w.title }} {{ w.source_title }} {{ w.tags|join(' ') }}" data-work-id="{{ w.id }}" data-title="{{ w.title }}" data-source-title="{{ w.source_title or '' }}" data-buy-url="{{ w.buy_url or '' }}" data-cover-url="{{ w.cover_url }}" data-buy-label="{{ w.buy_label }}">
       {% if w.cover_kind == 'original_badge' %}
-      <div class="work-card-cover original-visual-badge" aria-label="アニメオリジナル作品">
+      <div class="work-card-cover original-visual-badge" aria-label="{{ t.original_aria }}">
         <span class="original-visual-badge__mark">TV</span>
-        <span class="original-visual-badge__text">アニメ<br>オリジナル<br>作品</span>
+        <span class="original-visual-badge__text">{{ t.original_l1 }}<br>{{ t.original_l2 }}<br>{{ t.original_l3 }}</span>
       </div>
       {% elif w.buy_url %}
       <a class="work-card-cover cover-with-fallback" href="{{ w.buy_url }}" target="_blank" rel="noopener sponsored" aria-label="{{ w.source_title or w.title }}を{{ w.buy_label }}">
@@ -94,7 +94,7 @@
         {% if w.is_original_anime %}
         <div class="original-visual-badge original-visual-badge--fallback" aria-hidden="true">
           <span class="original-visual-badge__mark">TV</span>
-          <span class="original-visual-badge__text">アニメ<br>オリジナル<br>作品</span>
+          <span class="original-visual-badge__text">{{ t.original_l1 }}<br>{{ t.original_l2 }}<br>{{ t.original_l3 }}</span>
         </div>
         {% endif %}
       </a>
@@ -104,21 +104,21 @@
         {% if w.is_original_anime %}
         <div class="original-visual-badge original-visual-badge--fallback" aria-hidden="true">
           <span class="original-visual-badge__mark">TV</span>
-          <span class="original-visual-badge__text">アニメ<br>オリジナル<br>作品</span>
+          <span class="original-visual-badge__text">{{ t.original_l1 }}<br>{{ t.original_l2 }}<br>{{ t.original_l3 }}</span>
         </div>
         {% endif %}
       </div>
       {% endif %}
       <div class="work-card-body">
       <div class="work-card-head">
-        <span class="badge badge-status">{{ w.status_label }}</span>
+        <span class="badge badge-status">{{ t.status_labels.get(w.status, w.status_label) }}</span>
         {% if w.source_type_label %}
-        <span class="badge badge-source">{{ w.source_type_label }}</span>
+        <span class="badge badge-source">{{ t.source_labels.get(w.source_type, w.source_type_label) }}</span>
         {% endif %}
       </div>
-      <h2><a href="/works/{{ w.id }}">{{ w.title }}</a></h2>
+      <h2><a href="{{ lang_prefix }}/works/{{ w.id }}">{{ w.title }}</a></h2>
       {% if w.source_title %}
-      <p class="source-line">原作: {{ w.source_title }}</p>
+      <p class="source-line">{{ t.source_prefix }} {{ w.source_title }}</p>
       {% endif %}
       {% if w.anime_continue_short %}
       <p class="snippet snippet-continue">{{ w.anime_continue_short }}</p>
@@ -126,27 +126,27 @@
       <p class="snippet">{{ w.volumes_anime[:90] }}{% if w.volumes_anime|length > 90 %}…{% endif %}</p>
       {% endif %}
       <div class="card-actions">
-        <a class="btn btn-secondary" href="/works/{{ w.id }}">詳細</a>
+        <a class="btn btn-secondary" href="{{ lang_prefix }}/works/{{ w.id }}">{{ t.detail }}</a>
         {% if w.buy_url %}
-        <a class="btn btn-primary" href="{{ w.buy_url }}" target="_blank" rel="noopener sponsored">{{ w.buy_label }}</a>
+        <a class="btn btn-primary" href="{{ w.buy_url }}" target="_blank" rel="noopener sponsored">{{ t.amazon_view if w.amazon_asin else t.amazon_search }}</a>
         {% endif %}
-        <a class="btn btn-share btn-x btn-x-mini" href="{{ w.twitter_share_url }}" target="_blank" rel="noopener noreferrer" title="Xでシェア">𝕏</a>
+        <a class="btn btn-share btn-x btn-x-mini" href="{{ w.twitter_share_url }}" target="_blank" rel="noopener noreferrer" title="{{ t.share_x }}">𝕏</a>
       </div>
       </div>
     </article>
     {% endfor %}
   </div>
-  <p class="empty-msg hidden" id="emptyMsg">条件に一致する作品がありません。</p>
+  <p class="empty-msg hidden" id="emptyMsg">{{ t.empty }}</p>
 </section>
 </div>
 
-<aside class="home-sidebar" aria-label="ガイドメニュー">
+<aside class="home-sidebar" aria-label="{{ t.menu_aria }}">
   {% if matome_pages %}
   <section class="panel sidebar-panel">
-    <h2 class="section-title">シーズンまとめ</h2>
+    <h2 class="section-title">{{ t.matome_heading }}</h2>
     <nav class="sidebar-nav">
       {% for m in matome_pages %}
-      <a class="sidebar-link" href="{{ m.path }}">{{ m.title }}</a>
+      <a class="sidebar-link" href="{{ lang_prefix }}{{ m.path }}">{{ t.matome[m.slug].title if m.slug in t.matome else m.title }}</a>
       {% endfor %}
     </nav>
   </section>
@@ -154,10 +154,10 @@
 
   {% if popular_works %}
   <section class="panel sidebar-panel">
-    <h2 class="section-title">人気の原作ガイド</h2>
+    <h2 class="section-title">{{ t.popular_heading }}</h2>
     <nav class="sidebar-nav">
       {% for w in popular_works %}
-      <a class="sidebar-link" href="/works/{{ w.id }}">{{ w.title }}</a>
+      <a class="sidebar-link" href="{{ lang_prefix }}/works/{{ w.id }}">{{ w.title }}</a>
       {% endfor %}
     </nav>
   </section>
@@ -165,10 +165,10 @@
 
   {% if ln_pick_works %}
   <section class="panel sidebar-panel">
-    <h2 class="section-title">おすすめラノベ</h2>
+    <h2 class="section-title">{{ t.ln_heading }}</h2>
     <nav class="sidebar-nav">
       {% for w in ln_pick_works %}
-      <a class="sidebar-link" href="/works/{{ w.share_slug }}">{{ w.title }}</a>
+      <a class="sidebar-link" href="{{ lang_prefix }}/works/{{ w.share_slug }}">{{ w.title }}</a>
       {% endfor %}
     </nav>
   </section>

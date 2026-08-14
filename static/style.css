@@ -86,6 +86,35 @@ a { color: var(--cyan); }
   background: var(--bg);
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 0.35rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.lang-link {
+  padding: 0.32rem 0.65rem !important;
+  border-radius: 0 !important;
+  border: none !important;
+  font-size: 0.75rem !important;
+  font-weight: 800 !important;
+}
+
+.lang-link.is-active {
+  background: linear-gradient(135deg, var(--pink-2), var(--violet));
+  color: #fff !important;
+  -webkit-text-fill-color: #fff;
+}
+
+.jp-body-note {
+  margin: 0 0 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
 .container {
   max-width: 1360px;
   margin: 0 auto;

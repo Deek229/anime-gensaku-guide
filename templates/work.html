@@ -32,13 +32,13 @@
   'buy_label': work.buy_label
 }|tojson }}</script>
 <article class="work-detail">
-  <nav class="breadcrumb"><a href="/">一覧</a> / {{ work.title }}</nav>
+  <nav class="breadcrumb"><a href="{{ lang_prefix }}/">{{ t.list }}</a> / {{ work.title }}</nav>
   <header class="work-header">
     <div class="work-header-main">
       {% if work.cover_kind == 'original_badge' %}
-      <div class="work-cover-wrap original-visual-badge original-visual-badge--detail" aria-label="アニメオリジナル作品">
+      <div class="work-cover-wrap original-visual-badge original-visual-badge--detail" aria-label="{{ t.original_aria }}">
         <span class="original-visual-badge__mark">TV</span>
-        <span class="original-visual-badge__text">アニメ<br>オリジナル<br>作品</span>
+        <span class="original-visual-badge__text">{{ t.original_l1 }}<br>{{ t.original_l2 }}<br>{{ t.original_l3 }}</span>
       </div>
       {% elif work.buy_url %}
       <a class="work-cover-wrap work-cover-link cover-with-fallback" href="{{ work.buy_url }}" target="_blank" rel="noopener sponsored" aria-label="{{ work.source_title or work.title }}を{{ work.buy_label }}">
@@ -46,7 +46,7 @@
         {% if work.is_original_anime %}
         <div class="original-visual-badge original-visual-badge--detail original-visual-badge--fallback" aria-hidden="true">
           <span class="original-visual-badge__mark">TV</span>
-          <span class="original-visual-badge__text">アニメ<br>オリジナル<br>作品</span>
+          <span class="original-visual-badge__text">{{ t.original_l1 }}<br>{{ t.original_l2 }}<br>{{ t.original_l3 }}</span>
         </div>
         {% endif %}
       </a>
@@ -56,32 +56,35 @@
         {% if work.is_original_anime %}
         <div class="original-visual-badge original-visual-badge--detail original-visual-badge--fallback" aria-hidden="true">
           <span class="original-visual-badge__mark">TV</span>
-          <span class="original-visual-badge__text">アニメ<br>オリジナル<br>作品</span>
+          <span class="original-visual-badge__text">{{ t.original_l1 }}<br>{{ t.original_l2 }}<br>{{ t.original_l3 }}</span>
         </div>
         {% endif %}
       </div>
       {% endif %}
       <div class="work-header-text">
     <div class="badges">
-      <span class="badge badge-status">{{ work.status_label }}</span>
-      <span class="badge badge-source">{{ work.source_type_label }}</span>
+      <span class="badge badge-status">{{ t.status_labels.get(work.status, work.status_label) }}</span>
+      <span class="badge badge-source">{{ t.source_labels.get(work.source_type, work.source_type_label) }}</span>
       {% for tag in work.tags %}
       <span class="badge badge-tag">{{ tag }}</span>
       {% endfor %}
     </div>
-    <h1>{% if work.is_ln_pick %}{{ work.title }} ラノベガイド{% else %}{{ work.title }}の原作は？{% endif %}</h1>
-    <p class="season-line">{% if work.is_ln_pick %}おすすめラノベ（アニメ化未定）{% else %}{{ work.season_label }}{% endif %}</p>
+    <h1>{% if work.is_ln_pick %}{{ t.work_h1_ln.format(title=work.title) }}{% else %}{{ t.work_h1.format(title=work.title) }}{% endif %}</h1>
+    <p class="season-line">{% if work.is_ln_pick %}{{ t.ln_season_line }}{% else %}{{ t.season_labels.get(work.season, work.season_label) }}{% endif %}</p>
       </div>
     </div>
   </header>
 
+  {% if t.jp_body_note %}
+  <p class="jp-body-note">{{ t.jp_body_note }}</p>
+  {% endif %}
   <section class="detail-panel intro-panel">
     <p class="intro-text">{{ work.intro }}</p>
   </section>
 
   {% if work.main_comment %}
   <section class="detail-panel main-comment-panel">
-    <h2>主コメント</h2>
+    <h2>{{ t.main_comment }}</h2>
     <div class="main-comment-box">
       <p class="main-comment-text">{{ work.main_comment }}</p>
     </div>
@@ -90,18 +93,18 @@
 
   {% if work.has_anime_continue %}
   <section class="detail-panel continue-panel">
-    <h2>アニメの続きは何巻から？</h2>
+    <h2>{{ t.continue_h }}</h2>
     <p class="continue-text">{{ work.anime_continue_text }}</p>
   </section>
   {% endif %}
 
   <section class="detail-panel">
-    <h2>{% if work.is_ln_pick %}作品情報{% else %}原作情報{% endif %}</h2>
+    <h2>{% if work.is_ln_pick %}{{ t.info_h_ln }}{% else %}{{ t.info_h }}{% endif %}</h2>
     {% if work.has_source %}
     <table class="info-table">
-      <tr><th>原作</th><td>{{ work.source_title or '—' }}</td></tr>
-      <tr><th>タイプ</th><td>{{ work.source_type_label }}</td></tr>
-      <tr><th>{% if work.is_ln_pick %}刊行状況{% else %}アニメ化範囲{% endif %}</th>
+      <tr><th>{{ t.th_source }}</th><td>{{ work.source_title or '—' }}</td></tr>
+      <tr><th>{{ t.th_type }}</th><td>{{ t.source_labels.get(work.source_type, work.source_type_label) }}</td></tr>
+      <tr><th>{% if work.is_ln_pick %}{{ t.th_pub }}{% else %}{{ t.th_range }}{% endif %}</th>
         <td>
           {% if work.is_ln_pick %}
           <p class="volume-range-line">
@@ -114,9 +117,9 @@
               書籍版 第2巻まで（2024年2月時点）
               {% endif %}
             </strong>
-            <span class="volume-type">（{{ work.source_type_label }}）</span>
+            <span class="volume-type">（{{ t.source_labels.get(work.source_type, work.source_type_label) }}）</span>
           </p>
-          <p class="volume-detail">アニメ化未定</p>
+          <p class="volume-detail">{{ t.no_anime_yet }}</p>
           {% elif work.source_volume_from is not none or work.source_volume_to is not none %}
           <p class="volume-range-line">
             <strong>
@@ -128,25 +131,25 @@
               〜第{{ work.source_volume_to }}巻
               {% endif %}
             </strong>
-            <span class="volume-type">（{{ work.source_type_label }}）</span>
-            {% if work.source_volume_approximate %}<span class="volume-approx">※放送進行で更新</span>{% endif %}
+            <span class="volume-type">（{{ t.source_labels.get(work.source_type, work.source_type_label) }}）</span>
+            {% if work.source_volume_approximate %}<span class="volume-approx">{{ t.approx }}</span>{% endif %}
           </p>
           {% endif %}
           {% if not work.is_ln_pick %}
-          <p class="volume-detail">{{ work.volumes_anime or '後日更新' }}</p>
+          <p class="volume-detail">{{ work.volumes_anime or t.later }}</p>
           {% endif %}
         </td>
       </tr>
-      <tr><th>読む順・買い方</th><td>{{ work.read_order or '—' }}</td></tr>
+      <tr><th>{{ t.th_order }}</th><td>{{ work.read_order or '—' }}</td></tr>
     </table>
     {% else %}
-    <p>オリジナルアニメ、または原作情報は未登録です。</p>
+    <p>{{ t.no_source }}</p>
     {% endif %}
   </section>
 
   {% if work.faq %}
   <section class="detail-panel faq-panel">
-    <h2>よくある質問</h2>
+    <h2>{{ t.faq }}</h2>
     <div class="faq-list">
       {% for item in work.faq %}
       <details class="faq-item">
@@ -160,50 +163,50 @@
 
   {% if work.memo %}
   <section class="detail-panel">
-    <h2>メモ</h2>
+    <h2>{{ t.memo }}</h2>
     <p>{{ work.memo }}</p>
   </section>
   {% endif %}
 
   <section class="detail-panel actions-panel">
-    <h2>リンク</h2>
+    <h2>{{ t.links }}</h2>
     <div class="action-buttons">
       {% if work.buy_url %}
-      <a class="btn btn-primary" href="{{ work.buy_url }}" target="_blank" rel="noopener sponsored">{{ work.buy_label }}</a>
+      <a class="btn btn-primary" href="{{ work.buy_url }}" target="_blank" rel="noopener sponsored">{{ t.amazon_view if work.amazon_asin else t.amazon_search }}</a>
       {% endif %}
       {% if work.official_url %}
-      <a class="btn btn-secondary" href="{{ work.official_url }}" target="_blank" rel="noopener">公式サイト</a>
+      <a class="btn btn-secondary" href="{{ work.official_url }}" target="_blank" rel="noopener">{{ t.official }}</a>
       {% endif %}
       {% if work.wikipedia_url %}
       <a class="btn btn-secondary" href="{{ work.wikipedia_url }}" target="_blank" rel="noopener">Wikipedia</a>
       {% endif %}
     </div>
     <div class="share-row">
-      <span class="share-label">Xで投稿</span>
-      <a class="btn btn-share btn-x" href="{{ work.twitter_share_url }}" target="_blank" rel="noopener noreferrer">Xでシェア</a>
-      <button type="button" class="btn btn-share btn-copy" id="copyShareText" data-text="{{ work.x_share_text }}">文面をコピー</button>
+      <span class="share-label">{{ t.post_on_x }}</span>
+      <a class="btn btn-share btn-x" href="{{ work.twitter_share_url }}" target="_blank" rel="noopener noreferrer">{{ t.share_x }}</a>
+      <button type="button" class="btn btn-share btn-copy" id="copyShareText" data-text="{{ work.x_share_text }}">{{ t.copy_text }}</button>
       <a class="btn btn-share btn-line" href="{{ work.line_share_url }}" target="_blank" rel="noopener noreferrer">LINE</a>
     </div>
     {% if work.has_cover %}
-    <p class="share-hint">📷 画像付き投稿: 上の表紙を<strong>右クリック→「画像を保存」</strong>して、X投稿時に添付してください。</p>
+    <p class="share-hint">{{ t.share_hint }}</p>
     {% endif %}
-    <p class="share-preview"><span class="share-label">投稿文プレビュー</span>{{ work.x_share_text }}</p>
-    <p class="share-url-hint">シェアURL: <a href="{{ work.share_url }}">{{ work.share_url }}</a></p>
-    <p class="affiliate-note">※ 購入リンクはAmazonアソシエイトを使用する場合があります。</p>
+    <p class="share-preview"><span class="share-label">{{ t.share_preview }}</span>{{ work.x_share_text }}</p>
+    <p class="share-url-hint">{{ t.share_url }}: <a href="{{ work.share_url }}">{{ work.share_url }}</a></p>
+    <p class="affiliate-note">{{ t.affiliate_note }}</p>
   </section>
 
   {% if related_works %}
   <section class="detail-panel related-panel">
-    <h2>関連作品</h2>
+    <h2>{{ t.related }}</h2>
     <div class="related-links">
       {% for rw in related_works %}
-      <a class="related-chip" href="/works/{{ rw.id }}">{{ rw.title }}</a>
+      <a class="related-chip" href="{{ lang_prefix }}/works/{{ rw.id }}">{{ rw.title }}</a>
       {% endfor %}
     </div>
   </section>
   {% endif %}
 
-  <p class="updated">最終更新: {{ work.updated_at or '—' }}</p>
+  <p class="updated">{{ t.updated }}: {{ work.updated_at or '—' }}</p>
 </article>
 {% endblock %}
 {% block scripts %}
@@ -215,15 +218,15 @@
     var text = btn.getAttribute('data-text') || '';
     var done = function () {
       var prev = btn.textContent;
-      btn.textContent = 'コピーしました';
+      btn.textContent = document.body.getAttribute('data-copied') || 'Copied';
       setTimeout(function () { btn.textContent = prev; }, 1800);
     };
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(done).catch(function () {
-        window.prompt('以下をコピーしてください', text);
+        window.prompt(document.body.getAttribute('data-copy-prompt') || 'Copy', text);
       });
     } else {
-      window.prompt('以下をコピーしてください', text);
+      window.prompt(document.body.getAttribute('data-copy-prompt') || 'Copy', text);
     }
   });
 })();
