@@ -24,6 +24,13 @@
 </script>
 {% endblock %}
 {% block content %}
+<script type="application/json" id="workInterest">{{ {
+  'id': work.id,
+  'title': work.source_title or work.title,
+  'buy_url': work.buy_url or '',
+  'cover_url': work.cover_url,
+  'buy_label': work.buy_label
+}|tojson }}</script>
 <article class="work-detail">
   <nav class="breadcrumb"><a href="/">一覧</a> / {{ work.title }}</nav>
   <header class="work-header">

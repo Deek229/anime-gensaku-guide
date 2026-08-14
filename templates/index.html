@@ -31,11 +31,11 @@
 {% if affiliate_picks %}
 <aside class="home-aff" aria-label="Amazonおすすめ">
   <section class="panel sidebar-panel aff-panel">
-    <h2 class="section-title">今期のおすすめ原作</h2>
-    <p class="aff-note">Amazonアフィリエイトリンクです</p>
-    <div class="aff-list">
+    <h2 class="section-title" id="affTitle">今期のおすすめ原作</h2>
+    <p class="aff-note">この端末で見た作品を優先して出します（Amazonアフィリエイト）</p>
+    <div class="aff-list" id="affList">
       {% for w in affiliate_picks %}
-      <a class="aff-card" href="{{ w.buy_url }}" target="_blank" rel="noopener sponsored">
+      <a class="aff-card" href="{{ w.buy_url }}" target="_blank" rel="noopener sponsored" data-work-id="{{ w.id }}">
         <img src="{{ w.cover_url }}" alt="{{ w.source_title or w.title }}" width="80" height="113" loading="lazy">
         <span class="aff-card-title">{{ w.source_title or w.title }}</span>
         <span class="aff-card-cta">{{ w.buy_label }}</span>
@@ -82,7 +82,7 @@
 <section class="panel">
   <div class="work-grid" id="workGrid">
     {% for w in works %}
-    <article class="work-card" data-source="{{ w.source_type }}" data-has-source="{{ '1' if w.has_source else '0' }}" data-search="{{ w.title }} {{ w.source_title }} {{ w.tags|join(' ') }}">
+    <article class="work-card" data-source="{{ w.source_type }}" data-has-source="{{ '1' if w.has_source else '0' }}" data-search="{{ w.title }} {{ w.source_title }} {{ w.tags|join(' ') }}" data-work-id="{{ w.id }}" data-title="{{ w.title }}" data-source-title="{{ w.source_title or '' }}" data-buy-url="{{ w.buy_url or '' }}" data-cover-url="{{ w.cover_url }}" data-buy-label="{{ w.buy_label }}">
       {% if w.cover_kind == 'original_badge' %}
       <div class="work-card-cover original-visual-badge" aria-label="アニメオリジナル作品">
         <span class="original-visual-badge__mark">TV</span>
