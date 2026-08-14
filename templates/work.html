@@ -32,6 +32,7 @@
   'buy_label': work.buy_label
 }|tojson }}</script>
 <article class="work-detail">
+  <div class="read-progress" id="readProgress" aria-hidden="true"></div>
   <nav class="breadcrumb"><a href="{{ lang_prefix }}/">{{ t.list }}</a> / {{ work.title }}</nav>
   <header class="work-header">
     <div class="work-header-main">
@@ -198,9 +199,12 @@
   {% if related_works %}
   <section class="detail-panel related-panel">
     <h2>{{ t.related }}</h2>
-    <div class="related-links">
+    <div class="related-rail">
       {% for rw in related_works %}
-      <a class="related-chip" href="{{ lang_prefix }}/works/{{ rw.id }}">{{ rw.title }}</a>
+      <a class="related-cover" href="{{ lang_prefix }}/works/{{ rw.id }}">
+        <img src="{{ rw.cover_url }}" alt="{{ rw.title }}" width="96" height="136" loading="lazy">
+        <span>{{ rw.title }}</span>
+      </a>
       {% endfor %}
     </div>
   </section>
@@ -213,8 +217,8 @@
 <script>
 (function () {
   var btn = document.getElementById('copyShareText');
-  if (!btn) return;
-  btn.addEventListener('click', function () {
+  if (btn) {
+    btn.addEventListener('click', function () {
     var text = btn.getAttribute('data-text') || '';
     var done = function () {
       var prev = btn.textContent;
@@ -228,7 +232,21 @@
     } else {
       window.prompt(document.body.getAttribute('data-copy-prompt') || 'Copy', text);
     }
-  });
+    });
+  }
+  var bar = document.getElementById('readProgress');
+  if (bar) {
+    var onScroll = function () {
+      var el = document.querySelector('.work-detail');
+      if (!el) return;
+      var top = el.getBoundingClientRect().top + window.scrollY;
+      var h = el.offsetHeight - window.innerHeight;
+      var p = h <= 0 ? 1 : Math.min(1, Math.max(0, (window.scrollY - top) / h));
+      bar.style.transform = 'scaleX(' + p + ')';
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
 })();
 </script>
 {% endblock %}

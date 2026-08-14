@@ -110,7 +110,7 @@ MATOME = {
 UI = {
     'ja': {
         'app_title': 'アニメ原作ガイド',
-        'tagline': '今期アニメの原作ラノベ・漫画をチェックして、買う順まで一発でわかる',
+        'hero_kicker': '表紙を眺めて、気になった一冊から開く',
         'nav_current': '今期アニメ',
         'nav_matome': 'まとめ',
         'nav_rankings': 'なろうR',
@@ -200,7 +200,7 @@ UI = {
     },
     'en': {
         'app_title': 'Anime Source Guide',
-        'tagline': 'See the original novels and manga for this season’s anime — and what to buy next.',
+        'hero_kicker': 'Browse the covers. Open the one that pulls you in.',
         'nav_current': 'This season',
         'nav_matome': 'Picks',
         'nav_rankings': 'Narou',
