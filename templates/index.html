@@ -27,38 +27,8 @@
   <p class="tagline">{{ tagline }}</p>
 </section>
 
-{% if popular_works %}
-<section class="panel popular-panel">
-  <h2 class="section-title">人気の原作ガイド</h2>
-  <div class="popular-links">
-    {% for w in popular_works %}
-    <a class="popular-chip" href="/works/{{ w.id }}">{{ w.title }}</a>
-    {% endfor %}
-  </div>
-</section>
-{% endif %}
-
-{% if ln_pick_works %}
-<section class="panel popular-panel">
-  <h2 class="section-title">おすすめラノベ（アニメ化未定）</h2>
-  <div class="popular-links">
-    {% for w in ln_pick_works %}
-    <a class="popular-chip" href="/works/{{ w.share_slug }}">{{ w.title }}</a>
-    {% endfor %}
-  </div>
-</section>
-{% endif %}
-
-{% if matome_pages %}
-<section class="panel matome-panel">
-  <h2 class="section-title">シーズンまとめ（原作おすすめ10選）</h2>
-  <div class="popular-links">
-    {% for m in matome_pages %}
-    <a class="popular-chip" href="{{ m.path }}">{{ m.title }}</a>
-    {% endfor %}
-  </div>
-</section>
-{% endif %}
+<div class="home-layout">
+<div class="home-main">
 
 <section class="panel controls">
   <div class="control-row">
@@ -150,6 +120,43 @@
   </div>
   <p class="empty-msg hidden" id="emptyMsg">条件に一致する作品がありません。</p>
 </section>
+</div>
+
+<aside class="home-sidebar" aria-label="ガイドメニュー">
+  {% if popular_works %}
+  <section class="panel sidebar-panel">
+    <h2 class="section-title">人気の原作ガイド</h2>
+    <nav class="sidebar-nav">
+      {% for w in popular_works %}
+      <a class="sidebar-link" href="/works/{{ w.id }}">{{ w.title }}</a>
+      {% endfor %}
+    </nav>
+  </section>
+  {% endif %}
+
+  {% if ln_pick_works %}
+  <section class="panel sidebar-panel">
+    <h2 class="section-title">おすすめラノベ</h2>
+    <nav class="sidebar-nav">
+      {% for w in ln_pick_works %}
+      <a class="sidebar-link" href="/works/{{ w.share_slug }}">{{ w.title }}</a>
+      {% endfor %}
+    </nav>
+  </section>
+  {% endif %}
+
+  {% if matome_pages %}
+  <section class="panel sidebar-panel">
+    <h2 class="section-title">シーズンまとめ</h2>
+    <nav class="sidebar-nav">
+      {% for m in matome_pages %}
+      <a class="sidebar-link" href="{{ m.path }}">{{ m.title }}</a>
+      {% endfor %}
+    </nav>
+  </section>
+  {% endif %}
+</aside>
+</div>
 {% endblock %}
 {% block scripts %}
 <script src="/static/home.js"></script>
