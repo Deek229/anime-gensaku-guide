@@ -51,8 +51,8 @@
     "share_slug": "jojo-sbr-2-3",
     "main_comment": "ジョジョシリーズ第7部「スティール・ボール・ラン」のアニメ続編。2026年秋に2nd・3rd STAGEが放送予定。西部劇×スタンドバトルの異色作で、1st STAGEを追った人は漫画12巻前後から先読み可能。ジョジョファンは必見、バトル漫画の傑作を味わいたい人にもおすすめです。",
     "cover_image_url": "/static/covers/jojo-sbr-2-3.jpg",
-    "isbn": "9784088841981",
-    "amazon_asin": "4088841981"
+    "isbn": "9784088700601",
+    "amazon_asin": "4088700600"
   },
   {
     "id": "the-one-piece",
@@ -79,8 +79,8 @@
     "share_slug": "the-one-piece",
     "main_comment": "尾田栄一郎監修のONE PIECE完全新作アニメ「THE ONE PIECE」。東海編から再構築されるNetflix版リメイクで、2027年2月配信予定。原作漫画は国民的ベストセラー。初めての人もファンも注目の冬の超大作です。",
     "cover_image_url": "/static/covers/the-one-piece.jpg",
-    "isbn": "9784088725092",
-    "amazon_asin": "4088725095"
+    "isbn": "9784088725093",
+    "amazon_asin": "4088725093"
   },
   {
     "id": "ドラゴンボール超-ビルス",
@@ -107,8 +107,8 @@
     "share_slug": "db-super-beerus",
     "main_comment": "ドラゴンボール超のビルス編が新作アニメとして秋に登場。孫悟空たちと破壊神ビルスの関係、宇宙規模のバトルが再び描かれます。国民的IPの新作として注目度は最高クラス。DB超漫画20巻前後が参考。長年ファンは当然必見、入門は本編→超の順がおすすめです。",
     "cover_image_url": "/static/covers/db-super-beerus.jpg",
-    "isbn": "9784088836119",
-    "amazon_asin": "4088836110"
+    "isbn": "9784088834702",
+    "amazon_asin": "4088834704"
   },
   {
     "id": "氷の城壁-第2期",
@@ -135,8 +135,8 @@
     "share_slug": "koori-no-jouheki-2",
     "main_comment": "高校バスケ漫画の人気作が2期へ。2026年10月1日からTBS系で放送開始。原作は試合の緊張感とチームの成長描写が秀逸で、1期を追った人は4巻前後から先読み可能。スポーツ漫画・バスケが好きな人に。秋クール早々の注目続編です。",
     "cover_image_url": "/static/covers/koori-no-jouheki-2.jpg",
-    "isbn": "9784065313756",
-    "amazon_asin": "4065313752"
+    "isbn": "9784088836485",
+    "amazon_asin": "4088836480"
   },
   {
     "id": "薬屋のひとりごと-第3期",
@@ -247,9 +247,9 @@
     "watchers_count": 9800,
     "share_slug": "shangri-la-3",
     "main_comment": "クソゲーハンターが神ゲーで無双するゲーマー漫画が3期へ。原作はバトルとゲームシステムの描写が秀逸で、アニメ2期まで見た人は13巻前後から。ゲームアニメ・攻略ものが好きな人に。2027年1月冬クールの看板枠です。",
-    "cover_image_url": "/static/cover-placeholder.svg",
-    "isbn": "9784253312344",
-    "amazon_asin": "4253312340"
+    "cover_image_url": "/static/covers/shangri-la-3.jpg",
+    "isbn": "9784065315866",
+    "amazon_asin": "4065315867"
   },
   {
     "id": "サイバーパンク-エッジランナーズ2",
@@ -302,7 +302,7 @@
     "share_slug": "tokyo-revengers-santen",
     "main_comment": "タイムリープ青春ヤンキー漫画のクライマックス「三天戦争編」がアニメ化。マイキーと武道の因縁、トーマンと黒龍の抗争が最終局面へ。原作は完結済みで結末が確定しているため、アニメ勢も漫画で先読み可能。熱い友情と復讐劇が好きな人に。秋クールの注目作です。",
     "isbn": "9784065281789",
-    "amazon_asin": "4065281789",
+    "amazon_asin": "4065281784",
     "cover_image_url": "/static/covers/tokyo-revengers-santen.jpg"
   },
   {
@@ -358,8 +358,8 @@
     "share_slug": "sakamoto-days-2",
     "main_comment": "伝説の殺し屋がコンビニ店員として暮らすアクションコメディが2期へ。派手なバトルと日常ギャグのテンポが良いジャンプの人気作。1期を楽しんだ人は8巻前後から。冬のバトルコメ枠として続投です。",
     "cover_image_url": "/static/covers/sakamoto-days-2.jpg",
-    "isbn": "9784088833896",
-    "amazon_asin": "4088833890"
+    "isbn": "9784088831916",
+    "amazon_asin": "4088831918"
   },
   {
     "id": "アオのハコ-第2期",
@@ -443,7 +443,7 @@
     "share_slug": "akane-banashi-2",
     "main_comment": "落語の世界を舞台にした青春漫画が2期へ。春の1期に続き、真打を目指すあかねの成長がさらに描かれます。伝統芸能×ジャンプの異色作。1期を見た人は5巻前後から。落語や演目に興味がある人に。",
     "isbn": "9784088834276",
-    "amazon_asin": "4088834276",
+    "amazon_asin": "4088834275",
     "cover_image_url": "/static/covers/akane-banashi-2.jpg"
   },
   {
@@ -471,7 +471,7 @@
     "share_slug": "aoashi-2",
     "main_comment": "サッカー漫画の金字塔がプロ編へ。青井あおしのJリーグ・海外挑戦が本格化し、戦術描写と人間ドラマの密度がさらに上がります。スポーツ漫画ファンは必見。1期で青年編を追った人は、漫画のプロ編（20巻前後〜）から先読みも可能。リアルなサッカー戦術が好きな人に。",
     "isbn": "9784098605965",
-    "amazon_asin": "4098605965",
+    "amazon_asin": "4098605961",
     "cover_image_url": "/static/covers/aoashi-2.jpg"
   },
   {
@@ -526,8 +526,8 @@
     "share_slug": "hirayasumi",
     "main_comment": "湘南の下町を舞台にした、のんびり日常漫画がNHKでアニメ化。細やかな生活描写と家族・友人の温かさが魅力。癒し系・日常系が好きな人、NHKの落ち着いた作風が好きな人に。全3巻程度と読みやすく、冬の癒し枠として注目です。",
     "cover_image_url": "/static/covers/hirayasumi.jpg",
-    "isbn": "9784065284695",
-    "amazon_asin": "4065284696"
+    "isbn": "9784065284698",
+    "amazon_asin": "4065284694"
   },
   {
     "id": "転生したら剣でした-第2期",
@@ -544,7 +544,7 @@
     "source_volume_approximate": true,
     "source_volume_note": "1期は第1〜6巻相当。2期は7巻以降。",
     "read_order": "ラノベ1巻から。1期見た人は7巻前後から",
-    "amazon_search": "転剣 ラノベ",
+    "amazon_search": "転生したら剣でした ラノベ",
     "tags": [
       "異世界",
       "ファンタジー",
@@ -553,9 +553,9 @@
     "watchers_count": 9400,
     "share_slug": "tensei-ken-2",
     "main_comment": "「剣」に転生した主人公と少女フランの冒険ファンタジーが2期へ。原作ラノベは仲間が増えダンジョン探索と国際的なスケールが拡大。ほのぼの系異世界とバトルのバランスが良い作品。1期を楽しんだ人は7巻前後から。かわいいキャラと爽快な成長が好きな人に。",
-    "isbn": "9784040689838",
-    "amazon_asin": "4040689838",
-    "cover_image_url": "/static/cover-placeholder.svg"
+    "isbn": "9784896378634",
+    "amazon_asin": "4896378636",
+    "cover_image_url": "/static/covers/tensei-ken-2.jpg"
   },
   {
     "id": "ヒストリエ",
@@ -581,9 +581,9 @@
     "watchers_count": 9400,
     "share_slug": "historie",
     "main_comment": "岩明均による古代ギリシャ・マケドニア時代の歴史漫画が待望のアニメ化。アレクサンドロス大王の側近エウメネースを主人公に、緻密な歴史考証と人間ドラマが融合。歴史好き・青年漫画ファンにとって冬の最大の期待作の一つ。全12巻完結で一気読み可能です。",
-    "cover_image_url": "/static/cover-placeholder.svg",
-    "isbn": "9784063142392",
-    "amazon_asin": "4063142390"
+    "cover_image_url": "/static/covers/historie.jpg",
+    "isbn": "9784063142396",
+    "amazon_asin": "4063142396"
   },
   {
     "id": "帰還者の魔法は特別です-第2期",
@@ -610,8 +610,8 @@
     "share_slug": "kikansha-mahou-2",
     "main_comment": "異世界から帰還した主人公が現代魔法社会で無双するファンタジーが2期へ。デスマーチ系の知識チートと学園・国家の陰謀が絡みます。原作はWeb発の人気作でラノベ化。バトルと策略が好きな人、1期の続きを待っていた人に。4巻前後からが2期の入口です。",
     "cover_image_url": "/static/covers/kikansha-mahou-2.jpg",
-    "isbn": "9784046807343",
-    "amazon_asin": "4046807340"
+    "isbn": "9784046807342",
+    "amazon_asin": "4046807342"
   },
   {
     "id": "風を継ぐもの",
@@ -664,8 +664,8 @@
     "share_slug": "ranma-1-2-3",
     "main_comment": "高橋留美子の名作格闘ラブコメが完全新作アニメで続く第3期。乱馬・あかねをはじめ個性派キャラのドタバタコメディと中国・秘宝編などが再構築されます。原作漫画は38巻完結の大ボリューム。懐かしさと新しい作画の両方を楽しみたい人、ラブコメ格闘が好きな人に。",
     "cover_image_url": "/static/covers/ranma-1-2-3.jpg",
-    "isbn": "9784091433198",
-    "amazon_asin": "4091433199"
+    "isbn": "9784091433190",
+    "amazon_asin": "4091433197"
   },
   {
     "id": "あかね噺",
@@ -748,7 +748,9 @@
     "watchers_count": 9200,
     "share_slug": "iruma-if-mafia",
     "main_comment": "入間くん本編とは別の「if魔フィア」世界線を描くスピンオフアニメ。本編未視聴でも楽しめるが、悪魔学校の基礎設定は本編の方が詳しい。ファン向けの実験的な作品としてNHKで放送。本編ファンは必見、新規は本編1巻からがおすすめです。",
-    "cover_image_url": "/static/cover-placeholder.svg"
+    "cover_image_url": "/static/covers/iruma-if-mafia.jpg",
+    "isbn": "9784253229180",
+    "amazon_asin": "4253229182"
   },
   {
     "id": "ブラッククローバー-2nd-season",
@@ -775,8 +777,8 @@
     "share_slug": "black-clover-2",
     "main_comment": "魔法帝サタン vs 黒の暴牛団のクライマックスが新作アニメで再開。原作漫画は全36巻で完結済み。アスタとユノの成長、仲間との絆が最終局面へ。熱血バトルと魔法ファンタジーが好きな人に。旧シリーズ170話まで見た人は漫画28巻前後から先読み可能です。",
     "cover_image_url": "/static/covers/black-clover-2.jpg",
-    "isbn": "9784088837201",
-    "amazon_asin": "4088837205"
+    "isbn": "9784088825946",
+    "amazon_asin": "4088825942"
   },
   {
     "id": "黄泉のツガイ",
@@ -859,8 +861,8 @@
     "share_slug": "psyren",
     "main_comment": "週刊少年ジャンプのSFバトル漫画が待望のアニメ化。謎の世界「PSYREN」へ呼ばれた主人公たちの脱出劇。タイムリミットと能力戦が緊張感高く描かれる名作。全16巻完結なので一気読みしやすい。バトルロワイヤル系・能力者バトルが好きな人に。秋の期待新作の一つです。",
     "cover_image_url": "/static/covers/psyren.jpg",
-    "isbn": "9784088741652",
-    "amazon_asin": "4088741650"
+    "isbn": "9784088741659",
+    "amazon_asin": "408874165X"
   },
   {
     "id": "dr-stone-science-future-第3クール",
@@ -917,8 +919,8 @@
     "share_slug": "golden-kamuy-final",
     "main_comment": "北海道を舞台にした歴史アクション漫画の最終章「暴走列車編」がアニメ化。杉元・アシㇼパたちの金塊争奪戦が完結へ。原作は全31巻完結済み。アニメ勢も漫画で結末を先読み可能。歴史アクション・サバイバルが好きな人に。冬のクライマックス枠です。",
     "cover_image_url": "/static/covers/golden-kamuy-final.jpg",
-    "isbn": "9784065293652",
-    "amazon_asin": "4065293653"
+    "isbn": "9784088921624",
+    "amazon_asin": "4088921623"
   },
   {
     "id": "ジャンケットバンク",
@@ -944,9 +946,9 @@
     "watchers_count": 8900,
     "share_slug": "janken-bank",
     "main_comment": "じゃんけんを賭け金付きで行う異色のギャンブル漫画がアニメ化。心理戦と駆け引きが中心で、派手な打撃より「読み合い」が熱い作品。ギャンブルもの・心理戦が好きな人、賭博アニメ（カイジ系）ファンに。初アニメ化なので漫画1巻から先読みするのがおすすめです。",
-    "cover_image_url": "/static/cover-placeholder.svg",
-    "isbn": "9784253313778",
-    "amazon_asin": "4253313775"
+    "cover_image_url": "/static/covers/janken-bank.jpg",
+    "isbn": "9784088916576",
+    "amazon_asin": "4088916573"
   },
   {
     "id": "ようこそ実力至上主義の教室へ-4th-season",
@@ -1003,8 +1005,8 @@
     "share_slug": "kekkaishi-ichirinka",
     "main_comment": "結界術を駆使する主人公のファンタジーアクションがアニメ化。B's-LOG文庫の人気作で、和風ファンタジーとバトルのバランスが魅力。初アニメ化なので1巻から先読みがおすすめ。冬の新連載ファンタジー枠として注目です。",
     "cover_image_url": "/static/covers/kekkaishi-ichirinka.jpg",
-    "isbn": "9784049122141",
-    "amazon_asin": "4049122149"
+    "isbn": "9784049122145",
+    "amazon_asin": "4049122146"
   },
   {
     "id": "ホタルの嫁入り",
@@ -1031,8 +1033,8 @@
     "share_slug": "hotaru-no-yomeiri",
     "main_comment": "武家の娘・蛍と嘘の花嫁契約を結ぶ忍びの青年の時代劇恋愛。和の雰囲気と切ない恋模様が魅力の少女漫画がアニメ化。花と炎のコントラストが印象的。時代劇ロマンス・和風恋愛が好きな人、女性向けの秋アニメを探している人に。1巻から読めば世界観にすぐ入れます。",
     "cover_image_url": "/static/covers/hotaru-no-yomeiri.jpg",
-    "isbn": "9784591153804",
-    "amazon_asin": "4591153800"
+    "isbn": "9784098521470",
+    "amazon_asin": "4098521474"
   },
   {
     "id": "ぐらんぶる-season-3",
@@ -1085,9 +1087,9 @@
     "watchers_count": 8800,
     "share_slug": "zatsuyou-fuyo",
     "main_comment": "「雑用」スキルが実は最強だったと気づく支援系ファンタジー。サポートキャラが主役の異世界もので、近年のトレンドを押さえた作品。チート・支援魔法が好きな人に。初アニメ化なので1巻から入るのがおすすめです。",
-    "cover_image_url": "/static/cover-placeholder.svg",
-    "isbn": "9784046803371",
-    "amazon_asin": "4046803374"
+    "cover_image_url": "/static/covers/zatsuyou-fuyo.jpg",
+    "isbn": "9784575243994",
+    "amazon_asin": "457524399X"
   },
   {
     "id": "魔法騎士レイアース",
@@ -1113,7 +1115,9 @@
     "watchers_count": 8700,
     "share_slug": "rayearth-2026",
     "main_comment": "CLAMPの名作ロボットファンタジーが2026年版で再アニメ化。異世界セファイで魔法騎士として戦う3人の少女の物語。懐かしさと新しい演出の両方が楽しめるリメイク。メカ×魔法×少女の組み合わせが好きな人、90年代アニメファンに。原作漫画は3巻完結のコンパクトな名作です。",
-    "cover_image_url": "/static/cover-placeholder.svg"
+    "cover_image_url": "/static/covers/rayearth-2026.jpg",
+    "isbn": "9784063346428",
+    "amazon_asin": "4063346420"
   },
   {
     "id": "魔入りました-入間くん-第4シリーズ",
@@ -1169,9 +1173,9 @@
     "watchers_count": 8700,
     "share_slug": "charisma",
     "main_comment": "「カリスマ」と呼ばれる存在を巡る心理ホラー漫画がアニメ化。不穏な雰囲気と独特の世界観が魅力。ホラー・心理サスペンスが好きな人に。2027年冬の異色作として注目。1巻から先読みすると伏線を楽しみやすいです。",
-    "cover_image_url": "/static/cover-placeholder.svg",
-    "isbn": "9784253312870",
-    "amazon_asin": "4253312878"
+    "cover_image_url": "/static/covers/charisma.jpg",
+    "isbn": "9784575830385",
+    "amazon_asin": "4575830380"
   },
   {
     "id": "彼方から",
@@ -1198,8 +1202,8 @@
     "share_slug": "kanata-kara",
     "main_comment": "異世界から現代に迷い込んだ少女と高校生の恋愛ファンタジーが再アニメ化。2026年10月4日からTOKYO MXほかで放送開始。少女漫画の古典的名作で、切ない恋と異世界要素のバランスが魅力。懐かし名作の新アニメが好きな人、ファンタジー恋愛が好きな人に。1巻から先読みがおすすめです。",
     "cover_image_url": "/static/covers/kanata-kara.jpg",
-    "isbn": "9784592216585",
-    "amazon_asin": "4592216583"
+    "isbn": "9784592216582",
+    "amazon_asin": "459221658X"
   },
   {
     "id": "幻想水滸伝",
@@ -1225,7 +1229,7 @@
     "watchers_count": 8600,
     "share_slug": "gensou-suikoden-anime",
     "main_comment": "コニミーの名作RPG「幻想水滸伝」が初の本格TVアニメ化。108星の集結と帝国への反乱が描かれる王道ファンタジー。ゲーム未プレイでもアニメ単体で楽しめますが、原作ゲームは物語の深みが段違い。JRPG・政治劇ファンタジーが好きな人に。秋のゲーム原作注目作です。",
-    "cover_image_url": "/static/cover-placeholder.svg"
+    "cover_image_url": "/static/covers/gensou-suikoden-anime.jpg"
   },
   {
     "id": "終末のワルキューレⅲ",
@@ -1280,9 +1284,9 @@
     "watchers_count": 8600,
     "share_slug": "isshiki-san-koi",
     "main_comment": "恋愛経験ゼロの一式さんが恋を学ぶラブコメ。純情でほのぼのとした恋愛模様が魅力の少女漫画原作。冬の恋愛ラブコメ枠として期待。1巻から読めばキャラの魅力がつかめます。",
-    "cover_image_url": "/static/cover-placeholder.svg",
-    "isbn": "9784575389897",
-    "amazon_asin": "4575389896"
+    "cover_image_url": "/static/covers/isshiki-san-koi.jpg",
+    "isbn": "9784041109328",
+    "amazon_asin": "4041109329"
   },
   {
     "id": "死亡遊戯で飯を食う-44-cloudy-beach",
@@ -1309,8 +1313,8 @@
     "share_slug": "shibou-yuugi",
     "main_comment": "死亡ゲームに参加して稼ぐ主人公のサバイバルラノベがアニメ化。2026年9月に先行配信、10月から地上波放送。心理戦とルール攻略が読みどころのデスゲーム系。カイジ・賭博黙示録系が好きな人に。初アニメ化なので1巻から先読みがおすすめです。",
     "cover_image_url": "/static/covers/shibou-yuugi.jpg",
-    "isbn": "9784041127830",
-    "amazon_asin": "404112783X"
+    "isbn": "9784041127834",
+    "amazon_asin": "4041127831"
   },
   {
     "id": "探偵はもう-死んでいる-season2",
@@ -1337,8 +1341,8 @@
     "share_slug": "tantei-shinda-2",
     "main_comment": "伝説の探偵が死に、彼女の遺した謎を追うミステリーアクションが2期へ。ビジュアルとミステリ要素が光るラノベ原作。1期の黒幕編の続きが2期の中心。推理とバトルが混ざった作風が好きな人に。4巻前後から読み始めるのがおすすめです。",
     "cover_image_url": "/static/covers/tantei-shinda-2.jpg",
-    "isbn": "9784049136322",
-    "amazon_asin": "4049136324"
+    "isbn": "9784049136326",
+    "amazon_asin": "4049136325"
   },
   {
     "id": "とんがり帽子のアトリエ",
@@ -1421,8 +1425,8 @@
     "share_slug": "zombie-harem",
     "main_comment": "ゾンビパンデミック後、ゾンビに襲われない主人公を巡るサバイバルハーレム。タイトル通りの設定で、ゾンビもの×ラブコメの組み合わせ。ゾンビアニメ・ハーレムものが好きな人に。初アニメ化なので1巻から。",
     "cover_image_url": "/static/covers/zombie-harem.jpg",
-    "isbn": "9784046801223",
-    "amazon_asin": "4046801226"
+    "isbn": "9784046801227",
+    "amazon_asin": "4046801220"
   },
   {
     "id": "佐々木とピーちゃん-season2",
@@ -1449,8 +1453,8 @@
     "share_slug": "sasaki-pea-2",
     "main_comment": "サラリーマン佐々木と異世界から来た少女ピーちゃんのほのぼの現代ファンタジーが2期へ。日常と異世界要素のバランスが良く、癒し系と軽いバトルが好きな人に。1期を楽しんだ人は4巻前後から。秋の癒し枠として注目です。",
     "cover_image_url": "/static/covers/sasaki-pea-2.jpg",
-    "isbn": "9784041124181",
-    "amazon_asin": "4041124180"
+    "isbn": "9784041124185",
+    "amazon_asin": "4041124182"
   },
   {
     "id": "彼女-お借りします-第5期",
@@ -1505,9 +1509,9 @@
     "watchers_count": 8400,
     "share_slug": "sudachi-maou",
     "main_comment": "魔王城で繰り広げられるほのぼのコメディファンタジー。ダンジョン飯的な雰囲気もある癒し系。コメディファンタジー・魔王ものが好きな人に。冬のほのぼの枠として期待。",
-    "cover_image_url": "/static/cover-placeholder.svg",
-    "isbn": "9784098709246",
-    "amazon_asin": "409870924X"
+    "cover_image_url": "/static/covers/sudachi-maou.jpg",
+    "isbn": "9784065275573",
+    "amazon_asin": "4065275571"
   },
   {
     "id": "転生貴族-鑑定スキルで成り上がる-第3期",
@@ -1534,8 +1538,8 @@
     "share_slug": "tensei-kizoku-3",
     "main_comment": "鑑定スキルで成り上がる転生貴族の領地経営ファンタジーが3期へ。のんびり系異世界と政治・外交のバランスが魅力。原作はWeb発の安定人気作。スローライフ異世界・内政ものが好きな人に。2期まで追った人は7巻前後から。",
     "cover_image_url": "/static/covers/tensei-kizoku-3.jpg",
-    "isbn": "9784046809668",
-    "amazon_asin": "4046809660"
+    "isbn": "9784046809667",
+    "amazon_asin": "4046809663"
   },
   {
     "id": "beastars-final-season-part2",
@@ -1592,8 +1596,8 @@
     "share_slug": "matsurika-kanri",
     "main_comment": "中華風宮廷を舞台にした官吏の娘の恋愛ファンタジー。薬屋のひとりごと好きにもおすすめの宮廷系。中華ファンタジー・宮廷恋愛が好きな人に。初アニメ化なので1巻から先読みがおすすめです。",
     "cover_image_url": "/static/covers/matsurika-kanri.jpg",
-    "isbn": "9784049134334",
-    "amazon_asin": "4049134337"
+    "isbn": "9784049134339",
+    "amazon_asin": "4049134330"
   },
   {
     "id": "凶乱令嬢ニア-リストン-病弱令嬢に転生した神殺しの武人の華麗なる無双録",
@@ -1620,8 +1624,8 @@
     "share_slug": "nia-liston",
     "main_comment": "神殺しの武人が病弱令嬢に転生し、武術で無双する異世界転生もの。タイトルが長いが中身は痛快なバトルファンタジー。令嬢もの×格闘の組み合わせが新鮮。転生バトル・女主人公アクションが好きな人に。初アニメ化なので1巻から先読みがおすすめです。",
     "cover_image_url": "/static/covers/nia-liston.jpg",
-    "isbn": "9784046840777",
-    "amazon_asin": "4046840771"
+    "isbn": "9784046840776",
+    "amazon_asin": "4046840773"
   },
   {
     "id": "杖と剣のウィストリア-シーズン2",
@@ -1704,8 +1708,8 @@
     "share_slug": "ramen-akane-2",
     "main_comment": "猫が接客するラーメン店を舞台にした癒し系日常漫画が2期へ。ほのぼのとした店の雰囲気とラーメンの描写が魅力。グルメ・癒し系・猫が好きな人に。1期を見た人は4巻前後から。",
     "cover_image_url": "/static/covers/ramen-akane-2.jpg",
-    "isbn": "9784040751753",
-    "amazon_asin": "4040751758"
+    "isbn": "9784040751757",
+    "amazon_asin": "4040751752"
   },
   {
     "id": "傷だらけ聖女より報復をこめて-season2",
@@ -1732,8 +1736,8 @@
     "share_slug": "kizu-darake-seijo-2",
     "main_comment": "虐げられた聖女の復讐劇が2期へ。悪役令嬢・復讐ものの文脈で人気の少女漫画原作。ドロドロとした心理戦とカタルシスが魅力。復讐ドラマ・女性向けの秋アニメが好きな人に。1期を見た人は4巻前後から漫画で続きが読めます。",
     "cover_image_url": "/static/covers/kizu-darake-seijo-2.jpg",
-    "isbn": "9784592217100",
-    "amazon_asin": "4592217105"
+    "isbn": "9784592217107",
+    "amazon_asin": "4592217101"
   },
   {
     "id": "liar-game",
@@ -1790,8 +1794,8 @@
     "share_slug": "hime-kishi-himo",
     "main_comment": "最強の姫騎士に拾われた主人公の逆ハーレムファンタジーコメディ。コメディとバトルのバランスが良い。逆ハーレム・コメディファンタジーが好きな人に。初アニメ化なので1巻から。",
     "cover_image_url": "/static/covers/hime-kishi-himo.jpg",
-    "isbn": "9784046808642",
-    "amazon_asin": "404680864X"
+    "isbn": "9784046808646",
+    "amazon_asin": "4046808640"
   },
   {
     "id": "冰剣の魔術師が世界を統べるii",
@@ -1818,8 +1822,8 @@
     "share_slug": "hyouken-2",
     "main_comment": "最強の冰剣魔術師が学園と世界を舞台に活躍するファンタジーが2期へ。王道バトルとハーレム要素のバランスが取れた作品。1期を楽しんだ人は7巻前後から。秋の異世界バトル枠として続投です。",
     "cover_image_url": "/static/covers/hyouken-2.jpg",
-    "isbn": "9784040723262",
-    "amazon_asin": "4040723266"
+    "isbn": "9784040723266",
+    "amazon_asin": "4040723260"
   },
   {
     "id": "ドロヘドロ-season2",
@@ -1876,8 +1880,8 @@
     "share_slug": "gacha-bishoujo",
     "main_comment": "ガチャで仲間を召喚して軍団を作る異世界ファンタジー。ゲーム的なガチャシステムが魅力のチートもの。ガチャゲー好き・異世界バトルが好きな人に。長いタイトルだが1巻から読み始めれば分かりやすいです。",
     "cover_image_url": "/static/covers/gacha-bishoujo.jpg",
-    "isbn": "9784046800479",
-    "amazon_asin": "4046800470"
+    "isbn": "9784046800473",
+    "amazon_asin": "404680047X"
   },
   {
     "id": "ホテル-インヒューマンズ-第2期",
@@ -1904,8 +1908,8 @@
     "share_slug": "hotel-inhumans-2",
     "main_comment": "殺し屋専用ホテルを舞台にしたアクション漫画が2期へ。スタイリッシュな殺し合いとホテル内のルールが魅力。バトルアクション・クールな作画が好きな人に。1期未視聴なら漫画1巻からがおすすめです。",
     "cover_image_url": "/static/covers/hotel-inhumans-2.jpg",
-    "isbn": "9784098702322",
-    "amazon_asin": "4098702326"
+    "isbn": "9784098702329",
+    "amazon_asin": "4098702320"
   },
   {
     "id": "じょせまる",
@@ -1932,8 +1936,8 @@
     "share_slug": "josemaru",
     "main_comment": "女性の日常を描いたショートコメディ漫画がアニメ化。短い話の積み重ねで笑いを届ける作品。気軽に観られるコメディ・日常系が好きな人に。冬の短尺アニメ枠として注目です。",
     "cover_image_url": "/static/covers/josemaru.jpg",
-    "isbn": "9784098720104",
-    "amazon_asin": "4098720103"
+    "isbn": "9784098720101",
+    "amazon_asin": "4098720108"
   },
   {
     "id": "彼女の友達",
@@ -1960,8 +1964,8 @@
     "share_slug": "kanojo-no-tomodachi",
     "main_comment": "「友達」の境界線を揺さぶる青春恋愛漫画がアニメ化。三角関係と友情のあいだで揺れる主人公の心理が丁寧に描かれます。恋愛ラブコメ・青春のもどかしさが好きな人に。2026年秋の新連載アニメとして話題。1巻から先読みするとキャラの関係性が把握しやすいです。",
     "cover_image_url": "/static/covers/kanojo-no-tomodachi.jpg",
-    "isbn": "9784065289624",
-    "amazon_asin": "4065289621"
+    "isbn": "9784065264799",
+    "amazon_asin": "4065264790"
   },
   {
     "id": "お隣の天使様にいつの間にか駄目人間にされていた件-第2期",
@@ -2072,8 +2076,8 @@
     "share_slug": "jigen-chihara",
     "main_comment": "「地雷」系女子を巡る恋愛ラブコメ。現代のネットスラングを題材にした青春恋愛。ラブコメ・恋愛の駆け引きが好きな人に。初アニメ化なので1巻から先読みがおすすめです。",
     "cover_image_url": "/static/covers/jigen-chihara.jpg",
-    "isbn": "9784065310823",
-    "amazon_asin": "4065310826"
+    "isbn": "9784758024389",
+    "amazon_asin": "4758024383"
   },
   {
     "id": "目覚めたら最強装備と宇宙船持ちだったので-一戸建て目指して傭兵として自由に生きたい",
@@ -2100,8 +2104,8 @@
     "share_slug": "saikyou-soubi-isekai",
     "main_comment": "最強装備と宇宙船を手に入れた主人公が傭兵としてのんびり暮らすSFファンタジー。長いタイトルだが、チート×スローライフの癒し系。メカと異世界のハイブリッドが好きな人に。初アニメ化なので1巻から入るのがおすすめです。",
     "cover_image_url": "/static/covers/saikyou-soubi-isekai.jpg",
-    "isbn": "9784046812696",
-    "amazon_asin": "4046812694"
+    "isbn": "9784040731926",
+    "amazon_asin": "4040731921"
   },
   {
     "id": "だんでらいおん",
@@ -2158,8 +2162,8 @@
     "share_slug": "tougen-anki-2",
     "main_comment": "鬼と人の戦いを描くバトル漫画の続編「日光・華厳の滝編」。派手な能力戦と家族の絆が魅力。1期を追った人は12巻前後から。少年漫画バトル・鬼テーマが好きな人に。",
     "cover_image_url": "/static/covers/tougen-anki-2.jpg",
-    "isbn": "9784088840810",
-    "amazon_asin": "4088840815"
+    "isbn": "9784088840819",
+    "amazon_asin": "408884081X"
   },
   {
     "id": "ダイヤのa-actⅱ-second-season",
