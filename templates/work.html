@@ -175,9 +175,6 @@
       {% if work.buy_url %}
       <a class="btn btn-primary" href="{{ work.buy_url }}" target="_blank" rel="noopener sponsored">{{ t.amazon_view if work.amazon_asin else t.amazon_search }}</a>
       {% endif %}
-      {% if work.narou_url %}
-      <a class="btn btn-secondary" href="{{ work.narou_url }}" target="_blank" rel="noopener">{{ t.narou }}</a>
-      {% endif %}
       {% if work.official_url %}
       <a class="btn btn-secondary" href="{{ work.official_url }}" target="_blank" rel="noopener">{{ t.official }}</a>
       {% endif %}

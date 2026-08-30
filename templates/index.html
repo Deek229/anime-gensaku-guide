@@ -169,7 +169,7 @@
     <h2 class="section-title">{{ t.ln_heading }}</h2>
     <nav class="sidebar-nav">
       {% for w in ln_pick_works %}
-      <a class="sidebar-link" href="{% if w.narou_url %}{{ w.narou_url }}{% else %}{{ lang_prefix }}/works/{{ w.share_slug }}{% endif %}"{% if w.narou_url %} target="_blank" rel="noopener"{% endif %}>{{ w.title }}</a>
+      <a class="sidebar-link" href="{{ lang_prefix }}/works/{{ w.share_slug }}">{{ w.title }}</a>
       {% endfor %}
     </nav>
   </section>
