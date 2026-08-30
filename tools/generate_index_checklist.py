@@ -43,6 +43,8 @@ HUB_DEFAULTS = {
     '/matome/2026-summer': {'メモ': 'SEOまとめページ'},
     '/matome/2026-autumn': {'メモ': 'SEOまとめページ'},
     '/matome/2027-winter': {'メモ': 'SEOまとめページ'},
+    '/matome/2026-autumn-nankan': {'メモ': 'SEO何巻から一覧'},
+    '/matome/2027-winter-nankan': {'メモ': 'SEO何巻から一覧'},
 }
 
 

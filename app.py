@@ -194,10 +194,18 @@ def matome_page(request: Request, slug: str):
     if loc:
         page = {**page, 'title': loc['title'], 'lead': loc['lead'], 'seo_description': loc['lead'][:155]}
     page = {**page, 'season_label': t['season_labels'].get(page['season'], page['season_label'])}
+    if page.get('related'):
+        related_loc = t['matome'].get(page['related']['slug'])
+        if related_loc:
+            page = {
+                **page,
+                'related': {**page['related'], 'title': related_loc['title']},
+            }
     other_matome = [m for m in list_matome_pages() if m['slug'] != slug]
+    template = 'matome_nankan.html' if page.get('page_kind') == 'nankan' else 'matome.html'
     return html_page(
         request,
-        'matome.html',
+        template,
         page['path'],
         page=page,
         other_matome=other_matome,

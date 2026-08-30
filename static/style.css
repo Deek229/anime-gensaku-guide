@@ -1047,6 +1047,73 @@ a { color: var(--cyan); }
 
 .matome-list { margin-top: 0.5rem; }
 
+.nankan-meta {
+  margin: 0.5rem 0 0;
+  color: var(--muted, #666);
+  font-size: 0.95rem;
+}
+
+.nankan-related {
+  margin: 0.75rem 0 0;
+}
+
+.nankan-related a {
+  font-weight: 700;
+}
+
+.nankan-wrap {
+  overflow-x: auto;
+}
+
+.nankan-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.nankan-table th,
+.nankan-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.85rem 0.65rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.nankan-table th {
+  font-size: 0.85rem;
+  color: var(--muted, #666);
+  white-space: nowrap;
+}
+
+.nankan-title a {
+  font-weight: 700;
+  color: inherit;
+  text-decoration: none;
+}
+
+.nankan-title a:hover {
+  color: var(--pink);
+}
+
+.nankan-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.45rem;
+}
+
+.btn-tiny {
+  padding: 0.25rem 0.55rem;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 720px) {
+  .nankan-table th:nth-child(2),
+  .nankan-table td:nth-child(2) {
+    display: none;
+  }
+}
+
 .matome-ranking {
   list-style: none;
   margin: 0;

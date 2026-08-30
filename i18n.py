@@ -27,7 +27,7 @@ SEASON = {
         '2026-summer': 'Summer 2026 anime',
         '2026-spring': 'Spring 2026 anime',
         '2026-autumn': 'Autumn 2026 anime',
-        '2026-winter': 'Winter 2026 anime',
+        '2027-winter': 'Winter 2027 anime',
         'ln-picks': 'Recommended light novels',
     },
 }
@@ -86,6 +86,14 @@ MATOME = {
             'title': '2027年冬アニメ 原作おすすめ10選',
             'lead': '2027年1〜3月放送の冬アニメから、原作チェックにおすすめの人気作10選。続編ものの「何巻から読むか」もひと目でわかります。',
         },
+        '2026-autumn-nankan': {
+            'title': '2026年秋アニメ 原作は何巻から？対応一覧',
+            'lead': '2026年秋（10月クール）アニメの原作漫画・ラノベを「何巻から読むか」が一覧でわかる対応表です。続編は続き巻、新作は1巻からの目安をまとめています。',
+        },
+        '2027-winter-nankan': {
+            'title': '2027年冬アニメ 原作は何巻から？対応一覧',
+            'lead': '2027年冬（1月クール）アニメの原作漫画・ラノベを「何巻から読むか」が一覧でわかる対応表です。続編は続き巻、新作は1巻からの目安をまとめています。',
+        },
     },
     'en': {
         '2026-spring': {
@@ -103,6 +111,14 @@ MATOME = {
         '2027-winter': {
             'title': 'Winter 2027 anime: 10 source-material picks',
             'lead': 'Ten Winter 2027 (Jan–Mar) shows to read ahead of or alongside the broadcast.',
+        },
+        '2026-autumn-nankan': {
+            'title': 'Autumn 2026 anime: which volume to start?',
+            'lead': 'A full volume guide for Autumn 2026 anime originals — where sequels continue and where new shows start.',
+        },
+        '2027-winter-nankan': {
+            'title': 'Winter 2027 anime: which volume to start?',
+            'lead': 'A full volume guide for Winter 2027 anime originals — where sequels continue and where new shows start.',
         },
     },
 }
@@ -183,6 +199,13 @@ UI = {
         'updated': '最終更新',
         'jp_body_note': '',
         'matome_other_seasons': 'ほかのシーズンまとめ',
+        'matome_nankan_link': '何巻から一覧を見る',
+        'matome_picks_link': 'おすすめ10選を見る',
+        'nankan_th_title': '作品',
+        'nankan_th_source': '原作',
+        'nankan_th_start': '何巻から',
+        'nankan_th_range': 'アニメ化範囲の目安',
+        'nankan_count': '{n}作品',
         'detail_guide': '詳細ガイド',
         'rankings_title': 'なろうランキング',
         'rankings_lead': '公式APIのランキング閲覧（サブ機能）。書籍化・アニメ化候補の探索用。',
@@ -275,6 +298,13 @@ UI = {
         'updated': 'Updated',
         'jp_body_note': 'Volume notes and comments below are in Japanese.',
         'matome_other_seasons': 'Other season picks',
+        'matome_nankan_link': 'Full volume list',
+        'matome_picks_link': 'Top 10 picks',
+        'nankan_th_title': 'Title',
+        'nankan_th_source': 'Source',
+        'nankan_th_start': 'Start volume',
+        'nankan_th_range': 'Anime coverage',
+        'nankan_count': '{n} titles',
         'detail_guide': 'Full guide',
         'rankings_title': 'Narou rankings',
         'rankings_lead': 'Official API rankings (side feature) for spotting print and anime candidates.',

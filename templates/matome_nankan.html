@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}{{ page.title }}｜{{ app_title }}{% endblock %}
+{% block description %}{{ page.seo_description }}{% endblock %}
+{% block og_title %}{{ page.title }}{% endblock %}
+{% block og_description %}{{ page.lead }}{% endblock %}
+{% block twitter_title %}{{ page.title }}{% endblock %}
+{% block twitter_description %}{{ page.lead }}{% endblock %}
+{% block head %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": {{ page.title|tojson }},
+  "description": {{ page.lead|tojson }},
+  "url": {{ canonical_url|tojson }}
+}
+</script>
+{% endblock %}
+{% block content %}
+<section class="hero">
+  <p class="breadcrumb"><a href="{{ lang_prefix }}/">{{ t.home }}</a> › <a href="{{ lang_prefix }}/?season={{ page.season }}">{{ page.season_label }}</a> › {{ t.matome_crumb }}</p>
+  <h1>{{ page.title }}</h1>
+  <p class="tagline">{{ page.lead }}</p>
+  <p class="nankan-meta">{% set _n = page.picks|length %}{{ t.nankan_count.replace('{n}', '' ~ _n) }}</p>
+  {% if page.related %}
+  <p class="nankan-related"><a href="{{ lang_prefix }}{{ page.related.path }}">{{ t.matome_picks_link }}</a></p>
+  {% endif %}
+</section>
+
+<section class="panel matome-list">
+  <div class="table-wrap nankan-wrap">
+    <table class="nankan-table">
+      <thead>
+        <tr>
+          <th scope="col">{{ t.nankan_th_title }}</th>
+          <th scope="col">{{ t.nankan_th_source }}</th>
+          <th scope="col">{{ t.nankan_th_start }}</th>
+          <th scope="col">{{ t.nankan_th_range }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for w in page.picks %}
+        <tr>
+          <td class="nankan-title">
+            <a href="{{ lang_prefix }}/works/{{ w.id }}">{{ w.title }}</a>
+            <div class="nankan-actions">
+              <a class="btn btn-secondary btn-tiny" href="{{ lang_prefix }}/works/{{ w.id }}">{{ t.detail }}</a>
+              {% if w.buy_url %}
+              <a class="btn btn-primary btn-tiny" href="{{ w.buy_url }}" target="_blank" rel="noopener sponsored">{{ t.amazon_view if w.amazon_asin else t.amazon_search }}</a>
+              {% endif %}
+            </div>
+          </td>
+          <td>
+            {% if w.source_title %}
+            {{ t.source_labels.get(w.source_type, w.source_type_label) }}「{{ w.source_title }}」
+            {% else %}
+            —
+            {% endif %}
+          </td>
+          <td>
+            {% if w.anime_continue_short %}
+            {{ w.anime_continue_short }}
+            {% elif w.source_volume_from %}
+            {{ w.source_volume_from }}巻〜
+            {% else %}
+            1巻〜
+            {% endif %}
+          </td>
+          <td>
+            {% if w.volumes_anime %}
+            {{ w.volumes_anime }}
+            {% elif w.anime_continue_text %}
+            {{ w.anime_continue_text }}
+            {% else %}
+            {{ t.approx }}
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="panel matome-footer">
+  <p>{{ t.home }}: <a href="{{ lang_prefix }}/?season={{ page.season }}">{{ page.season_label }}</a></p>
+  {% if other_matome %}
+  <h2 class="section-title">{{ t.matome_other_seasons }}</h2>
+  <div class="popular-links">
+    {% for m in other_matome %}
+    <a class="popular-chip" href="{{ lang_prefix }}{{ m.path }}">{{ t.matome[m.slug].title if m.slug in t.matome else m.title }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+</section>
+{% endblock %}
