@@ -1,4 +1,8 @@
-"""2026秋・2027冬の ISBN/ASIN/amazon_search を正規化し表紙を再取得"""
+"""2026秋・2027冬の ISBN/ASIN/amazon_search を正規化し表紙を再取得
+
+IMPORTANT: ISBN13_BY_SLUG には版元で確認した正しい ISBN-13 のみ入れる。
+偽ISBNのチェックディジットだけ直すと、別作品の表紙が付く。
+"""
 from __future__ import annotations
 
 import re
@@ -12,9 +16,30 @@ from store import load_works, save_works
 
 TARGET_SEASONS = {'2026-autumn', '2027-winter'}
 
-# share_slug -> ISBN-13（版元・出版社サイトで確認済み）
+# share_slug -> ISBN-13（版元・OpenBDでタイトル一致確認済み）
 ISBN13_BY_SLUG: dict[str, str] = {
-    # 誤表紙・誤書誌の差し替え
+    # --- スクショで誤表紙が確認された作品（最優先） ---
+    'ranma-1-2-3': '9784091230959',           # らんま1/2 25
+    'psyren': '9784088745329',                # PSYREN 1
+    'kanata-kara': '9784592123514',           # 彼方から 1
+    'kikansha-mahou-2': '9784046806611',      # 帰還者の魔法は特別です 漫画1（原作はWeb小説）
+    'hotel-inhumans-2': '9784098513826',      # ホテル・インヒューマンズ 4
+    'kizu-darake-seijo-2': '9784758018753',   # 傷だらけ聖女より報復をこめて 1
+    'nia-liston': '9784798629704',            # 凶乱令嬢ニア・リストン LN 1
+    'sasaki-pea-2': '9784046809155',          # 佐々木とピーちゃん 4
+    'shibou-yuugi': '9784046819376',          # 死亡遊戯で飯を食う。 LN 1
+    'tantei-shinda-2': '9784046800169',       # 探偵はもう、死んでいる。 4
+    'tensei-kizoku-3': '9784065373095',       # 転生貴族 鑑定スキル LN 7
+    'tougen-anki-2': '9784253280129',         # 桃源暗鬼 12
+    'historie': '9784063143584',              # ヒストリエ 1
+    'kekkaishi-ichirinka': '9784041118832',   # 結界師の一輪華 LN 1
+    'zombie-harem': '9784861348600',          # ゾンビのあふれた世界… LN 1
+    'matsurika-kanri': '9784047347045',       # 茉莉花官吏伝 LN 1
+    'ramen-akane-2': '9784088836195',         # ラーメン赤猫 4
+    'hime-kishi-himo': '9784049142150',       # 姫騎士様のヒモ LN 1
+    'gacha-bishoujo': '9784896376029',        # ガチャを回して… LN 1
+    'josemaru': '9784046074225',              # じょせまる つよくいきるひび
+    # --- 以前の修正で正しいもの ---
     'sakamoto-days-2': '9784088831916',
     'kanojo-no-tomodachi': '9784065264799',
     'koori-no-jouheki-2': '9784088836485',
@@ -28,73 +53,47 @@ ISBN13_BY_SLUG: dict[str, str] = {
     'shangri-la-3': '9784065315866',
     'iruma-if-mafia': '9784253229180',
     'jojo-sbr-2-3': '9784088700601',
-    # プレースホルダーだった作品
     'janken-bank': '9784088916576',
     'charisma': '9784575830385',
     'sudachi-maou': '9784065275573',
     'isshiki-san-koi': '9784041109328',
     'zatsuyou-fuyo': '9784575243994',
     'tensei-ken-2': '9784896378634',
-    # チェックディジット修正（ISBN-13 正）
     'ao-no-hako-2': '9784088833897',
     'aoashi-2': '9784098605965',
     'akane-banashi-2': '9784088834276',
     'tokyo-revengers-santen': '9784065281789',
     'kusuriya-3': '9784757579859',
-    'hotel-inhumans-2': '9784098702320',
-    'kanata-kara': '9784592216585',
-    'kikansha-mahou-2': '9784046807342',
-    'kizu-darake-seijo-2': '9784592217100',
-    'nia-liston': '9784046840777',
-    'psyren': '9784088741652',
-    'ranma-1-2-3': '9784091433197',
-    'sasaki-pea-2': '9784041124181',
-    'shibou-yuugi': '9784041127830',
-    'tantei-shinda-2': '9784049136322',
-    'tensei-kizoku-3': '9784046809668',
-    'tougen-anki-2': '9784088840810',
-    'gacha-bishoujo': '9784046800479',
-    'hime-kishi-himo': '9784046808642',
     'hirayasumi': '9784098611188',
     'hyouken-2': '9784065305539',
-    'historie': '9784063142392',
-    'josemaru': '9784098720104',
-    'kekkaishi-ichirinka': '9784049122141',
-    'matsurika-kanri': '9784049134334',
-    'ramen-akane-2': '9784040751753',
     'the-one-piece': '9784088725093',
-    'zombie-harem': '9784046801223',
+}
+
+# ゲーム・オリジナルは Amazon ASIN（ISBNなし）
+ASIN_ONLY: dict[str, str] = {
+    'gensou-suikoden-anime': 'B0DF9SBJ34',  # 幻想水滸伝 I&II HDリマスター Switch
 }
 
 AMAZON_SEARCH_FIXES: dict[str, str] = {
     'tensei-ken-2': '転生したら剣でした ラノベ',
+    'gensou-suikoden-anime': '幻想水滸伝 I&II HDリマスター',
 }
 
-# オリジナル・ゲーム（公式キービジュアル／OGP）
 ORIGINAL_COVER_URLS: dict[str, str] = {
-  # 公式OGPが取れない場合はシリーズ代表画像で代替
     'cyberpunk-edgerunners-2': (
         'https://upload.wikimedia.org/wikipedia/en/8/8a/Cyberpunk_Edgerunners_poster.jpg'
     ),
     'kaze-wo-tsugumono': 'https://kazetsugu.com/common/img/ogp.png',
     'mygo-ave-mujica': 'https://bang-dream.com/mygo/assets/img/ogp.png',
-    'gensou-suikoden-anime': 'https://img.hanmoto.com/bd/img/9784041099145_600.jpg',
+    # Amazon 商品画像（HDリマスター）
+    'gensou-suikoden-anime': (
+        'https://m.media-amazon.com/images/I/81qKQnJ8qLL._AC_SL1500_.jpg'
+    ),
 }
 
 
 def digits(s: str) -> str:
     return ''.join(c for c in (s or '') if c.isdigit())
-
-
-def normalize_isbn13(isbn13: str) -> str:
-    """先頭12桁からISBN-13チェックディジットを再計算"""
-    s = digits(isbn13)
-    if len(s) < 12:
-        return s
-    base = s[:12]
-    total = sum(int(base[i]) * (1 if i % 2 == 0 else 3) for i in range(12))
-    check = (10 - total % 10) % 10
-    return base + str(check)
 
 
 def isbn13_checksum_ok(isbn13: str) -> bool:
@@ -131,7 +130,7 @@ def main() -> int:
             continue
         slug = work.get('share_slug', '')
         if slug in ISBN13_BY_SLUG:
-            isbn = normalize_isbn13(ISBN13_BY_SLUG[slug])
+            isbn = ISBN13_BY_SLUG[slug]
             asin = isbn13_to_isbn10(isbn)
             if isbn13_checksum_ok(isbn) and asin:
                 work['isbn'] = isbn
@@ -139,6 +138,10 @@ def main() -> int:
                 fixed_meta += 1
             else:
                 print(f'WARN checksum: {slug} isbn={isbn} asin={asin}')
+        elif slug in ASIN_ONLY:
+            work['amazon_asin'] = ASIN_ONLY[slug]
+            work.pop('isbn', None)
+            fixed_meta += 1
         if slug in AMAZON_SEARCH_FIXES:
             work['amazon_search'] = AMAZON_SEARCH_FIXES[slug]
 
