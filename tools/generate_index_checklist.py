@@ -1,4 +1,5 @@
 """Generate Search Console index registration checklist CSV."""
+import argparse
 import csv
 import json
 import sys
@@ -15,6 +16,7 @@ BASE = (SITE_URL if SITE_URL.startswith('http') and '127.0.0.1' not in SITE_URL 
         else 'https://anime-gensaku-guide.onrender.com').rstrip('/')
 WORKS_FILE = ROOT / 'data' / 'works.json'
 CSV_PATH = ROOT / 'docs' / 'インデックス登録チェックリスト.csv'
+SHEET_IMPORT_PATH = ROOT / 'docs' / 'インデックス登録チェックリスト_スプレッドシート貼付用.csv'
 USER_STATUS_PATH = ROOT / 'tools' / 'checklist_user_status.json'
 
 HEADERS = [
@@ -40,7 +42,7 @@ HUB_DEFAULTS = {
     '/matome/2026-spring': {'メモ': 'SEOまとめページ'},
     '/matome/2026-summer': {'メモ': 'SEOまとめページ'},
     '/matome/2026-autumn': {'メモ': 'SEOまとめページ'},
-    '/matome/2026-winter': {'メモ': 'SEOまとめページ'},
+    '/matome/2027-winter': {'メモ': 'SEOまとめページ'},
 }
 
 
@@ -68,21 +70,54 @@ def _row_status(row: dict[str, str]) -> dict[str, str]:
     return {field: (row.get(field) or '').strip() for field in STATUS_FIELDS}
 
 
-def _load_existing_status() -> dict[str, dict[str, str]]:
-    if not CSV_PATH.exists():
+def _load_status_from_csv(path: Path) -> dict[str, dict[str, str]]:
+    if not path.exists():
         return {}
     status: dict[str, dict[str, str]] = {}
-    with CSV_PATH.open('r', encoding='utf-8-sig', newline='') as handle:
-        for row in csv.DictReader(handle):
+    text = None
+    for encoding in ('utf-8-sig', 'utf-8', 'cp932'):
+        try:
+            text = path.read_text(encoding=encoding)
+            break
+        except UnicodeDecodeError:
+            continue
+    if text is None:
+        return {}
+    rows = list(csv.DictReader(text.splitlines()))
+    if not rows:
+        return {}
+    keys = list(rows[0].keys())
+
+    def pick(row: dict[str, str], idx: int) -> str:
+        if idx < len(keys):
+            return str(row.get(keys[idx], '') or '')
+        return ''
+
+    for row in rows:
+        if 'URL（フル）' in row:
             url = (row.get('URL（フル）') or '').strip()
             name = (row.get('ページ名') or '').strip()
-            if not url:
-                continue
             fields = _row_status(row)
-            status[_slug_from_url(url)] = fields
-            if name:
-                status[f'name:{name}'] = fields
+        else:
+            url = pick(row, 2).strip()
+            name = pick(row, 1).strip()
+            fields = {
+                'インデックス登録リクエスト': pick(row, 3).strip(),
+                'site:検索で確認': pick(row, 4).strip(),
+                'メモ': pick(row, 5).strip(),
+            }
+        if not url:
+            continue
+        status[_slug_from_url(url)] = fields
+        if name:
+            status[f'name:{name}'] = fields
+        if '/works/' in url:
+            status[url.rstrip('/').rsplit('/', 1)[-1]] = fields
     return status
+
+
+def _load_existing_status() -> dict[str, dict[str, str]]:
+    return _load_status_from_csv(CSV_PATH)
 
 
 def _normalize_done_status(status: dict[str, str]) -> dict[str, str]:
@@ -134,10 +169,26 @@ def _load_user_status_overlay() -> dict[str, dict[str, str]]:
     return overlay
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> None:
+    parser = argparse.ArgumentParser(description='インデックス登録チェックリストCSVを再生成')
+    parser.add_argument(
+        '--merge-csv',
+        action='append',
+        default=[],
+        help='進捗をマージするCSV（スプレッドシート書き出しなど）。複数指定可',
+    )
+    parser.add_argument(
+        '--also-sheet-import',
+        action='store_true',
+        help=f'貼付用コピーも書く: {SHEET_IMPORT_PATH.name}',
+    )
+    args = parser.parse_args(argv)
+
     works = json.loads(WORKS_FILE.read_text(encoding='utf-8'))
     existing = _load_existing_status()
     existing.update(_load_user_status_overlay())
+    for merge_path in args.merge_csv:
+        existing.update(_load_status_from_csv(Path(merge_path)))
     rows: list[dict[str, str]] = []
 
     for path, name in [('/', 'トップ（ホーム）'), ('/rankings', 'なろうランキング')]:
@@ -179,13 +230,19 @@ def main() -> None:
     rows.sort(key=lambda row: (PRIORITY_ORDER[row['優先度']], -_watchers_for_row(row, sorted_works), row['ページ名']))
 
     CSV_PATH.parent.mkdir(exist_ok=True)
-    with CSV_PATH.open('w', encoding='utf-8-sig', newline='') as handle:
-        writer = csv.DictWriter(handle, fieldnames=HEADERS)
-        writer.writeheader()
-        writer.writerows(rows)
+    outputs = [CSV_PATH]
+    if args.also_sheet_import:
+        outputs.append(SHEET_IMPORT_PATH)
+    for out_path in outputs:
+        with out_path.open('w', encoding='utf-8-sig', newline='') as handle:
+            writer = csv.DictWriter(handle, fieldnames=HEADERS)
+            writer.writeheader()
+            writer.writerows(rows)
 
     done = sum(1 for r in rows if '済' in r.get('インデックス登録リクエスト', ''))
     print(f'Created {CSV_PATH} ({len(rows)} rows, {done} 済)')
+    if args.also_sheet_import:
+        print(f'Also wrote {SHEET_IMPORT_PATH}')
 
 
 def _watchers_for_row(row: dict[str, str], works: list[dict]) -> int:
@@ -202,4 +259,4 @@ def _watchers_for_row(row: dict[str, str], works: list[dict]) -> int:
 
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv[1:])

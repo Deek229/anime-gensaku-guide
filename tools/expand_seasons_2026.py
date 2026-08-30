@@ -71,14 +71,14 @@ def main() -> int:
             added_summer += 1
         elif season == '2026-autumn':
             added_autumn += 1
-        elif season == '2026-winter':
+        elif season == '2027-winter':
             added_winter += 1
     works.sort(key=lambda w: (-(w.get('watchers_count') or 0), w.get('season', ''), w.get('title', '')))
     save_works(works)
     spring_total = sum(1 for w in works if w.get('season') == '2026-spring')
     summer_total = sum(1 for w in works if w.get('season') == '2026-summer')
     autumn_total = sum(1 for w in works if w.get('season') == '2026-autumn')
-    winter_total = sum(1 for w in works if w.get('season') == '2026-winter')
+    winter_total = sum(1 for w in works if w.get('season') == '2027-winter')
     print(f'added spring: {added_spring}, summer: {added_summer}, autumn: {added_autumn}, winter: {added_winter}')
     print(f'totals -> spring: {spring_total}, summer: {summer_total}, autumn: {autumn_total}, winter: {winter_total}, all: {len(works)}')
     return 0

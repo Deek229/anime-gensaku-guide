@@ -27,8 +27,34 @@
     "main_comment": "転生ファンタジーの代表的ベストセラーが、2026夏に第3期で帰ってきます。原作ラノベでは少年期を経て若い冒険者として新天地に足を踏み入れるフェーズ。師弟関係や家族の絆が試されるシリアスな展開が本格化し、「本気の異世界」としての厚みが一段深まります。アニメ2期まで見終えた人は第13巻前後から、初見の人は1巻から入るのが吉。成長と後悔を描く重厚系異世界が好きな人に。"
   },
   {
+    "id": "スティール-ボール-ラン-ジョジョの奇妙な冒険-2nd-3rd-stage",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "スティール・ボール・ラン ジョジョの奇妙な冒険 2nd & 3rd STAGE",
+    "source_type": "manga",
+    "source_title": "ジョジョの奇妙な冒険 スティール・ボール・ラン",
+    "source_volume_from": 12,
+    "source_volume_to": 18,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年秋クール。1st STAGEは第1〜11巻相当。",
+    "read_order": "SBR1巻から。1st STAGE見た人は12巻前後から",
+    "amazon_search": "ジョジョ SBR 漫画",
+    "tags": [
+      "バトル",
+      "西部劇",
+      "少年漫画"
+    ],
+    "watchers_count": 9950,
+    "share_slug": "jojo-sbr-2-3",
+    "main_comment": "ジョジョシリーズ第7部「スティール・ボール・ラン」のアニメ続編。2026年秋に2nd・3rd STAGEが放送予定。西部劇×スタンドバトルの異色作で、1st STAGEを追った人は漫画12巻前後から先読み可能。ジョジョファンは必見、バトル漫画の傑作を味わいたい人にもおすすめです。",
+    "cover_image_url": "/static/cover-placeholder.svg"
+  },
+  {
     "id": "the-one-piece",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -76,6 +102,32 @@
     "watchers_count": 9900,
     "share_slug": "db-super-beerus",
     "main_comment": "ドラゴンボール超のビルス編が新作アニメとして秋に登場。孫悟空たちと破壊神ビルスの関係、宇宙規模のバトルが再び描かれます。国民的IPの新作として注目度は最高クラス。DB超漫画20巻前後が参考。長年ファンは当然必見、入門は本編→超の順がおすすめです。",
+    "cover_image_url": "/static/cover-placeholder.svg"
+  },
+  {
+    "id": "氷の城壁-第2期",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "氷の城壁 第2期",
+    "source_type": "manga",
+    "source_title": "氷の城壁",
+    "source_volume_from": 4,
+    "source_volume_to": 6,
+    "source_volume_approximate": true,
+    "source_volume_note": "1期は第1〜3巻相当。2026年10月1日放送開始。",
+    "read_order": "漫画1巻から。1期見た人は4巻前後から",
+    "amazon_search": "氷の城壁 漫画",
+    "tags": [
+      "スポーツ",
+      "バスケ",
+      "少年漫画"
+    ],
+    "watchers_count": 9850,
+    "share_slug": "koori-no-jouheki-2",
+    "main_comment": "高校バスケ漫画の人気作が2期へ。2026年10月1日からTBS系で放送開始。原作は試合の緊張感とチームの成長描写が秀逸で、1期を追った人は4巻前後から先読み可能。スポーツ漫画・バスケが好きな人に。秋クール早々の注目続編です。",
     "cover_image_url": "/static/cover-placeholder.svg"
   },
   {
@@ -165,7 +217,7 @@
   },
   {
     "id": "シャングリラ-フロンティア-3rd-season",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -187,6 +239,32 @@
     "watchers_count": 9800,
     "share_slug": "shangri-la-3",
     "main_comment": "クソゲーハンターが神ゲーで無双するゲーマー漫画が3期へ。原作はバトルとゲームシステムの描写が秀逸で、アニメ2期まで見た人は13巻前後から。ゲームアニメ・攻略ものが好きな人に。2027年1月冬クールの看板枠です。",
+    "cover_image_url": "/static/cover-placeholder.svg"
+  },
+  {
+    "id": "サイバーパンク-エッジランナーズ2",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "サイバーパンク エッジランナーズ2",
+    "source_type": "original",
+    "source_title": "",
+    "source_volume_from": null,
+    "source_volume_to": null,
+    "source_volume_approximate": true,
+    "source_volume_note": "オリジナルTVアニメ続編。2026年10月20日Netflix配信開始予定。",
+    "read_order": "前作を視聴後がおすすめ。原作なし",
+    "amazon_search": "",
+    "tags": [
+      "SF",
+      "アクション",
+      "オリジナル"
+    ],
+    "watchers_count": 9750,
+    "share_slug": "cyberpunk-edgerunners-2",
+    "main_comment": "Trigger×CD Projekt REDの話題作が続編へ。2026年10月20日からNetflixで配信予定のオリジナルアニメ。前作の世界観とキャラクター性を引き継ぎつつ、新たな物語が展開される見込み。SFアクション・サイバーパンクが好きな人は前作からの視聴を。原作はないためアニメ単体で楽しめます。",
     "cover_image_url": "/static/cover-placeholder.svg"
   },
   {
@@ -247,7 +325,7 @@
   },
   {
     "id": "sakamoto-days-第2期",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -330,7 +408,7 @@
   },
   {
     "id": "あかね噺-第2期",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -413,7 +491,7 @@
   },
   {
     "id": "ひらやすみ",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -467,7 +545,7 @@
   },
   {
     "id": "ヒストリエ",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -519,7 +597,7 @@
   },
   {
     "id": "風を継ぐもの",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -628,7 +706,7 @@
   },
   {
     "id": "魔入りました-入間くん-if-episode-of-魔フィア",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -710,7 +788,7 @@
   },
   {
     "id": "bang-dream-it-s-mygo-ave-mujica",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -792,7 +870,7 @@
   },
   {
     "id": "ゴールデンカムイ-最終章-暴走列車編",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -874,7 +952,7 @@
   },
   {
     "id": "結界師の一輪華",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -953,7 +1031,7 @@
   },
   {
     "id": "雑用付与術師が自分の最強に気付くまで",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -1035,7 +1113,7 @@
   },
   {
     "id": "カリスマ",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -1057,6 +1135,32 @@
     "watchers_count": 8700,
     "share_slug": "charisma",
     "main_comment": "「カリスマ」と呼ばれる存在を巡る心理ホラー漫画がアニメ化。不穏な雰囲気と独特の世界観が魅力。ホラー・心理サスペンスが好きな人に。2027年冬の異色作として注目。1巻から先読みすると伏線を楽しみやすいです。",
+    "cover_image_url": "/static/cover-placeholder.svg"
+  },
+  {
+    "id": "彼方から",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "彼方から",
+    "source_type": "manga",
+    "source_title": "彼方から",
+    "source_volume_from": 1,
+    "source_volume_to": 3,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月4日放送開始。連載中。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "彼方から 漫画",
+    "tags": [
+      "ファンタジー",
+      "恋愛",
+      "少女漫画"
+    ],
+    "watchers_count": 8650,
+    "share_slug": "kanata-kara",
+    "main_comment": "異世界から現代に迷い込んだ少女と高校生の恋愛ファンタジーが再アニメ化。2026年10月4日からTOKYO MXほかで放送開始。少女漫画の古典的名作で、切ない恋と異世界要素のバランスが魅力。懐かし名作の新アニメが好きな人、ファンタジー恋愛が好きな人に。1巻から先読みがおすすめです。",
     "cover_image_url": "/static/cover-placeholder.svg"
   },
   {
@@ -1116,7 +1220,7 @@
   },
   {
     "id": "一式さんは恋を知りたい",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -1138,6 +1242,32 @@
     "watchers_count": 8600,
     "share_slug": "isshiki-san-koi",
     "main_comment": "恋愛経験ゼロの一式さんが恋を学ぶラブコメ。純情でほのぼのとした恋愛模様が魅力の少女漫画原作。冬の恋愛ラブコメ枠として期待。1巻から読めばキャラの魅力がつかめます。",
+    "cover_image_url": "/static/cover-placeholder.svg"
+  },
+  {
+    "id": "死亡遊戯で飯を食う-44-cloudy-beach",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "死亡遊戯で飯を食う。44:CLOUDY BEACH",
+    "source_type": "light_novel",
+    "source_title": "死亡遊戯で飯を食う。",
+    "source_volume_from": 1,
+    "source_volume_to": 3,
+    "source_volume_approximate": true,
+    "source_volume_note": "9月先行配信・10月地上波。連載中。",
+    "read_order": "ラノベ1巻から",
+    "amazon_search": "死亡遊戯で飯を食う ラノベ",
+    "tags": [
+      "デスゲーム",
+      "サバイバル",
+      "バトル"
+    ],
+    "watchers_count": 8550,
+    "share_slug": "shibou-yuugi",
+    "main_comment": "死亡ゲームに参加して稼ぐ主人公のサバイバルラノベがアニメ化。2026年9月に先行配信、10月から地上波放送。心理戦とルール攻略が読みどころのデスゲーム系。カイジ・賭博黙示録系が好きな人に。初アニメ化なので1巻から先読みがおすすめです。",
     "cover_image_url": "/static/cover-placeholder.svg"
   },
   {
@@ -1224,7 +1354,7 @@
   },
   {
     "id": "ゾンビのあふれた世界で俺だけが襲われない",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -1305,7 +1435,7 @@
   },
   {
     "id": "すだちの魔王城",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -1387,7 +1517,7 @@
   },
   {
     "id": "茉莉花官吏伝",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -1495,7 +1625,7 @@
   },
   {
     "id": "ラーメン赤猫-其の二",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -1577,7 +1707,7 @@
   },
   {
     "id": "姫騎士様のヒモ",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -1659,7 +1789,7 @@
   },
   {
     "id": "ガチャを回して仲間を増やす-最強の美少女軍団を作り上げろ",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -1711,7 +1841,7 @@
   },
   {
     "id": "じょせまる",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -1847,7 +1977,7 @@
   },
   {
     "id": "地雷なんですか-地原さん",
-    "season": "2026-winter",
+    "season": "2027-winter",
     "status": "upcoming",
     "media": "tv",
     "memo": "",
@@ -3724,6 +3854,88 @@
     "isbn": "9784798633169",
     "amazon_asin": "479863316X",
     "cover_image_url": "/static/covers/tamane-clarion.jpg",
-    "main_comment": "異世界に迷い込んだ青年・但馬波留が、まずはマルチ商法で金稼ぎ→逮捕→紙の発明で英雄へ。内政チート国家×本格モノ作りの異世界ファンタジー。HJ小説大賞受賞作で、なろう2000万PV超え。コミカライズも連載中。アニメ化未定だが、詐欺師ヒーロー物語として個性が強い一冊。"
+    "main_comment": "もっと評価されてほしいと願う作品。練られたストーリーは満足できるはず。いろんな要素がまざっている小説で、科学の内容や少し冗長的と感じる部分もあり、万人受けはしないかもしれない。それでもなろう徘徊者で未読なら、是非読んでほしい。2回読むのもいいと思う。\n\n異世界に迷い込んだ青年・但馬波留が、まずはマルチ商法で金稼ぎ→逮捕→紙の発明で英雄へという、詐欺師から始まる成り上がり英雄譚。内政チート国家づくりと本格モノ作り（紙・印刷・火薬など）が融合した異世界ファンタジー。HJ小説大賞受賞作で、なろうでも2000万PV超え。コミカライズも連載中だが、アニメ化は未定。\n\n「お前を消す方法を探してください」——作品の中核にある問いかけのように、主人公の知恵と狡猾さ、そして異世界での発明と政治が絡み合う物語は、読み終えたあとも余韻が残る。派手なバトルより頭脳と制度設計が好きな人、Re:ゼロや盾の勇者のような「異世界で何かを作る」系が好きな人に特におすすめ。",
+    "narou_url": "https://ncode.syosetu.com/n0632db/"
+  },
+  {
+    "id": "その無限の先へ",
+    "season": "ln-picks",
+    "status": "ln_only",
+    "media": "novel",
+    "memo": "旧MFブックス版1〜6巻は絶版。クラファンでリブート第1巻発売中。",
+    "official_url": "",
+    "narou_url": "https://ncode.syosetu.com/n6811ck/",
+    "title": "その無限の先へ",
+    "source_type": "light_novel",
+    "source_title": "その無限の先へ",
+    "source_volume_from": 1,
+    "source_volume_to": 1,
+    "source_volume_approximate": false,
+    "source_volume_note": "なろう連載中。書籍第1巻発売中、第2巻準備中。",
+    "read_order": "なろう1話目から。書籍版は1巻から",
+    "amazon_search": "その無限の先へ ラノベ",
+    "tags": [
+      "異世界",
+      "ダンジョン",
+      "コメディ"
+    ],
+    "watchers_count": 750,
+    "share_slug": "sono-mugen-no-saki-e",
+    "cover_image_url": "/static/cover-placeholder.svg",
+    "main_comment": "限界村落から迷宮都市へ。ゲーム的システムと過酷な現実が同居するダンジョン冒険譚。貧困から這い上がる主人公の成長と、クラン運営・階層攻略の読み応えが魅力。大体コメディ寄りだがシリアスな場面も。ダンジョンもの・成り上がりが好きな人に。"
+  },
+  {
+    "id": "幻想再帰のアリュージョニスト",
+    "season": "ln-picks",
+    "status": "ln_only",
+    "media": "novel",
+    "memo": "書籍未刊。なろう連載のみ。",
+    "official_url": "",
+    "narou_url": "https://ncode.syosetu.com/n9073ca/",
+    "title": "幻想再帰のアリュージョニスト",
+    "source_type": "web_novel",
+    "source_title": "幻想再帰のアリュージョニスト",
+    "source_volume_from": null,
+    "source_volume_to": null,
+    "source_volume_approximate": false,
+    "source_volume_note": "なろう連載中。書籍化なし。",
+    "read_order": "なろう1話目から",
+    "amazon_search": "幻想再帰のアリュージョニスト",
+    "tags": [
+      "SF",
+      "オカルト",
+      "哲学"
+    ],
+    "watchers_count": 700,
+    "share_slug": "gensou-saiki-allusionist",
+    "cover_image_url": "/static/cover-placeholder.svg",
+    "main_comment": "言葉と理解をめぐる、頭脳派SFファンタジー。サイバーパンクとオカルトパンクが交差する世界で、主人公は「誰も自分の言葉を理解できない」という孤独を抱える。難解な部分もあるが、読み返すほど味が出る作品。哲学系・実験的なWeb小説が好きな人に。"
+  },
+  {
+    "id": "crawlers",
+    "season": "ln-picks",
+    "status": "ln_only",
+    "media": "novel",
+    "memo": "カクヨム版もあり。",
+    "official_url": "",
+    "narou_url": "https://ncode.syosetu.com/n5472cu/",
+    "title": "Crawler's",
+    "source_type": "web_novel",
+    "source_title": "Crawler's",
+    "source_volume_from": null,
+    "source_volume_to": null,
+    "source_volume_approximate": false,
+    "source_volume_note": "なろう連載中。書籍化なし。",
+    "read_order": "なろう「導入」から",
+    "amazon_search": "Crawler's 小説",
+    "tags": [
+      "SF",
+      "ポストアポカリプス",
+      "ミリタリー"
+    ],
+    "watchers_count": 650,
+    "share_slug": "crawlers",
+    "cover_image_url": "/static/cover-placeholder.svg",
+    "main_comment": "ポールシフト後の再生地球を舞台にしたSFサバイバル。軍人の永瀬恭一郎が、女ばかりのドームポリスで異形生命体と戦いながら謎を解いていく。硬めのミリタリーSFと謎解きが好きな人に。書籍未刊のためなろうで読むのが基本です。"
   }
 ]

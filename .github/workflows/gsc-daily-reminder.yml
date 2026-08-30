@@ -38,4 +38,5 @@ jobs:
           BREVO_SENDER_EMAIL: a_n_k_6@hotmail.com
           REMINDER_EMAIL_TO: a_n_k_6@hotmail.com
           SITE_URL: https://anime-gensaku-guide.onrender.com
+          CHECKLIST_SHEET_URL: ${{ secrets.CHECKLIST_SHEET_URL }}
         run: python tools/gsc_reminder.py

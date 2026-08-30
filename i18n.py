@@ -20,7 +20,7 @@ SEASON = {
         '2026-summer': '2026年夏アニメ',
         '2026-spring': '2026年春アニメ',
         '2026-autumn': '2026年秋アニメ',
-        '2026-winter': '2026年冬アニメ',
+        '2027-winter': '2027年冬アニメ',
         'ln-picks': 'おすすめラノベ',
     },
     'en': {
@@ -80,11 +80,11 @@ MATOME = {
         },
         '2026-autumn': {
             'title': '2026年秋アニメ 原作おすすめ10選',
-            'lead': '2026年10月放送の秋アニメから、原作ファン・これから読み始める人向けのおすすめ10作品をピックアップしました。',
+            'lead': '2026年9〜12月（10月クール）の秋アニメから、原作を読む価値が高い作品を10本厳選。ラノベ・漫画の読み始め巻と、アニメ化範囲の目安をまとめました。',
         },
-        '2026-winter': {
-            'title': '2026年冬アニメ 原作おすすめ10選',
-            'lead': '2027年1月放送の冬アニメ（2026年冬クール）から、原作を押さえておきたい注目作10選を紹介します。',
+        '2027-winter': {
+            'title': '2027年冬アニメ 原作おすすめ10選',
+            'lead': '2027年1〜3月放送の冬アニメから、原作チェックにおすすめの人気作10選。続編ものの「何巻から読むか」もひと目でわかります。',
         },
     },
     'en': {
@@ -98,11 +98,11 @@ MATOME = {
         },
         '2026-autumn': {
             'title': 'Autumn 2026 anime: 10 source-material picks',
-            'lead': 'Ten Autumn 2026 titles for readers who want the original novels or manga.',
+            'lead': 'Ten Autumn 2026 titles (Sep–Dec) for readers who want the original novels or manga.',
         },
-        '2026-winter': {
-            'title': 'Winter 2026 anime: 10 source-material picks',
-            'lead': 'Ten Winter 2026 (early 2027) shows to read ahead of or alongside the broadcast.',
+        '2027-winter': {
+            'title': 'Winter 2027 anime: 10 source-material picks',
+            'lead': 'Ten Winter 2027 (Jan–Mar) shows to read ahead of or alongside the broadcast.',
         },
     },
 }
@@ -170,6 +170,7 @@ UI = {
         'memo': 'メモ',
         'links': 'リンク',
         'official': '公式サイト',
+        'narou': '小説家になろう',
         'post_on_x': 'Xで投稿',
         'copy_text': '文面をコピー',
         'copied': 'コピーしました',
@@ -261,6 +262,7 @@ UI = {
         'memo': 'Notes',
         'links': 'Links',
         'official': 'Official site',
+        'narou': 'Shōsetsuka ni Narō',
         'post_on_x': 'Post on X',
         'copy_text': 'Copy text',
         'copied': 'Copied',

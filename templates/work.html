@@ -103,7 +103,7 @@
     <h2>{% if work.is_ln_pick %}{{ t.info_h_ln }}{% else %}{{ t.info_h }}{% endif %}</h2>
     {% if work.has_source %}
     <table class="info-table">
-      <tr><th>{{ t.th_source }}</th><td>{{ work.source_title or '—' }}</td></tr>
+      <tr><th>{{ t.th_source }}</th><td>{% if work.narou_url and work.is_ln_pick %}<a href="{{ work.narou_url }}" target="_blank" rel="noopener">{{ work.source_title or work.title }}</a>{% else %}{{ work.source_title or '—' }}{% endif %}</td></tr>
       <tr><th>{{ t.th_type }}</th><td>{{ t.source_labels.get(work.source_type, work.source_type_label) }}</td></tr>
       <tr><th>{% if work.is_ln_pick %}{{ t.th_pub }}{% else %}{{ t.th_range }}{% endif %}</th>
         <td>
@@ -174,6 +174,9 @@
     <div class="action-buttons">
       {% if work.buy_url %}
       <a class="btn btn-primary" href="{{ work.buy_url }}" target="_blank" rel="noopener sponsored">{{ t.amazon_view if work.amazon_asin else t.amazon_search }}</a>
+      {% endif %}
+      {% if work.narou_url %}
+      <a class="btn btn-secondary" href="{{ work.narou_url }}" target="_blank" rel="noopener">{{ t.narou }}</a>
       {% endif %}
       {% if work.official_url %}
       <a class="btn btn-secondary" href="{{ work.official_url }}" target="_blank" rel="noopener">{{ t.official }}</a>

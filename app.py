@@ -179,6 +179,11 @@ def work_page(request: Request, work_id: str):
     )
 
 
+@app.get('/matome/2026-winter')
+def matome_winter_redirect():
+    return RedirectResponse(url='/matome/2027-winter', status_code=301)
+
+
 @app.get('/matome/{slug}', response_class=HTMLResponse)
 def matome_page(request: Request, slug: str):
     page = get_matome(slug)
