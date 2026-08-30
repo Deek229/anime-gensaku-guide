@@ -42,7 +42,6 @@ ISBN13_BY_SLUG: dict[str, str] = {
     'tokyo-revengers-santen': '9784065281789',
     'kusuriya-3': '9784757579859',
     'hotel-inhumans-2': '9784098702320',
-    'hyouken-2': '9784040723260',
     'kanata-kara': '9784592216585',
     'kikansha-mahou-2': '9784046807342',
     'kizu-darake-seijo-2': '9784592217100',
@@ -56,13 +55,14 @@ ISBN13_BY_SLUG: dict[str, str] = {
     'tougen-anki-2': '9784088840810',
     'gacha-bishoujo': '9784046800479',
     'hime-kishi-himo': '9784046808642',
-    'hirayasumi': '9784065284695',
+    'hirayasumi': '9784098611188',
+    'hyouken-2': '9784065305539',
     'historie': '9784063142392',
     'josemaru': '9784098720104',
     'kekkaishi-ichirinka': '9784049122141',
     'matsurika-kanri': '9784049134334',
     'ramen-akane-2': '9784040751753',
-    'the-one-piece': '9784088725092',
+    'the-one-piece': '9784088725093',
     'zombie-harem': '9784046801223',
 }
 
@@ -72,17 +72,29 @@ AMAZON_SEARCH_FIXES: dict[str, str] = {
 
 # オリジナル・ゲーム（公式キービジュアル／OGP）
 ORIGINAL_COVER_URLS: dict[str, str] = {
+  # 公式OGPが取れない場合はシリーズ代表画像で代替
     'cyberpunk-edgerunners-2': (
         'https://upload.wikimedia.org/wikipedia/en/8/8a/Cyberpunk_Edgerunners_poster.jpg'
     ),
-    'kaze-wo-tsugumono': 'https://www.aniplex.co.jp/lineup/kazetsugu/assets/img/ogp.jpg',
-    'mygo-ave-mujica': 'https://bang-dream.com/mygo/assets/img/common/ogp.jpg',
+    'kaze-wo-tsugumono': 'https://kazetsugu.com/common/img/ogp.png',
+    'mygo-ave-mujica': 'https://bang-dream.com/mygo/assets/img/ogp.png',
     'gensou-suikoden-anime': 'https://img.hanmoto.com/bd/img/9784041099145_600.jpg',
 }
 
 
 def digits(s: str) -> str:
     return ''.join(c for c in (s or '') if c.isdigit())
+
+
+def normalize_isbn13(isbn13: str) -> str:
+    """先頭12桁からISBN-13チェックディジットを再計算"""
+    s = digits(isbn13)
+    if len(s) < 12:
+        return s
+    base = s[:12]
+    total = sum(int(base[i]) * (1 if i % 2 == 0 else 3) for i in range(12))
+    check = (10 - total % 10) % 10
+    return base + str(check)
 
 
 def isbn13_checksum_ok(isbn13: str) -> bool:
@@ -119,7 +131,7 @@ def main() -> int:
             continue
         slug = work.get('share_slug', '')
         if slug in ISBN13_BY_SLUG:
-            isbn = ISBN13_BY_SLUG[slug]
+            isbn = normalize_isbn13(ISBN13_BY_SLUG[slug])
             asin = isbn13_to_isbn10(isbn)
             if isbn13_checksum_ok(isbn) and asin:
                 work['isbn'] = isbn
