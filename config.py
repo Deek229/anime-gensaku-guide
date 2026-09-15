@@ -24,7 +24,7 @@ AMAZON_ASSOCIATE_TAG = os.environ.get('AMAZON_ASSOCIATE_TAG', '').strip()
 ANNICT_ACCESS_TOKEN = os.environ.get('ANNICT_ACCESS_TOKEN', '').strip()
 ANNICT_API_URL = 'https://api.annict.com/v1/works'
 
-DEFAULT_SEASON = '2026-summer'
+DEFAULT_SEASON = '2026-autumn'
 
 SEASON_LABELS = {
     '2026-summer': '2026年夏アニメ',

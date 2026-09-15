@@ -111,6 +111,34 @@
     "amazon_asin": "4088834704"
   },
   {
+    "id": "マッシュル-mashle-三魔対争神覚者最終試験編",
+    "season": "2027-winter",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "マッシュル-MASHLE- 三魔対争神覚者最終試験編",
+    "source_type": "manga",
+    "source_title": "マッシュル-MASHLE-",
+    "source_volume_from": 13,
+    "source_volume_to": 18,
+    "source_volume_approximate": true,
+    "source_volume_note": "漫画は全18巻完結。1・2期の続き、最終試験編。2027年冬。",
+    "read_order": "漫画1巻から。2期まで見た人は13巻前後から",
+    "amazon_search": "マッシュル 漫画",
+    "tags": [
+      "バトル",
+      "ギャグ",
+      "少年漫画"
+    ],
+    "watchers_count": 9880,
+    "share_slug": "mashle-3",
+    "main_comment": "魔法が使えない筋肉少年が魔法界で無双するギャグバトルの最終章。2027年冬に三魔対争神覚者最終試験編として放送。原作は全18巻完結済みなので、結末まで先読みできる。2期まで追った人は13巻前後から。ジャンプの馬鹿力コメディが好きな人、冬の看板続編です。",
+    "isbn": "9784088823294",
+    "amazon_asin": "408882329X",
+    "cover_image_url": "/static/covers/mashle-3.jpg"
+  },
+  {
     "id": "氷の城壁-第2期",
     "season": "2026-autumn",
     "status": "upcoming",
@@ -123,7 +151,7 @@
     "source_volume_from": 4,
     "source_volume_to": 6,
     "source_volume_approximate": true,
-    "source_volume_note": "1期は第1〜3巻相当。2026年10月1日放送開始。",
+    "source_volume_note": "1期は第1〜3巻相当。2026年10月1日 TBS系放送開始。",
     "read_order": "漫画1巻から。1期見た人は4巻前後から",
     "amazon_search": "氷の城壁 漫画",
     "tags": [
@@ -151,7 +179,7 @@
     "source_volume_from": 10,
     "source_volume_to": 12,
     "source_volume_approximate": true,
-    "source_volume_note": "第1・2期は第1〜9巻相当。3期は第10巻前後から。",
+    "source_volume_note": "第1・2期は第1〜9巻相当。3期は第10巻前後から。2026年10月2日日本テレビ系で第1クール開始。",
     "read_order": "1巻から。2期まで見た人は9巻前後から",
     "amazon_search": "薬屋のひとりごと ラノベ",
     "tags": [
@@ -236,7 +264,7 @@
     "source_volume_from": 13,
     "source_volume_to": 16,
     "source_volume_approximate": true,
-    "source_volume_note": "1・2期は第1〜12巻相当。3期は13巻以降。",
+    "source_volume_note": "1・2期は第1〜12巻相当。3期は13巻以降。2027年1月 MBS/TBS系。",
     "read_order": "漫画1巻から。2期まで見た人は13巻前後から",
     "amazon_search": "シャングリラフロンティア 漫画",
     "tags": [
@@ -290,7 +318,7 @@
     "source_volume_from": 28,
     "source_volume_to": 31,
     "source_volume_approximate": true,
-    "source_volume_note": "三天戦争編。漫画は全31巻で完結済み。",
+    "source_volume_note": "三天戦争編。漫画は全31巻で完結済み。2026年10月2日 MBS/TBS系。",
     "read_order": "1巻から。アニメ追いなら該当巻から",
     "amazon_search": "東京リベンジャーズ 漫画",
     "tags": [
@@ -346,7 +374,7 @@
     "source_volume_from": 8,
     "source_volume_to": 11,
     "source_volume_approximate": true,
-    "source_volume_note": "1期は第1〜7巻相当。",
+    "source_volume_note": "1期は第1〜7巻相当。2027年1月放送。",
     "read_order": "漫画1巻から。1期見た人は8巻前後から",
     "amazon_search": "SAKAMOTO DAYS 漫画",
     "tags": [
@@ -374,7 +402,7 @@
     "source_volume_from": 8,
     "source_volume_to": 12,
     "source_volume_approximate": true,
-    "source_volume_note": "1期は第1〜7巻相当。2期は8巻以降。",
+    "source_volume_note": "1期は第1〜7巻相当。2期は8巻以降。2026年10月4日 TBS系。",
     "read_order": "漫画1巻から。1期見た人は8巻前後から",
     "amazon_search": "アオのハコ 漫画",
     "tags": [
@@ -431,7 +459,7 @@
     "source_volume_from": 5,
     "source_volume_to": 8,
     "source_volume_approximate": true,
-    "source_volume_note": "1期は第1〜4巻相当。2027年1月放送。",
+    "source_volume_note": "1期は第1〜4巻相当。第2期は前座修業篇。2027年1月 テレビ朝日系 IMAnimation。",
     "read_order": "漫画1巻から。1期見た人は5巻前後から",
     "amazon_search": "あかね噺 漫画",
     "tags": [
@@ -459,7 +487,7 @@
     "source_volume_from": 20,
     "source_volume_to": 25,
     "source_volume_approximate": true,
-    "source_volume_note": "1期は青年編中心。2期はプロ編へ。",
+    "source_volume_note": "1期は青年編中心。2期はプロ編へ。2026年10月4日 NHK Eテレ。",
     "read_order": "1巻から。アニメ1期後は該当巻から",
     "amazon_search": "アオアシ 漫画",
     "tags": [
@@ -528,6 +556,34 @@
     "cover_image_url": "/static/covers/hirayasumi.jpg",
     "isbn": "9784098611188",
     "amazon_asin": "409861118X"
+  },
+  {
+    "id": "マリッジトキシン-第2期",
+    "season": "2027-winter",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "マリッジトキシン 第2期",
+    "source_type": "manga",
+    "source_title": "マリッジトキシン",
+    "source_volume_from": 8,
+    "source_volume_to": 12,
+    "source_volume_approximate": true,
+    "source_volume_note": "1期は序盤相当。2027年1月放送。",
+    "read_order": "漫画1巻から。1期見た人は8巻前後から",
+    "amazon_search": "マリッジトキシン 漫画",
+    "tags": [
+      "アクション",
+      "コメディ",
+      "少年漫画"
+    ],
+    "watchers_count": 9450,
+    "share_slug": "marriage-toxin-2",
+    "main_comment": "殺し屋と結婚詐欺師のバディが「世界一ハードな婚活」を続けるアクションコメディの2期。2027年1月放送。毒と策略、ギャグの温度差が原作の魅力。1期を見た人は8巻前後から。バトルコメ・ジャンプ作品の続編を冬に観たい人向けです。",
+    "isbn": "9784088832135",
+    "amazon_asin": "4088832132",
+    "cover_image_url": "/static/covers/marriage-toxin-2.jpg"
   },
   {
     "id": "転生したら剣でした-第2期",
@@ -614,6 +670,34 @@
     "amazon_asin": "4046806613"
   },
   {
+    "id": "気になってる人が男じゃなかった",
+    "season": "2027-winter",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "気になってる人が男じゃなかった",
+    "source_type": "manga",
+    "source_title": "気になってる人が男じゃなかった",
+    "source_volume_from": 1,
+    "source_volume_to": 4,
+    "source_volume_approximate": true,
+    "source_volume_note": "2027年冬 CloverWorks。Web発の人気作。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "気になってる人が男じゃなかった 漫画",
+    "tags": [
+      "百合",
+      "青春",
+      "恋愛"
+    ],
+    "watchers_count": 9300,
+    "share_slug": "kinioto",
+    "main_comment": "CDショップの「おにーさん」が実は同級生の女子だった、Web発の青春百合作。2027年冬にCloverWorksがアニメ化。音楽と視線の温度で関係性が進むタイプで、大声のラブコメではない。百合・青春ものが好きな人は1巻から。冬の注目新作です。",
+    "isbn": "9784046817327",
+    "amazon_asin": "4046817321",
+    "cover_image_url": "/static/covers/kinioto.jpg"
+  },
+  {
     "id": "風を継ぐもの",
     "season": "2027-winter",
     "status": "upcoming",
@@ -652,7 +736,7 @@
     "source_volume_from": 25,
     "source_volume_to": 30,
     "source_volume_approximate": true,
-    "source_volume_note": "リメイク第3クール。原作漫画38巻完結。",
+    "source_volume_note": "2026年10月2日 日本テレビほか。",
     "read_order": "漫画1巻から。アニメ追いなら該当巻から",
     "amazon_search": "らんま1/2 漫画",
     "tags": [
@@ -666,6 +750,34 @@
     "cover_image_url": "/static/covers/ranma-1-2-3.jpg",
     "isbn": "9784091230959",
     "amazon_asin": "4091230954"
+  },
+  {
+    "id": "魔法少女育成計画-restart",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "魔法少女育成計画 restart",
+    "source_type": "light_novel",
+    "source_title": "魔法少女育成計画 restart",
+    "source_volume_from": 1,
+    "source_volume_to": 2,
+    "source_volume_approximate": true,
+    "source_volume_note": "restart前・後編。2026年10月5日 テレビ東京ほか。1期は無印相当。",
+    "read_order": "無印を読んでからrestart前編。アニメ1期視聴済みならrestartから",
+    "amazon_search": "魔法少女育成計画 restart ラノベ",
+    "tags": [
+      "魔法少女",
+      "サスペンス",
+      "デスゲーム"
+    ],
+    "watchers_count": 9200,
+    "share_slug": "mahoiku-restart",
+    "main_comment": "魔法少女たちが理不尽な生存ゲームに巻き込まれるシリーズの続編。2026年10月5日からテレビ東京ほかで放送。原作はrestart前編・後編が今回の中心で、1期を見た人は無印を飛ばして続きから入れる。サスペンス寄りの魔法少女もの、デスゲームの駆け引きが好きな人に。秋の異色枠です。",
+    "isbn": "9784800201829",
+    "amazon_asin": "4800201829",
+    "cover_image_url": "/static/covers/mahoiku-restart.jpg"
   },
   {
     "id": "あかね噺",
@@ -907,7 +1019,7 @@
     "source_volume_from": 28,
     "source_volume_to": 31,
     "source_volume_approximate": true,
-    "source_volume_note": "漫画全31巻完結。最終章アニメ。",
+    "source_volume_note": "最終章「暴走列車編」。公式表記は今冬。漫画は完結済み。",
     "read_order": "1巻から。アニメ追いなら該当巻から",
     "amazon_search": "ゴールデンカムイ 漫画",
     "tags": [
@@ -949,6 +1061,34 @@
     "cover_image_url": "/static/covers/janken-bank.jpg",
     "isbn": "9784088916576",
     "amazon_asin": "4088916573"
+  },
+  {
+    "id": "超巡-超条先輩",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "超巡！超条先輩",
+    "source_type": "manga",
+    "source_title": "超巡！超条先輩",
+    "source_volume_from": 1,
+    "source_volume_to": 4,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月スタート。週刊少年ジャンプ連載。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "超巡 超条先輩 漫画",
+    "tags": [
+      "コメディ",
+      "超能力",
+      "少年漫画"
+    ],
+    "watchers_count": 8900,
+    "share_slug": "chojo-senpai",
+    "main_comment": "超能力を持ちながら場末の交番にいる先輩と、怪力の新米が組むポリスコメディ。2026年10月スタートのジャンプ新作アニメ。ギャグのテンポと能力バトルが同居するのが読みどころ。初アニメ化なので1巻から。コメディ×能力ものが好きな人、秋の新顔を探している人に。",
+    "isbn": "9784088841083",
+    "amazon_asin": "4088841085",
+    "cover_image_url": "/static/covers/chojo-senpai.jpg"
   },
   {
     "id": "ようこそ実力至上主義の教室へ-4th-season",
@@ -1092,6 +1232,34 @@
     "amazon_asin": "457524399X"
   },
   {
+    "id": "朱色の仮面",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "朱色の仮面",
+    "source_type": "manga",
+    "source_title": "朱色の仮面",
+    "source_volume_from": 1,
+    "source_volume_to": 5,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月10日 読売テレビ・日本テレビ系。分割2クール。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "朱色の仮面 漫画",
+    "tags": [
+      "ファンタジー",
+      "バトル",
+      "青年漫画"
+    ],
+    "watchers_count": 8750,
+    "share_slug": "shuiro-no-kamen",
+    "main_comment": "仮面を着けると能力が目覚める世界で、贖罪の旅に出る少年のファンタジー。2026年10月から読売テレビ・日本テレビ系で分割2クール。土曜夕方枠の新作で、画の密度と世界観の厚みが原作の強み。ダークファンタジーや能力バトルが好きな人は1巻から先読みがおすすめです。",
+    "isbn": "9784785969820",
+    "amazon_asin": "4785969822",
+    "cover_image_url": "/static/covers/shuiro-no-kamen.jpg"
+  },
+  {
     "id": "魔法騎士レイアース",
     "season": "2026-autumn",
     "status": "upcoming",
@@ -1104,7 +1272,7 @@
     "source_volume_from": 1,
     "source_volume_to": 6,
     "source_volume_approximate": true,
-    "source_volume_note": "1990年代名作の2026年版リメイク。",
+    "source_volume_note": "2026年10月7日 テレビ朝日系。",
     "read_order": "原作漫画1巻から（3巻完結+続編）",
     "amazon_search": "魔法騎士レイアース 漫画",
     "tags": [
@@ -1178,6 +1346,34 @@
     "amazon_asin": "4575830380"
   },
   {
+    "id": "傷口と包帯",
+    "season": "2027-winter",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "傷口と包帯",
+    "source_type": "manga",
+    "source_title": "傷口と包帯",
+    "source_volume_from": 1,
+    "source_volume_to": 3,
+    "source_volume_approximate": true,
+    "source_volume_note": "2027年1月 ABC・テレビ朝日系 ANiMAZiNG!!!枠。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "傷口と包帯 漫画",
+    "tags": [
+      "恋愛",
+      "青年漫画",
+      "ヒューマンドラマ"
+    ],
+    "watchers_count": 8700,
+    "share_slug": "kizu-to-houtai",
+    "main_comment": "ヤクザの若頭が、特殊な体質を持つ組長の娘の世話係になるヒューマンドラマ。2027年1月からABC・テレビ朝日系。依存と世話の関係が生々しく、王道ラブコメではない。人間関係の歪みが好きな人、冬の新作で濃い話が欲しい人は1巻から。",
+    "isbn": "9784065376928",
+    "amazon_asin": "4065376920",
+    "cover_image_url": "/static/covers/kizu-to-houtai.jpg"
+  },
+  {
     "id": "彼方から",
     "season": "2026-autumn",
     "status": "upcoming",
@@ -1190,7 +1386,7 @@
     "source_volume_from": 1,
     "source_volume_to": 3,
     "source_volume_approximate": true,
-    "source_volume_note": "2026年10月4日放送開始。連載中。",
+    "source_volume_note": "2026年10月2日 TOKYO MXほか。連載当時の名作の新アニメ。",
     "read_order": "漫画1巻から",
     "amazon_search": "彼方から 漫画",
     "tags": [
@@ -1204,6 +1400,62 @@
     "cover_image_url": "/static/covers/kanata-kara.jpg",
     "isbn": "9784592123514",
     "amazon_asin": "4592123514"
+  },
+  {
+    "id": "黒岩メダカに私の可愛いが通じない-season2",
+    "season": "2027-winter",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "黒岩メダカに私の可愛いが通じない Season2",
+    "source_type": "manga",
+    "source_title": "黒岩メダカに私の可愛いが通じない",
+    "source_volume_from": 6,
+    "source_volume_to": 10,
+    "source_volume_approximate": true,
+    "source_volume_note": "1期の続き。2027年冬 Season2。",
+    "read_order": "漫画1巻から。1期見た人は6巻前後から",
+    "amazon_search": "黒岩メダカに私の可愛いが通じない 漫画",
+    "tags": [
+      "ラブコメ",
+      "学園",
+      "少年漫画"
+    ],
+    "watchers_count": 8650,
+    "share_slug": "kuroiwa-medaka-2",
+    "main_comment": "ぶりっ子が通じない男子を落とそうとする学園ラブコメの2期。2027年冬。原作は「可愛さの定義」をずらして笑わせるタイプで、1期の延長で十分楽しめる。ラブコメの続編を冬に観たい人、1期を見た人は6巻前後から。",
+    "cover_image_url": "/static/covers/kuroiwa-medaka-2.jpg",
+    "isbn": "9784065244906",
+    "amazon_asin": "4065244900"
+  },
+  {
+    "id": "マジカル-エクスプローラー",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "マジカル★エクスプローラー",
+    "source_type": "light_novel",
+    "source_title": "マジカル★エクスプローラー エロゲの友人キャラに転生したけど、ゲーム知識使って自由に生きる",
+    "source_volume_from": 1,
+    "source_volume_to": 3,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月3日 TOKYO MXほか。ラノベ原作。",
+    "read_order": "ラノベ1巻から。漫画版でも可",
+    "amazon_search": "マジカルエクスプローラー ラノベ",
+    "tags": [
+      "転生",
+      "学園",
+      "ラブコメ"
+    ],
+    "watchers_count": 8600,
+    "share_slug": "magical-explorer",
+    "main_comment": "美少女ゲームの友人キャラに転生し、知識で自由に立ち回る学園ファンタジー。2026年10月3日からTOKYO MXほか。原作ラノベはハーレム要素と攻略知識の使い方が読みどころ。転生もの・学園ものが好きな人、秋のライトな異世界枠を探している人に。1巻からで十分入れます。",
+    "isbn": "9784041110072",
+    "amazon_asin": "4041110076",
+    "cover_image_url": "/static/covers/magical-explorer.jpg"
   },
   {
     "id": "幻想水滸伝",
@@ -1288,6 +1540,34 @@
     "cover_image_url": "/static/covers/isshiki-san-koi.jpg",
     "isbn": "9784041109328",
     "amazon_asin": "4041109329"
+  },
+  {
+    "id": "新テニスの王子様-u-17-world-cup-決勝メンバー決定戦",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "新テニスの王子様 U-17 WORLD CUP 決勝メンバー決定戦",
+    "source_type": "manga",
+    "source_title": "新テニスの王子様",
+    "source_volume_from": 30,
+    "source_volume_to": 34,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年9月30日 テレビ東京ほか。WORLD CUP編の続き。",
+    "read_order": "本編から。WORLD CUPまで見た人は該当巻から",
+    "amazon_search": "新テニスの王子様 漫画",
+    "tags": [
+      "スポーツ",
+      "テニス",
+      "少年漫画"
+    ],
+    "watchers_count": 8550,
+    "share_slug": "shin-tenipuri-u17",
+    "main_comment": "テニプリシリーズのU-17ワールドカップ編が続編へ。2026年9月30日からテレビ東京ほか。代表争いの緊張感と個性的なプレースタイルが原作の魅力。前作まで追った人は続き巻から、初見なら漫画1巻か旧アニメから。スポーツアニメの秋の定番枠です。",
+    "isbn": "9784088747248",
+    "amazon_asin": "4088747240",
+    "cover_image_url": "/static/covers/shin-tenipuri-u17.jpg"
   },
   {
     "id": "死亡遊戯で飯を食う-44-cloudy-beach",
@@ -1430,6 +1710,34 @@
     "amazon_asin": "4861348609"
   },
   {
+    "id": "信者ゼロの女神サマと始める異世界攻略",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "信者ゼロの女神サマと始める異世界攻略",
+    "source_type": "light_novel",
+    "source_title": "信者ゼロの女神サマと始める異世界攻略",
+    "source_volume_from": 1,
+    "source_volume_to": 4,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月スタート。オーバーラップ文庫。",
+    "read_order": "ラノベ1巻から",
+    "amazon_search": "信者ゼロの女神サマ ラノベ",
+    "tags": [
+      "異世界",
+      "ダンジョン",
+      "冒険"
+    ],
+    "watchers_count": 8450,
+    "share_slug": "shinja-zero",
+    "main_comment": "クラス最弱の転移者に、信者ゼロのマイナー女神が噛みついてくる異世界攻略もの。2026年10月スタート。ゲーム知識とダンジョン攻略のテンポが原作の売り。よくある転移ものより「弱い側からの成り上がり」がはっきりしている。秋の異世界枠で1巻から先読みしやすい作品です。",
+    "isbn": "9784865544626",
+    "amazon_asin": "4865544623",
+    "cover_image_url": "/static/covers/shinja-zero.jpg"
+  },
+  {
     "id": "佐々木とピーちゃん-season2",
     "season": "2026-autumn",
     "status": "upcoming",
@@ -1513,6 +1821,34 @@
     "cover_image_url": "/static/covers/sudachi-maou.jpg",
     "isbn": "9784065275573",
     "amazon_asin": "4065275571"
+  },
+  {
+    "id": "貸した魔力は-リボ払い-で強制徴収",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "貸した魔力は【リボ払い】で強制徴収",
+    "source_type": "manga",
+    "source_title": "貸した魔力は【リボ払い】で強制徴収",
+    "source_volume_from": 1,
+    "source_volume_to": 4,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月1日 テレビ朝日系ほか。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "貸した魔力はリボ払い 漫画",
+    "tags": [
+      "異世界",
+      "復讐",
+      "ファンタジー"
+    ],
+    "watchers_count": 8350,
+    "share_slug": "ribarai-maryoku",
+    "main_comment": "パーティーに魔力を貸したあげく追放された少年が、リボ払いで取り立てる異色ファンタジー。2026年10月1日からテレビ朝日系ほか。追放ものに「債権回収」を足した切り口が面白い。スカッと系・成り上がりが好きな人は1巻から。秋の新作でネタが刺さる人向けです。",
+    "isbn": "9784866753072",
+    "amazon_asin": "4866753072",
+    "cover_image_url": "/static/covers/ribarai-maryoku.jpg"
   },
   {
     "id": "転生貴族-鑑定スキルで成り上がる-第3期",
@@ -1601,6 +1937,34 @@
     "amazon_asin": "4047347043"
   },
   {
+    "id": "fx戦士くるみちゃん",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "FX戦士くるみちゃん",
+    "source_type": "manga",
+    "source_title": "FX戦士くるみちゃん",
+    "source_volume_from": 1,
+    "source_volume_to": 3,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月1日 AT-X・TOKYO MXほか。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "FX戦士くるみちゃん 漫画",
+    "tags": [
+      "コメディ",
+      "金融",
+      "日常"
+    ],
+    "watchers_count": 8200,
+    "share_slug": "fx-kurumi",
+    "main_comment": "FXをテーマにした異色の金融コメディ漫画が10月1日から放送。数字と生活が直結するテンポで、ただのギャグに終わらないのが原作の味。お金・仕事系の漫画が好きな人、秋の変わり種を観たい人に。話数も読みやすく、1巻からで十分間に合います。",
+    "isbn": "9784046806680",
+    "amazon_asin": "4046806680",
+    "cover_image_url": "/static/covers/fx-kurumi.jpg"
+  },
+  {
     "id": "凶乱令嬢ニア-リストン-病弱令嬢に転生した神殺しの武人の華麗なる無双録",
     "season": "2026-autumn",
     "status": "upcoming",
@@ -1613,7 +1977,7 @@
     "source_volume_from": 1,
     "source_volume_to": 3,
     "source_volume_approximate": true,
-    "source_volume_note": "2026年秋にTV第1期。",
+    "source_volume_note": "2026年10月6日 TOKYO MXほか。HJ文庫。",
     "read_order": "ラノベ1巻から",
     "amazon_search": "凶乱令嬢ニアリストン ラノベ",
     "tags": [
@@ -1713,6 +2077,34 @@
     "amazon_asin": "4088836197"
   },
   {
+    "id": "おじさんはカワイイものがお好き",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "おじさんはカワイイものがお好き。",
+    "source_type": "manga",
+    "source_title": "おじさんはカワイイものがお好き。",
+    "source_volume_from": 1,
+    "source_volume_to": 3,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月4日スタート。連載中。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "おじさんはカワイイものがお好き 漫画",
+    "tags": [
+      "コメディ",
+      "日常",
+      "職場"
+    ],
+    "watchers_count": 8100,
+    "share_slug": "ojisan-kawaii",
+    "main_comment": "仕事はデキるのに、隠れて可愛いものを愛でる課長の日常コメディ。2026年10月4日スタート。ギャップ萌えと職場の人間関係が読みどころで、重い秋アニメの合間に観やすい。癒し・コメディ枠が欲しい人は1巻から。実写化もされた人気作のアニメ版です。",
+    "isbn": "9784866750125",
+    "amazon_asin": "486675012X",
+    "cover_image_url": "/static/covers/ojisan-kawaii.jpg"
+  },
+  {
     "id": "傷だらけ聖女より報復をこめて-season2",
     "season": "2026-autumn",
     "status": "upcoming",
@@ -1725,7 +2117,7 @@
     "source_volume_from": 4,
     "source_volume_to": 6,
     "source_volume_approximate": true,
-    "source_volume_note": "1期は第1〜3巻相当。",
+    "source_volume_note": "2026年10月1日 tvk・CBCほか。",
     "read_order": "漫画1巻から",
     "amazon_search": "傷だらけ聖女より報復をこめて 漫画",
     "tags": [
@@ -1797,6 +2189,34 @@
     "cover_image_url": "/static/covers/hime-kishi-himo.jpg",
     "isbn": "9784049142150",
     "amazon_asin": "4049142155"
+  },
+  {
+    "id": "ロメリア戦記",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "ロメリア戦記",
+    "source_type": "manga",
+    "source_title": "ロメリア戦記 伯爵令嬢、魔王を倒した後も人類やばそうだから軍隊組織した",
+    "source_volume_from": 1,
+    "source_volume_to": 4,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月スタート TOKYO MXほか。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "ロメリア戦記 漫画",
+    "tags": [
+      "ファンタジー",
+      "戦記",
+      "転生"
+    ],
+    "watchers_count": 8000,
+    "share_slug": "romelia-senki",
+    "main_comment": "魔王を倒したあと、次の危機に備えて軍隊を組織する令嬢の戦記ファンタジー。2026年10月からTOKYO MXほか。転生ものでも「戦いのあとの国家運営」に寄っているのが原作の個性。戦記・軍略ものが好きな人、秋の異世界で王道以外を探している人に。1巻から先読みできます。",
+    "isbn": "9784800011374",
+    "amazon_asin": "480001137X",
+    "cover_image_url": "/static/covers/romelia-senki.jpg"
   },
   {
     "id": "冰剣の魔術師が世界を統べるii",
@@ -1883,6 +2303,34 @@
     "cover_image_url": "/static/covers/gacha-bishoujo.jpg",
     "isbn": "9784896376029",
     "amazon_asin": "4896376021"
+  },
+  {
+    "id": "ダークサモナーとデキている",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "ダークサモナーとデキている",
+    "source_type": "manga",
+    "source_title": "ダークサモナーとデキている",
+    "source_volume_from": 1,
+    "source_volume_to": 3,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月スタート。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "ダークサモナーとデキている 漫画",
+    "tags": [
+      "ファンタジー",
+      "ラブコメ",
+      "冒険"
+    ],
+    "watchers_count": 7900,
+    "share_slug": "dark-summoner",
+    "main_comment": "神官見習いと悪魔使いが秘密の関係を抱えたまま旅するファンタジーラブコメ。2026年10月スタート。バトルより二人の温度差と世界観の軽さが売り。ラブコメ×ファンタジーが好きな人、秋の新作で肩の力を抜きたい人に。初アニメ化なので1巻からがおすすめです。",
+    "isbn": "9784040747569",
+    "amazon_asin": "4040747569",
+    "cover_image_url": "/static/covers/dark-summoner.jpg"
   },
   {
     "id": "ホテル-インヒューマンズ-第2期",
@@ -2081,6 +2529,34 @@
     "amazon_asin": "4758024383"
   },
   {
+    "id": "悠久の愚者アズリーの-賢者のすゝめ",
+    "season": "2027-winter",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "悠久の愚者アズリーの、賢者のすゝめ",
+    "source_type": "light_novel",
+    "source_title": "悠久の愚者アズリーの、賢者のすゝめ",
+    "source_volume_from": 1,
+    "source_volume_to": 3,
+    "source_volume_approximate": true,
+    "source_volume_note": "2027年1月。アース・スターノベル。",
+    "read_order": "ラノベ1巻から",
+    "amazon_search": "悠久の愚者アズリー ラノベ",
+    "tags": [
+      "ファンタジー",
+      "魔法",
+      "スローライフ"
+    ],
+    "watchers_count": 7800,
+    "share_slug": "azley",
+    "main_comment": "5000年生きた落ちこぼれ魔法使いが、現代の魔法大学で再評価されるファンタジー。2027年1月放送。長期視点の成長と、周囲が追いつかないギャップが原作の味。スロー寄りの異世界・魔法ものが好きな人に。冬の新作ラノベ枠として1巻から読めます。",
+    "isbn": "9784803007886",
+    "amazon_asin": "4803007888",
+    "cover_image_url": "/static/covers/azley.jpg"
+  },
+  {
     "id": "目覚めたら最強装備と宇宙船持ちだったので-一戸建て目指して傭兵として自由に生きたい",
     "season": "2026-autumn",
     "status": "upcoming",
@@ -2139,6 +2615,34 @@
     "anime_continue_note": "原作は銀魂1巻収録の読切。アニメ全7話で完結。続きの原作巻はありません。"
   },
   {
+    "id": "異世界転生騒動記",
+    "season": "2027-winter",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "異世界転生騒動記",
+    "source_type": "light_novel",
+    "source_title": "異世界転生騒動記",
+    "source_volume_from": 1,
+    "source_volume_to": 4,
+    "source_volume_approximate": true,
+    "source_volume_note": "2027年冬。スタジオディーン。",
+    "read_order": "ラノベ1巻から",
+    "amazon_search": "異世界転生騒動記 ラノベ",
+    "tags": [
+      "異世界",
+      "転生",
+      "戦記"
+    ],
+    "watchers_count": 7700,
+    "share_slug": "isekai-soudouki",
+    "main_comment": "戦国武将とオタク高校生の魂が一人の少年に入り、異世界で成り上がる戦記もの。2027年冬。一人の体に複数人格、という設定で内政と戦争が同時に進む。転生ものでも戦記寄りの作品が欲しい人に。初アニメ化なので1巻からがおすすめです。",
+    "cover_image_url": "/static/covers/isekai-soudouki.jpg",
+    "isbn": "9784434189678",
+    "amazon_asin": "4434189670"
+  },
+  {
     "id": "桃源暗鬼-日光-華厳の滝編",
     "season": "2026-autumn",
     "status": "upcoming",
@@ -2151,7 +2655,7 @@
     "source_volume_from": 12,
     "source_volume_to": 15,
     "source_volume_approximate": true,
-    "source_volume_note": "1期の続き。日光編。",
+    "source_volume_note": "日光・華厳の滝編。2026年10月 日本テレビ系。",
     "read_order": "漫画1巻から。1期見た人は12巻前後から",
     "amazon_search": "桃源暗鬼 漫画",
     "tags": [
