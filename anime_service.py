@@ -183,6 +183,12 @@ def affiliate_picks(season: str | None = None, limit: int = 6) -> list[dict[str,
         w for w in list_works(season=season, has_source_only=True)
         if (w.get('amazon_asin') or '').strip() and w.get('buy_url')
     ]
+    status_rank = {'airing': 0, 'upcoming': 1, 'finished': 2}
+    items.sort(key=lambda w: (
+        status_rank.get(w.get('status'), 9),
+        0 if w.get('has_cover') else 1,
+        -(w.get('watchers_count') or 0),
+    ))
     return items[:limit]
 
 

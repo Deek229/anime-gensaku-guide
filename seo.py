@@ -38,10 +38,9 @@ def work_page_title(work: dict[str, Any]) -> str:
 def work_meta_description(work: dict[str, Any]) -> str:
     title = work.get('title', '')
     if work.get('is_ln_pick'):
-        return (
-            f'「{title}」ラノベのあらすじ・読む順・Amazon購入リンク。'
-            f'詐欺師から英雄へ——本格モノ作り異世界ファンタジー。{APP_TAGLINE}'
-        )[:155]
+        comment = ' '.join((work.get('main_comment') or '').split())
+        extra = comment[:70] if comment else APP_TAGLINE
+        return f'「{title}」のあらすじ・読む順・購入リンク。{extra}'[:155]
     if not work.get('has_source'):
         return f'{title}（{work.get("season_label", "")}）の情報。{APP_TAGLINE}'
 
@@ -60,10 +59,12 @@ def build_intro(work: dict[str, Any]) -> str:
     season = work.get('season_label', '')
     if work.get('is_ln_pick'):
         source = work.get('source_title') or title
+        st = work.get('source_type_label') or 'ラノベ'
+        note = (work.get('source_volume_note') or '現時点ではアニメ化未定。').strip()
+        order = work.get('read_order') or '1巻から順に読むのがおすすめ。'
         return (
-            f'「{source}」は水月一人著の異世界ファンタジーラノベ（HJノベルス）。'
-            f'現時点ではアニメ化未定。{work.get("read_order") or "1巻から順に読むのがおすすめ。"} '
-            f'このページではあらすじ・巻数・Amazon購入リンクをまとめています。'
+            f'「{source}」はおすすめ掲載の{st}です。{note} {order} '
+            f'このページではあらすじ・巻数・購入リンクをまとめています。'
         )
 
     if not work.get('has_source'):

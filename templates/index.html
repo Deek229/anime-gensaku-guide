@@ -36,8 +36,8 @@
     <p class="aff-note">{{ t.aff_note }}</p>
     <div class="aff-list" id="affList">
       {% for w in affiliate_picks %}
-      <a class="aff-card" href="{{ w.buy_url }}" target="_blank" rel="noopener sponsored" data-work-id="{{ w.id }}">
-        <img src="{{ w.cover_url }}" alt="{{ w.source_title or w.title }}" width="80" height="113" loading="lazy">
+      <a class="aff-card" href="{{ w.buy_url }}" target="_blank" rel="noopener sponsored" data-work-id="{{ w.id }}" data-cover-url="{{ w.cover_url }}">
+        <img src="{{ w.cover_url }}" alt="{{ w.source_title or w.title }}" width="80" height="113" loading="lazy" onerror="this.onerror=null;this.src='/static/cover-placeholder.svg';">
         <span class="aff-card-title">{{ w.source_title or w.title }}</span>
         <span class="aff-card-cta">{{ t.amazon_view if w.amazon_asin else t.amazon_search }}</span>
       </a>
@@ -169,7 +169,10 @@
     <h2 class="section-title">{{ t.ln_heading }}</h2>
     <nav class="sidebar-nav">
       {% for w in ln_pick_works %}
-      <a class="sidebar-link" href="{{ lang_prefix }}/works/{{ w.share_slug }}">{{ w.title }}</a>
+      <a class="sidebar-link ln-pick-link" href="{{ lang_prefix }}/works/{{ w.share_slug }}">
+        <img src="{{ w.cover_url }}" alt="" width="40" height="56" loading="lazy" onerror="this.onerror=null;this.src='/static/cover-placeholder.svg';">
+        <span>{{ w.title }}</span>
+      </a>
       {% endfor %}
     </nav>
   </section>

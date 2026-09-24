@@ -57,11 +57,15 @@
     a.rel = 'noopener sponsored';
     a.dataset.workId = item.id;
     const img = document.createElement('img');
-    img.src = item.cover_url;
+    img.src = item.cover_url || '/static/cover-placeholder.svg';
     img.alt = item.title;
     img.width = 80;
     img.height = 113;
     img.loading = 'lazy';
+    img.onerror = function () {
+      this.onerror = null;
+      this.src = '/static/cover-placeholder.svg';
+    };
     const title = document.createElement('span');
     title.className = 'aff-card-title';
     title.textContent = item.title;

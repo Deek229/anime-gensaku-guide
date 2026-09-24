@@ -2,7 +2,7 @@
   {
     "id": "無職転生ⅲ-異世界行ったら本気だす",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -29,7 +29,7 @@
   {
     "id": "スティール-ボール-ラン-ジョジョの奇妙な冒険-2nd-3rd-stage",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -39,7 +39,7 @@
     "source_volume_from": 12,
     "source_volume_to": 18,
     "source_volume_approximate": true,
-    "source_volume_note": "2026年秋クール。1st STAGEは第1〜11巻相当。",
+    "source_volume_note": "2nd & 3rd STAGE。2026年9月25日 Netflix配信開始。",
     "read_order": "SBR1巻から。1st STAGE見た人は12巻前後から",
     "amazon_search": "ジョジョ SBR 漫画",
     "tags": [
@@ -227,7 +227,7 @@
   {
     "id": "re-ゼロから始める異世界生活-4th-season-奪還編",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -336,7 +336,7 @@
   {
     "id": "ワンパンマン-第3期",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -505,7 +505,7 @@
   {
     "id": "幼女戦記ⅱ",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -812,7 +812,7 @@
   {
     "id": "bleach-千年血戦篇-禍進譚",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1149,6 +1149,34 @@
     "amazon_asin": "4041118832"
   },
   {
+    "id": "とある暗部の少女共棲",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "とある暗部の少女共棲",
+    "source_type": "light_novel",
+    "source_title": "とある暗部の少女共棲",
+    "source_volume_from": 1,
+    "source_volume_to": 1,
+    "source_volume_approximate": false,
+    "source_volume_note": "2026年10月9日 AT-X・TOKYO MXほか。禁書目録外伝ITEM。電撃文庫。",
+    "read_order": "本作1巻から。本編既読なら世界観がより分かる",
+    "amazon_search": "とある暗部の少女共棲 ラノベ",
+    "tags": [
+      "学園",
+      "バトル",
+      "ダーク"
+    ],
+    "watchers_count": 8800,
+    "share_slug": "toaru-item",
+    "main_comment": "学園都市の暗部組織ITEMに属する少女たちの外伝。2026年10月9日からAT-X・TOKYO MXほか。本編の裏側で動く四人の仕事と友情が原作の核で、禁書目録を知っていると味が増す。ダークな能力バトルが好きな人、シリーズの隙間を埋めたい人に。外伝単体でも1巻から入れます。",
+    "isbn": "9784049149395",
+    "amazon_asin": "4049149397",
+    "cover_image_url": "/static/covers/toaru-item.jpg"
+  },
+  {
     "id": "ホタルの嫁入り",
     "season": "2026-autumn",
     "status": "upcoming",
@@ -1179,7 +1207,7 @@
   {
     "id": "ぐらんぶる-season-3",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1258,6 +1286,34 @@
     "isbn": "9784785969820",
     "amazon_asin": "4785969822",
     "cover_image_url": "/static/covers/shuiro-no-kamen.jpg"
+  },
+  {
+    "id": "tank-chair-戦車椅子",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "TANK CHAIR-戦車椅子-",
+    "source_type": "manga",
+    "source_title": "戦車椅子-TANK CHAIR-",
+    "source_volume_from": 1,
+    "source_volume_to": 5,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月4日 TOKYO MXほか。週刊ヤングマガジン連載。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "戦車椅子 TANK CHAIR 漫画",
+    "tags": [
+      "アクション",
+      "サスペンス",
+      "青年漫画"
+    ],
+    "watchers_count": 8700,
+    "share_slug": "tank-chair",
+    "main_comment": "車椅子を戦車に変えて戦う、青年漫画寄りのダークアクション。2026年10月4日からTOKYO MXほか。障害と暴力、家族の歪みが同居するのが原作の手触りで、ただのバトルものではない。サスペンスや青年漫画が好きな人は1巻から先読みがおすすめです。",
+    "isbn": "9784065299234",
+    "amazon_asin": "4065299233",
+    "cover_image_url": "/static/covers/tank-chair.jpg"
   },
   {
     "id": "魔法騎士レイアース",
@@ -1402,6 +1458,34 @@
     "amazon_asin": "4592123514"
   },
   {
+    "id": "転生ゴブリンだけど質問ある",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "転生ゴブリンだけど質問ある？",
+    "source_type": "manga",
+    "source_title": "転生ゴブリンだけど質問ある？",
+    "source_volume_from": 1,
+    "source_volume_to": 4,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月5日 TOKYO MX・BS11ほか。ジャンプ＋連載。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "転生ゴブリンだけど質問ある 漫画",
+    "tags": [
+      "異世界",
+      "転生",
+      "ファンタジー"
+    ],
+    "watchers_count": 8650,
+    "share_slug": "tensei-goblin",
+    "main_comment": "寿命7日のゴブリンに転生し、スキルを継ぎながら生き残る異世界無双。2026年10月5日からTOKYO MXほか。短命種族の制約と成り上がりのテンポが原作の面白さ。転生もの・無双ものが好きな人は1巻から。秋の新作ジャンプ枠です。",
+    "isbn": "9784088915753",
+    "amazon_asin": "4088915755",
+    "cover_image_url": "/static/covers/tensei-goblin.jpg"
+  },
+  {
     "id": "黒岩メダカに私の可愛いが通じない-season2",
     "season": "2027-winter",
     "status": "upcoming",
@@ -1542,9 +1626,37 @@
     "amazon_asin": "4041109329"
   },
   {
+    "id": "電撃デイジー",
+    "season": "2027-winter",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "電撃デイジー",
+    "source_type": "manga",
+    "source_title": "電撃デイジー",
+    "source_volume_from": 1,
+    "source_volume_to": 4,
+    "source_volume_approximate": true,
+    "source_volume_note": "2027年冬。スタジオディーン。別コミ連載の少女漫画。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "電撃デイジー 漫画",
+    "tags": [
+      "恋愛",
+      "学園",
+      "少女漫画"
+    ],
+    "watchers_count": 8600,
+    "share_slug": "dengeki-daisy",
+    "main_comment": "秘密を抱えた少女と、謎の用務員の学園ラブストーリー。2027年冬。別コミの定番を新作アニメ化する枠で、年齢差と秘密のやり取りが原作の魅力。少女漫画・学園恋愛が好きな人は1巻から。冬の新作で王道恋愛が欲しい人に。",
+    "isbn": "9784091313065",
+    "amazon_asin": "409131306X",
+    "cover_image_url": "/static/covers/dengeki-daisy.jpg"
+  },
+  {
     "id": "新テニスの王子様-u-17-world-cup-決勝メンバー決定戦",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1572,7 +1684,7 @@
   {
     "id": "死亡遊戯で飯を食う-44-cloudy-beach",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1582,7 +1694,7 @@
     "source_volume_from": 1,
     "source_volume_to": 3,
     "source_volume_approximate": true,
-    "source_volume_note": "9月先行配信・10月地上波。連載中。",
+    "source_volume_note": "2026年9月25日スタート。電撃の新文芸。",
     "read_order": "ラノベ1巻から",
     "amazon_search": "死亡遊戯で飯を食う ラノベ",
     "tags": [
@@ -1626,6 +1738,34 @@
     "amazon_asin": "404680016X"
   },
   {
+    "id": "生徒会にも穴はある",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "生徒会にも穴はある！",
+    "source_type": "manga",
+    "source_title": "生徒会にも穴はある！",
+    "source_volume_from": 1,
+    "source_volume_to": 4,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月3日 TOKYO MX・BS11ほか。週刊少年マガジン連載。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "生徒会にも穴はある 漫画",
+    "tags": [
+      "コメディ",
+      "学園",
+      "少年漫画"
+    ],
+    "watchers_count": 8500,
+    "share_slug": "seitokai-ana",
+    "main_comment": "生徒会の穴（欠点）を突いて笑わせる学園ギャグ。2026年10月3日からTOKYO MX・BS11ほか。テンポの速さとキャラの癖が原作の強みで、秋のコメディ枠として入りやすい。ギャグ漫画が好きな人、学園ものが欲しい人は1巻から。",
+    "isbn": "9784065290866",
+    "amazon_asin": "4065290864",
+    "cover_image_url": "/static/covers/seitokai-ana.jpg"
+  },
+  {
     "id": "とんがり帽子のアトリエ",
     "season": "2026-spring",
     "status": "finished",
@@ -1657,7 +1797,7 @@
   {
     "id": "君のことが大大大大大好きな100人の彼女-第3期",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1738,6 +1878,34 @@
     "cover_image_url": "/static/covers/shinja-zero.jpg"
   },
   {
+    "id": "世界最強の魔女-始めました",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "世界最強の魔女、始めました",
+    "source_type": "light_novel",
+    "source_title": "世界最強の魔女、始めました",
+    "source_volume_from": 1,
+    "source_volume_to": 4,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月7日 TOKYO MXほか。一迅社文庫。",
+    "read_order": "ラノベ1巻から。漫画版でも可",
+    "amazon_search": "世界最強の魔女始めました ラノベ",
+    "tags": [
+      "ファンタジー",
+      "魔女",
+      "冒険"
+    ],
+    "watchers_count": 8400,
+    "share_slug": "saikyou-majo",
+    "main_comment": "平凡な少女が最強魔女としての力に目覚め、世界を巻き込むファンタジー。2026年10月7日からTOKYO MXほか。成り上がりと魔法バトルのテンポが原作の売り。異世界・魔女ものが好きな人、秋の新作ラノベ枠を探している人は1巻から。",
+    "isbn": "9784757583030",
+    "amazon_asin": "4757583036",
+    "cover_image_url": "/static/covers/saikyou-majo.jpg"
+  },
+  {
     "id": "佐々木とピーちゃん-season2",
     "season": "2026-autumn",
     "status": "upcoming",
@@ -1750,7 +1918,7 @@
     "source_volume_from": 4,
     "source_volume_to": 6,
     "source_volume_approximate": true,
-    "source_volume_note": "1期は第1〜3巻相当。",
+    "source_volume_note": "2026年10月7日 AT-X・TOKYO MXほか。初回1時間SP。",
     "read_order": "1巻から",
     "amazon_search": "佐々木とピーちゃん ラノベ",
     "tags": [
@@ -1823,6 +1991,34 @@
     "amazon_asin": "4065275571"
   },
   {
+    "id": "欠けた月のメルセデス",
+    "season": "2027-winter",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "欠けた月のメルセデス",
+    "source_type": "light_novel",
+    "source_title": "欠けた月のメルセデス～吸血鬼の貴族に転生したけど捨てられそうなのでダンジョンを制覇する～",
+    "source_volume_from": 1,
+    "source_volume_to": 4,
+    "source_volume_approximate": true,
+    "source_volume_note": "2027年1月。TOブックス。漫画版もあり。",
+    "read_order": "ラノベ1巻から。漫画版でも可",
+    "amazon_search": "欠けた月のメルセデス ラノベ",
+    "tags": [
+      "ファンタジー",
+      "転生",
+      "ダンジョン"
+    ],
+    "watchers_count": 8400,
+    "share_slug": "kaketa-tsuki-mercedes",
+    "main_comment": "貧乏貴族の吸血鬼少女が、ダンジョン制覇で家を立て直す冒険譚。2027年1月。転生知識と力押しの攻略が同居するのが原作のテンポ。ダンジョンもの・成り上がりが好きな人、冬の新作ラノベ枠を探している人は1巻から。",
+    "isbn": "9784866992167",
+    "amazon_asin": "4866992166",
+    "cover_image_url": "/static/covers/kaketa-tsuki-mercedes.jpg"
+  },
+  {
     "id": "貸した魔力は-リボ払い-で強制徴収",
     "season": "2026-autumn",
     "status": "upcoming",
@@ -1851,9 +2047,37 @@
     "cover_image_url": "/static/covers/ribarai-maryoku.jpg"
   },
   {
-    "id": "転生貴族-鑑定スキルで成り上がる-第3期",
+    "id": "塩対応の佐藤さんが俺にだけ甘い",
     "season": "2026-autumn",
     "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "塩対応の佐藤さんが俺にだけ甘い",
+    "source_type": "light_novel",
+    "source_title": "塩対応の佐藤さんが俺にだけ甘い",
+    "source_volume_from": 1,
+    "source_volume_to": 3,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月スタート。ガガガ文庫。漫画版もあり。",
+    "read_order": "ラノベ1巻から。漫画版でも可",
+    "amazon_search": "塩対応の佐藤さん ラノベ",
+    "tags": [
+      "ラブコメ",
+      "学園",
+      "日常"
+    ],
+    "watchers_count": 8300,
+    "share_slug": "shio-sato",
+    "main_comment": "クラスでは塩対応の佐藤さんが、主人公の前だけ甘い学園ラブコメ。2026年10月スタート。ギャップ萌えと日常の温度差が原作の読みどころで、重い異世界の合間に観やすい。ラブコメ・学園ものが好きな人は1巻から。漫画版でも入れます。",
+    "isbn": "9784094518238",
+    "amazon_asin": "4094518231",
+    "cover_image_url": "/static/covers/shio-sato.jpg"
+  },
+  {
+    "id": "転生貴族-鑑定スキルで成り上がる-第3期",
+    "season": "2026-autumn",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1863,7 +2087,7 @@
     "source_volume_from": 7,
     "source_volume_to": 9,
     "source_volume_approximate": true,
-    "source_volume_note": "1・2期は第1〜6巻相当。",
+    "source_volume_note": "1・2期の続き。2026年9月27日スタート。",
     "read_order": "1巻から。2期まで見た人は7巻前後から",
     "amazon_search": "転生貴族 鑑定スキル ラノベ",
     "tags": [
@@ -1909,6 +2133,34 @@
     "anime_continue_note": "漫画は全22巻で完結。FINAL Part2で原作完結。"
   },
   {
+    "id": "ジャイアントお嬢様",
+    "season": "2027-winter",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "ジャイアントお嬢様",
+    "source_type": "manga",
+    "source_title": "ジャイアントお嬢様",
+    "source_volume_from": 1,
+    "source_volume_to": 3,
+    "source_volume_approximate": true,
+    "source_volume_note": "2027年冬。タツノコプロ。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "ジャイアントお嬢様 漫画",
+    "tags": [
+      "コメディ",
+      "恋愛",
+      "日常"
+    ],
+    "watchers_count": 8300,
+    "share_slug": "giant-ojousama",
+    "main_comment": "体の大きな令嬢と、彼女に振り回される周囲のギャグコメディ。2027年冬。ビジュアルの落差と愛情の真っ直ぐさが原作の売りで、重い冬アニメの合間に観やすい。ラブコメ・ギャグが好きな人は1巻から。",
+    "isbn": "9784098508075",
+    "amazon_asin": "4098508079",
+    "cover_image_url": "/static/covers/giant-ojousama.jpg"
+  },
+  {
     "id": "茉莉花官吏伝",
     "season": "2027-winter",
     "status": "upcoming",
@@ -1935,6 +2187,34 @@
     "cover_image_url": "/static/covers/matsurika-kanri.jpg",
     "isbn": "9784047347045",
     "amazon_asin": "4047347043"
+  },
+  {
+    "id": "転生した大聖女は-聖女であることをひた隠す",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "転生した大聖女は、聖女であることをひた隠す",
+    "source_type": "light_novel",
+    "source_title": "転生した大聖女は、聖女であることをひた隠す",
+    "source_volume_from": 1,
+    "source_volume_to": 4,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月スタート。アース・スターノベル。",
+    "read_order": "ラノベ1巻から。漫画版でも可",
+    "amazon_search": "転生した大聖女 ラノベ",
+    "tags": [
+      "ファンタジー",
+      "転生",
+      "聖女"
+    ],
+    "watchers_count": 8250,
+    "share_slug": "tensei-daiseijo",
+    "main_comment": "前世の大聖女が、今生では聖女だとバレないよう騎士を目指すファンタジー。2026年10月スタート。力を隠しながら便利に使ってしまうギャップが原作の味。なろう発の定番枠で、転生・聖女ものが好きな人は1巻から。秋の異世界で読みやすい一作です。",
+    "isbn": "9784803013061",
+    "amazon_asin": "4803013063",
+    "cover_image_url": "/static/covers/tensei-daiseijo.jpg"
   },
   {
     "id": "fx戦士くるみちゃん",
@@ -2024,7 +2304,7 @@
   {
     "id": "逃げ上手の若君-第二期",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2047,6 +2327,34 @@
     "amazon_asin": "4088830733",
     "cover_image_url": "/static/covers/nige-jouzu-2.jpg",
     "main_comment": "南北朝の乱世を「逃げ」で生き延びる若君の歴史コメディが2クール連続2期。漫画は戦と政治のリアルさとギャグの温度差が絶妙で、教科書では触れない視点の歴史物語としても読めます。1期は4巻まで相当。知的好奇心と笑いを両立した作品が好きな人、大河の代わりに軽快な歴史エンタメが欲しい人に。原作は全巻そろえる価値あり。"
+  },
+  {
+    "id": "ふつつかな悪女ではございますが-第2クール",
+    "season": "2027-winter",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "ふつつかな悪女ではございますが 第2クール",
+    "source_type": "manga",
+    "source_title": "ふつつかな悪女ではございますが",
+    "source_volume_from": 5,
+    "source_volume_to": 8,
+    "source_volume_approximate": true,
+    "source_volume_note": "第1クールは2026年夏。第2クールは2027年1月。はじめての外遊編。",
+    "read_order": "漫画1巻から。1クール見た人は5巻前後から",
+    "amazon_search": "ふつつかな悪女 漫画",
+    "tags": [
+      "ファンタジー",
+      "恋愛",
+      "悪役令嬢"
+    ],
+    "watchers_count": 8200,
+    "share_slug": "futsutsuka-akujo-2",
+    "main_comment": "入れ替わり後宮ものの続き。2027年1月から第2クール。南領での豊穣祭と新たな黒幕が原作の山場で、1クールの延長として十分楽しめる。悪役令嬢・後宮ものが好きな人、夏に1クールを見た人は5巻前後から。",
+    "isbn": "9784758036269",
+    "amazon_asin": "4758036268",
+    "cover_image_url": "/static/covers/futsutsuka-akujo-2.jpg"
   },
   {
     "id": "ラーメン赤猫-其の二",
@@ -2075,6 +2383,34 @@
     "cover_image_url": "/static/covers/ramen-akane-2.jpg",
     "isbn": "9784088836195",
     "amazon_asin": "4088836197"
+  },
+  {
+    "id": "野生のラスボスが現れた-第2期",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "野生のラスボスが現れた！ 第2期",
+    "source_type": "light_novel",
+    "source_title": "野生のラスボスが現れた！",
+    "source_volume_from": 5,
+    "source_volume_to": 8,
+    "source_volume_approximate": true,
+    "source_volume_note": "1期の続き。2026年10月3日 TOKYO MXほか。",
+    "read_order": "ラノベ1巻から。1期見た人は5巻前後から",
+    "amazon_search": "野生のラスボスが現れた ラノベ",
+    "tags": [
+      "異世界",
+      "ファンタジー",
+      "コメディ"
+    ],
+    "watchers_count": 8150,
+    "share_slug": "yasei-lastboss-2",
+    "main_comment": "異世界のラスボス側に転生した青年の続編。2026年10月3日からTOKYO MXほか。強すぎて周囲がざわつくコメディと世界観の広がりが原作の売り。1期を見た人は5巻前後から、初見なら1巻から。秋の続編異世界枠です。",
+    "isbn": "9784803008722",
+    "amazon_asin": "4803008728",
+    "cover_image_url": "/static/covers/yasei-lastboss-2.jpg"
   },
   {
     "id": "おじさんはカワイイものがお好き",
@@ -2191,6 +2527,34 @@
     "amazon_asin": "4049142155"
   },
   {
+    "id": "どうも-好きな人に惚れ薬を依頼された魔女です",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "どうも、好きな人に惚れ薬を依頼された魔女です。",
+    "source_type": "light_novel",
+    "source_title": "どうも、好きな人に惚れ薬を依頼された魔女です。",
+    "source_volume_from": 1,
+    "source_volume_to": 3,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月スタート。Mノベルスf。漫画版もあり。",
+    "read_order": "ラノベ1巻から。漫画版でも可",
+    "amazon_search": "どうも好きな人に惚れ薬を依頼された魔女です ラノベ",
+    "tags": [
+      "恋愛",
+      "ファンタジー",
+      "日常"
+    ],
+    "watchers_count": 8050,
+    "share_slug": "horegusuri-majo",
+    "main_comment": "片想いの騎士に惚れ薬を頼まれた引きこもり魔女の恋愛ファンタジー。2026年10月スタート。完成を引き延ばしながら一緒にいる時間が原作の核で、バトルより会話と温度が売り。おとなしい恋愛もの・魔女ものが好きな人は1巻から。",
+    "isbn": "9784575242171",
+    "amazon_asin": "4575242179",
+    "cover_image_url": "/static/covers/horegusuri-majo.jpg"
+  },
+  {
     "id": "ロメリア戦記",
     "season": "2026-autumn",
     "status": "upcoming",
@@ -2305,6 +2669,34 @@
     "amazon_asin": "4896376021"
   },
   {
+    "id": "フールナイト",
+    "season": "2026-autumn",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "フールナイト",
+    "source_type": "manga",
+    "source_title": "フールナイト",
+    "source_volume_from": 1,
+    "source_volume_to": 5,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年11月26日 Netflix配信開始。ビッグコミックス。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "フールナイト 漫画",
+    "tags": [
+      "ダークファンタジー",
+      "吸血鬼",
+      "青年漫画"
+    ],
+    "watchers_count": 7950,
+    "share_slug": "fool-night",
+    "main_comment": "資源が尽きた世界で植物化を拒み、吸血鬼として生きる青年のダークファンタジー。2026年11月26日からNetflix。生存と倫理の問いが原作の重みで、秋後半の異色枠。青年漫画・ディストピアが好きな人は1巻から。",
+    "isbn": "9784098608669",
+    "amazon_asin": "4098608669",
+    "cover_image_url": "/static/covers/fool-night.jpg"
+  },
+  {
     "id": "ダークサモナーとデキている",
     "season": "2026-autumn",
     "status": "upcoming",
@@ -2359,6 +2751,34 @@
     "cover_image_url": "/static/covers/hotel-inhumans-2.jpg",
     "isbn": "9784098513826",
     "amazon_asin": "409851382X"
+  },
+  {
+    "id": "おデブ悪女に転生したら-なぜかラスボス王子様に執着されています",
+    "season": "2027-winter",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "おデブ悪女に転生したら、なぜかラスボス王子様に執着されています",
+    "source_type": "manga",
+    "source_title": "おデブ悪女に転生したら、なぜかラスボス王子様に執着されています",
+    "source_volume_from": 1,
+    "source_volume_to": 3,
+    "source_volume_approximate": true,
+    "source_volume_note": "2027年冬。FLOS COMIC。スタジオリングス。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "おデブ悪女に転生したら 漫画",
+    "tags": [
+      "恋愛",
+      "転生",
+      "悪役令嬢"
+    ],
+    "watchers_count": 7900,
+    "share_slug": "odebu-akujo",
+    "main_comment": "悪役令嬢として転生したセリーヌが、ラスボス王子の執着を受けながら平穏を目指す溺愛もの。2027年冬。更生とヤンデレが同時に走るのが原作の味。転生恋愛・悪役令嬢が好きな人は1巻から。冬の乙女向け新作枠です。",
+    "isbn": "9784046842138",
+    "amazon_asin": "404684213X",
+    "cover_image_url": "/static/covers/odebu-akujo.jpg"
   },
   {
     "id": "じょせまる",
@@ -2448,7 +2868,7 @@
   {
     "id": "lv999の村人",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2476,7 +2896,7 @@
   {
     "id": "乙女ゲー世界はモブに厳しい世界です2",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2734,7 +3154,7 @@
   {
     "id": "ヒロイン-聖女-いいえ-オールワークスメイドです-誇",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2761,7 +3181,7 @@
   {
     "id": "片田舎のおっさん-剣聖になるⅱ",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2818,7 +3238,7 @@
   {
     "id": "無自覚聖女は今日も無意識に力を垂れ流す",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2846,7 +3266,7 @@
   {
     "id": "骸骨騎士様-只今異世界へお出掛け中ⅱ",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2902,7 +3322,7 @@
   {
     "id": "きみが死ぬまで恋をしたい",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2929,7 +3349,7 @@
   {
     "id": "落第賢者の学院無双-二度目の転生-sランクチート魔術師冒険録",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2987,7 +3407,7 @@
   {
     "id": "花ざかりの君たちへ-第2期",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3044,7 +3464,7 @@
   {
     "id": "ヤニねこ",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3071,7 +3491,7 @@
   {
     "id": "株式会社マジルミエ-第2期",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3128,7 +3548,7 @@
   {
     "id": "乙女怪獣キャラメリゼ",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3185,7 +3605,7 @@
   {
     "id": "これ描いて死ね",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3212,7 +3632,7 @@
   {
     "id": "正反対な君と僕-第2期",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3269,7 +3689,7 @@
   {
     "id": "うちの弟どもがすみません",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3296,7 +3716,7 @@
   {
     "id": "攻殻機動隊-the-ghost-in-the-shell",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3352,7 +3772,7 @@
   {
     "id": "ヘルモード-やり込み好きのゲーマーは廃設定の異世界で無双する-2nd-season",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3379,7 +3799,7 @@
   {
     "id": "天幕のジャードゥーガル",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3435,7 +3855,7 @@
   {
     "id": "クレバテスⅱ-魔獣の王と偽りの勇者伝承",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3462,7 +3882,7 @@
   {
     "id": "猫と竜",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3518,7 +3938,7 @@
   {
     "id": "black-torch",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3546,7 +3966,7 @@
   {
     "id": "スーパーの裏でヤニ吸うふたり",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3603,7 +4023,7 @@
   {
     "id": "岩元先輩ノ推薦",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3631,7 +4051,7 @@
   {
     "id": "追放された転生重騎士はゲーム知識で無双する",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3687,7 +4107,7 @@
   {
     "id": "ワールド-イズ-ダンシング",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "https://sh-anime.shochiku.co.jp/worldisdancing-anime/",
@@ -3715,7 +4135,7 @@
   {
     "id": "鬼の花嫁",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3773,7 +4193,7 @@
   {
     "id": "きみを愛する気はない-と言った次期公爵様がなぜか溺愛してきます",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3801,7 +4221,7 @@
   {
     "id": "二十世紀電氣目録-ユーレカ-エヴリカ",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3858,7 +4278,7 @@
   {
     "id": "才女のお世話-高嶺の花だらけな名門校で-学院一のお嬢様-生活能力皆無-を陰ながらお世話することになりました",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3915,7 +4335,7 @@
   {
     "id": "鉄鍋のジャン",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3973,7 +4393,7 @@
   {
     "id": "最強出涸らし皇子の暗躍帝位争い",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -4029,7 +4449,7 @@
   {
     "id": "ここは俺に任せて先に行けと言ってから10年がたったら伝説になっていた",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -4085,7 +4505,7 @@
   {
     "id": "転校先の清楚可憐な美少女が-昔男子と思って一緒に遊んだ幼馴染だった件",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -4112,7 +4532,7 @@
   {
     "id": "ブチ切れ令嬢は報復を誓いました-魔導書の力で祖国を叩き潰します",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -4140,7 +4560,7 @@
   {
     "id": "対ありでした-お嬢さまは格闘ゲームなんてしない",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -4168,7 +4588,7 @@
   {
     "id": "いびってこない義母と義姉",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -4196,7 +4616,7 @@
   {
     "id": "天は赤い河のほとり",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -4224,7 +4644,7 @@
   {
     "id": "領民0人スタートの辺境領主様",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -4252,7 +4672,7 @@
   {
     "id": "同じゼミの染谷さんがセクシー女優だった話",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "https://someyasan-anime.af-original.com/",
@@ -4280,7 +4700,7 @@
   {
     "id": "令和のダラさん",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -4307,7 +4727,7 @@
   {
     "id": "透明な夜に駆ける君と-目に見えない恋をした",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -4334,7 +4754,7 @@
   {
     "id": "捨てられ聖女の異世界ごはん旅",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -4362,7 +4782,7 @@
   {
     "id": "花織さんは転生しても喧嘩がしたい",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -4390,7 +4810,7 @@
   {
     "id": "ふつつかな悪女ではございますが-雛宮蝶鼠とりかえ伝",
     "season": "2026-summer",
-    "status": "airing",
+    "status": "finished",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -4400,7 +4820,7 @@
     "source_volume_from": 1,
     "source_volume_to": 4,
     "source_volume_approximate": true,
-    "source_volume_note": "2026年夏にTV第1期。",
+    "source_volume_note": "第1クールは2026年夏。第2クールは2027年1月。",
     "read_order": "漫画1巻から",
     "amazon_search": "ふつつかな悪女 漫画",
     "tags": [
@@ -4428,7 +4848,7 @@
     "source_volume_from": 1,
     "source_volume_to": 2,
     "source_volume_approximate": false,
-    "source_volume_note": "HJノベルス刊。なろう版もあり。",
+    "source_volume_note": "HJノベルス刊。書籍は2巻まで。なろう版もあり。コミカライズ連載中。",
     "read_order": "書籍版は1巻から順に。Web版は「小説家になろう」でも読める",
     "amazon_search": "玉葱とクラリオン ラノベ",
     "tags": [
@@ -4436,7 +4856,7 @@
       "ファンタジー",
       "モノ作り"
     ],
-    "watchers_count": 800,
+    "watchers_count": 860,
     "share_slug": "tamane-clarion",
     "isbn": "9784798633169",
     "amazon_asin": "479863316X",
@@ -4449,27 +4869,29 @@
     "season": "ln-picks",
     "status": "ln_only",
     "media": "novel",
-    "memo": "旧MFブックス版1〜6巻は絶版。クラファンでリブート第1巻発売中。",
+    "memo": "旧MFブックス版1〜6巻は絶版。クラファンリブートは第2巻まで刊行。",
     "official_url": "",
     "narou_url": "https://ncode.syosetu.com/n6811ck/",
     "title": "その無限の先へ",
     "source_type": "light_novel",
     "source_title": "その無限の先へ",
     "source_volume_from": 1,
-    "source_volume_to": 1,
+    "source_volume_to": 2,
     "source_volume_approximate": false,
-    "source_volume_note": "なろう連載中。書籍第1巻発売中、第2巻準備中。",
-    "read_order": "なろう1話目から。書籍版は1巻から",
+    "source_volume_note": "なろう連載中。旧MFブックス版は絶版。リブート版は1〜2巻刊。",
+    "read_order": "なろう1話目から。書籍はリブート版1巻から",
     "amazon_search": "その無限の先へ ラノベ",
     "tags": [
       "異世界",
       "ダンジョン",
       "コメディ"
     ],
-    "watchers_count": 750,
+    "watchers_count": 780,
     "share_slug": "sono-mugen-no-saki-e",
-    "cover_image_url": "/static/cover-placeholder.svg",
-    "main_comment": "限界村落から迷宮都市へ。ゲーム的システムと過酷な現実が同居するダンジョン冒険譚。貧困から這い上がる主人公の成長と、クラン運営・階層攻略の読み応えが魅力。大体コメディ寄りだがシリアスな場面も。ダンジョンもの・成り上がりが好きな人に。"
+    "cover_image_url": "/static/covers/sono-mugen-no-saki-e.jpg",
+    "main_comment": "限界村落から迷宮都市へ。ゲーム的システムと過酷な現実が同居するダンジョン冒険譚。貧困から這い上がる成長と、クラン運営・階層攻略の読み応えが魅力。リブート書籍は2巻まで出ているが、続きはなろうが基本。ダンジョンもの・成り上がりが好きな人に。",
+    "isbn": "9784040679501",
+    "amazon_asin": "4040679504"
   },
   {
     "id": "幻想再帰のアリュージョニスト",
@@ -4485,7 +4907,7 @@
     "source_volume_from": null,
     "source_volume_to": null,
     "source_volume_approximate": false,
-    "source_volume_note": "なろう連載中。書籍化なし。",
+    "source_volume_note": "なろう連載中。書籍化なし（2026年9月時点）。",
     "read_order": "なろう1話目から",
     "amazon_search": "幻想再帰のアリュージョニスト",
     "tags": [
@@ -4493,7 +4915,7 @@
       "オカルト",
       "哲学"
     ],
-    "watchers_count": 700,
+    "watchers_count": 720,
     "share_slug": "gensou-saiki-allusionist",
     "cover_image_url": "/static/cover-placeholder.svg",
     "main_comment": "言葉と理解をめぐる、頭脳派SFファンタジー。サイバーパンクとオカルトパンクが交差する世界で、主人公は「誰も自分の言葉を理解できない」という孤独を抱える。難解な部分もあるが、読み返すほど味が出る作品。哲学系・実験的なWeb小説が好きな人に。"
@@ -4512,7 +4934,7 @@
     "source_volume_from": null,
     "source_volume_to": null,
     "source_volume_approximate": false,
-    "source_volume_note": "なろう連載中。書籍化なし。",
+    "source_volume_note": "なろう連載中。カクヨム版もあり。書籍化なし（2026年9月時点）。",
     "read_order": "なろう「導入」から",
     "amazon_search": "Crawler's 小説",
     "tags": [
@@ -4520,7 +4942,7 @@
       "ポストアポカリプス",
       "ミリタリー"
     ],
-    "watchers_count": 650,
+    "watchers_count": 680,
     "share_slug": "crawlers",
     "cover_image_url": "/static/cover-placeholder.svg",
     "main_comment": "ポールシフト後の再生地球を舞台にしたSFサバイバル。軍人の永瀬恭一郎が、女ばかりのドームポリスで異形生命体と戦いながら謎を解いていく。硬めのミリタリーSFと謎解きが好きな人に。書籍未刊のためなろうで読むのが基本です。"
