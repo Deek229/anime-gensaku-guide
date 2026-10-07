@@ -7,6 +7,7 @@ from typing import Any
 from amazon_links import amazon_cover_url, buy_url
 from config import (
     DEFAULT_SEASON,
+    SEASON_DISPLAY_ORDER,
     SEASON_LABELS,
     SOURCE_TYPE_LABELS,
     STATUS_LABELS,
@@ -192,9 +193,20 @@ def affiliate_picks(season: str | None = None, limit: int = 6) -> list[dict[str,
     return items[:limit]
 
 
+def _season_sort_key(season: str) -> tuple:
+    if season == DEFAULT_SEASON:
+        return (0, 0)
+    if season == 'ln-picks':
+        return (2, 0)
+    try:
+        return (1, SEASON_DISPLAY_ORDER.index(season))
+    except ValueError:
+        return (1, 99)
+
+
 def list_meta() -> dict[str, Any]:
     works = load_works()
-    seasons = sorted({w.get('season', '') for w in works if w.get('season')}, reverse=True)
+    seasons = sorted({w.get('season', '') for w in works if w.get('season')}, key=_season_sort_key)
     return {
         'app_title': 'アニメ原作ガイド',
         'default_season': DEFAULT_SEASON,

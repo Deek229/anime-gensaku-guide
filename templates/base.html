@@ -58,7 +58,7 @@
   <footer class="site-footer">
     <p class="disclosure">{{ t.disclosure }}</p>
     <p class="access-count">{{ t.access_count }}: {{ total_access_count | commas }}</p>
-    <p><small>{{ app_title }} v0.2 · <a href="/sitemap.xml">{{ t.sitemap }}</a></small></p>
+    <p><small>{{ app_title }} v{{ app_version }} · <a href="/sitemap.xml">{{ t.sitemap }}</a></small></p>
   </footer>
   {% block scripts %}{% endblock %}
   <script src="/static/interest.js?v=20260924"></script>

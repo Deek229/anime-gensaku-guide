@@ -40,6 +40,14 @@ MATOME_PAGES: dict[str, dict[str, Any]] = {
         'limit': 10,
         'page_kind': 'picks',
     },
+    '2027-spring': {
+        'season': '2027-spring',
+        'slug': '2027-spring',
+        'title': '2027年春アニメ 原作おすすめ10選',
+        'lead': '2027年4〜6月放送の春アニメから、原作を読む価値が高い作品を10本厳選。ラノベ・漫画の読み始め巻と、アニメ化範囲の目安をまとめました。',
+        'limit': 10,
+        'page_kind': 'picks',
+    },
     # SEO: 「何巻から」検索向け（シーズン全作品の巻対応表）
     '2026-autumn-nankan': {
         'season': '2026-autumn',
@@ -58,6 +66,15 @@ MATOME_PAGES: dict[str, dict[str, Any]] = {
         'limit': None,
         'page_kind': 'nankan',
         'related_matome': '2027-winter',
+    },
+    '2027-spring-nankan': {
+        'season': '2027-spring',
+        'slug': '2027-spring-nankan',
+        'title': '2027年春アニメ 原作は何巻から？対応一覧',
+        'lead': '2027年春（4月クール）アニメの原作漫画・ラノベを「何巻から読むか」が一覧でわかる対応表です。続編は続き巻、新作は1巻からの目安をまとめています。',
+        'limit': None,
+        'page_kind': 'nankan',
+        'related_matome': '2027-spring',
     },
 }
 

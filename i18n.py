@@ -21,6 +21,7 @@ SEASON = {
         '2026-spring': '2026年春アニメ',
         '2026-autumn': '2026年秋アニメ',
         '2027-winter': '2027年冬アニメ',
+        '2027-spring': '2027年春アニメ',
         'ln-picks': 'おすすめラノベ',
     },
     'en': {
@@ -28,6 +29,7 @@ SEASON = {
         '2026-spring': 'Spring 2026 anime',
         '2026-autumn': 'Autumn 2026 anime',
         '2027-winter': 'Winter 2027 anime',
+        '2027-spring': 'Spring 2027 anime',
         'ln-picks': 'Recommended light novels',
     },
 }
@@ -86,6 +88,10 @@ MATOME = {
             'title': '2027年冬アニメ 原作おすすめ10選',
             'lead': '2027年1〜3月放送の冬アニメから、原作チェックにおすすめの人気作10選。続編ものの「何巻から読むか」もひと目でわかります。',
         },
+        '2027-spring': {
+            'title': '2027年春アニメ 原作おすすめ10選',
+            'lead': '2027年4〜6月放送の春アニメから、原作を読む価値が高い作品を10本厳選。ラノベ・漫画の読み始め巻と、アニメ化範囲の目安をまとめました。',
+        },
         '2026-autumn-nankan': {
             'title': '2026年秋アニメ 原作は何巻から？対応一覧',
             'lead': '2026年秋（10月クール）アニメの原作漫画・ラノベを「何巻から読むか」が一覧でわかる対応表です。続編は続き巻、新作は1巻からの目安をまとめています。',
@@ -93,6 +99,10 @@ MATOME = {
         '2027-winter-nankan': {
             'title': '2027年冬アニメ 原作は何巻から？対応一覧',
             'lead': '2027年冬（1月クール）アニメの原作漫画・ラノベを「何巻から読むか」が一覧でわかる対応表です。続編は続き巻、新作は1巻からの目安をまとめています。',
+        },
+        '2027-spring-nankan': {
+            'title': '2027年春アニメ 原作は何巻から？対応一覧',
+            'lead': '2027年春（4月クール）アニメの原作漫画・ラノベを「何巻から読むか」が一覧でわかる対応表です。続編は続き巻、新作は1巻からの目安をまとめています。',
         },
     },
     'en': {
@@ -112,6 +122,10 @@ MATOME = {
             'title': 'Winter 2027 anime: 10 source-material picks',
             'lead': 'Ten Winter 2027 (Jan–Mar) shows to read ahead of or alongside the broadcast.',
         },
+        '2027-spring': {
+            'title': 'Spring 2027 anime: 10 source-material picks',
+            'lead': 'Ten Spring 2027 (Apr–Jun) titles for readers who want the original novels or manga.',
+        },
         '2026-autumn-nankan': {
             'title': 'Autumn 2026 anime: which volume to start?',
             'lead': 'A full volume guide for Autumn 2026 anime originals — where sequels continue and where new shows start.',
@@ -119,6 +133,10 @@ MATOME = {
         '2027-winter-nankan': {
             'title': 'Winter 2027 anime: which volume to start?',
             'lead': 'A full volume guide for Winter 2027 anime originals — where sequels continue and where new shows start.',
+        },
+        '2027-spring-nankan': {
+            'title': 'Spring 2027 anime: which volume to start?',
+            'lead': 'A full volume guide for Spring 2027 anime originals — where sequels continue and where new shows start.',
         },
     },
 }

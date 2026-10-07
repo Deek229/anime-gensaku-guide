@@ -103,6 +103,7 @@ def html_page(request: Request, template: str, page_path: str, **ctx) -> HTMLRes
         **i18n,
         'google_site_verification': GOOGLE_SITE_VERIFICATION,
         'site_url': SITE_URL,
+        'app_version': APP_VERSION,
         **ctx,
         'canonical_url': canonical,
         'og_url': canonical,

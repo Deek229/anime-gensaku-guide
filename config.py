@@ -10,7 +10,7 @@ RANKINGS_FALLBACK_DIR = DATA_DIR / 'rankings_fallback'
 
 APP_TITLE = 'アニメ原作ガイド'
 APP_TAGLINE = '今期アニメの原作ラノベ・漫画をチェックして、買う順まで一発でわかる'
-APP_VERSION = '0.2.0'
+APP_VERSION = '0.3.0'
 DEFAULT_PORT = 8052
 SITE_URL = os.environ.get('SITE_URL', os.environ.get('RENDER_EXTERNAL_URL', 'http://127.0.0.1:8052')).rstrip('/')
 
@@ -31,8 +31,19 @@ SEASON_LABELS = {
     '2026-spring': '2026年春アニメ',
     '2026-autumn': '2026年秋アニメ',
     '2027-winter': '2027年冬アニメ',
+    '2027-spring': '2027年春アニメ',
     'ln-picks': 'おすすめラノベ',
 }
+
+# ドロップダウン表示順（今期は list_meta で先頭に出す）
+SEASON_DISPLAY_ORDER = [
+    '2026-spring',
+    '2026-summer',
+    '2026-autumn',
+    '2027-winter',
+    '2027-spring',
+    'ln-picks',
+]
 
 SOURCE_TYPE_LABELS = {
     'light_novel': 'ラノベ',

@@ -85,7 +85,7 @@
   {
     "id": "ドラゴンボール超-ビルス",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -95,7 +95,7 @@
     "source_volume_from": 20,
     "source_volume_to": 22,
     "source_volume_approximate": true,
-    "source_volume_note": "破壊神ビルス編。DB超漫画は連載中。",
+    "source_volume_note": "破壊神ビルス編。2026年10月11日 フジテレビ系。",
     "read_order": "ドラゴンボール本編後に超1巻から",
     "amazon_search": "ドラゴンボール超 漫画",
     "tags": [
@@ -141,7 +141,7 @@
   {
     "id": "氷の城壁-第2期",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -169,7 +169,7 @@
   {
     "id": "薬屋のひとりごと-第3期",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -179,7 +179,7 @@
     "source_volume_from": 10,
     "source_volume_to": 12,
     "source_volume_approximate": true,
-    "source_volume_note": "第1・2期は第1〜9巻相当。3期は第10巻前後から。2026年10月2日日本テレビ系で第1クール開始。",
+    "source_volume_note": "第1・2期は第1〜9巻相当。3期第1クールは2026年10月2日日本テレビ系。第2クールは2027年春。",
     "read_order": "1巻から。2期まで見た人は9巻前後から",
     "amazon_search": "薬屋のひとりごと ラノベ",
     "tags": [
@@ -252,6 +252,34 @@
     "main_comment": "4期の後半クール「奪還編」は、積み上げた喪失の果てに再起を描く章です。原作ラノベ21〜25巻相当で、スバルの精神と人間関係がより厳しく試される一方、策士としての成長も際立ちます。「虐げられる→這い上がる」のピッチが高い作品が好きな人、ダーク寄り異世界でも人間ドラマを求める人に向いています。3期まで追ってきた人は、夏の放送とともに原作の続きを読む絶好のタイミングです。"
   },
   {
+    "id": "カグラバチ",
+    "season": "2027-spring",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "カグラバチ",
+    "source_type": "manga",
+    "source_title": "カグラバチ",
+    "source_volume_from": 1,
+    "source_volume_to": 5,
+    "source_volume_approximate": true,
+    "source_volume_note": "2027年4月。週刊少年ジャンプ連載。Cypic。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "カグラバチ 漫画",
+    "tags": [
+      "アクション",
+      "復讐",
+      "少年漫画"
+    ],
+    "watchers_count": 9800,
+    "share_slug": "kagurabachi",
+    "main_comment": "父を奪われた少年が妖刀を手に復讐へ向かうジャンプ新作。2027年4月。刀と術のバトル、殺気の密度が原作の魅力。少年漫画のダークアクションが好きな人は1巻から。春の看板新作枠です。",
+    "isbn": "9784088838199",
+    "amazon_asin": "408883819X",
+    "cover_image_url": "/static/covers/kagurabachi.jpg"
+  },
+  {
     "id": "シャングリラ-フロンティア-3rd-season",
     "season": "2027-winter",
     "status": "upcoming",
@@ -282,7 +310,7 @@
   {
     "id": "サイバーパンク-エッジランナーズ2",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -308,7 +336,7 @@
   {
     "id": "東京リベンジャーズ-三天戦争編",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -392,7 +420,7 @@
   {
     "id": "アオのハコ-第2期",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -447,6 +475,34 @@
     "anime_continue_note": "アニメ4期（第17〜19巻相当）の続きはラノベ20巻から。"
   },
   {
+    "id": "薬屋のひとりごと-第3期-第2クール",
+    "season": "2027-spring",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "薬屋のひとりごと 第3期 第2クール",
+    "source_type": "light_novel",
+    "source_title": "薬屋のひとりごと",
+    "source_volume_from": 12,
+    "source_volume_to": 14,
+    "source_volume_approximate": true,
+    "source_volume_note": "第3期第1クールは2026年秋。第2クールは2027年春。",
+    "read_order": "ラノベ1巻から。3期前半を見た人は12巻前後から",
+    "amazon_search": "薬屋のひとりごと ラノベ",
+    "tags": [
+      "ミステリー",
+      "宮廷",
+      "歴史"
+    ],
+    "watchers_count": 9600,
+    "share_slug": "kusuriya-3-2nd",
+    "main_comment": "後宮ミステリー3期の後半クール。2027年春。秋の第1クールの続きで、陰謀と人間関係がさらに深まる。1・2期や3期前半を見た人は12巻前後から。春の看板続編です。",
+    "isbn": "9784757579859",
+    "amazon_asin": "4757579853",
+    "cover_image_url": "/static/covers/kusuriya-3-2nd.jpg"
+  },
+  {
     "id": "あかね噺-第2期",
     "season": "2027-winter",
     "status": "upcoming",
@@ -477,7 +533,7 @@
   {
     "id": "アオアシ-season2",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -588,7 +644,7 @@
   {
     "id": "転生したら剣でした-第2期",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -612,6 +668,34 @@
     "isbn": "9784896378634",
     "amazon_asin": "4896378636",
     "cover_image_url": "/static/covers/tensei-ken-2.jpg"
+  },
+  {
+    "id": "転生したらスライムだった件-クレイマンrevenge",
+    "season": "2027-spring",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "転生したらスライムだった件 クレイマンREVENGE",
+    "source_type": "manga",
+    "source_title": "転生したらスライムだった件 クレイマンREVENGE",
+    "source_volume_from": 1,
+    "source_volume_to": 4,
+    "source_volume_approximate": true,
+    "source_volume_note": "2027年春。スピンオフ漫画。8-bit。",
+    "read_order": "本作1巻から。本編既読なら世界観がより分かる",
+    "amazon_search": "転スラ クレイマンREVENGE 漫画",
+    "tags": [
+      "ファンタジー",
+      "スピンオフ",
+      "逆転"
+    ],
+    "watchers_count": 9400,
+    "share_slug": "tensura-clayman-revenge",
+    "main_comment": "死んだはずのクレイマンが復活し暗躍する転スラのスピンオフ。2027年春。本編の裏側から見た戦争と野心が原作の核。転スラを追っている人、悪役視点が好きな人は1巻から。春の続編シーズンと並ぶ注目作です。",
+    "isbn": "9784065300954",
+    "amazon_asin": "4065300959",
+    "cover_image_url": "/static/covers/tensura-clayman-revenge.jpg"
   },
   {
     "id": "ヒストリエ",
@@ -644,7 +728,7 @@
   {
     "id": "帰還者の魔法は特別です-第2期",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -726,7 +810,7 @@
   {
     "id": "らんま1-2-第3期",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -754,7 +838,7 @@
   {
     "id": "魔法少女育成計画-restart",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -837,6 +921,34 @@
     "main_comment": "千年血戦篇ついに完結へ。漫画原作の最終局面は、護廷十三隊と滅却師の全面戦争が最高峰に達するバトルアニメとして位置づけられます。72〜74巻相当で、アニメのみ派もそのまま視聴可能ですが、原作は圧倒的な画と情報量。派手な剣戟・能力バトル、長年の伏線回収が好きな人、少年ジャンプ系の大作クライマックス待ちの人に。"
   },
   {
+    "id": "魔女と傭兵",
+    "season": "2027-spring",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "魔女と傭兵",
+    "source_type": "light_novel",
+    "source_title": "魔女と傭兵",
+    "source_volume_from": 1,
+    "source_volume_to": 3,
+    "source_volume_approximate": true,
+    "source_volume_note": "2027年4月 日本テレビ系。GCN文庫。8-bit。",
+    "read_order": "ラノベ1巻から。漫画版でも可",
+    "amazon_search": "魔女と傭兵 ラノベ",
+    "tags": [
+      "ファンタジー",
+      "冒険",
+      "ダーク"
+    ],
+    "watchers_count": 9200,
+    "share_slug": "majo-to-youhei",
+    "main_comment": "追われる魔女と双刃の傭兵が安住の地を探すダークファンタジー。2027年4月から日本テレビ系。なろう発の本格冒険もので、二人の信頼関係と世界の過酷さが原作の核。ダークファンタジーが好きな人は1巻から。春の注目ラノベ枠です。",
+    "isbn": "9784867164242",
+    "amazon_asin": "4867164240",
+    "cover_image_url": "/static/covers/majo-to-youhei.jpg"
+  },
+  {
     "id": "魔入りました-入間くん-if-episode-of-魔フィア",
     "season": "2027-winter",
     "status": "upcoming",
@@ -867,7 +979,7 @@
   {
     "id": "ブラッククローバー-2nd-season",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -923,6 +1035,34 @@
     "anime_continue_note": "第1期終了後は漫画6巻から。未読の人は1巻から。"
   },
   {
+    "id": "幼稚園wars",
+    "season": "2027-spring",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "幼稚園WARS",
+    "source_type": "manga",
+    "source_title": "幼稚園WARS",
+    "source_volume_from": 1,
+    "source_volume_to": 5,
+    "source_volume_approximate": true,
+    "source_volume_note": "2027年春。少年ジャンプ＋連載。サンライズ×FelixFilm。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "幼稚園WARS 漫画",
+    "tags": [
+      "アクション",
+      "コメディ",
+      "少年漫画"
+    ],
+    "watchers_count": 9100,
+    "share_slug": "youchien-wars",
+    "main_comment": "元殺し屋が幼稚園で園児を守るバイオレンスラブコメ。2027年春。ギャグと殺傷の落差が原作の売りで、ただのバトルものではない。ジャンプ＋の人気作を先読みしたい人は1巻から。",
+    "isbn": "9784088834863",
+    "amazon_asin": "4088834860",
+    "cover_image_url": "/static/covers/youchien-wars.jpg"
+  },
+  {
     "id": "bang-dream-it-s-mygo-ave-mujica",
     "season": "2027-winter",
     "status": "upcoming",
@@ -951,7 +1091,7 @@
   {
     "id": "psyren-サイレン",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1007,6 +1147,34 @@
     "anime_continue_note": "漫画は全28巻で完結済み。アニメ最終クール後に原作で読む続きはありません。"
   },
   {
+    "id": "運命の巻戻士",
+    "season": "2027-spring",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "運命の巻戻士",
+    "source_type": "manga",
+    "source_title": "運命の巻戻士",
+    "source_volume_from": 1,
+    "source_volume_to": 5,
+    "source_volume_approximate": true,
+    "source_volume_note": "2027年4月 テレビ朝日系 IMAnimation。月刊コロコロコミック。bones film。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "運命の巻戻士 漫画",
+    "tags": [
+      "SF",
+      "サスペンス",
+      "少年漫画"
+    ],
+    "watchers_count": 9000,
+    "share_slug": "unmei-no-makimodoshi",
+    "main_comment": "死者を救うため時間を巻き戻す少年のSFサスペンス。2027年4月からテレビ朝日系。コロコロ発だが暗めの運命ものと時間ループが核。SF・サスペンスが好きな人は1巻から。春の異色枠です。",
+    "isbn": "9784091433992",
+    "amazon_asin": "4091433995",
+    "cover_image_url": "/static/covers/unmei-no-makimodoshi.jpg"
+  },
+  {
     "id": "ゴールデンカムイ-最終章-暴走列車編",
     "season": "2027-winter",
     "status": "upcoming",
@@ -1037,7 +1205,7 @@
   {
     "id": "ジャンケットバンク",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1065,7 +1233,7 @@
   {
     "id": "超巡-超条先輩",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1121,6 +1289,34 @@
     "anime_continue_note": "4期（2年生編）終了後はラノベ8巻から。3期まで見た人は4.5巻前後からでも可。"
   },
   {
+    "id": "ザ-ファブル-第2期",
+    "season": "2027-winter",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "ザ・ファブル 第2期",
+    "source_type": "manga",
+    "source_title": "ザ・ファブル",
+    "source_volume_from": 8,
+    "source_volume_to": 14,
+    "source_volume_approximate": true,
+    "source_volume_note": "1期の続き。2027年1月 日本テレビ系。手塚プロダクション。",
+    "read_order": "漫画1巻から。1期見た人は8巻前後から",
+    "amazon_search": "ザ・ファブル 漫画",
+    "tags": [
+      "アクション",
+      "コメディ",
+      "青年漫画"
+    ],
+    "watchers_count": 8900,
+    "share_slug": "the-fable-2",
+    "main_comment": "殺しの天才が普通の生活を強いられるダークコメディの続編。2027年1月から日本テレビ系。1期の延長で、日常と殺意の落差が原作の核。青年漫画・殺し屋ものが好きな人、1期を見た人は8巻前後から。",
+    "isbn": "9784063825633",
+    "amazon_asin": "4063825639",
+    "cover_image_url": "/static/covers/the-fable-2.jpg"
+  },
+  {
     "id": "結界師の一輪華",
     "season": "2027-winter",
     "status": "upcoming",
@@ -1151,7 +1347,7 @@
   {
     "id": "とある暗部の少女共棲",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1179,7 +1375,7 @@
   {
     "id": "ホタルの嫁入り",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1232,6 +1428,34 @@
     "main_comment": "飲んだくれ×ダイビングの暴れコメディが3期へ。漫画原作は大学編のパラオ遠征が見どころで、常識外れのギャグと本気の潜水分が同居するのが魅力です。2期まで見た人は12巻前後から追いかけやすい。笑いと青春が欲しい夏にぴったりの作品。ラブコメというより「仲間の馬鹿騒ぎ」が好きな人、スポーツ漫画の勢いをコメディで味わいたい人に。"
   },
   {
+    "id": "テンカイチ-日本最強武芸者決定戦",
+    "season": "2027-spring",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "テンカイチ 日本最強武芸者決定戦",
+    "source_type": "manga",
+    "source_title": "テンカイチ 日本最強武芸者決定戦",
+    "source_volume_from": 1,
+    "source_volume_to": 5,
+    "source_volume_approximate": true,
+    "source_volume_note": "2027年4月。ヤングマガジン連載。冨嶽。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "テンカイチ 日本最強武芸者決定戦 漫画",
+    "tags": [
+      "バトル",
+      "歴史",
+      "青年漫画"
+    ],
+    "watchers_count": 8800,
+    "share_slug": "tenkaichi",
+    "main_comment": "信長が日本最強の武芸者を決める異種格闘の戦国バトル。2027年4月。武蔵や忠勝が史実と違う形でぶつかり合うのが原作の見どころ。格闘・歴史ものが好きな人は1巻から。春の青年漫画枠です。",
+    "isbn": "9784065230305",
+    "amazon_asin": "4065230306",
+    "cover_image_url": "/static/covers/tenkaichi.jpg"
+  },
+  {
     "id": "雑用付与術師が自分の最強に気付くまで",
     "season": "2027-winter",
     "status": "upcoming",
@@ -1262,7 +1486,7 @@
   {
     "id": "朱色の仮面",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1290,7 +1514,7 @@
   {
     "id": "tank-chair-戦車椅子",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1318,7 +1542,7 @@
   {
     "id": "魔法騎士レイアース",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1372,6 +1596,34 @@
     "cover_image_url": "/static/covers/mairimashita-iruma-4.jpg",
     "anime_continue_volume": 33,
     "anime_continue_note": "第4シリーズ終了後は漫画33巻から。"
+  },
+  {
+    "id": "スキップとローファー-2nd-season",
+    "season": "2027-spring",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "スキップとローファー 2nd season",
+    "source_type": "manga",
+    "source_title": "スキップとローファー",
+    "source_volume_from": 6,
+    "source_volume_to": 10,
+    "source_volume_approximate": true,
+    "source_volume_note": "1期の続き。2027年春。P.A.WORKS。",
+    "read_order": "漫画1巻から。1期見た人は6巻前後から",
+    "amazon_search": "スキップとローファー 漫画",
+    "tags": [
+      "青春",
+      "学園",
+      "日常"
+    ],
+    "watchers_count": 8700,
+    "share_slug": "skip-to-loafer-2",
+    "main_comment": "地方出身の優等生が都内高校で居場所を見つける青春ものの2期。2027年春。人間関係の機微と季節の移ろいが原作の強み。1期を見た人は6巻前後から、初見なら1巻から。春の日常・青春枠です。",
+    "isbn": "9784065102169",
+    "amazon_asin": "4065102162",
+    "cover_image_url": "/static/covers/skip-to-loafer-2.jpg"
   },
   {
     "id": "カリスマ",
@@ -1432,7 +1684,7 @@
   {
     "id": "彼方から",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1460,7 +1712,7 @@
   {
     "id": "転生ゴブリンだけど質問ある",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1516,7 +1768,7 @@
   {
     "id": "マジカル-エクスプローラー",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1544,7 +1796,7 @@
   {
     "id": "幻想水滸伝",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1596,6 +1848,32 @@
     "cover_image_url": "/static/covers/shuumatsu-3.jpg",
     "anime_continue_volume": 21,
     "anime_continue_note": "3期終了後は漫画21巻から（全23巻）。"
+  },
+  {
+    "id": "機動戦士ガンダムrg-xarx-zero",
+    "season": "2027-spring",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "機動戦士ガンダムRG XARX-ZERO",
+    "source_type": "original",
+    "source_title": "",
+    "source_volume_from": null,
+    "source_volume_to": null,
+    "source_volume_approximate": false,
+    "source_volume_note": "2027年春。SOLA ANIMATION。オリジナル。",
+    "read_order": "",
+    "amazon_search": "機動戦士ガンダムRG XARX-ZERO",
+    "tags": [
+      "ロボット",
+      "SF",
+      "オリジナル"
+    ],
+    "watchers_count": 8600,
+    "share_slug": "gundam-rg-xarx",
+    "main_comment": "ガンダムシリーズの新作オリジナル。2027年春。原作漫画・小説はなし。ロボットものと宇宙世紀周辺の新作を追いたい人向け。春の大型オリジナル枠です。",
+    "cover_image_url": "/static/cover-placeholder.svg"
   },
   {
     "id": "一式さんは恋を知りたい",
@@ -1710,9 +1988,37 @@
     "amazon_asin": "4046819375"
   },
   {
+    "id": "世界最高の暗殺者-異世界貴族に転生する-第2期",
+    "season": "2027-winter",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "世界最高の暗殺者、異世界貴族に転生する 第2期",
+    "source_type": "light_novel",
+    "source_title": "世界最高の暗殺者、異世界貴族に転生する",
+    "source_volume_from": 5,
+    "source_volume_to": 8,
+    "source_volume_approximate": true,
+    "source_volume_note": "1期の続き。2027年冬。SILVER LINK。",
+    "read_order": "ラノベ1巻から。1期見た人は5巻前後から",
+    "amazon_search": "世界最高の暗殺者 異世界貴族 ラノベ",
+    "tags": [
+      "異世界",
+      "転生",
+      "アクション"
+    ],
+    "watchers_count": 8550,
+    "share_slug": "ansatsu-kizoku-2",
+    "main_comment": "現代の暗殺者が異世界貴族に転生するシリーズの2期。2027年冬。育成と任務のテンポが原作の売りで、1期の延長として十分楽しめる。転生もの・暗闘が好きな人、1期を見た人は5巻前後から。",
+    "isbn": "9784040731735",
+    "amazon_asin": "4040731735",
+    "cover_image_url": "/static/covers/ansatsu-kizoku-2.jpg"
+  },
+  {
     "id": "探偵はもう-死んでいる-season2",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1740,7 +2046,7 @@
   {
     "id": "生徒会にも穴はある",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1852,7 +2158,7 @@
   {
     "id": "信者ゼロの女神サマと始める異世界攻略",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1878,9 +2184,37 @@
     "cover_image_url": "/static/covers/shinja-zero.jpg"
   },
   {
+    "id": "真-侍伝-yaiba-かぐや編",
+    "season": "2027-winter",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "真・侍伝 YAIBA かぐや編",
+    "source_type": "manga",
+    "source_title": "YAIBA",
+    "source_volume_from": 8,
+    "source_volume_to": 14,
+    "source_volume_approximate": true,
+    "source_volume_note": "第2期。2027年1月9日 日本テレビ系。WIT STUDIO。",
+    "read_order": "漫画1巻から。1期見た人はかぐや編該当巻から",
+    "amazon_search": "YAIBA 漫画",
+    "tags": [
+      "アクション",
+      "少年漫画",
+      "剣"
+    ],
+    "watchers_count": 8450,
+    "share_slug": "yaiba-kaguya",
+    "main_comment": "青山剛昌の剣戟バトル漫画の新作アニメ第2期。2027年1月9日から日本テレビ系。かぐや編が中心で、1期の勢いを引き継ぐ。少年漫画の剣術バトルが好きな人、1期を見た人は該当巻から。",
+    "isbn": "9784091230010",
+    "amazon_asin": "4091230016",
+    "cover_image_url": "/static/covers/yaiba-kaguya.jpg"
+  },
+  {
     "id": "世界最強の魔女-始めました",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -1908,7 +2242,7 @@
   {
     "id": "佐々木とピーちゃん-season2",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2021,7 +2355,7 @@
   {
     "id": "貸した魔力は-リボ払い-で強制徴収",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2047,9 +2381,37 @@
     "cover_image_url": "/static/covers/ribarai-maryoku.jpg"
   },
   {
+    "id": "アラフォー賢者の異世界生活日記",
+    "season": "2027-winter",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "アラフォー賢者の異世界生活日記",
+    "source_type": "light_novel",
+    "source_title": "アラフォー賢者の異世界生活日記",
+    "source_volume_from": 1,
+    "source_volume_to": 4,
+    "source_volume_approximate": true,
+    "source_volume_note": "2027年1月。MFブックス。",
+    "read_order": "ラノベ1巻から。漫画版でも可",
+    "amazon_search": "アラフォー賢者の異世界生活日記 ラノベ",
+    "tags": [
+      "異世界",
+      "転生",
+      "ファンタジー"
+    ],
+    "watchers_count": 8350,
+    "share_slug": "around40-kenja",
+    "main_comment": "ゲームの能力を引き継いだ40歳が、平穏を望みつつ異世界で賢者扱いされる転生もの。2027年1月。スローライフ志向と無自覚チートのギャップが原作の味。おっさん転生・異世界ものが好きな人は1巻から。冬の新作ラノベ枠です。",
+    "isbn": "9784040686417",
+    "amazon_asin": "4040686411",
+    "cover_image_url": "/static/covers/around40-kenja.jpg"
+  },
+  {
     "id": "塩対応の佐藤さんが俺にだけ甘い",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2191,7 +2553,7 @@
   {
     "id": "転生した大聖女は-聖女であることをひた隠す",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2219,7 +2581,7 @@
   {
     "id": "fx戦士くるみちゃん",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2247,7 +2609,7 @@
   {
     "id": "凶乱令嬢ニア-リストン-病弱令嬢に転生した神殺しの武人の華麗なる無双録",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2387,7 +2749,7 @@
   {
     "id": "野生のラスボスが現れた-第2期",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2415,7 +2777,7 @@
   {
     "id": "おじさんはカワイイものがお好き",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2441,9 +2803,37 @@
     "cover_image_url": "/static/covers/ojisan-kawaii.jpg"
   },
   {
+    "id": "マロニエ王国の七人の騎士",
+    "season": "2026-autumn",
+    "status": "airing",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "マロニエ王国の七人の騎士",
+    "source_type": "manga",
+    "source_title": "マロニエ王国の七人の騎士",
+    "source_volume_from": 1,
+    "source_volume_to": 4,
+    "source_volume_approximate": true,
+    "source_volume_note": "2026年10月スタート。月刊フラワーズ連載。",
+    "read_order": "漫画1巻から",
+    "amazon_search": "マロニエ王国の七人の騎士 漫画",
+    "tags": [
+      "ファンタジー",
+      "冒険",
+      "少女漫画"
+    ],
+    "watchers_count": 8100,
+    "share_slug": "marronnier-kingdom",
+    "main_comment": "小さな姫と七人の騎士が国を守るファンタジー。2026年10月スタート。画の密度と宮廷の人間関係が原作の読みどころで、バトルより物語の厚みが売り。少女漫画ファンタジーが好きな人、秋の新作で王道以外を探している人は1巻から。",
+    "isbn": "9784091394279",
+    "amazon_asin": "4091394272",
+    "cover_image_url": "/static/covers/marronnier-kingdom.jpg"
+  },
+  {
     "id": "傷だらけ聖女より報復をこめて-season2",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2529,7 +2919,7 @@
   {
     "id": "どうも-好きな人に惚れ薬を依頼された魔女です",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2557,7 +2947,7 @@
   {
     "id": "ロメリア戦記",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2585,7 +2975,7 @@
   {
     "id": "冰剣の魔術師が世界を統べるii",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2699,7 +3089,7 @@
   {
     "id": "ダークサモナーとデキている",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2727,7 +3117,7 @@
   {
     "id": "ホテル-インヒューマンズ-第2期",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2811,7 +3201,7 @@
   {
     "id": "彼女の友達",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -2921,6 +3311,32 @@
     "main_comment": "転生モブが乙女ゲー世界で生き残る知略劇が2期。原作ラノベは「悪役令嬢もの」の裏側を男主人公視点で描く異色作で、政治と人間関係の駆け引きが好きな人に刺さります。1期を見た人は4巻前後から。乙女ゲー文法に詳しくなくても、サバイバルとコメディのバランスで読めます。脇役視点の転生ものが好きな人に。"
   },
   {
+    "id": "lona",
+    "season": "2027-spring",
+    "status": "upcoming",
+    "media": "tv",
+    "memo": "",
+    "official_url": "",
+    "title": "LONA",
+    "source_type": "original",
+    "source_title": "",
+    "source_volume_from": null,
+    "source_volume_to": null,
+    "source_volume_approximate": false,
+    "source_volume_note": "2027年春。WIT STUDIO。オリジナル。",
+    "read_order": "",
+    "amazon_search": "LONA アニメ",
+    "tags": [
+      "SF",
+      "ミステリー",
+      "オリジナル"
+    ],
+    "watchers_count": 7800,
+    "share_slug": "lona-2027",
+    "main_comment": "死者の脳に残った記憶を読む研究者たちのオリジナルSFミステリー。2027年春、WIT STUDIO。原作書籍はない。脳科学ものと謎解きが好きな人向けの春のオリジナル枠です。",
+    "cover_image_url": "/static/cover-placeholder.svg"
+  },
+  {
     "id": "地雷なんですか-地原さん",
     "season": "2027-winter",
     "status": "upcoming",
@@ -2979,7 +3395,7 @@
   {
     "id": "目覚めたら最強装備と宇宙船持ちだったので-一戸建て目指して傭兵として自由に生きたい",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
@@ -3065,7 +3481,7 @@
   {
     "id": "桃源暗鬼-日光-華厳の滝編",
     "season": "2026-autumn",
-    "status": "upcoming",
+    "status": "airing",
     "media": "tv",
     "memo": "",
     "official_url": "",
